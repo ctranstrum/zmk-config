@@ -10,8 +10,12 @@
 
 
 &mt {
-  //  flavor = "tap-preferred";
-   // tapping_term_ms = <200>;
+  // flavor = "tap-preferred";
+  // tapping_term_ms = <200>;
+};
+
+&led_strip {
+    chain-length = <23>;
 };
 
 / {
@@ -24,25 +28,25 @@
             bindings = <&kp ESC>;
         };
 
-         combo_tab {
+        combo_tab {
             timeout-ms = <50>;
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
 
-            combo_ralt {
+        combo_ralt {
             timeout-ms = <50>;
             key-positions = <17 16>;
             bindings = <&kp RALT>;
         };
 
-                    combo_lalt {
+        combo_lalt {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&kp LALT>;
         };
 
-                           combo_lgui {
+        combo_lgui {
             timeout-ms = <50>;
             key-positions = <12 13>;
             bindings = <&kp LGUI>;
@@ -59,19 +63,19 @@
 
     };
 
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-            default_layer {
+        default_layer {
         bindings = <
-        &kp Q &kp W &kp E &kp R &kp T                       &kp Y &kp U  &kp I    &kp O   &kp P
-        &kp A &kp S &kp D &kp F &kp G                               &kp H &kp J &kp K &kp L &kp QUOT
-        &mt LSFT Z &kp X &kp C &kp V &kp B                      &kp N &kp M  &kp CMMA &kp DOT &mt LSFT RET
-                        &mo 1 &kp LCTL                  &kp SPC &mo 2
+        &kp Q      &kp W &kp E &kp R &kp T                       &kp Y &kp U &kp I    &kp O   &kp P
+        &kp A      &kp S &kp D &kp F &kp G                       &kp H &kp J &kp K    &kp L   &kp QUOT
+        &mt LSFT Z &kp X &kp C &kp V &kp B                       &kp N &kp M &kp CMMA &kp DOT &mt LSFT RET
+                                     &mo 1 &kp LCTL      &kp SPC &mo 2
         >;
         };
 
-            left_layer {
+        left_layer {
         bindings = <
         &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5     &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0
         &kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH         &kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL
