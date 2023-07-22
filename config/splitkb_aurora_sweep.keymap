@@ -30,12 +30,6 @@
             tapping-term-ms = <200>;
             bindings = <&none>, <&none>, <&bt BT_CLR>;
         };
-
-        xp: external_power {
-            compatible = "zmk,behavior-ext-power";
-            label = "EXTERNAL_POWER_SHORTCUT";
-            #binding-cells = <1>;
-        };
     };
 
     ZMK_MACRO(arrow_fn, bindings = <&kp EQUAL &kp GT &kp SPACE &kp LBRC &kp RBRC &kp LEFT>;)
@@ -89,11 +83,11 @@
 
         adjust_layer {
             bindings = <
-// ======================================================================  ======================================================================
-&xp EP_TOG      &caps_word   &none        &kp C_BRI_UP    &kp C_BRI_DN     &none      &kp LG(LC(Q))  &kp K_MUTE         &kp C_VOL_DN &kp C_VOL_UP
-&bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4     &bt_clr    &kp LC(LS(N4)) &kp LG(LC(LS(N4))) &none        &none
-&rgb_ug RGB_TOG &none        &kp CAPS     &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &kp C_PREV &kp C_REWIND   &kp C_PLAY_PAUSE   &kp C_FF     &kp C_NEXT
-                                          &kp ESC         &trans           &trans     &kp DELETE
+// ======================================================================    ======================================================================
+&ext_power EP_TOG &caps_word   &none        &kp C_BRI_UP    &kp C_BRI_DN     &none      &kp LG(LC(Q))  &kp K_MUTE         &kp C_VOL_DN &kp C_VOL_UP
+&bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4     &bt_clr    &kp LC(LS(N4)) &kp LG(LC(LS(N4))) &none        &none
+&rgb_ug RGB_TOG   &none        &kp CAPS     &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &kp C_PREV &kp C_REWIND   &kp C_PLAY_PAUSE   &kp C_FF     &kp C_NEXT
+                                            &kp ESC         &trans           &trans     &kp DELETE
             >;
         };
 
