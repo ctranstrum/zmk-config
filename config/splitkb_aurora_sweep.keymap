@@ -35,7 +35,6 @@
             compatible = "zmk,behavior-ext-power";
             label = "EXTERNAL_POWER_SHORTCUT";
             #binding-cells = <1>;
-            bindings = <&ext_power>;
         };
     };
 
