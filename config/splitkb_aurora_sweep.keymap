@@ -27,8 +27,16 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BLUETOOTH_MAGIC";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&bt BT_SEL 4>, <&none>, <&bt BT_CLR>;
+        };
+
+        rgb_tog: rgb_toggle {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RGB_TOGGLE";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&ext_power EP_TOG>, <&rgb_ug RGB_TOG>;
         };
     };
 
@@ -60,7 +68,7 @@
         base_layer {
             bindings = <
 // =========================================================  ========================================================
-&none       &kp W       &kp F      &kp P      &none           &none      &kp L      &kp U      &kp Y       &none
+&kp ESC     &kp W       &kp F      &kp P      &none           &none      &kp L      &kp U      &kp Y       &kp GRAVE
 &kp A       &kp R       &kp S      &kp T      &kp G           &kp M      &kp N      &kp E      &kp I       &kp O
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V      &mt LALT K &mt RCMD H &mt RALT B &mt RCTRL J &mt RSHFT Q
                         &lt LSYMBOL BSPC      &lt LLOWER TAB  &lt LRAISE SPACE      &lt LMACRO RETURN
@@ -89,11 +97,11 @@
 
         adjust_layer {
             bindings = <
-// =================================================================  ========================================================================
-&none        &caps_word &rgb_ug RGB_TOG &kp K_MUTE   &none            &none        &scrn_lock   &none            &launchpad   &none
-&kp C_BRI_UP &scrn_file &scrn_clip      &kp C_VOL_DN &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3 &bt_magic
-&kp C_BRI_DN &mic_mute  &kp CAPS        &kp C_VOL_UP &rgb_ug RGB_BRD  &kp C_PREV   &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF     &kp C_NEXT
-                                        &kp ESC      &trans           &trans       &kp DELETE
+// ============================================================  ==================================================================
+&none        &caps_word &none      &kp K_MUTE   &none            &none        &scrn_lock   &none            &launchpad   &rgb_tog
+&kp C_BRI_UP &scrn_file &scrn_clip &kp C_VOL_DN &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3 &bt_magic
+&kp C_BRI_DN &mic_mute  &kp CAPS   &kp C_VOL_UP &rgb_ug RGB_BRD  &kp C_PREV   &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF     &kp C_NEXT
+                                   &kp ESC      &trans           &trans       &kp DELETE
             >;
         };
 
@@ -113,7 +121,7 @@
 &none           &none           &none          &none          &none           &none     &kp F7 &kp F8 &kp F9 &none
 &tmux_name      &tmux_new       &tmux_end      &none          &none           &arrow_fn &kp F4 &kp F5 &kp F6 &kp F12
 &mt LSHFT LC(Z) &mt LCTRL LC(X) &mt LALT LC(C) &mt LCMD LC(D) &mt RALT LC(V)  &kp F10   &kp F1 &kp F2 &kp F3 &kp F11
-                                               &trans         &none           &none     &trans
+                                               &kp DEL        &none           &none     &trans
             >;
         };
 
