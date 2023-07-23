@@ -23,21 +23,27 @@
 
 / {
     behaviors {
-        bt_clr: bluetooth_clear {
+        bt_magic: bluetooth_magic {
             compatible = "zmk,behavior-tap-dance";
-            label = "BLUETOOTH_CLEAR";
+            label = "BLUETOOTH_MAGIC";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&none>, <&none>, <&bt BT_CLR>;
+            bindings = <&bt BT_SEL 4>, <&none>, <&bt BT_CLR>;
         };
     };
 
     ZMK_MACRO(arrow_fn, bindings = <&kp EQUAL &kp GT &kp SPACE &kp LBRC &kp RBRC &kp LEFT>;)
 
+    // MacOS shortcuts (need to match what is listed in Keyboard Shortcuts settings)
+    ZMK_MACRO(launchpad, bindings = <&kp LG(LC(LS(N4)))>;)
+    ZMK_MACRO(mic_mute, bindings = <&kp LG(LA(LC(LS(M))))>;)
+    ZMK_MACRO(scrn_clip, bindings = <&kp LG(LC(LS(N4)))>;)
+    ZMK_MACRO(scrn_file, bindings = <&kp LG(LS(N4))>;)
+    ZMK_MACRO(scrn_lock, bindings = <&kp LG(LC(Q))>;)
+
+    // tmux convenience macros
     ZMK_MACRO(tmux_name, bindings = <&kp GRAVE &kp A>;)
-
     ZMK_MACRO(tmux_new, bindings = <&kp GRAVE &kp C>;)
-
     ZMK_MACRO(tmux_end, bindings = <&kp GRAVE &kp D>;)
 
     conditional_layers {
@@ -53,49 +59,49 @@
 
         base_layer {
             bindings = <
-// =========================================================  ==================================================================
-&kp Q       &kp W       &kp F      &kp P      &kp B           &kp J      &kp L      &kp U          &kp Y         &kp APOSTROPHE
-&kp A       &kp R       &kp S      &kp T      &kp G           &kp M      &kp N      &kp E          &kp I         &kp O
-&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V      &mt LALT K &mt RCMD H &mt RALT COMMA &mt RCTRL DOT &mt RSHFT SLASH
+// =========================================================  ========================================================
+&none       &kp W       &kp F      &kp P      &none           &none      &kp L      &kp U      &kp Y       &none
+&kp A       &kp R       &kp S      &kp T      &kp G           &kp M      &kp N      &kp E      &kp I       &kp O
+&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V      &mt LALT K &mt RCMD H &mt RALT B &mt RCTRL J &mt RSHFT Q
                         &lt LSYMBOL BSPC      &lt LLOWER TAB  &lt LRAISE SPACE      &lt LMACRO RETURN
             >;
         };
 
         lower_layer {
             bindings = <
-// ============================================================  =============================================================
-&kp EXCL       &none         &kp UP        &kp LPAR    &kp RPAR  &kp SLASH &kp N7      &kp N8      &kp N9       &kp EQUAL
-&kp COLON      &kp LEFT      &kp DOWN      &kp RIGHT   &none     &kp STAR  &kp N4      &kp N5      &kp N6       &kp MINUS
-&mt LSHFT BSPC &mt LCTRL RET &mt LALT DOWN &mt LCMD LT &kp GT    &kp DOT   &mt RCMD N1 &mt RALT N2 &mt RCTRL N3 &mt RSHFT PLUS
-                                           &kp DELETE  &trans    &trans    &kp N0
+// ====================================================================  ================================================================
+&none          &none         &kp LPAR      &kp RPAR       &none          &none        &kp N7      &kp N8      &kp N9       &none
+&kp LT         &kp GT        &kp EXCL      &kp EQUAL      &kp COLON      &kp COMMA    &kp N4      &kp N5      &kp N6       &kp MINUS
+&mt LSHFT BSPC &mt LCTRL RET &mt LALT STAR &mt LCMD SLASH &mt RALT SEMI  &mt LALT DOT &mt RCMD N1 &mt RALT N2 &mt RCTRL N3 &mt RSHFT PLUS
+                                           &kp DELETE     &trans         &trans       &kp N0
             >;
         };
 
         raise_layer {
             bindings = <
-// ===============================================================  ====================================================================
-&kp GRAVE     &kp TILDE      &kp LPAR      &kp RPAR      &none      &kp HOME  &kp PG_UP   &kp UP        &kp PG_DN    &kp END
-&kp EQUAL     &kp GT         &kp LBRC      &kp RBRC      &kp COLON  &kp MINUS &kp LEFT    &kp DOWN      &kp RIGHT    &kp PIPE
-&mt LSHFT DEL &mt LCTRL EXCL &mt LALT LBKT &mt LCMD RBKT &kp SEMI   &kp UNDER &mt RCMD LT &mt RALT DOWN &mt RCTRL GT &mt RSHFT BACKSLASH
-                                           &kp ESC       &trans     &trans    &mo BKSP
+// ======================================================================  =========================================================================
+&none           &kp GRAVE       &kp LPAR      &kp RPAR      &none          &none          &kp BACKSLASH &kp UP         &kp DQT       &none
+&kp LT          &kp GT          &kp LBRC      &kp RBRC      &kp COLON      &kp MINUS      &kp LEFT      &kp DOWN       &kp RIGHT     &kp APOSTROPHE
+&mt LSHFT QMARK &mt LCTRL TILDE &mt LALT LBKT &mt LCMD RBKT &mt RALT SEMI  &mt LALT UNDER &mt RCMD PIPE &mt RALT COMMA &mt RCTRL DOT &mt RSHFT SLASH
+                                              &kp ESC       &trans         &trans         &mo BKSP
         >;
         };
 
         adjust_layer {
             bindings = <
-// ======================================================================    ======================================================================
-&ext_power EP_TOG &caps_word   &none        &kp C_BRI_UP    &kp C_BRI_DN     &none      &kp LG(LC(Q))  &kp K_MUTE         &kp C_VOL_DN &kp C_VOL_UP
-&bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4     &bt_clr    &kp LC(LS(N4)) &kp LG(LC(LS(N4))) &none        &none
-&rgb_ug RGB_TOG   &none        &kp CAPS     &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &kp C_PREV &kp C_REWIND   &kp C_PLAY_PAUSE   &kp C_FF     &kp C_NEXT
-                                            &kp ESC         &trans           &trans     &kp DELETE
+// =================================================================  ========================================================================
+&none        &caps_word &rgb_ug RGB_TOG &kp K_MUTE   &none            &none        &scrn_lock   &none            &launchpad   &none
+&kp C_BRI_UP &scrn_file &scrn_clip      &kp C_VOL_DN &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3 &bt_magic
+&kp C_BRI_DN &mic_mute  &kp CAPS        &kp C_VOL_UP &rgb_ug RGB_BRD  &kp C_PREV   &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF     &kp C_NEXT
+                                        &kp ESC      &trans           &trans       &kp DELETE
             >;
         };
 
         symbol_layer {
             bindings = <
 // =========================================================================  ======================================================================
-&none           &none           &kp PG_UP      &none          &kp LC(TAB)     &none          &kp AMPS      &kp STAR    &kp SLASH      &none
-&none           &kp HOME        &kp PG_DN      &kp END        &kp LG(GRAVE)   &kp BACKSLASH  &kp DOLLAR    &kp PERCENT &kp CARET      &kp MINUS
+&none           &none           &kp LPAR       &kp RPAR       &none           &none          &kp AMPS      &kp STAR    &kp SLASH      &none
+&none           &none           &none          &kp LC(TAB)    &kp LG(GRAVE)   &kp BACKSLASH  &kp DOLLAR    &kp PERCENT &kp CARET      &kp MINUS
 &mt LSHFT LG(Z) &mt LCTRL LG(X) &mt LALT LG(C) &mt LCMD LG(D) &mt RALT LG(V)  &mt LALT EQUAL &mt RCMD EXCL &mt RALT AT &mt RCTRL HASH &mt RSHFT PLUS
                                                &trans         &none           &none          &trans
             >;
@@ -103,11 +109,11 @@
 
         macro_layer {
             bindings = <
-// ===============================================  ==================================
-&none      &none     &none     &none     &none      &none &kp F7 &kp F8 &kp F9 &kp F12
-&tmux_name &tmux_new &tmux_end &arrow_fn &none      &none &kp F4 &kp F5 &kp F6 &kp F11
-&kp LC(Z)  &kp LC(X) &kp LC(C) &kp LC(D) &kp LC(V)  &none &kp F1 &kp F2 &kp F3 &kp F10
-                               &trans    &none      &none &trans
+// =========================================================================  ======================================
+&none           &none           &none          &none          &none           &none     &kp F7 &kp F8 &kp F9 &none
+&tmux_name      &tmux_new       &tmux_end      &none          &none           &arrow_fn &kp F4 &kp F5 &kp F6 &kp F12
+&mt LSHFT LC(Z) &mt LCTRL LC(X) &mt LALT LC(C) &mt LCMD LC(D) &mt RALT LC(V)  &kp F10   &kp F1 &kp F2 &kp F3 &kp F11
+                                               &trans         &none           &none     &trans
             >;
         };
 
