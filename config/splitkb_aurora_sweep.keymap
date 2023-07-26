@@ -1,4 +1,5 @@
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/animation.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
@@ -78,7 +79,7 @@
         lower_layer {
             bindings = <
 // ====================================================================  ================================================================
-&none          &none         &kp LPAR      &kp RPAR       &none          &none        &kp N7      &kp N8      &kp N9       &none
+&none          &none         &kp LPAR      &kp RPAR       &none          &none        &kp N7      &kp N8      &kp N9       &animation ANIMATION_TOGGLE
 &kp LT         &kp GT        &kp EXCL      &kp EQUAL      &kp COLON      &kp COMMA    &kp N4      &kp N5      &kp N6       &kp MINUS
 &mt LSHFT BSPC &mt LCTRL RET &mt LALT STAR &mt LCMD SLASH &mt RALT SEMI  &mt LALT DOT &mt RCMD N1 &mt RALT N2 &mt RCTRL N3 &mt RSHFT PLUS
                                            &kp DELETE     &trans         &trans       &kp N0
@@ -125,5 +126,72 @@
             >;
         };
 
+    };
+
+    animation {
+        compatible = "zmk,animation";
+        drivers = <&led_strip>;
+        pixels =
+            // 0: RGB underglow back of left board
+            <&pixel 62 21>, <&pixel 47 3>, <&pixel 10 18>, <&pixel 10 43>, <&pixel 37 52>, <&pixel 74 61>,
+            // 6: per-key lighting on left board, top row
+            <&pixel 0 18>, <&pixel 18 6>, <&pixel 37 0>, <&pixel 51 4>, <&pixel 74 6>,
+            // 11: row 2
+            <&pixel 0 37>, <&pixel 18 25>, <&pixel 37 18>, <&pixel 51 22>, <&pixel 74 24>,
+            // 16: row 3
+            <&pixel 0 55>, <&pixel 18 43>, <&pixel 37 37>, <&pixel 51 41>, <&pixel 74 43>,
+            // 21: thumb keys
+            <&pixel 65 65>, <&pixel 85 72>,
+
+            // 23: RGB underglow back of right board
+            <&pixel 123 21>, <&pixel 138 3>, <&pixel 175 18>, <&pixel 175 43>, <&pixel 148 52>, <&pixel 111 61>,
+            // 29: per-key lighting on right board, top row, right-to-left
+            <&pixel 185 18>, <&pixel 167 6>, <&pixel 148 0>, <&pixel 134 4>, <&pixel 111 6>,
+            // 34: row 2, right-to-left
+            <&pixel 185 37>, <&pixel 167 25>, <&pixel 148 18>, <&pixel 134 22>, <&pixel 111 24>,
+            // 39: row 3, right-to-left
+            <&pixel 185 55>, <&pixel 167 43>, <&pixel 148 37>, <&pixel 134 41>, <&pixel 111 43>,
+            // 44: thumb keys, right-to-left
+            <&pixel 120 65>, <&pixel 100 72>;
+    };
+
+    root_animation: animation0 {
+        compatible = "zmk,animation-control";
+        label = "ANIMATION_CTRL_0";
+        animations = <&base_rgb>;
+    };
+
+    base_rgb: base_rgb {
+        compatible = "zmk,animation-compose";
+        status = "okay";
+        animations = <&underglow_red &base_rgb_white &base_rgb_yellow &base_rgb_blue>;
+    };
+
+    underglow_red: underglow_red {
+        compatible = "zmk,animation-solid";
+        status = "okay";
+        pixels = <0 1 2 3 4 5 23 24 25 26 27 28>;
+        colors = <HSL(0, 100, 50)>;
+    };
+
+    base_rgb_white: base_rgb_white {
+        compatible = "zmk,animation-solid";
+        status = "okay";
+        pixels = <7 8 9 11 12 13 14 15 16 17 18 19 20 30 31 32 34 35 36 37 38 39 40 41 42 43>;
+        colors = <HSL(0, 0, 100)>;
+    };
+
+    base_rgb_yellow: base_rgb_yellow {
+        compatible = "zmk,animation-solid";
+        status = "okay";
+        pixels = <6 29>;
+        colors = <HSL(53, 100, 100)>;
+    };
+
+    base_rgb_blue: base_rgb_blue {
+        compatible = "zmk,animation-solid";
+        status = "okay";
+        pixels = <21 22 44 45>;
+        colors = <HSL(222, 100, 100)>;
     };
 };
