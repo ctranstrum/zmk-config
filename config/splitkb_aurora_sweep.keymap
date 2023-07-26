@@ -79,7 +79,7 @@
         lower_layer {
             bindings = <
 // ====================================================================  ================================================================
-&none          &none         &kp LPAR      &kp RPAR       &none          &none        &kp N7      &kp N8      &kp N9       &animation ANIMATION_TOGGLE
+&none          &none         &kp LPAR      &kp RPAR       &none          &none        &kp N7      &kp N8      &kp N9       &animation ANIMATION_TOGGLE(0)
 &kp LT         &kp GT        &kp EXCL      &kp EQUAL      &kp COLON      &kp COMMA    &kp N4      &kp N5      &kp N6       &kp MINUS
 &mt LSHFT BSPC &mt LCTRL RET &mt LALT STAR &mt LCMD SLASH &mt RALT SEMI  &mt LALT DOT &mt RCMD N1 &mt RALT N2 &mt RCTRL N3 &mt RSHFT PLUS
                                            &kp DELETE     &trans         &trans       &kp N0
