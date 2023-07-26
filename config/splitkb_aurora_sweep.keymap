@@ -132,61 +132,61 @@
     animation {
         compatible = "zmk,animation";
         drivers = <&led_strip>;
-        animations = <&rgb_red &rgb_white &rgb_yellow &rgb_blue>;
+        animations = <&z_red &z_white &z_yellow &z_blue>;
         chain-lengths = <23 23>;
 
         pixels =
             // 0: RGB underglow back of left board
-            <&rgb_red 62 21>, <&rgb_red 47 3>, <&rgb_red 10 18>, <&rgb_red 10 43>, <&rgb_red 37 52>, <&rgb_red 74 61>,
+            <&z_red 62 21>, <&z_red 47 3>, <&z_red 10 18>, <&z_red 10 43>, <&z_red 37 52>, <&z_red 74 61>,
             // 6: per-key lighting on left board, top row
-            <&rgb_yellow 0 18>, <&rgb_white 18 6>, <&rgb_white 37 0>, <&rgb_white 51 4>, <&rgb_white 74 6>,
+            <&z_yellow 0 18>, <&z_white 18 6>, <&z_white 37 0>, <&z_white 51 4>, <&z_white 74 6>,
             // 11: row 2
-            <&rgb_white 0 37>, <&rgb_white 18 25>, <&rgb_white 37 18>, <&rgb_white 51 22>, <&rgb_white 74 24>,
+            <&z_white 0 37>, <&z_white 18 25>, <&z_white 37 18>, <&z_white 51 22>, <&z_white 74 24>,
             // 16: row 3
-            <&rgb_white 0 55>, <&rgb_white 18 43>, <&rgb_white 37 37>, <&rgb_white 51 41>, <&rgb_white 74 43>,
+            <&z_white 0 55>, <&z_white 18 43>, <&z_white 37 37>, <&z_white 51 41>, <&z_white 74 43>,
             // 21: thumb keys
-            <&rgb_blue 65 65>, <&rgb_blue 85 72>,
+            <&z_blue 65 65>, <&z_blue 85 72>,
 
             // 23: RGB underglow back of right board
-            <&rgb_red 123 21>, <&rgb_red 138 3>, <&rgb_red 175 18>, <&rgb_red 175 43>, <&rgb_red 148 52>, <&rgb_red 111 61>,
+            <&z_red 123 21>, <&z_red 138 3>, <&z_red 175 18>, <&rz_red 175 43>, <&z_red 148 52>, <&z_red 111 61>,
             // 29: per-key lighting on right board, top row, right-to-left
-            <&rgb_yellow 185 18>, <&rgb_white 167 6>, <&rgb_white 148 0>, <&rgb_white 134 4>, <&rgb_white 111 6>,
+            <&z_yellow 185 18>, <&z_white 167 6>, <&z_white 148 0>, <&z_white 134 4>, <&z_white 111 6>,
             // 34: row 2, right-to-left
-            <&rgb_white 185 37>, <&rgb_white 167 25>, <&rgb_white 148 18>, <&rgb_white 134 22>, <&rgb_white 111 24>,
+            <&z_white 185 37>, <&z_white 167 25>, <&z_white 148 18>, <&z_white 134 22>, <&z_white 111 24>,
             // 39: row 3, right-to-left
-            <&rgb_white 185 55>, <&rgb_white 167 43>, <&rgb_white 148 37>, <&rgb_white 134 41>, <&rgb_white 111 43>,
+            <&z_white 185 55>, <&z_white 167 43>, <&z_white 148 37>, <&z_white 134 41>, <&z_white 111 43>,
             // 44: thumb keys, right-to-left
-            <&rgb_blue 120 65>, <&rgb_blue 100 72>;
+            <&z_blue 120 65>, <&z_blue 100 72>;
     };
 
-    rgb_red: rgb_red {
+    z_red: z_red {
         compatible = "zmk,animation-solid";
         status = "okay";
-        label = "rgb_red";
+        label = "z_red";
         #pixel-cells = <2>;
         colors = <HSL(0, 100, 50)>;
     };
 
-    rgb_white: rgb_white {
+    z_white: z_white {
         compatible = "zmk,animation-solid";
         status = "okay";
-        label = "rgb_white";
+        label = "z_white";
         #pixel-cells = <2>;
         colors = <HSL(0, 0, 100)>;
     };
 
-    rgb_yellow: rgb_yellow {
+    z_yellow: z_yellow {
         compatible = "zmk,animation-solid";
         status = "okay";
-        label = "rgb_red";
+        label = "z_yellow";
         #pixel-cells = <2>;
         colors = <HSL(53, 100, 100)>;
     };
 
-    rgb_blue: rgb_blue {
+    z_blue: z_blue {
         compatible = "zmk,animation-solid";
         status = "okay";
-        label = "rgb_red";
+        label = "z_blue";
         #pixel-cells = <2>;
         colors = <HSL(222, 100, 100)>;
     };
