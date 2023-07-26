@@ -133,6 +133,8 @@
         compatible = "zmk,animation";
         drivers = <&led_strip>;
         animations = <&rgb_red &rgb_white &rgb_yellow &rgb_blue>;
+        chain-lengths = <23 23>;
+
         pixels =
             // 0: RGB underglow back of left board
             <&rgb_red 62 21>, <&rgb_red 47 3>, <&rgb_red 10 18>, <&rgb_red 10 43>, <&rgb_red 37 52>, <&rgb_red 74 61>,
