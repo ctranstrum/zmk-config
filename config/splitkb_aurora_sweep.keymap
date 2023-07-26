@@ -148,7 +148,7 @@
             <&z_blue 65 65>, <&z_blue 85 72>,
 
             // 23: RGB underglow back of right board
-            <&z_red 123 21>, <&z_red 138 3>, <&z_red 175 18>, <&rz_red 175 43>, <&z_red 148 52>, <&z_red 111 61>,
+            <&z_red 123 21>, <&z_red 138 3>, <&z_red 175 18>, <&z_red 175 43>, <&z_red 148 52>, <&z_red 111 61>,
             // 29: per-key lighting on right board, top row, right-to-left
             <&z_yellow 185 18>, <&z_white 167 6>, <&z_white 148 0>, <&z_white 134 4>, <&z_white 111 6>,
             // 34: row 2, right-to-left
