@@ -109,11 +109,11 @@
 
         adjust_layer {
             bindings = <
-// ===============================================  =====================================================================
-&none &none     &none    &kp C_VOL_UP &none         &none        &none        &none            &none           &none
-&none &none     &none    &kp C_VOL_DN &kp C_BRI_UP  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3    &bt_magic
-&none &mic_mute &kp CAPS &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV   &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF        &kp C_NEXT
-                         &none        &trans        &trans       &none
+// =================================================  =====================================================================
+&none &none     &scrn_file &kp C_VOL_UP &none         &none        &scrn_lock   &none            &launchpad      &none
+&none &none     &scrn_clip &kp C_VOL_DN &kp C_BRI_UP  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3    &bt_magic
+&none &mic_mute &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV   &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF        &kp C_NEXT
+                           &none        &trans        &trans       &none
             >;
         };
 
@@ -130,10 +130,10 @@
         macro_layer {
             bindings = <
 // =========================================================================  ======================================
-&scrn_lock      &launchpad      &scrn_file     &scrn_clip     &none           &none     &kp F7 &kp F8 &kp F9 &none
+&none           &none           &none          &none          &none           &none     &kp F7 &kp F8 &kp F9 &none
 &tmux_name      &tmux_new       &tmux_end      &none          &none           &arrow_fn &kp F4 &kp F5 &kp F6 &kp F12
 &mt LSHFT LC(Z) &mt LCTRL LC(X) &mt LALT LC(C) &mt LCMD LC(D) &mt RALT LC(V)  &kp F10   &kp F1 &kp F2 &kp F3 &kp F11
-                                               &kp DEL        &none           &none     &trans
+                                               &trans         &none           &none     &trans
             >;
         };
 
