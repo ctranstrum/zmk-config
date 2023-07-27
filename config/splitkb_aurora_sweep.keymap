@@ -13,6 +13,7 @@
 #define LADJUST 3
 #define LSYMBOL 4
 #define LMACRO  5
+#define LRGB    6
 
 &mt {
     flavor = "tap-preferred";
@@ -29,7 +30,6 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BLUETOOTH_MAGIC";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
             bindings = <&bt BT_SEL 4>, <&none>, <&bt BT_CLR>;
         };
 
@@ -37,15 +37,23 @@
             compatible = "zmk,behavior-tap-dance";
             label = "RGB_TOGGLE";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
             bindings = <&ext_power EP_TOG>, <&rgb_ug RGB_TOG>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = <20 29>; // both shift keys
+            bindings = <&caps_word>;
         };
     };
 
     ZMK_MACRO(arrow_fn, bindings = <&kp EQUAL &kp GT &kp SPACE &kp LBRC &kp RBRC &kp LEFT>;)
 
     // MacOS shortcuts (need to match what is listed in Keyboard Shortcuts settings)
-    ZMK_MACRO(launchpad, bindings = <&kp LG(LC(LS(N4)))>;)
+    ZMK_MACRO(launchpad, bindings = <&kp LG(LA(LC(LS(N4))))>;)
     ZMK_MACRO(mic_mute, bindings = <&kp LG(LA(LC(LS(M))))>;)
     ZMK_MACRO(scrn_clip, bindings = <&kp LG(LC(LS(N4)))>;)
     ZMK_MACRO(scrn_file, bindings = <&kp LG(LS(N4))>;)
@@ -61,6 +69,10 @@
         adjust_layer {
             if-layers = <LLOWER LRAISE>;
             then-layer = <LADJUST>;
+        };
+        adjust_layer {
+            if-layers = <LSYMBOL LMACRO>;
+            then-layer = <LRGB>;
         };
     };
 
@@ -80,7 +92,7 @@
         lower_layer {
             bindings = <
 // ====================================================================  ================================================================
-&none          &none         &kp LPAR      &kp RPAR       &none          &none        &kp N7      &kp N8      &kp N9       &animation ANIMATION_TOGGLE(0)
+&none          &none         &kp LPAR      &kp RPAR       &none          &none        &kp N7      &kp N8      &kp N9       &none
 &kp LT         &kp GT        &kp EXCL      &kp EQUAL      &kp COLON      &kp COMMA    &kp N4      &kp N5      &kp N6       &kp MINUS
 &mt LSHFT BSPC &mt LCTRL RET &mt LALT STAR &mt LCMD SLASH &mt RALT SEMI  &mt LALT DOT &mt RCMD N1 &mt RALT N2 &mt RCTRL N3 &mt RSHFT PLUS
                                            &kp DELETE     &trans         &trans       &kp N0
@@ -99,11 +111,11 @@
 
         adjust_layer {
             bindings = <
-// ============================================================  ==================================================================
-&none        &caps_word &none      &kp K_MUTE   &none            &none        &scrn_lock   &none            &launchpad   &rgb_tog
-&kp C_BRI_UP &scrn_file &scrn_clip &kp C_VOL_DN &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3 &bt_magic
-&kp C_BRI_DN &mic_mute  &kp CAPS   &kp C_VOL_UP &rgb_ug RGB_BRD  &kp C_PREV   &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF     &kp C_NEXT
-                                   &kp ESC      &trans           &trans       &kp DELETE
+// ===============================================  =====================================================================
+&none &none     &none    &kp C_VOL_UP &none         &none        &none        &none            &none           &none
+&none &none     &none    &kp C_VOL_DN &kp C_BRI_UP  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3    &bt_magic
+&none &mic_mute &kp CAPS &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV   &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF        &kp C_NEXT
+                         &none        &trans        &trans       &none
             >;
         };
 
@@ -120,76 +132,22 @@
         macro_layer {
             bindings = <
 // =========================================================================  ======================================
-&none           &none           &none          &none          &none           &none     &kp F7 &kp F8 &kp F9 &none
+&scrn_lock      &launchpad      &scrn_file     &scrn_clip     &none           &none     &kp F7 &kp F8 &kp F9 &none
 &tmux_name      &tmux_new       &tmux_end      &none          &none           &arrow_fn &kp F4 &kp F5 &kp F6 &kp F12
 &mt LSHFT LC(Z) &mt LCTRL LC(X) &mt LALT LC(C) &mt LCMD LC(D) &mt RALT LC(V)  &kp F10   &kp F1 &kp F2 &kp F3 &kp F11
                                                &kp DEL        &none           &none     &trans
             >;
         };
 
-    };
+        rgb_layer {
+            bindings = <
+// ============================================================================  =============================
+&rgb_ug RGB_TOG &none           &none           &none           &none            &none &none &none &none &none
+&rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  &none &none &none &none &none
+&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  &none &none &none &none &none
+                                                &trans          &none            &none &trans
+            >;
+        };
 
-    animation {
-        compatible = "zmk,animation";
-        drivers = <&led_strip>;
-        animations = <&z_red &z_white &z_yellow &z_blue>;
-        chain-lengths = <23>;
-
-        pixels =
-            // 0: RGB underglow back of left board
-            <&z_red 62 21>, <&z_red 47 3>, <&z_red 10 18>, <&z_red 10 43>, <&z_red 37 52>, <&z_red 74 61>,
-            // 6: per-key lighting on left board, top row
-            <&z_yellow 0 18>, <&z_white 18 6>, <&z_white 37 0>, <&z_white 51 4>, <&z_white 74 6>,
-            // 11: row 2
-            <&z_white 0 37>, <&z_white 18 25>, <&z_white 37 18>, <&z_white 51 22>, <&z_white 74 24>,
-            // 16: row 3
-            <&z_white 0 55>, <&z_white 18 43>, <&z_white 37 37>, <&z_white 51 41>, <&z_white 74 43>,
-            // 21: thumb keys
-            <&z_blue 65 65>, <&z_blue 85 72>;
-
-            /*
-            // 23: RGB underglow back of right board
-            <&z_red 123 21>, <&z_red 138 3>, <&z_red 175 18>, <&z_red 175 43>, <&z_red 148 52>, <&z_red 111 61>,
-            // 29: per-key lighting on right board, top row, right-to-left
-            <&z_yellow 185 18>, <&z_white 167 6>, <&z_white 148 0>, <&z_white 134 4>, <&z_white 111 6>,
-            // 34: row 2, right-to-left
-            <&z_white 185 37>, <&z_white 167 25>, <&z_white 148 18>, <&z_white 134 22>, <&z_white 111 24>,
-            // 39: row 3, right-to-left
-            <&z_white 185 55>, <&z_white 167 43>, <&z_white 148 37>, <&z_white 134 41>, <&z_white 111 43>,
-            // 44: thumb keys, right-to-left
-            <&z_blue 120 65>, <&z_blue 100 72>;
-            */
-    };
-
-    z_red: z_red {
-        compatible = "zmk,animation-solid";
-        status = "okay";
-        label = "z_red";
-        #pixel-cells = <2>;
-        colors = <HSL(0, 100, 50)>;
-    };
-
-    z_white: z_white {
-        compatible = "zmk,animation-solid";
-        status = "okay";
-        label = "z_white";
-        #pixel-cells = <2>;
-        colors = <HSL(0, 0, 100)>;
-    };
-
-    z_yellow: z_yellow {
-        compatible = "zmk,animation-solid";
-        status = "okay";
-        label = "z_yellow";
-        #pixel-cells = <2>;
-        colors = <HSL(53, 100, 100)>;
-    };
-
-    z_blue: z_blue {
-        compatible = "zmk,animation-solid";
-        status = "okay";
-        label = "z_blue";
-        #pixel-cells = <2>;
-        colors = <HSL(222, 100, 100)>;
     };
 };
