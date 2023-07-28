@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
 // Define layer names
@@ -11,7 +12,9 @@
 #define LADJUST 3
 #define LSYMBOL 4
 #define LMACRO  5
-#define LRGB    6
+#define LRGB_BT 6
+
+#define HT(keycode) &ht LG(LA(LC(LSHIFT))) keycode
 
 &mt {
     flavor = "tap-preferred";
@@ -31,6 +34,15 @@
             bindings = <&bt BT_SEL 4>, <&none>, <&bt BT_CLR>;
         };
 
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            flavor = "tap-preferred";
+            bindings <&kp>, <&kp>;
+        };
+
         rgb_tog: rgb_toggle {
             compatible = "zmk,behavior-tap-dance";
             label = "RGB_TOGGLE";
@@ -47,7 +59,7 @@
         };
         rgb_layer {
             if-layers = <LSYMBOL LMACRO>;
-            then-layer = <LRGB>;
+            then-layer = <LRGB_BT>;
         };
     };
 
@@ -80,7 +92,7 @@
         base_layer {
             bindings = <
 // =========================================================  ========================================================
-&kp ESC     &kp W       &kp F      &kp P      &none           &none      &kp L      &kp U      &kp Y       &kp GRAVE
+HT(ESC)     &kp W       &kp F      &kp P      &none           &none      &kp L      &kp U      &kp Y       HT(GRAVE)
 &kp A       &kp R       &kp S      &kp T      &kp G           &kp M      &kp N      &kp E      &kp I       &kp O
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V      &mt LALT K &mt RCMD H &mt RALT B &mt RCTRL J &mt RSHFT Q
                         &lt LSYMBOL BSPC      &lt LLOWER TAB  &lt LRAISE SPACE      &lt LMACRO RETURN
@@ -103,17 +115,17 @@
 &none           &kp GRAVE       &kp LPAR      &kp RPAR      &none          &none          &kp BACKSLASH &kp UP         &kp DQT       &none
 &kp LT          &kp GT          &kp LBRC      &kp RBRC      &kp COLON      &kp MINUS      &kp LEFT      &kp DOWN       &kp RIGHT     &kp APOSTROPHE
 &mt LSHFT QMARK &mt LCTRL TILDE &mt LALT LBKT &mt LCMD RBKT &mt RALT SEMI  &mt LALT UNDER &mt RCMD PIPE &mt RALT COMMA &mt RCTRL DOT &mt RSHFT SLASH
-                                              &kp ESC       &trans         &trans         &mo BKSP
+                                              &kp ESC       &trans         &trans         &kp BKSP
         >;
         };
 
         adjust_layer {
             bindings = <
-// =================================================  =====================================================================
-&none &none     &scrn_file &kp C_VOL_UP &none         &none        &scrn_lock   &none            &launchpad      &none
-&none &none     &scrn_clip &kp C_VOL_DN &kp C_BRI_UP  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3    &bt_magic
-&none &mic_mute &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV   &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF        &kp C_NEXT
-                           &none        &trans        &trans       &none
+// =================================================  ==============================================================
+&none &none     &scrn_file &kp C_VOL_UP &none         &none      &scrn_lock   &none            &launchpad &none
+&none &none     &scrn_clip &kp C_VOL_DN &kp C_BRI_UP  &none      &none        &none            &none      &none
+&none &mic_mute &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF   &kp C_NEXT
+                           &none        &trans        &trans     &none
             >;
         };
 
@@ -137,13 +149,13 @@
             >;
         };
 
-        rgb_layer {
+        rgb_bt_layer {
             bindings = <
 // ============================================================================  =============================
-&rgb_ug RGB_TOG &none           &none           &none           &none            &none &none &none &none &none
-&rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  &none &none &none &none &none
-&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  &none &none &none &none &none
-                                                &trans          &none            &none &trans
+&rgb_ug RGB_TOG &none           &none           &none           &none            &none        &none        &out OUT_USB &none        &none
+&rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt_magic
+&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  &none        &none        &out OUT_BLE &none        &none
+                                                &trans          &none            &none        &trans
             >;
         };
 
