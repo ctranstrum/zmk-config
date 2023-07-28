@@ -40,7 +40,7 @@
             #binding-cells = <2>;
             tapping_term_ms = <200>;
             flavor = "tap-preferred";
-            bindings <&kp>, <&kp>;
+            bindings = <&kp>, <&kp>;
         };
 
         rgb_tog: rgb_toggle {
