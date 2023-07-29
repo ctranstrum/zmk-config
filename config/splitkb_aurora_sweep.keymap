@@ -36,6 +36,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HYPER_MOD_TAP";
             #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
             bindings = <&hypr_key>, <&kp>;
         };
 
