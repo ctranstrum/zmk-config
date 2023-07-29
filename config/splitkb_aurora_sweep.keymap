@@ -36,7 +36,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HYPER_MOD_TAP";
             #binding-cells = <2>;
-            bindings = <&hyper_key>, <&kp>;
+            bindings = <&hypr_key>, <&kp>;
         };
 
         rgb_tog: rgb_toggle {
