@@ -26,7 +26,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <200>;
+    tapping-term-ms = <200>;
 };
 
 &led_strip {
@@ -47,6 +47,22 @@
             label = "RGB_TOGGLE";
             #binding-cells = <0>;
             bindings = <&ext_power EP_TOG>, <&rgb_ug RGB_TOG>;
+        };
+
+        sscw: sticky_shift_caps_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "STICKY_SHIFT_CAPS_WORD";
+            #binding-cells = <0>;
+            bindings = <&sk LSHIFT>, <&caps_word>;
+        };
+
+        lsscw: layer_sticky_shift_caps_word {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_STICKY_SHIFT_CAPS_WORD";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&sscw>;
         };
     };
 
@@ -165,12 +181,13 @@
         compatible = "zmk,keymap";
 
         base_layer {
+            label = "colemak";
             bindings = <
 // ====================================================  ========================================================
-&kp ESC     &kp W       &kp F      &kp P      &none      &none      &kp L      &kp U      &kp Y       &kp GRAVE
+&kp TAB     &kp W       &kp F      &kp P      &none      &none      &kp L      &kp U      &kp Y       &kp GRAVE
 &kp A       &kp R       &kp S      &kp T      &kp G      &kp M      &kp N      &kp E      &kp I       &kp O
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V &mt LALT K &mt RCMD H &mt RALT B &mt RCTRL J &mt RSHFT Q
-            &lt LSYMBOL BSPC       &lt LLOWER TAB        &lt LRAISE SPACE      &lt LMACRO RETURN
+            &lt LSYMBOL BSPC       &lsscw LLOWER 0       &lt LRAISE SPACE      &lt LMACRO RETURN
             >;
         };
 
