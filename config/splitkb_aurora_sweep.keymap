@@ -54,7 +54,7 @@
         sscw: sticky_shift_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "STICKY_SHIFT_CAPS_WORD";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
             #binding-cells = <0>;
             bindings = <&sk LSHIFT>, <&caps_word>;
         };
@@ -217,10 +217,10 @@
             label = "code";
             bindings = <
 // =============================================  ==============================================
-&none     &kp GRAVE &kp LPAR &kp RPAR  &none      &none    &none    &none    &none     &none
-&kp LT    &kp GT    &kp LBRC &kp RBRC  &kp COLON  &none    &none    &none    &none     &none
-&kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp SEMI   &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
-                    &kp PIPE &lt LNAV AMPS        &trans   &trans
+&kp ESC   &kp GRAVE &kp LPAR &kp RPAR  &none      &none    &none    &none    &none     &none
+&kp LT    &kp GT    &kp LBRC &kp RBRC  &kp MINUS  &none    &none    &none    &none     &none
+&kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
+                    &kp BSLH &lt LNAV FSLH        &trans   &trans
             >;
         };
 
@@ -240,9 +240,9 @@
             bindings = <
 // ==============================================  ==============================================
 &kp STAR  &kp HASH  &kp DLLR  &kp PRCNT &none      &none    &none    &none    &none     &none
-&kp EXCL  &kp EQUAL &kp COMMA &kp DQT   &kp MINUS  &none    &none    &none    &none     &none
-&kp QMARK &kp AT    &kp DOT   &kp SQT   &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
-                    &lt LNUM BSLH       &kp FSLH   &trans   &trans
+&kp EXCL  &kp EQUAL &kp COMMA &kp DQT   &kp COLON  &none    &none    &none    &none     &none
+&kp QMARK &kp AT    &kp DOT   &kp SQT   &kp SEMI   &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
+                    &lt LNUM PIPE       &kp AMPS   &trans   &trans
             >;
         };
 
