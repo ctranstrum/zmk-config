@@ -6,15 +6,15 @@
 #include <dt-bindings/zmk/rgb.h>
 
 // Define layer names
-#define LBASE   0
-#define LNAV    1
-#define LCODE   2
-#define LNUM    3
-#define LPUNCT  4
-#define LFUNC   5
-#define LMACRO  6
-#define LADJUST 7
-#define LRGB_BT 8
+#define L_BASE  0
+#define L_NAV   1
+#define L_CODE  2
+#define L_NUM   3
+#define L_PUNCT 4
+#define L_FUNC  5
+#define L_MACRO 6
+#define L_MEDIA 7
+#define L_KEYBD 8
 
 // Keyboard layout
 // ->|  W   F   P  [ ]     [ ]  L   U   Y  [ ]
@@ -72,7 +72,7 @@
     combos {
         compatible = "zmk,combos";
         combo_caps_word {
-            layers = <LBASE>;
+            layers = <L_BASE>;
             timeout-ms = <50>;
             key-positions = <KZ KQ>;
             bindings = <&caps_word>;
@@ -82,20 +82,20 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         func_layer {
-            if-layers = <LNAV LNUM>;
-            then-layer = <LFUNC>;
+            if-layers = <L_NAV L_NUM>;
+            then-layer = <L_FUNC>;
         };
         macro_layer {
-            if-layers = <LCODE LPUNCT>;
-            then-layer = <LMACRO>;
+            if-layers = <L_CODE L_PUNCT>;
+            then-layer = <L_MACRO>;
         };
-        adjust_layer {
-            if-layers = <LNAV LCODE>;
-            then-layer = <LADJUST>;
+        media_layer {
+            if-layers = <L_NAV L_CODE>;
+            then-layer = <L_MEDIA>;
         };
         rgb_bt_layer {
-            if-layers = <LNUM LPUNCT>;
-            then-layer = <LRGB_BT>;
+            if-layers = <L_NUM L_PUNCT>;
+            then-layer = <L_KEYBD>;
         };
     };
 
@@ -194,11 +194,11 @@
         base_layer {
             label = "colemak";
             bindings = <
-// ====================================================  ========================================================
-&kp TAB     &kp W       &kp F      &kp P      &none      &none      &kp L      &kp U      &kp Y       &kp GRAVE
-&kp A       &kp R       &kp S      &kp T      &kp G      &kp M      &kp N      &kp E      &kp I       &kp O
-&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V &mt RALT K &mt LCMD H &mt LALT B &mt LCTRL J &mt LSHFT Q
-            &lt LNUM BSPC          &lsscw LNAV 0         &lt LCODE SPACE       &lt LPUNCT RETURN
+// =====================================================  ========================================================
+&kp TAB     &kp W       &kp F      &kp P      &none       &none      &kp L      &kp U      &kp Y       &kp GRAVE
+&kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E      &kp I       &kp O
+&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT B &mt LCTRL J &mt LSHFT Q
+            &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
         };
 
@@ -209,7 +209,7 @@
 &none     &none     &none    &none    &none     &none    &none    &kp UP   &none     &none
 &none     &none     &none    &none    &none     &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp DEL
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &none    &kp DOWN &none     &none
-                             &trans   &trans    &lt LCODE TAB     &kp ESC
+                             &trans   &trans    &lt L_CODE TAB    &kp ESC
             >;
         };
 
@@ -220,7 +220,7 @@
 &kp ESC   &kp GRAVE &kp LPAR &kp RPAR  &none      &none    &none    &none    &none     &none
 &kp LT    &kp GT    &kp LBRC &kp RBRC  &kp MINUS  &none    &none    &none    &none     &none
 &kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
-                    &kp BSLH &lt LNAV FSLH        &trans   &trans
+                    &kp BSLH &lt L_NAV FSLH       &trans   &trans
             >;
         };
 
@@ -231,7 +231,7 @@
 &none     &none     &none    &none    &none     &none     &kp N7 &kp N8 &kp N9 &kp EQUAL
 &none     &none     &none    &none    &none     &kp SLASH &kp N4 &kp N5 &kp N6 &kp MINUS
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp STAR  &kp N1 &kp N2 &kp N3 &kp PLUS
-                             &trans   &trans    &kp DOT   &lt LPUNCT N0
+                             &trans   &trans    &kp DOT   &lt L_PUNCT N0
             >;
         };
 
@@ -240,9 +240,9 @@
             bindings = <
 // ==============================================  ==============================================
 &kp STAR  &kp HASH  &kp DLLR  &kp PRCNT &none      &none    &none    &none    &none     &none
-&kp EXCL  &kp EQUAL &kp COMMA &kp DQT   &kp COLON  &none    &none    &none    &none     &none
-&kp QMARK &kp AT    &kp DOT   &kp SQT   &kp SEMI   &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
-                    &lt LNUM PIPE       &kp AMPS   &trans   &trans
+&kp EXCL  &kp EQUAL &kp DOT   &kp SQT   &kp COLON  &none    &none    &none    &none     &none
+&kp QMARK &kp AT    &kp COMMA &kp DQT   &kp SEMI   &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
+                    &lt L_NUM PIPE      &kp AMPS   &trans   &trans
             >;
         };
 
@@ -268,8 +268,8 @@
             >;
         };
 
-        adjust_layer {
-            label = "adjust";
+        media_layer {
+            label = "media";
             bindings = <
 // ===============================================  ============================================================
 &none &none   &scrn_file &kp C_VOL_UP &none         &none      &scrn_lock   &none            &hypr N4 &none
@@ -279,8 +279,8 @@
             >;
         };
 
-        rgb_bt_layer {
-            label = "rgb & bt";
+        keyboard_layer {
+            label = "keyboard";
             bindings = <
 // ============================================================================  =============================================================
 &rgb_ug RGB_TOG &none           &none           &none           &none            &none        &none        &out OUT_USB &none        &none
