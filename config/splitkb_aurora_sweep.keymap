@@ -205,10 +205,10 @@
         nav_layer {
             label = "nav";
             bindings = <
-// ===========================================  ============================================
-&none     &none     &none    &none    &none     &none    &none    &kp UP   &none     &none
+// ===========================================  =============================================
+&none     &none     &none    &none    &none     &none    &none    &kp UP   &none     &kp BSPC
 &none     &none     &none    &none    &none     &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp DEL
-&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &none    &kp DOWN &none     &none
+&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN &none     &kp BSPC
                              &trans   &trans    &lt L_CODE TAB    &kp ESC
             >;
         };
