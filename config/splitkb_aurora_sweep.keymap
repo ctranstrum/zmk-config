@@ -260,11 +260,11 @@
         tmux_layer {
             label = "tmux";
             bindings = <
-// ==============================================  =================================
-&none     &tmux C   &tmux A   &tmux D   &none      &none  &none  &none  &none  &none
-&kp LG(1) &kp LG(2) &kp LG(3) &kp LG(4) &kp LG(5)  &none  &none  &none  &none  &none
-&tmux 1   &tmux 2   &tmux 3   &tmux 4   &tmux 5    &none  &none  &none  &none  &none
-                              &none     &none      &trans &trans
+// ===================================================  =================================
+&none     &tmux C   &tmux A   &tmux D   &none           &none  &none  &none  &none  &none
+&kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)  &none  &none  &none  &none  &none
+&tmux N1   &tmux N2   &tmux N3   &tmux N4   &tmux N5    &none  &none  &none  &none  &none
+                                 &none      &none       &trans &trans
             >;
         };
 
