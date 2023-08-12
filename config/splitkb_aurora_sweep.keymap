@@ -12,7 +12,7 @@
 #define L_NUM   3
 #define L_PUNCT 4
 #define L_FUNC  5
-#define L_MACRO 6
+#define L_TMUX  6
 #define L_MEDIA 7
 #define L_KEYBD 8
 
@@ -54,7 +54,7 @@
         sscw: sticky_shift_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "STICKY_SHIFT_CAPS_WORD";
-            tapping-term-ms = <300>;
+            tapping-term-ms = <350>;
             #binding-cells = <0>;
             bindings = <&sk LSHIFT>, <&caps_word>;
         };
@@ -63,7 +63,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_STICKY_SHIFT_CAPS_WORD";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&sscw>;
         };
@@ -85,9 +85,9 @@
             if-layers = <L_NAV L_NUM>;
             then-layer = <L_FUNC>;
         };
-        macro_layer {
+        tmux_layer {
             if-layers = <L_CODE L_PUNCT>;
-            then-layer = <L_MACRO>;
+            then-layer = <L_TMUX>;
         };
         media_layer {
             if-layers = <L_NAV L_CODE>;
@@ -183,7 +183,7 @@
             label = "MACRO_PREFIX_TMUX";
             #binding-cells = <1>;
             bindings =
-                <&macro_tap &kp GRAVE>,
+                <&macro_tap &kp LC(B)>,
                 <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>;
         };
     };
@@ -249,21 +249,21 @@
         func_layer {
             label = "fn";
             bindings = <
-// ===========================================  ====================================
-&none     &none     &none    &none    &none     &none   &kp F7 &kp F8 &kp F9 &none
-&none     &none     &none    &none    &none     &none   &kp F4 &kp F5 &kp F6 &kp F12
-&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp F10 &kp F1 &kp F2 &kp F3 &kp F11
-                             &trans   &trans    &none   &none
+// ===========================================  ======================================
+&none     &none     &none    &none    &none     &none     &kp F7 &kp F8 &kp F9 &none
+&none     &none     &none    &none    &none     &arrow_fn &kp F4 &kp F5 &kp F6 &kp F12
+&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &none     &kp F1 &kp F2 &kp F3 &kp F11
+                             &trans   &trans    &none     &kp F10
             >;
         };
 
-        macro_layer {
-            label = "macro";
+        tmux_layer {
+            label = "tmux";
             bindings = <
 // ==============================================  =================================
-&none     &kp LG(X) &kp LG(C) &kp LG(V) &none      &none  &none  &none  &none  &none
-&tmux A   &tmux C   &tmux D   &none     &arrow_fn  &none  &none  &none  &none  &none
-&kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(D) &kp LC(V)  &none  &none  &none  &none  &none
+&none     &tmux C   &tmux A   &tmux D   &none      &none  &none  &none  &none  &none
+&kp LG(1) &kp LG(2) &kp LG(3) &kp LG(4) &kp LG(5)  &none  &none  &none  &none  &none
+&tmux 1   &tmux 2   &tmux 3   &tmux 4   &tmux 5    &none  &none  &none  &none  &none
                               &none     &none      &trans &trans
             >;
         };
