@@ -186,6 +186,15 @@
                 <&macro_tap &kp LC(B)>,
                 <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>;
         };
+
+        vtab: vim_tab_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            label = "MACRO_VIM_TAB";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
+                <&macro_tap &kp G &kp T>;
+        };
     };
 
     keymap {
@@ -260,11 +269,11 @@
         tmux_layer {
             label = "tmux";
             bindings = <
-// ===================================================  =================================
-&none     &tmux C   &tmux A   &tmux D   &none           &none  &none  &none  &none  &none
-&kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)  &none  &none  &none  &none  &none
-&tmux N1   &tmux N2   &tmux N3   &tmux N4   &tmux N5    &none  &none  &none  &none  &none
-                                 &none      &none       &trans &trans
+// =========================================  =================================
+&none    &tmux C  &tmux A  &tmux D  &none     &none  &none  &none  &none  &none
+&vtab N1 &vtab N2 &vtab N3 &vtab N4 &vtab N5  &none  &none  &none  &none  &none
+&tmux N1 &tmux N2 &tmux N3 &tmux N4 &tmux N5  &none  &none  &none  &none  &none
+                           &none    &none     &trans &trans
             >;
         };
 
