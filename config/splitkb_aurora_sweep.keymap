@@ -17,7 +17,7 @@
 #define L_KEYBD 8
 
 // Keyboard layout
-// tab  W   F   P  [ ]     [ ]  L   U   Y  grv
+// tab  W   F   P  [ ]     [ ]  L   U   Y  esc
 //  A   R   S   T   G       M   N   E   I   O
 //  Z   X   C   D   V       K   H   B   J   Q
 //             bsp sft     spc ret
@@ -30,7 +30,7 @@
 #define KL 6
 #define KU 7
 #define KY 8
-#define Kgrv 9
+#define Kesc 9
 #define KA 10
 #define KR 11
 #define KS 12
@@ -288,7 +288,7 @@
             label = "colemak";
             bindings = <
 // =====================================================  ========================================================
-&kp TAB     &kp W       &kp F      &kp P      &none       &none      &kp L      &kp U      &kp Y       &kp GRAVE
+&kp TAB     &kp W       &kp F      &kp P      &none       &none      &kp L      &kp U      &kp Y       &kp ESC
 &kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E      &kp I       &kp O
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT B &mt LCTRL J &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
@@ -354,10 +354,10 @@
             label = "tmux";
             bindings = <
 // =========================================  =================================
-&none    &tmux C  &tmux A  &tmux D  &none     &none  &none  &none  &none  &none
+&vtab N8 &tmux C  &tmux A  &tmux D  &none     &none  &none  &none  &none  &none
 &vtab N1 &vtab N2 &vtab N3 &vtab N4 &vtab N5  &none  &none  &none  &none  &none
 &tmux N1 &tmux N2 &tmux N3 &tmux N4 &tmux N5  &none  &none  &none  &none  &none
-                           &none    &none     &trans &trans
+                           &vtab N6 &vtab N7  &trans &trans
             >;
         };
 
