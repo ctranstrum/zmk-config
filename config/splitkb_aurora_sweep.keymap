@@ -52,11 +52,11 @@
         };
 
         sscw: sticky_shift_caps_word {
-            compatible = "zmk,behavior-tap-dance";
+            compatible = "zmk,behavior-mod-morph";
             label = "STICKY_SHIFT_CAPS_WORD";
-            tapping-term-ms = <350>;
             #binding-cells = <0>;
             bindings = <&sk LSHIFT>, <&caps_word>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         lsscw: layer_sticky_shift_caps_word {
