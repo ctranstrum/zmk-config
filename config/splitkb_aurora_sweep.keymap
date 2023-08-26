@@ -17,14 +17,44 @@
 #define L_KEYBD 8
 
 // Keyboard layout
-// ->|  W   F   P  [ ]     [ ]  L   U   Y  [ ]
+// tab  W   F   P  [ ]     [ ]  L   U   Y  grv
 //  A   R   S   T   G       M   N   E   I   O
 //  Z   X   C   D   V       K   H   B   J   Q
-//             <-x [^]     [_] <-|
+//             bsp sft     spc ret
 
 // Define key positions
+#define Ktab 0
+#define KW 1
+#define KF 2
+#define KP 3
+#define KL 6
+#define KU 7
+#define KY 8
+#define Kgrv 9
+#define KA 10
+#define KR 11
+#define KS 12
+#define KT 13
+#define KG 14
+#define KM 15
+#define KN 16
+#define KE 17
+#define KI 18
+#define KO 19
 #define KZ 20
+#define KX 21
+#define KC 22
+#define KD 23
+#define KV 24
+#define KK 25
+#define KH 26
+#define KB 27
+#define KJ 28
 #define KQ 29
+#define Kbsp 30
+#define Ksft 31
+#define Kspc 32
+#define Kret 33
 
 &mt {
     flavor = "tap-preferred";
@@ -76,6 +106,60 @@
             timeout-ms = <50>;
             key-positions = <KZ KQ>;
             bindings = <&caps_word>;
+        };
+        combo_cmd_x {
+            layers = <L_BASE>;
+            timeout-ms = <30>;
+            key-positions = <KW KR>;
+            bindings = <&kp LG(X)>;
+        };
+        combo_cmd_c {
+            layers = <L_BASE>;
+            timeout-ms = <30>;
+            key-positions = <KF KS>;
+            bindings = <&kp LG(C)>;
+        };
+        combo_cmd_v {
+            layers = <L_BASE>;
+            timeout-ms = <30>;
+            key-positions = <KP KT>;
+            bindings = <&kp LG(V)>;
+        };
+        combo_ctrl_z {
+            layers = <L_BASE>;
+            timeout-ms = <30>;
+            key-positions = <KA KZ>;
+            bindings = <&kp LC(Z)>;
+        };
+        combo_ctrl_x {
+            layers = <L_BASE>;
+            timeout-ms = <30>;
+            key-positions = <KR KX>;
+            bindings = <&kp LC(X)>;
+        };
+        combo_ctrl_c {
+            layers = <L_BASE>;
+            timeout-ms = <30>;
+            key-positions = <KS KC>;
+            bindings = <&kp LC(C)>;
+        };
+        combo_ctrl_d {
+            layers = <L_BASE>;
+            timeout-ms = <30>;
+            key-positions = <KT KD>;
+            bindings = <&kp LC(D)>;
+        };
+        combo_ctrl_v {
+            layers = <L_BASE>;
+            timeout-ms = <30>;
+            key-positions = <KG KV>;
+            bindings = <&kp LC(V)>;
+        };
+        combo_ctrl_u {
+            layers = <L_BASE>;
+            timeout-ms = <30>;
+            key-positions = <KU KE>;
+            bindings = <&kp LC(U)>;
         };
     };
 
