@@ -6,10 +6,10 @@ manifest:
       url-base: https://github.com/muriworks
   projects:
     - name: zmk
-      # remote: zmkfirmware
-      # revision: main
-      remote: rgb
-      revision: feature/animations
+      remote: zmkfirmware
+      revision: main
+      # remote: rgb
+      # revision: feature/animations
       import: app/west.yml
   self:
     path: config
