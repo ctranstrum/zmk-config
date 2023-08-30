@@ -236,9 +236,9 @@
             label = "GUI_SHIFT_MOD_MACRO";
             #binding-cells = <1>;
             bindings =
-                <&macro_press &kp LCMD &kp LCTRL &kp LSHFT>,
+                <&macro_press &kp LCMD &kp LSHFT>,
                 <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
-                <&macro_release &kp LSHFT &kp LCTRL &kp LCMD>;
+                <&macro_release &kp LSHFT &kp LCMD>;
         };
 
         scrn_clip: screen_capture_to_clipboard_macro {
