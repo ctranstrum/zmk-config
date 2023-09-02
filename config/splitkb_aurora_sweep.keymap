@@ -6,15 +6,16 @@
 #include <dt-bindings/zmk/rgb.h>
 
 // Define layer names
-#define L_BASE  0
-#define L_NAV   1
-#define L_CODE  2
-#define L_NUM   3
-#define L_PUNCT 4
-#define L_FUNC  5
-#define L_TMUX  6
-#define L_MEDIA 7
-#define L_KEYBD 8
+#define L_CLMK  0
+#define L_QWRTY 1
+#define L_NAV   2
+#define L_CODE  3
+#define L_NUM   4
+#define L_PUNCT 5
+#define L_FUNC  6
+#define L_TMUX  7
+#define L_MEDIA 8
+#define L_KEYBD 9
 
 // Keyboard layout
 // tab  W   F   P  [ ]     [ ]  L   U   Y  esc
@@ -102,61 +103,61 @@
     combos {
         compatible = "zmk,combos";
         combo_caps_word {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <50>;
             key-positions = <KZ KQ>;
             bindings = <&caps_word>;
         };
         combo_cmd_x {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KW KR>;
             bindings = <&kp LG(X)>;
         };
         combo_cmd_c {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KF KS>;
             bindings = <&kp LG(C)>;
         };
         combo_cmd_v {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KP KT>;
             bindings = <&kp LG(V)>;
         };
         combo_ctrl_z {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KA KZ>;
             bindings = <&kp LC(Z)>;
         };
         combo_ctrl_x {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KR KX>;
             bindings = <&kp LC(X)>;
         };
         combo_ctrl_c {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KS KC>;
             bindings = <&kp LC(C)>;
         };
         combo_ctrl_d {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KT KD>;
             bindings = <&kp LC(D)>;
         };
         combo_ctrl_v {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KG KV>;
             bindings = <&kp LC(V)>;
         };
         combo_ctrl_u {
-            layers = <L_BASE>;
+            layers = <L_CLMK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KU KE>;
             bindings = <&kp LC(U)>;
@@ -295,6 +296,17 @@
             >;
         };
 
+        base_layer {
+            label = "qwerty";
+            bindings = <
+// =====================================================  ========================================================
+&kp TAB     &kp W       &kp E      &kp R      &none       &none      &kp U      &kp I      &kp O       &kp ESC
+&kp A       &kp S       &kp D      &kp F      &kp G       &kp H      &kp J      &kp K      &kp L       &kp P
+&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &mt RALT B  &mt RALT N &mt LCMD M &mt LALT T &mt LCTRL Y &mt LSHFT Q
+            &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
+            >;
+        };
+
         nav_layer {
             label = "nav";
             bindings = <
@@ -376,7 +388,7 @@
             label = "keyboard";
             bindings = <
 // ============================================================================  =============================================================
-&rgb_ug RGB_TOG &none           &none           &none           &none            &none        &none        &out OUT_USB &none        &none
+&rgb_ug RGB_TOG &none           &none           &to L_QWRTY     &none            &none        &to L_CLMK   &out OUT_USB &none        &none
 &rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt_magic
 &rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  &none        &none        &out OUT_BLE &none        &none
                                                 &trans          &none            &none        &trans
