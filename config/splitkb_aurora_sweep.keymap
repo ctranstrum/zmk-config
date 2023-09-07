@@ -57,6 +57,9 @@
 #define Kspc 32
 #define Kret 33
 
+// Make blank keys more inconspicuous
+#define ___ &none
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
@@ -280,6 +283,20 @@
                 <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
                 <&macro_tap &kp G &kp T>;
         };
+
+        vtabnxt: vim_tab_next_macro {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_VIM_TAB_NEXT";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp G &kp T>;
+        };
+
+        vtabprv: vim_tab_prv_macro {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_VIM_TAB_PREV";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp G &kp LS(T)>;
+        };
     };
 
     keymap {
@@ -289,7 +306,7 @@
             label = "colemak";
             bindings = <
 // =====================================================  ========================================================
-&kp TAB     &kp W       &kp F      &kp P      &none       &none      &kp L      &kp U      &kp Y       &kp ESC
+&kp TAB     &kp W       &kp F      &kp P      ___         ___        &kp L      &kp U      &kp Y       &kp ESC
 &kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E      &kp I       &kp O
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT B &mt LCTRL J &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
@@ -300,7 +317,7 @@
             label = "qwerty";
             bindings = <
 // =====================================================  ========================================================
-&kp TAB     &kp W       &kp E      &kp R      &none       &none      &kp U      &kp I      &kp O       &kp ESC
+&kp TAB     &kp W       &kp E      &kp R      ___         ___        &kp U      &kp I      &kp O       &kp ESC
 &kp A       &kp S       &kp D      &kp F      &kp G       &kp H      &kp J      &kp K      &kp L       &kp P
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &mt RALT B  &mt RALT N &mt LCMD M &mt LALT T &mt LCTRL Y &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
@@ -311,9 +328,9 @@
             label = "nav";
             bindings = <
 // ===========================================  =============================================
-&none     &none     &none    &none    &none     &none    &kp BSPC &kp UP   &kp DEL   &kp BSPC
-&none     &none     &none    &none    &none     &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
-&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN &none     &kp END
+___       ___       ___      ___      ___       ___      &kp BSPC &kp UP   &kp DEL   &kp BSPC
+___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
+&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN ___       &kp END
                              &trans   &trans    &lt L_CODE TAB    &kp ESC
             >;
         };
@@ -322,8 +339,8 @@
             label = "code";
             bindings = <
 // =============================================  ==============================================
-&kp ESC   &kp GRAVE &kp LPAR &kp RPAR  &none      &none    &none    &none    &none     &none
-&kp LT    &kp GT    &kp LBRC &kp RBRC  &kp MINUS  &none    &none    &none    &none     &none
+&kp ESC   &kp GRAVE &kp LPAR &kp RPAR  ___        ___      ___      ___      ___       ___
+&kp LT    &kp GT    &kp LBRC &kp RBRC  &kp MINUS  ___      ___      ___      ___       ___
 &kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
                     &kp BSLH &lt L_NAV FSLH       &trans   &trans
             >;
@@ -333,8 +350,8 @@
             label = "num";
             bindings = <
 // ===========================================  ========================================
-&none     &none     &none    &none    &none     &none     &kp N7 &kp N8 &kp N9 &kp EQUAL
-&none     &none     &none    &none    &none     &kp SLASH &kp N4 &kp N5 &kp N6 &kp MINUS
+___       ___       ___      ___      ___       ___       &kp N7 &kp N8 &kp N9 &kp EQUAL
+___       ___       ___      ___      ___       &kp SLASH &kp N4 &kp N5 &kp N6 &kp MINUS
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp STAR  &kp N1 &kp N2 &kp N3 &kp PLUS
                              &trans   &trans    &kp DOT   &lt L_PUNCT N0
             >;
@@ -344,8 +361,8 @@
             label = "punct";
             bindings = <
 // ==============================================  ==============================================
-&kp STAR  &kp HASH  &kp DLLR  &kp PRCNT &none      &none    &none    &none    &none     &none
-&kp EXCL  &kp EQUAL &kp DOT   &kp SQT   &kp COLON  &none    &none    &none    &none     &none
+&kp STAR  &kp HASH  &kp DLLR  &kp PRCNT ___        ___      ___      ___      ___       ___
+&kp EXCL  &kp EQUAL &kp DOT   &kp SQT   &kp COLON  ___      ___      ___      ___       ___
 &kp QMARK &kp AT    &kp COMMA &kp DQT   &kp SEMI   &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
                     &lt L_NUM PIPE      &kp AMPS   &trans   &trans
             >;
@@ -355,10 +372,10 @@
             label = "fn";
             bindings = <
 // ===========================================  ======================================
-&none     &none     &none    &none    &none     &none     &kp F7 &kp F8 &kp F9 &none
-&none     &none     &none    &none    &none     &arrow_fn &kp F4 &kp F5 &kp F6 &kp F12
-&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &none     &kp F1 &kp F2 &kp F3 &kp F11
-                             &trans   &trans    &none     &kp F10
+___       ___       ___      ___      ___       ___       &kp F7 &kp F8 &kp F9 ___
+___       ___       ___      ___      ___       &arrow_fn &kp F4 &kp F5 &kp F6 &kp F12
+&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  ___       &kp F1 &kp F2 &kp F3 &kp F11
+                             &trans   &trans    ___       &kp F10
             >;
         };
 
@@ -366,10 +383,10 @@
             label = "tmux";
             bindings = <
 // =========================================  =================================
-&vtab N8 &tmux C  &tmux A  &tmux D  &none     &none  &none  &none  &none  &none
-&vtab N1 &vtab N2 &vtab N3 &vtab N4 &vtab N5  &none  &none  &none  &none  &none
-&tmux N1 &tmux N2 &tmux N3 &tmux N4 &tmux N5  &none  &none  &none  &none  &none
-                           &vtab N6 &vtab N7  &trans &trans
+&tmux N  &tmux C  &tmux A  &tmux D  ___       ___    ___    ___    ___    ___
+&vtab N1 &vtab N2 &vtab N3 &vtab N4 &vtab N5  ___    ___    ___    ___    ___
+&tmux N1 &tmux N2 &tmux N3 &tmux N4 &tmux N5  ___    ___    ___    ___    ___
+                           &vtabprv &vtabnxt  &trans &trans
             >;
         };
 
@@ -377,10 +394,10 @@
             label = "media";
             bindings = <
 // ===============================================  ============================================================
-&none &none   &scrn_file &kp C_VOL_UP &none         &none      &scrn_lock   &none            &hypr N4 &none
-&none &none   &scrn_clip &kp C_VOL_DN &kp C_BRI_UP  &none      &none        &none            &none    &none
-&none &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF &kp C_NEXT
-                         &none        &trans        &trans     &none
+___   ___     &scrn_file &kp C_VOL_UP ___           ___        &scrn_lock   ___              &hypr N4 ___
+___   ___     &scrn_clip &kp C_VOL_DN &kp C_BRI_UP  ___        ___          ___              ___      ___
+___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF &kp C_NEXT
+                         ___          &trans        &trans     ___
             >;
         };
 
@@ -388,10 +405,10 @@
             label = "keyboard";
             bindings = <
 // ============================================================================  =============================================================
-&rgb_ug RGB_TOG &none           &none           &to L_QWRTY     &none            &none        &to L_CLMK   &out OUT_USB &none        &none
+&rgb_ug RGB_TOG ___             ___             &to L_QWRTY     ___              ___          &to L_CLMK   &out OUT_USB ___          ___
 &rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt_magic
-&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  &none        &none        &out OUT_BLE &none        &none
-                                                &trans          &none            &none        &trans
+&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  ___          ___          &out OUT_BLE ___          ___
+                                                &trans          ___              ___          &trans
             >;
         };
 
