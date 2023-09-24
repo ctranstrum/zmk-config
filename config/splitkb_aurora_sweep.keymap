@@ -405,7 +405,7 @@ ___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp 
             label = "keyboard";
             bindings = <
 // ============================================================================  =============================================================
-&rgb_ug RGB_TOG ___             ___             &to L_QWRTY     ___              ___          &to L_CLMK   &out OUT_USB ___          ___
+___             &rgb_ug RGB_TOG &rgb_ug RGB_TOG &to L_QWRTY     ___              ___          &to L_CLMK   &out OUT_USB ___          ___
 &rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt_magic
 &rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  ___          ___          &out OUT_BLE ___          ___
                                                 &trans          ___              ___          &trans
