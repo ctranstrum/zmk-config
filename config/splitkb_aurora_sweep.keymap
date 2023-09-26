@@ -335,7 +335,7 @@ ___         &kp W       &kp E      &kp R      ___         ___        &kp U      
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &mt RALT B  &mt RALT N &mt LCMD M &mt LALT T &mt LCTRL Y &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
-            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DOWN>;
+            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DN>;
         };
 
         nav_layer {
@@ -347,7 +347,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN ___       &kp END
                              &trans   &trans    &lt L_CODE TAB    &kp ESC
             >;
-            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DOWN>;
+            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DN>;
         };
 
         code_layer {
@@ -359,7 +359,7 @@ ___       &kp GRAVE &kp LPAR &kp RPAR  &kp ESC    ___      ___      ___      ___
 &kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
                     &kp BSLH &lt L_NAV FSLH       &trans   &trans
             >;
-            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DOWN>;
+            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DN>;
         };
 
         num_layer {
@@ -371,7 +371,7 @@ ___       ___       ___      ___      ___       &kp SLASH &kp N4 &kp N5 &kp N6 &
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp STAR  &kp N1 &kp N2 &kp N3 &kp PLUS
                              &trans   &trans    &kp DOT   &lt L_PUNCT N0
             >;
-            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DOWN>;
+            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DN>;
         };
 
         punct_layer {
@@ -383,7 +383,7 @@ ___       &kp HASH  &kp DLLR  &kp PRCNT &kp STAR   ___      ___      ___      __
 &kp QMARK &kp AT    &kp COMMA &kp DQT   &kp SEMI   &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
                     &lt L_NUM PIPE      &kp AMPS   &trans   &trans
             >;
-            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DOWN>;
+            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DN>;
         };
 
         func_layer {
@@ -395,7 +395,7 @@ ___       ___       ___      ___      ___       &arrow_fn &kp F4 &kp F5 &kp F6 &
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  ___       &kp F1 &kp F2 &kp F3 &kp F11
                              &trans   &trans    ___       &kp F10
             >;
-            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DOWN>;
+            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DN>;
         };
 
         tmux_layer {
@@ -407,7 +407,7 @@ ___      &tmux C  &tmux A  &tmux D  &tmux N   ___    ___    ___    ___    ___
 &tmux N1 &tmux N2 &tmux N3 &tmux N4 &tmux N5  ___    ___    ___    ___    ___
                            &vtabprv &vtabnxt  &trans &trans
             >;
-            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DOWN>;
+            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DN>;
         };
 
         media_layer {
@@ -419,7 +419,7 @@ ___   ___     &scrn_clip &kp C_VOL_DN &kp C_BRI_UP  ___        ___          ___ 
 ___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp C_PLAY_PAUSE &kp C_FF &kp C_NEXT
                          ___          &trans        &trans     ___
             >;
-            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DOWN>;
+            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DN>;
         };
 
         keyboard_layer {
@@ -431,7 +431,7 @@ ___ ___ ___ ___         ___  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
 ___ ___ ___ ___         ___  ___          ___          &out OUT_BLE ___          ___
             &trans      ___  ___          &trans
             >;
-            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DOWN>;
+            sensor-bindings = <&rot UP DOWN>, <&rot C_VOL_UP C_VOL_DN>;
         };
 
     };
