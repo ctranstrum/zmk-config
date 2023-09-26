@@ -66,11 +66,6 @@
     steps = <20>;
 };
 
-&sensors {
-    sensors = <&left_encoder2>, <&right_encoder2>;
-    triggers-per-rotation = <20>;
-};
-
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
@@ -308,6 +303,12 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp G &kp LS(T)>;
         };
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder2>, <&right_encoder2>;
+        triggers-per-rotation = <20>;
     };
 
     keymap {
