@@ -60,16 +60,16 @@
 
 &left_encoder2 {
     steps = <20>;
-}
+};
 
 &right_encoder2 {
     steps = <20>;
-}
+};
 
 &sensors {
     sensors = <&left_encoder2>, <&right_encoder2>;
     triggers-per-rotation = <20>;
-}
+};
 
 &mt {
     flavor = "tap-preferred";
