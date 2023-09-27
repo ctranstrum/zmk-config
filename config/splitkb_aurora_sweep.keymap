@@ -63,7 +63,7 @@
 // Set up encoders
 &left_encoder1 {
     status = "disable";
-}
+};
 
 &left_encoder2 {
     steps = <20>;
@@ -71,7 +71,7 @@
 
 &right_encoder1 {
     status = "disable";
-}
+};
 
 &right_encoder2 {
     steps = <20>;
