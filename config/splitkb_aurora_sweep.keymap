@@ -62,7 +62,7 @@
 
 // Set up encoders
 &left_encoder1 {
-    status = "disable";
+    status = "disabled";
 };
 
 &left_encoder2 {
@@ -70,7 +70,7 @@
 };
 
 &right_encoder1 {
-    status = "disable";
+    status = "disabled";
 };
 
 &right_encoder2 {
