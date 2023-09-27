@@ -16,20 +16,22 @@
 #define L_KEYBD 9
 
 // Keyboard layout
-// tab  W   F   P  [ ]     [ ]  L   U   Y  esc
+// enc  W   F   P  [ ]     [ ]  L   U   Y  enc
 //  A   R   S   T   G       M   N   E   I   O
 //  Z   X   C   D   V       K   H   B   J   Q
 //             bsp sft     spc ret
 
 // Define key positions
-#define Ktab 0
+#define Kenc1 0
 #define KW 1
 #define KF 2
 #define KP 3
+#define Kblnk1 4
+#define Kblnk2 5
 #define KL 6
 #define KU 7
 #define KY 8
-#define Kesc 9
+#define Kenc2 9
 #define KA 10
 #define KR 11
 #define KS 12
@@ -55,12 +57,21 @@
 #define Kspc 32
 #define Kret 33
 
-// Make blank keys more inconspicuous
+// Make blank keys less conspicuous
 #define ___ &none
+
+// Set up encoders
+&left_encoder1 {
+    status = "disable";
+}
 
 &left_encoder2 {
     steps = <20>;
 };
+
+&right_encoder1 {
+    status = "disable";
+}
 
 &right_encoder2 {
     steps = <20>;
