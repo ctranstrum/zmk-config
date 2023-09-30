@@ -112,6 +112,13 @@
             bindings = <&mo>, <&sscw>;
         };
 
+        rapid_rot: encoder_rotation_rapid_keypress {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "ENCODER_ROTATE_FAST";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp5>, <&kp5>;
+        };
+
         rot: encoder_rotation_keypress {
             compatible = "zmk,behavior-sensor-rotate-var";
             label = "ENC_ROTATE";
@@ -232,6 +239,19 @@
                 <&macro_release &kp LSHFT &kp LCTRL &kp LALT>;
         };
 
+        kp5: keypress_x5 {
+            compatible = "zmk,behavior-macro-one-param";
+            label = "MACRO_KP5";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+        };
+
         mod_gc: gui_ctrl_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
             label = "GUI_CTRL_MOD_MACRO";
@@ -334,7 +354,7 @@ ___         &kp W       &kp F      &kp P      ___         ___        &kp L      
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT B &mt LCTRL J &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
-            sensor-bindings = <&rot DOWN UP>, <&rot C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rapid_rot DOWN UP>, <&rot C_VOL_DN C_VOL_UP>;
         };
 
         qwerty_layer {
