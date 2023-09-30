@@ -61,20 +61,20 @@
 #define ___ &none
 
 // Set up encoders
-&left_encoder1 {
-    status = "disabled";
-};
+// &left_encoder1 {
+//     status = "disabled";
+// };
 
 &left_encoder2 {
-    steps = <20>;
+    steps = <80>;
 };
 
-&right_encoder1 {
-    status = "disabled";
-};
+// &right_encoder1 {
+//     status = "disabled";
+// };
 
 &right_encoder2 {
-    steps = <20>;
+    steps = <80>;
 };
 
 &mt {
@@ -110,6 +110,13 @@
             flavor = "balanced";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&sscw>;
+        };
+
+        rot: encoder_rotation_keypress {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "ENC_ROTATE";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
         };
     };
 
@@ -327,7 +334,7 @@ ___         &kp W       &kp F      &kp P      ___         ___        &kp L      
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT B &mt LCTRL J &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rot DOWN UP>, <&rot C_VOL_DN C_VOL_UP>;
         };
 
         qwerty_layer {
@@ -339,7 +346,7 @@ ___         &kp W       &kp E      &kp R      ___         ___        &kp U      
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &mt RALT B  &mt RALT N &mt LCMD M &mt LALT T &mt LCTRL Y &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rot DOWN UP>, <&rot C_VOL_DN C_VOL_UP>;
         };
 
         nav_layer {
