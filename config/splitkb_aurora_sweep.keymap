@@ -349,36 +349,36 @@
             label = "colemak";
             bindings = <
 // =====================================================  ========================================================
-___         &kp W       &kp F      &kp P      ___         ___        &kp L      &kp U      &kp Y       &kp K_MUTE
+&kp ESC     &kp W       &kp F      &kp P      &kp MINUS   &kp COLON  &kp L      &kp U      &kp Y       &kp K_MUTE
 &kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E      &kp I       &kp O
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT B &mt LCTRL J &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
-            sensor-bindings = <&rapid_rot DOWN UP>, <&rot C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rapid_rot UP DOWN>, <&rot C_VOL_DN C_VOL_UP>;
         };
 
         qwerty_layer {
             label = "qwerty";
             bindings = <
 // =====================================================  ========================================================
-___         &kp W       &kp E      &kp R      ___         ___        &kp U      &kp I      &kp O       &kp K_MUTE
+&kp ESC     &kp W       &kp E      &kp R      &kp MINUS   &kp COLON  &kp U      &kp I      &kp O       &kp K_MUTE
 &kp A       &kp S       &kp D      &kp F      &kp G       &kp H      &kp J      &kp K      &kp L       &kp P
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &mt RALT B  &mt RALT N &mt LCMD M &mt LALT T &mt LCTRL Y &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
-            sensor-bindings = <&rot DOWN UP>, <&rot C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rapid_rot UP DOWN>, <&rot C_VOL_DN C_VOL_UP>;
         };
 
         nav_layer {
             label = "nav";
             bindings = <
 // ===========================================  =============================================
-___       ___       ___      ___      ___       ___      &kp BSPC &kp UP   &kp DEL   ___
+___       ___       ___      ___      ___       &kp DEL  &kp BSPC &kp UP   &kp DEL   ___
 ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN ___       &kp END
                              &trans   &trans    &lt L_CODE TAB    &kp ESC
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <___ &rapid_rot LEFT RIGHT>;
         };
 
         code_layer {
@@ -390,7 +390,7 @@ ___       &kp GRAVE &kp LPAR &kp RPAR  &kp ESC    ___      ___      ___      ___
 &kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
                     &kp BSLH &lt L_NAV FSLH       &trans   &trans
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&rapid_rot LEFT RIGHT ___>;
         };
 
         num_layer {
@@ -457,10 +457,10 @@ ___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp 
             label = "keyboard";
             bindings = <
 // ========================  =============================================================
-___ ___ ___ &to L_QWRTY ___  ___          &to L_CLMAK  &out OUT_USB ___          ___
-___ ___ ___ ___         ___  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt_magic
-___ ___ ___ ___         ___  ___          ___          &out OUT_BLE ___          ___
-            &trans      ___  ___          &trans
+___ ___ ___ ___ &to L_QWRTY  &to L_CLMAK  ___          &out OUT_USB ___          ___
+___ ___ ___ ___ ___          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt_magic
+___ ___ ___ ___ ___          ___          ___          &out OUT_BLE ___          ___
+        &trans  ___          ___          &trans
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
