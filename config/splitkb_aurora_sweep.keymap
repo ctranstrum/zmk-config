@@ -378,7 +378,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN ___       &kp END
                              &trans   &trans    &lt L_CODE TAB    &kp ESC
             >;
-            sensor-bindings = <___ &rapid_rot LEFT RIGHT>;
+            sensor-bindings = <&inc_dec_kp UP DOWN>, <&rapid_rot LEFT RIGHT>;
         };
 
         code_layer {
@@ -390,7 +390,7 @@ ___       &kp GRAVE &kp LPAR &kp RPAR  &kp ESC    ___      ___      ___      ___
 &kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
                     &kp BSLH &lt L_NAV FSLH       &trans   &trans
             >;
-            sensor-bindings = <&rapid_rot LEFT RIGHT ___>;
+            sensor-bindings = <&rapid_rot LEFT RIGHT>, <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         num_layer {
