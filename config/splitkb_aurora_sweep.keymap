@@ -97,7 +97,7 @@
 
         colon: inverted_semi_colon {
             compatible = "zmk,behavior-mod-morph";
-            label = "STICKY_SHIFT_CAPS_WORD";
+            label = "INVERTED_SEMI_COLON";
             #binding-cells = <0>;
             bindings = <&kp COLON>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
