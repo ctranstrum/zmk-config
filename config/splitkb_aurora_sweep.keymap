@@ -116,7 +116,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_COMMA_SEMI";
             #binding-cells = <0>;
-            bindings = <&kb COMMA>, <&kp SEMI>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -124,7 +124,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_DOT_COLON";
             #binding-cells = <0>;
-            bindings = <&kb DOT>, <&kp COLON>;
+            bindings = <&kp DOT>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -132,7 +132,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_SLASH_BACKSLASH";
             #binding-cells = <0>;
-            bindings = <&kb SLASH>, <&kp BACKSLASH>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
