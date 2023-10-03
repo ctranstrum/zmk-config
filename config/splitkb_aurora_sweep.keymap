@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 // Define layer names
-#define L_CLMK  0
+#define L_CLMAK 0
 #define L_QWRTY 1
 #define L_NAV   2
 #define L_CODE  3
@@ -18,10 +18,10 @@
 #define L_KEYBD 9
 
 // Keyboard layout
-//  Q   W   F   P   B       J   L   U   Y  bsp
+//  Q   W   F   P   B       J   L   U   Y   '
 //  A   R   S   T   G       M   N   E   I   O
 //  Z   X   C   D   V       K   H   ,   .   /
-//             tab sft     spc ret
+//             bsp sft     spc ret
 
 // Define key positions
 #define KQ 0
@@ -33,7 +33,7 @@
 #define KL 6
 #define KU 7
 #define KY 8
-#define Kbsp 9
+#define Kquo 9
 #define KA 10
 #define KR 11
 #define KS 12
@@ -54,13 +54,18 @@
 #define Kcma 27
 #define Kdot 28
 #define Kslh 29
-#define Ktab 30
+#define Kbsp 30
 #define Ksft 31
 #define Kspc 32
 #define Kret 33
 
 // Make blank keys more inconspicuous
 #define ___ &none
+
+// Shortcuts for punctuation keys
+#define ALTcomma &alt_comma LALT 0
+#define CTRLdot &ctrl_dot LCTRL 0
+#define SHFTslash &shft_slash LSHFT 0
 
 &mt {
     flavor = "tap-preferred";
@@ -73,6 +78,15 @@
 
 / {
     behaviors {
+        alt_comma: mod_alt_comma {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_ALT_COMMA";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&mod_comma>;
+        };
+
         bt_magic: bluetooth_magic {
             compatible = "zmk,behavior-tap-dance";
             label = "BLUETOOTH_MAGIC";
@@ -80,19 +94,13 @@
             bindings = <&bt BT_SEL 4>, <&none>, <&bt BT_CLR>;
         };
 
-        rgb_tog: rgb_toggle {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RGB_TOGGLE";
-            #binding-cells = <0>;
-            bindings = <&ext_power EP_TOG>, <&rgb_ug RGB_TOG>;
-        };
-
-        sscw: sticky_shift_caps_word {
-            compatible = "zmk,behavior-mod-morph";
-            label = "STICKY_SHIFT_CAPS_WORD";
-            #binding-cells = <0>;
-            bindings = <&sk LSHIFT>, <&caps_word>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+        ctrl_dot: mod_ctrl_dot {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_CTRL_DOT";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&mod_dot>;
         };
 
         lsscw: layer_sticky_shift_caps_word {
@@ -103,69 +111,135 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&sscw>;
         };
+
+        mod_comma: mod_comma_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_COMMA_SEMI";
+            #binding-cells = <0>;
+            bindings = <&kb COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mod_dot: mod_dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_DOT_COLON";
+            #binding-cells = <0>;
+            bindings = <&kb DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mod_slash: mod_slash_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_SLASH_BACKSLASH";
+            #binding-cells = <0>;
+            bindings = <&kb SLASH>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        rgb_tog: rgb_toggle {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RGB_TOGGLE";
+            #binding-cells = <0>;
+            bindings = <&ext_power EP_TOG>, <&rgb_ug RGB_TOG>;
+        };
+
+        shft_slash: mod_shft_slash {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_SHIFT_SLASH";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&mod_slash>;
+        };
+
+        sscw: sticky_shift_caps_word {
+            compatible = "zmk,behavior-mod-morph";
+            label = "STICKY_SHIFT_CAPS_WORD";
+            #binding-cells = <0>;
+            bindings = <&sk LSHIFT>, <&caps_word>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
         combo_caps_word {
-            layers = <L_CLMK L_QWRTY>;
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <50>;
             key-positions = <KZ Kslh>;
             bindings = <&caps_word>;
         };
+        combo_cmd_z {
+            layers = <L_CLMAK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KQ KA>;
+            bindings = <&kp LG(Z)>;
+        };
         combo_cmd_x {
-            layers = <L_CLMK L_QWRTY>;
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KW KR>;
             bindings = <&kp LG(X)>;
         };
         combo_cmd_c {
-            layers = <L_CLMK L_QWRTY>;
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KF KS>;
             bindings = <&kp LG(C)>;
         };
-        combo_cmd_v {
-            layers = <L_CLMK L_QWRTY>;
+        combo_cmd_d {
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KP KT>;
+            bindings = <&kp LG(D)>;
+        };
+        combo_cmd_v {
+            layers = <L_CLMAK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KB KG>;
             bindings = <&kp LG(V)>;
         };
         combo_ctrl_z {
-            layers = <L_CLMK L_QWRTY>;
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KA KZ>;
             bindings = <&kp LC(Z)>;
         };
         combo_ctrl_x {
-            layers = <L_CLMK L_QWRTY>;
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KR KX>;
             bindings = <&kp LC(X)>;
         };
         combo_ctrl_c {
-            layers = <L_CLMK L_QWRTY>;
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KS KC>;
             bindings = <&kp LC(C)>;
         };
         combo_ctrl_d {
-            layers = <L_CLMK L_QWRTY>;
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KT KD>;
             bindings = <&kp LC(D)>;
         };
         combo_ctrl_v {
-            layers = <L_CLMK L_QWRTY>;
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KG KV>;
             bindings = <&kp LC(V)>;
         };
         combo_ctrl_u {
-            layers = <L_CLMK L_QWRTY>;
+            layers = <L_CLMAK L_QWRTY>;
             timeout-ms = <30>;
             key-positions = <KU KE>;
             bindings = <&kp LC(U)>;
+        };
+        combo_alt_dot {
+            layers = <L_CLMAK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KI Kdot>;
+            bindings = <&kp LA(DOT)>;
         };
     };
 
@@ -183,7 +257,7 @@
             if-layers = <L_NAV L_CODE>;
             then-layer = <L_MEDIA>;
         };
-        rgb_bt_layer {
+        keyboard_layer {
             if-layers = <L_NUM L_PUNCT>;
             then-layer = <L_KEYBD>;
         };
@@ -307,11 +381,11 @@
         colemak_layer {
             label = "colemak";
             bindings = <
-// =====================================================  =================================================================
-&kp Q       &kp W       &kp F      &kp P      &kp B       &kp J      &kp L      &kp U          &kp Y         &kp BSPC
-&kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E          &kp I         &kp O
-&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT COMMA &mt LCTRL DOT &mt LSHFT FSLH
-            &lt L_NUM TAB          &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
+// =====================================================  ================================================
+&kp Q       &kp W       &kp F      &kp P      &kp B       &kp J      &kp L      &kp U    &kp Y   &kp SQT
+&kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E    &kp I   &kp O
+&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H ALTcomma CTRLdot SHFTslash
+            &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
         };
 
@@ -319,10 +393,10 @@
             label = "qwerty";
             bindings = <
 // =====================================================  =================================================================
-&kp Q       &kp W       &kp E      &kp R      &kp T       &kp Y      &kp U      &kp I          &kp O         &kp P
-&kp A       &kp S       &kp D      &kp F      &kp G       &kp H      &kp J      &kp K          &kp L         &kp BSPC
-&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &mt RALT B  &mt RALT N &mt LCMD M &mt LALT COMMA &mt LCTRL DOT &mt LSHFT FSLH
-            &lt L_NUM TAB          &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
+&kp Q       &kp W       &kp E      &kp R      &kp T       &kp Y      &kp U      &kp I    &kp O   &kp P
+&kp A       &kp S       &kp D      &kp F      &kp G       &kp H      &kp J      &kp K    &kp L   &kp SQT
+&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &mt RALT B  &mt RALT N &mt LCMD M ALTcomma CTRLdot SHFTslash
+            &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
         };
 
@@ -330,7 +404,7 @@
             label = "nav";
             bindings = <
 // ===========================================  =============================================
-___       ___       ___      ___      ___       &kp TAB  ___      &kp UP   &kp ESC   &kp DEL
+___       ___       ___      ___      ___       ___      ___      &kp UP   &kp BSPC  &kp DEL
 ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN &kp RET   &kp END
                              &trans   &trans    &lt L_CODE TAB    &kp ESC
@@ -407,7 +481,7 @@ ___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp 
             label = "keyboard";
             bindings = <
 // ============================================================================  =============================================================
-___             &rgb_ug RGB_TOG &rgb_ug RGB_TOG &to L_QWRTY     ___              ___          &to L_CLMK   &out OUT_USB ___          ___
+___             &rgb_ug RGB_TOG &rgb_ug RGB_TOG &to L_QWRTY     ___              ___          &to L_CLMAK  &out OUT_USB ___          ___
 &rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt_magic
 &rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  ___          ___          &out OUT_BLE ___          ___
                                                 &trans          ___              ___          &trans
