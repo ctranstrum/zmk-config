@@ -18,20 +18,22 @@
 #define L_KEYBD 9
 
 // Keyboard layout
-// tab  W   F   P  [ ]     [ ]  L   U   Y  esc
+//  Q   W   F   P   B       J   L   U   Y  bsp
 //  A   R   S   T   G       M   N   E   I   O
-//  Z   X   C   D   V       K   H   B   J   Q
-//             bsp sft     spc ret
+//  Z   X   C   D   V       K   H   ,   .   /
+//             tab sft     spc ret
 
 // Define key positions
-#define Ktab 0
+#define KQ 0
 #define KW 1
 #define KF 2
 #define KP 3
+#define KB 4
+#define KJ 5
 #define KL 6
 #define KU 7
 #define KY 8
-#define Kesc 9
+#define Kbsp 9
 #define KA 10
 #define KR 11
 #define KS 12
@@ -49,10 +51,10 @@
 #define KV 24
 #define KK 25
 #define KH 26
-#define KB 27
-#define KJ 28
-#define KQ 29
-#define Kbsp 30
+#define Kcma 27
+#define Kdot 28
+#define Kslh 29
+#define Ktab 30
 #define Ksft 31
 #define Kspc 32
 #define Kret 33
@@ -108,7 +110,7 @@
         combo_caps_word {
             layers = <L_CLMK L_QWRTY>;
             timeout-ms = <50>;
-            key-positions = <KZ KQ>;
+            key-positions = <KZ Kslh>;
             bindings = <&caps_word>;
         };
         combo_cmd_x {
@@ -305,22 +307,22 @@
         colemak_layer {
             label = "colemak";
             bindings = <
-// =====================================================  ========================================================
-&kp TAB     &kp W       &kp F      &kp P      ___         ___        &kp L      &kp U      &kp Y       &kp ESC
-&kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E      &kp I       &kp O
-&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT B &mt LCTRL J &mt LSHFT Q
-            &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
+// =====================================================  =================================================================
+&kp Q       &kp W       &kp F      &kp P      &kp B       &kp J      &kp L      &kp U          &kp Y         &kp BSPC
+&kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E          &kp I         &kp O
+&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT COMMA &mt LCTRL DOT &mt LSHFT FSLH
+            &lt L_NUM TAB          &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
         };
 
         qwerty_layer {
             label = "qwerty";
             bindings = <
-// =====================================================  ========================================================
-&kp TAB     &kp W       &kp E      &kp R      ___         ___        &kp U      &kp I      &kp O       &kp ESC
-&kp A       &kp S       &kp D      &kp F      &kp G       &kp H      &kp J      &kp K      &kp L       &kp P
-&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &mt RALT B  &mt RALT N &mt LCMD M &mt LALT T &mt LCTRL Y &mt LSHFT Q
-            &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
+// =====================================================  =================================================================
+&kp Q       &kp W       &kp E      &kp R      &kp T       &kp Y      &kp U      &kp I          &kp O         &kp P
+&kp A       &kp S       &kp D      &kp F      &kp G       &kp H      &kp J      &kp K          &kp L         &kp BSPC
+&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &mt RALT B  &mt RALT N &mt LCMD M &mt LALT COMMA &mt LCTRL DOT &mt LSHFT FSLH
+            &lt L_NUM TAB          &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
         };
 
@@ -328,9 +330,9 @@
             label = "nav";
             bindings = <
 // ===========================================  =============================================
-___       ___       ___      ___      ___       ___      &kp BSPC &kp UP   &kp DEL   &kp BSPC
+___       ___       ___      ___      ___       &kp TAB  ___      &kp UP   &kp ESC   &kp DEL
 ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
-&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN ___       &kp END
+&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN &kp RET   &kp END
                              &trans   &trans    &lt L_CODE TAB    &kp ESC
             >;
         };
@@ -339,7 +341,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
             label = "code";
             bindings = <
 // =============================================  ==============================================
-&kp ESC   &kp GRAVE &kp LPAR &kp RPAR  ___        ___      ___      ___      ___       ___
+&kp ESC   &kp GRAVE &kp LPAR &kp RPAR  &kp PLUS   ___      ___      ___      ___       ___
 &kp LT    &kp GT    &kp LBRC &kp RBRC  &kp MINUS  ___      ___      ___      ___       ___
 &kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
                     &kp BSLH &lt L_NAV FSLH       &trans   &trans
@@ -350,7 +352,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
             label = "num";
             bindings = <
 // ===========================================  ========================================
-___       ___       ___      ___      ___       ___       &kp N7 &kp N8 &kp N9 &kp EQUAL
+___       ___       ___      ___      ___       &kp COLON &kp N7 &kp N8 &kp N9 &kp EQUAL
 ___       ___       ___      ___      ___       &kp SLASH &kp N4 &kp N5 &kp N6 &kp MINUS
 &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp STAR  &kp N1 &kp N2 &kp N3 &kp PLUS
                              &trans   &trans    &kp DOT   &lt L_PUNCT N0
@@ -361,7 +363,7 @@ ___       ___       ___      ___      ___       &kp SLASH &kp N4 &kp N5 &kp N6 &
             label = "punct";
             bindings = <
 // ==============================================  ==============================================
-&kp STAR  &kp HASH  &kp DLLR  &kp PRCNT ___        ___      ___      ___      ___       ___
+&kp STAR  &kp HASH  &kp DLLR  &kp PRCNT &kp MINUS  ___      ___      ___      ___       ___
 &kp EXCL  &kp EQUAL &kp DOT   &kp SQT   &kp COLON  ___      ___      ___      ___       ___
 &kp QMARK &kp AT    &kp COMMA &kp DQT   &kp SEMI   &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
                     &lt L_NUM PIPE      &kp AMPS   &trans   &trans
@@ -383,7 +385,7 @@ ___       ___       ___      ___      ___       &arrow_fn &kp F4 &kp F5 &kp F6 &
             label = "tmux";
             bindings = <
 // =========================================  =================================
-&tmux N  &tmux C  &tmux A  &tmux D  ___       ___    ___    ___    ___    ___
+&tmux N  &tmux C  &tmux A  &tmux D  &tmux N   ___    ___    ___    ___    ___
 &vtab N1 &vtab N2 &vtab N3 &vtab N4 &vtab N5  ___    ___    ___    ___    ___
 &tmux N1 &tmux N2 &tmux N3 &tmux N4 &tmux N5  ___    ___    ___    ___    ___
                            &vtabprv &vtabnxt  &trans &trans
