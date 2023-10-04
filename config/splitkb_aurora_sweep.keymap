@@ -78,7 +78,7 @@
     };
 };
 
-left_encoder {
+left_encoder: &qdec0 {
     status = "okay";
     led-pre = <0>;
     steps = <80>;
@@ -86,7 +86,7 @@ left_encoder {
     pinctrl-names = "left";
 };
 
-right_encoder {
+right_encoder: &qdec0 {
     status = "okay";
     led-pre = <0>;
     steps = <80>;
