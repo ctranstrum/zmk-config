@@ -79,7 +79,7 @@ left_encoder: &qdec0 {
     status = "okay";
     led-pre = <0>;
     steps = <80>;
-    pinctrl-0 = <&qdec_left>;
+    pinctrl-0 = <&qdec_default>;
     pinctrl-names = "default";
 };
 
