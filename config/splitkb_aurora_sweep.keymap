@@ -78,6 +78,10 @@
     };
 };
 
+&left_encoder2 {
+    status = "disabled";
+};
+
 left_encoder: &qdec0 {
     status = "okay";
     led-pre = <0>;
@@ -86,12 +90,8 @@ left_encoder: &qdec0 {
     pinctrl-names = "left";
 };
 
-right_encoder: &qdec0 {
-    status = "okay";
-    led-pre = <0>;
+&right_encoder2 {
     steps = <80>;
-    pinctrl-0 = <&qdec_right>;
-    pinctrl-names = "right";
 };
 
 &mt {
@@ -363,7 +363,7 @@ right_encoder: &qdec0 {
 
     sensors {
         compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder>, <&right_encoder>;
+        sensors = <&left_encoder>, <&right_encoder2>;
         triggers-per-rotation = <20>;
     };
 
