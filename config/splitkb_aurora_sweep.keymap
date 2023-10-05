@@ -62,17 +62,10 @@
 
 // Configure the encoders
 &pinctrl {
-    qdec_left: qdec_left {
+    qdec_default: qdec_default {
         group1 {
             psels = <NRF_PSEL(QDEC_A, 1, 11)>,
                     <NRF_PSEL(QDEC_B, 0, 10)>;
-            bias-pull-up;
-        };
-    };
-    qdec_right: qdec_right {
-        group1 {
-            psels = <NRF_PSEL(QDEC_A, 0, 29)>,
-                    <NRF_PSEL(QDEC_B, 0, 22)>;
             bias-pull-up;
         };
     };
@@ -87,7 +80,7 @@ left_encoder: &qdec0 {
     led-pre = <0>;
     steps = <80>;
     pinctrl-0 = <&qdec_left>;
-    pinctrl-names = "left";
+    pinctrl-names = "default";
 };
 
 &right_encoder2 {
