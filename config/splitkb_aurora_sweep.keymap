@@ -268,7 +268,7 @@
             compatible = "zmk,behavior-macro";
             label = "MACRO_ARROW_FN";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp GT &kp SPACE &kp LBRC &kp RBRC &kp LEFT>;
+            bindings = <&kp EQUAL &kp GT>;
         };
 
         hypr: hyper_mod_macro {
@@ -404,9 +404,9 @@
             label = "nav";
             bindings = <
 // ===========================================  =============================================
-___       ___       ___      ___      ___       ___      ___      &kp UP   &kp BSPC  &kp DEL
+___       ___       ___      ___      ___       &kp SPC  &kp RET  &kp UP   &kp BSPC  &kp DEL
 ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
-&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &kp SPC  &kp DOWN &kp RET   &kp END
+&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &vtabprv &tmux N  &vtabnxt  &kp END
                              &trans   &trans    &lt L_CODE TAB    &kp ESC
             >;
         };
@@ -415,7 +415,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
             label = "code";
             bindings = <
 // =============================================  ==============================================
-&kp ESC   &kp GRAVE &kp LPAR &kp RPAR  &kp PLUS   ___      ___      ___      ___       ___
+&arrow_fn &kp GRAVE &kp LPAR &kp RPAR  &kp PLUS   ___      ___      ___      ___       ___
 &kp LT    &kp GT    &kp LBRC &kp RBRC  &kp MINUS  ___      ___      ___      ___       ___
 &kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
                     &kp BSLH &lt L_NAV FSLH       &trans   &trans
