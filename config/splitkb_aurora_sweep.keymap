@@ -70,13 +70,19 @@
 // Macro for bluetooth connections
 #define BT_KEY(btnum) &bt_key btnum btnum
 
+// Hardware overrides for this board
+&led_strip {
+    chain-length = <23>;
+};
+
+&nice_view_spi {
+    cs-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
+};
+
+// Change default mod-tap settings
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
-};
-
-&led_strip {
-    chain-length = <23>;
 };
 
 / {
@@ -508,13 +514,15 @@ ___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp 
         keyboard_layer {
             label = "keyboard";
             bindings = <
-// ============================================================================  =======================================================
-___             &rgb_ug RGB_TOG &rgb_ug RGB_TOG &to L_QWRTY     ___              ___       &to L_CLMAK  &out OUT_USB ___       ___
-&rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  BT_KEY(0) BT_KEY(1)    BT_KEY(2)    BT_KEY(3) BT_KEY(4)
-&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  ___          ___       &out OUT_BLE ___       ___
-                                                &trans          ___              ___          &trans
+// ============================================================================  ======================================================
+&to L_QWRTY     &rgb_ug RGB_TOG &rgb_ug RGB_TOG ___             &out OUT_BLE     ___         ___       &out OUT_USB ___       ___
+&rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  BT_KEY(0)   BT_KEY(1) BT_KEY(2)    BT_KEY(3) BT_KEY(4)
+&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  &to L_CLMAK ___       ___          ___       ___
+                                                &trans          ___              ___         &trans
             >;
         };
 
     };
 };
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=devicetree
