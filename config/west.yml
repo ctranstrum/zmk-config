@@ -4,12 +4,16 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: rgb
       url-base: https://github.com/muriworks
+    - name: joelspadin
+      url-base: https://github.com/joelspadin/zmk
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      # remote: zmkfirmware
+      # revision: main
       # remote: rgb
       # revision: feature/animations
+      remote: joelspadin
+      revision: endpoint-instances-fixup
       import: app/west.yml
   self:
     path: config
