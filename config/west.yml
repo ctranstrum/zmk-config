@@ -5,7 +5,7 @@ manifest:
     - name: rgb
       url-base: https://github.com/muriworks
     - name: joelspadin
-      url-base: https://github.com/joelspadin/zmk
+      url-base: https://github.com/joelspadin
   projects:
     - name: zmk
       # remote: zmkfirmware
