@@ -67,6 +67,9 @@
 #define CTRLdot &ctrl_dot LCTRL 0
 #define SHFTslash &shft_slash LSHFT 0
 
+// Macro for bluetooth connections
+#define BT_KEY(btnum) &bt_key btnum btnum
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
@@ -85,6 +88,15 @@
             flavor = "balanced";
             tapping-term-ms = <200>;
             bindings = <&kp>, <&mod_comma>;
+        };
+
+        bt_key: bluetooth_key {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BLUETOOTH_KEY";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            bindings = <&bt_sel>, <&bt_clr>;
         };
 
         bt_magic: bluetooth_magic {
@@ -269,6 +281,22 @@
             label = "MACRO_ARROW_FN";
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp GT>;
+        };
+
+        bt_clr: bluetooth_clear_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            label = "MACRO_BT_CLEAR";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
+        };
+
+        bt_sel: bluetooth_selection_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            label = "MACRO_BT_SELECT";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>,
+                <&bt BT_CLR>;
         };
 
         hypr: hyper_mod_macro {
@@ -481,9 +509,9 @@ ___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp 
             label = "keyboard";
             bindings = <
 // ============================================================================  =============================================================
-___             &rgb_ug RGB_TOG &rgb_ug RGB_TOG &to L_QWRTY     ___              ___          &to L_CLMAK  &out OUT_USB ___          ___
-&rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt_magic
-&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  ___          ___          &out OUT_BLE ___          ___
+___             &rgb_ug RGB_TOG &rgb_ug RGB_TOG &to L_QWRTY     ___              ___       &to L_CLMAK  &out OUT_USB ___       ___
+&rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  &BT_KEY 0 &BT_KEY 1    &BT_KEY 2    &BT_KEY 3 &BT_KEY 4
+&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  ___          ___       &out OUT_BLE ___       ___
                                                 &trans          ___              ___          &trans
             >;
         };
