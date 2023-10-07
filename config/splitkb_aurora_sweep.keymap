@@ -223,7 +223,7 @@ left_encoder: &qdec0 {
             if-layers = <L_NAV L_CODE>;
             then-layer = <L_MEDIA>;
         };
-        rgb_bt_layer {
+        keybd_layer {
             if-layers = <L_NUM L_PUNCT>;
             then-layer = <L_KEYBD>;
         };
@@ -366,10 +366,10 @@ left_encoder: &qdec0 {
         colemak_layer {
             label = "colemak";
             bindings = <
-// =====================================================  ==============================================================
-&kp ESC     &kp W       &kp F      &kp P      &kp B       &kp J      &kp L      &kp U          &kp Y         &kp K_MUTE
-&kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E          &kp I         &kp O
-&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &mt LALT COMMA &mt LCTRL DOT &mt LSHFT Q
+// =====================================================  ================================================================
+&kp ESC     &kp W       &kp F      &kp P      &kp B       &kp J      &kp L      &kp U          &kp Y           &kp K_MUTE
+&kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &mt LALT E     &mt LCTRL I     &kp O
+&mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H &lt L_CODE SPC &lt L_PUNCT RET &mt LSHFT Q
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPC        &lt L_PUNCT RET
             >;
             sensor-bindings = <&rapid_rot UP DOWN>, <&rot C_VOL_DN C_VOL_UP>;
