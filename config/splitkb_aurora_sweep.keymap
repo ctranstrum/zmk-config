@@ -79,6 +79,22 @@
     cs-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
 };
 
+&left_encoder1 {
+    status = "disabled";
+};
+
+&left_encoder2 {
+    status = "disabled";
+};
+
+&right_encoder1 {
+    status = "disabled";
+};
+
+&right_encoder2 {
+    status = "disabled";
+};
+
 // Change default mod-tap settings
 &mt {
     flavor = "tap-preferred";
