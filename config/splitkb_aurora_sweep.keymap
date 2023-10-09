@@ -303,7 +303,7 @@
             compatible = "zmk,behavior-macro";
             label = "MACRO_ARROW_FN";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp GT>;
+            bindings = <&kp EQUAL &kp GT &kp SPACE>;
         };
 
         bt_clr: bluetooth_clear_macro {
@@ -480,7 +480,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
 &arrow_fn &kp GRAVE &kp LPAR &kp RPAR  &kp PLUS   ___      ___      ___      ___       ___
 &kp LT    &kp GT    &kp LBRC &kp RBRC  &kp MINUS  ___      ___      ___      ___       ___
 &kp CARET &kp TILDE &kp LBKT &kp RBKT  &kp UNDER  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
-                    &kp BSLH &lt L_NAV FSLH       &trans   &trans
+                    &kp PIPE &lt L_NAV AMPS       &trans   &trans
             >;
         };
 
@@ -488,9 +488,9 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
             label = "num";
             bindings = <
 // ===========================================  ========================================
-___       ___       ___      ___      ___       &kp COLON &kp N7 &kp N8 &kp N9 &kp EQUAL
-___       ___       ___      ___      ___       &kp SLASH &kp N4 &kp N5 &kp N6 &kp MINUS
-&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp STAR  &kp N1 &kp N2 &kp N3 &kp PLUS
+___       ___       ___      ___      ___       &kp SLASH &kp N7 &kp N8 &kp N9 &kp MINUS
+___       ___       ___      ___      ___       &kp STAR  &kp N4 &kp N5 &kp N6 &kp PLUS
+&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp COLON &kp N1 &kp N2 &kp N3 &kp EQUAL
                              &trans   &trans    &kp DOT   &lt L_PUNCT N0
             >;
         };
@@ -498,11 +498,11 @@ ___       ___       ___      ___      ___       &kp SLASH &kp N4 &kp N5 &kp N6 &
         punct_layer {
             label = "punct";
             bindings = <
-// ==============================================  ==============================================
-&kp STAR  &kp HASH  &kp DLLR  &kp PRCNT &kp MINUS  ___      ___      ___      ___       ___
-&kp EXCL  &kp EQUAL &kp DOT   &kp SQT   &kp COLON  ___      ___      ___      ___       ___
-&kp QMARK &kp AT    &kp COMMA &kp DQT   &kp SEMI   &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
-                    &lt L_NUM PIPE      &kp AMPS   &trans   &trans
+// ==================================  ==============================================
+___ &kp HASH  &kp DLLR  &kp PRCNT ___  ___      ___      ___      ___       ___
+___ &kp EQUAL ___       &kp EXCL  ___  ___      ___      ___      ___       ___
+___ &kp AT    ___       &kp QMARK ___  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT
+                        &trans    ___  &trans   &trans
             >;
         };
 
@@ -542,11 +542,11 @@ ___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp 
         keyboard_layer {
             label = "keyboard";
             bindings = <
-// ============================================================================  ======================================================
-&to L_QWRTY     &rgb_ug RGB_TOG &rgb_ug RGB_TOG ___             &out OUT_BLE     ___         ___       &out OUT_USB ___       ___
-&rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  BT_KEY(0)   BT_KEY(1) BT_KEY(2)    BT_KEY(3) BT_KEY(4)
-&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  &to L_CLMAK ___       ___          ___       ___
-                                                &trans          ___              ___         &trans
+// ============================================================================  ====================================================
+&rgb_ug RGB_TOG &to L_QWRTY     &to L_DVORK     &to L_CLMAK     &out OUT_BLE     ___       ___       &out OUT_USB ___       ___
+&rgb_ug RGB_EFF &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI  BT_KEY(0) BT_KEY(1) BT_KEY(2)    BT_KEY(3) BT_KEY(4)
+&rgb_ug RGB_EFR &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD  ___       ___       ___          ___       ___
+                                                &trans          ___              ___       &trans
             >;
         };
 
