@@ -7,15 +7,16 @@
 
 // Define layer names
 #define L_CLMAK 0
-#define L_QWRTY 1
-#define L_NAV   2
-#define L_CODE  3
-#define L_NUM   4
-#define L_PUNCT 5
-#define L_FUNC  6
-#define L_TMUX  7
-#define L_MEDIA 8
-#define L_KEYBD 9
+#define L_DVORK 1
+#define L_QWRTY 2
+#define L_NAV   3
+#define L_CODE  4
+#define L_NUM   5
+#define L_PUNCT 6
+#define L_FUNC  7
+#define L_TMUX  8
+#define L_MEDIA 9
+#define L_KEYBD 10
 
 // Keyboard layout
 //  Q   W   F   P   B       J   L   U   Y   '
@@ -436,6 +437,17 @@
 &kp A       &kp R       &kp S      &kp T      &kp G       &kp M      &kp N      &kp E    &kp I   &kp O
 &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD D &mt RALT V  &mt RALT K &mt LCMD H ALTcomma CTRLdot SHFTslash
             &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
+            >;
+        };
+
+        dvorak_layer {
+            label = "dvorak";
+            bindings = <
+// =====================================================  ======================================================
+&kp SQT   &mod_comma  &mod_dot   &kp P      &kp Y       &kp F      &kp G      &kp C      &kp R       &kp L
+&kp A     &kp O       &kp E      &kp U      &kp I       &kp D      &kp H      &kp T      &kp N       &kp S
+SHFTslash &mt LCTRL Q &mt LALT J &mt LCMD K &mt RALT X  &mt RALT B &mt LCMD M &mt LALT W &mt LCTRL V &mt LSHFT Z
+          &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN
             >;
         };
 
