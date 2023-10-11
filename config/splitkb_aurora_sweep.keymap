@@ -468,7 +468,7 @@ SHFTslash &mt LCTRL Q &mt LALT J &mt LCMD K &mt RALT X  &mt RALT B &mt LCMD M &m
 // ===========================================  =============================================
 ___       ___       ___      ___      ___       &kp SPC  &kp RET  &kp UP   &kp BSPC  &kp DEL
 ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
-&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &vtabprv &tmux N  &vtabnxt  &kp END
+&kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT  &kp PGDN &vtabprv &kp DOWN &vtabnxt  &kp END
                              &trans   &trans    &lt L_CODE TAB    &kp ESC
             >;
         };
