@@ -18,3 +18,8 @@ shield:
   - splitkb_aurora_sweep_left nice_view_adapter nice_view
   - splitkb_aurora_sweep_right nice_view_adapter nice_view
   - settings_reset
+include:
+  - board: seeeduino_xiao_ble
+    shield: totem_left
+  - board: seeeduino_xiao_ble
+    shield: totem_right
