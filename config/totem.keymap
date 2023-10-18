@@ -215,6 +215,13 @@
     };
 
     macros {
+        arrow_fn: arrow_function_macro {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_ARROW_FN";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT &kp SPACE>;
+        };
+
         bt_clr: bluetooth_clear_macro {
             compatible = "zmk,behavior-macro-one-param";
             label = "MACRO_BT_CLEAR";
