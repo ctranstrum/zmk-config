@@ -44,6 +44,10 @@
     tapping-term-ms = <270>;
 };
 
+&caps_word {
+    continue-list: <UNDERSCORE MINUS BACKSPACE DEL>;
+};
+
 / {
     behaviors {
         alt_comma: mod_alt_comma {
@@ -269,8 +273,8 @@
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃  - _  ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃             ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃  ! ?  ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃ BSPC  ┃ SHIFT ┃  TAB  ┃ ┃  ESC  ┃  SPC  ┃  RET  ┃
-//                               ┃  num  ┃  nav  ┃  vim  ┃ ┃ keybd ┃  sym  ┃ media ┃
+//                               ┃  ESC  ┃ BSPC  ┃ SHIFT ┃ ┃ SPACE ┃  RET  ┃  TAB  ┃
+//                               ┃  vim  ┃  num  ┃  nav  ┃ ┃  sym  ┃ media ┃ keybd ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
 //       ╷           ╷           ╷          ╷          ╷          ╷   ╷          ╷          ╷        ╷       ╷         ╷        ╷
@@ -278,7 +282,7 @@
           &kp Q       &kp W       &kp F      &kp P      &kp B          &kp J      &kp L      &kp U    &kp Y   &kp SQT
           &kp A       &kp R       &kp S      &kp T      &kp G          &kp M      &kp N      &kp E    &kp I   &kp O
 &kp MINUS &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI D &mt RALT V     &mt RALT K &mt LGUI H ALTcomma CTRLdot SHFTslash &mod_excl
-&lt L_NUM BSPC        &lsscw L_NAV 0         &lt L_VIM TAB             &lt L_KEYBD ESC       &lt L_SYM SPACE  &lt L_MEDIA RETURN
+&lt L_VIM ESC         &lt L_NUM BSPC         &lsscw L_NAV 0            &lt L_SYM SPACE       &lt L_MEDIA RET  &lt L_KEYBD TAB
             >;
         };
 
@@ -295,8 +299,8 @@
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃  - _  ┃  / \  ┃   Q   ┃   J   ┃   K   ┃   X   ┃             ┃   B   ┃   M   ┃   W   ┃   V   ┃   Z   ┃  ! ?  ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃ BSPC  ┃ SHIFT ┃  TAB  ┃ ┃  ESC  ┃  SPC  ┃  RET  ┃
-//                               ┃  num  ┃  nav  ┃  vim  ┃ ┃ keybd ┃  sym  ┃ media ┃
+//                               ┃  ESC  ┃ BSPC  ┃ SHIFT ┃ ┃ SPACE ┃  RET  ┃  TAB  ┃
+//                               ┃  vim  ┃  num  ┃  nav  ┃ ┃  sym  ┃ media ┃ keybd ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
 //       ╷         ╷           ╷          ╷          ╷          ╷   ╷          ╷          ╷          ╷           ╷           ╷         ╷
@@ -304,7 +308,7 @@
           &kp SQT   &mod_comma  &mod_dot   &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R       &kp L
           &kp A     &kp O       &kp E      &kp U      &kp I          &kp D      &kp H      &kp T      &kp N       &kp S
 &kp MINUS SHFTslash &mt LCTRL Q &mt LALT J &mt LGUI K &mt RALT X     &mt RALT B &mt LGUI M &mt LALT W &mt LCTRL V &mt LSHFT Z &mod_excl
-&lt L_NUM BSPC      &lsscw L_NAV 0         &lt L_VIM TAB             &lt L_KEYBD ESC       &lt L_SYM SPACE        &lt L_MEDIA RETURN
+&lt L_VIM ESC       &lt L_NUM BSPC         &lsscw L_NAV 0            &lt L_SYM SPACE       &lt L_MEDIA RET        &lt L_KEYBD TAB
             >;
         };
 
@@ -321,8 +325,8 @@
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃  - _  ┃   Z   ┃   X   ┃   C   ┃   V   ┃   B   ┃             ┃   N   ┃   M   ┃  , ;  ┃  . :  ┃  / \  ┃  ! ?  ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃ BSPC  ┃ SHIFT ┃  TAB  ┃ ┃  ESC  ┃  SPC  ┃  RET  ┃
-//                               ┃  num  ┃  nav  ┃  vim  ┃ ┃ keybd ┃  sym  ┃ media ┃
+//                               ┃  ESC  ┃ BSPC  ┃ SHIFT ┃ ┃ SPACE ┃  RET  ┃  TAB  ┃
+//                               ┃  vim  ┃  num  ┃  nav  ┃ ┃  sym  ┃ media ┃ keybd ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
 //       ╷           ╷           ╷          ╷          ╷          ╷   ╷          ╷          ╷        ╷       ╷         ╷        ╷
@@ -330,7 +334,7 @@
           &kp Q       &kp W       &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I    &kp O   &kp P
           &kp A       &kp S       &kp D      &kp F      &kp G          &kp H      &kp J      &kp K    &kp L   &kp SQT
 &kp MINUS &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI V &mt RALT B     &mt RALT N &mt LGUI M ALTcomma CTRLdot SHFTslash &mod_excl
-&lt L_NUM BSPC        &lsscw L_NAV 0         &lt L_VIM TAB             &lt L_KEYBD ESC       &lt L_SYM SPACE  &lt L_MEDIA RETURN
+&lt L_VIM ESC         &lt L_NUM BSPC         &lsscw L_NAV 0            &lt L_SYM SPACE       &lt L_MEDIA RET  &lt L_KEYBD TAB
             >;
         };
 
@@ -347,15 +351,15 @@
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃ Pg Dn ┃       ┃ DOWN  ┃       ┃  End  ┃ BSPC  ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃ func  ┃  ###  ┃       ┃ ┃       ┃  SPC  ┃  RET  ┃
+//                               ┃       ┃ func  ┃  ###  ┃ ┃  SPC  ┃  RET  ┃       ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-// ╷         ╷         ╷         ╷        ╷        ╷   ╷        ╷        ╷        ╷         ╷        ╷        ╷
+// ╷         ╷         ╷        ╷         ╷        ╷   ╷        ╷        ╷        ╷         ╷        ╷        ╷
 
-    ___       ___       ___       ___      ___          ___      ___      &kp UP   ___       &kp DEL
-    ___       ___       ___       ___      ___          &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
-___ &kp LSHFT &kp LCTRL &kp LALT  &kp LGUI &kp RALT     &kp PGDN ___      &kp DOWN ___       &kp END  &kp BSPC
-                        &mo L_NUM &trans   ___          ___      &kp SPC  &kp RETURN
+    ___       ___       ___      ___       ___          ___      ___      &kp UP   ___       &kp DEL
+    ___       ___       ___      ___       ___          &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
+___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp PGDN ___      &kp DOWN ___       &kp END  &kp BSPC
+                        ___      &mo L_NUM &trans       &kp SPC  &kp RET  ___
             >;
         };
 
@@ -372,7 +376,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT  &kp LGUI &kp RALT     &kp PGDN ___      &kp DO
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃   :   ┃   1   ┃   2   ┃   3   ┃   =   ┃ BSPC  ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃  ###  ┃ func  ┃       ┃ ┃   ,   ┃   .   ┃   0   ┃
+//                               ┃       ┃  ###  ┃ func  ┃ ┃   ,   ┃   .   ┃   0   ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
 // ╷         ╷         ╷        ╷         ╷        ╷   ╷         ╷       ╷      ╷      ╷         ╷        ╷
@@ -397,15 +401,15 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃   ^   ┃   ~   ┃   @   ┃   [   ┃   ]   ┃       ┃             ┃ R ALT ┃  CMD  ┃  ALT  ┃ CTRL  ┃ SHIFT ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃   |   ┃   &   ┃       ┃ ┃       ┃  ###  ┃       ┃
+//                               ┃  =>   ┃   |   ┃   &   ┃ ┃  ###  ┃       ┃       ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//       ╷         ╷        ╷        ╷        ╷         ╷   ╷        ╷        ╷        ╷         ╷        ╷   ╷
+//       ╷         ╷        ╷         ╷        ╷         ╷   ╷        ╷        ╷        ╷         ╷        ╷   ╷
 
-          &kp GRAVE &kp HASH &kp LPAR &kp RPAR &kp PRCNT     ___       ___     ___      ___       ___
-          &kp LT    &kp GT   &kp LBRC &kp RBRC &kp DLLR      ___       ___     ___      ___       ___
-&kp CARET &kp TILDE &kp AT   &kp LBKT &kp RBKT ___           &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp RALT ___
-                             &kp PIPE &kp AMPS ___           ___      &trans   ___
+          &kp GRAVE &kp HASH &kp LPAR  &kp RPAR &kp PRCNT     ___      ___      ___      ___       ___
+          &kp LT    &kp GT   &kp LBRC  &kp RBRC &kp DLLR      ___      ___      ___      ___       ___
+&kp CARET &kp TILDE &kp AT   &kp LBKT  &kp RBKT ___           &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp RALT ___
+                             &arrow_fn &kp PIPE &kp AMPS      &trans   ___      ___
             >;
         };
 
@@ -422,7 +426,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃       ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃  ###  ┃  ###  ┃       ┃ ┃       ┃       ┃  F10  ┃
+//                               ┃       ┃  ###  ┃  ###  ┃ ┃       ┃       ┃  F10  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
 // ╷         ╷         ╷        ╷        ╷        ╷   ╷   ╷      ╷      ╷      ╷       ╷   ╷
@@ -430,7 +434,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2
     ___       ___       ___      ___      ___          ___ &kp F7 &kp F8 &kp F9 &kp F12
     ___       ___       ___      ___      ___          ___ &kp F3 &kp F5 &kp F6 &kp F11
 ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 &kp F10 ___
-                        &trans   &trans   ___          ___ ___    &kp F10
+                        ___      &trans   &trans       ___ ___    &kp F10
             >;
         };
 
@@ -447,15 +451,15 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃ QUIT! ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃ tab 1 ┃ tab 2 ┃ tab 3 ┃       ┃ exit  ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃       ┃       ┃  ###  ┃ ┃       ┃       ┃ tab10 ┃
+//                               ┃  ###  ┃       ┃       ┃ ┃       ┃       ┃ tab10 ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//   ╷   ╷   ╷   ╷   ╷      ╷   ╷       ╷        ╷        ╷        ╷   ╷       ╷
+//   ╷   ╷   ╷      ╷   ╷   ╷   ╷       ╷        ╷        ╷        ╷   ╷       ╷
 
-      ___ ___ ___ ___ ___        &vldr W &vtab N7 &vtab N8 &vtab N9 ___
-      ___ ___ ___ ___ ___        ___     &vtab N3 &vtab N5 &vtab N6 ___
-&vimQ ___ ___ ___ ___ ___        ___     &vtab N1 &vtab N2 &vtab N3 ___ &vldr Q
-              ___ ___ &trans     ___     ___      &vtab N0
+      ___ ___ ___    ___ ___     &vldr W &vtab N7 &vtab N8 &vtab N9 ___
+      ___ ___ ___    ___ ___     ___     &vtab N3 &vtab N5 &vtab N6 ___
+&vimQ ___ ___ ___    ___ ___     ___     &vtab N1 &vtab N2 &vtab N3 ___ &vldr Q
+              &trans ___ ___     ___     ___      &vtab N0
             >;
         };
 
@@ -475,7 +479,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
 // ┃ screen ┃        ┃  mic   ┃        ┃        ┃ screen ┃              ┃       ┃       ┃       ┃       ┃       ┃       ┃
 // ┃  lock  ┃        ┃  mute  ┃        ┃  mute  ┃ dimmer ┃              ┃       ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━━┻━━━━━━━━┻━━━━━━━━┻━━━━━━┳━┻━━━━━━┳━┻━━━━━━┳━┻━━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                   ┃  prev  ┃  play  ┃  next  ┃ ┃       ┃       ┃  ###  ┃
+//                                   ┃  prev  ┃  play  ┃  next  ┃ ┃       ┃  ###  ┃       ┃
 //                                   ┗━━━━━━━━┻━━━━━━━━┻━━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
 //        ╷        ╷       ╷          ╷            ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷   ╷
@@ -483,7 +487,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
            &hypr N4 ___     &scrn_file &kp C_VOL_UP ___              ___ ___ ___ ___ ___
            ___      ___     &scrn_clip &kp C_VOL_DN &kp C_BRI_UP     ___ ___ ___ ___ ___
 &scrn_lock ___      &hypr M ___        &kp K_MUTE   &kp C_BRI_DN     ___ ___ ___ ___ ___ ___
-           &kp C_PREV       &kp C_PLAY_PAUSE        &kp C_NEXT       ___ ___ &trans
+           &kp C_PREV       &kp C_PLAY_PAUSE        &kp C_NEXT       ___ &trans  ___
             >;
         };
 
@@ -500,7 +504,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃ reset ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃ reset ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃       ┃       ┃       ┃ ┃  ###  ┃       ┃       ┃
+//                               ┃       ┃       ┃       ┃ ┃       ┃       ┃  ###  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
 //         ╷            ╷           ╷           ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
@@ -508,7 +512,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
             &out OUT_USB &to L_QWRTY &to L_DVORK &to L_COLMK &out OUT_BLE     ___ ___ ___ ___ ___
             BT_KEY(0)    BT_KEY(1)   BT_KEY(2)   BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
 &bootloader ___          ___         ___         ___         ___              ___ ___ ___ ___ ___ &bootloader
-                                     ___         ___         ___              &trans  ___ ___
+                                     ___         ___         ___              ___ ___ ___
             >;
         };
 
