@@ -45,7 +45,7 @@
 };
 
 &caps_word {
-    continue-list: <UNDERSCORE MINUS BACKSPACE DEL>;
+    continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
 };
 
 / {
