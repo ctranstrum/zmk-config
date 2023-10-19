@@ -26,6 +26,50 @@
 #define L_MEDIA 8
 #define L_KEYBD 9
 
+// Define key positions for macros using Colemak key names
+//   Q W F P B J L U Y '
+//   A R S T G M N E I O
+// - Z X C D V K H , . / !
+// esc bsp sft spc ret tab
+#define KQ 0
+#define KW 1
+#define KF 2
+#define KP 3
+#define KB 4
+#define KJ 5
+#define KL 6
+#define KU 7
+#define KY 8
+#define Kquo 9
+#define KA 10
+#define KR 11
+#define KS 12
+#define KT 13
+#define KG 14
+#define KM 15
+#define KN 16
+#define KE 17
+#define KI 18
+#define KO 19
+#define Kdsh 20
+#define KZ 21
+#define KX 22
+#define KC 23
+#define KD 24
+#define KV 25
+#define KK 26
+#define KH 27
+#define Kcma 28
+#define Kdot 29
+#define Kslh 30
+#define Kexc 31
+#define Kesc 32
+#define Kbsp 33
+#define Ksft 34
+#define Kspc 35
+#define Kret 36
+#define Ktab 37
+
 // Make blank keys more inconspicuous
 #define ___ &none
 
@@ -199,10 +243,83 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_esc {
+        combo_caps_word {
+            layers = <L_COLMK L_DVORK L_QWRTY>;
             timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
+            key-positions = <KZ Kslh>;
+            bindings = <&caps_word>;
+        };
+        combo_cmd_z {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KQ KA>;
+            bindings = <&kp LG(Z)>;
+        };
+        combo_cmd_x {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KW KR>;
+            bindings = <&kp LG(X)>;
+        };
+        combo_cmd_c {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KF KS>;
+            bindings = <&kp LG(C)>;
+        };
+        combo_cmd_d {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KP KT>;
+            bindings = <&kp LG(D)>;
+        };
+        combo_cmd_v {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KB KG>;
+            bindings = <&kp LG(V)>;
+        };
+        combo_ctrl_z {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KA KZ>;
+            bindings = <&kp LC(Z)>;
+        };
+        combo_ctrl_x {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KR KX>;
+            bindings = <&kp LC(X)>;
+        };
+        combo_ctrl_c {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KS KC>;
+            bindings = <&kp LC(C)>;
+        };
+        combo_ctrl_d {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KT KD>;
+            bindings = <&kp LC(D)>;
+        };
+        combo_ctrl_v {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KG KV>;
+            bindings = <&kp LC(V)>;
+        };
+        combo_ctrl_u {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KU KE>;
+            bindings = <&kp LC(U)>;
+        };
+        combo_alt_dot {
+            layers = <L_COLMK L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KI Kdot>;
+            bindings = <&kp LA(DOT)>;
         };
     };
 
@@ -352,21 +469,21 @@
             label = "NAVIGATION"                   ;
 //                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-//         ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃       ┃  UP   ┃       ┃  DEL  ┃
+//         ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃ BSPC  ┃  UP   ┃  DEL  ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-//         ┃       ┃       ┃       ┃       ┃       ┃             ┃ Pg Up ┃ LEFT  ┃ DOWN  ┃ RIGHT ┃ Home  ┃
+//         ┃       ┃       ┃       ┃       ┃       ┃             ┃ PG UP ┃ LEFT  ┃ DOWN  ┃ RIGHT ┃ HOME  ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃ Pg Dn ┃       ┃ DOWN  ┃       ┃  End  ┃ BSPC  ┃
+// ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃ PG DN ┃       ┃ DOWN  ┃       ┃  END  ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃       ┃ func  ┃  ###  ┃ ┃  SPC  ┃  RET  ┃       ┃
+//                               ┃       ┃ func  ┃  ###  ┃ ┃  SPC  ┃  RET  ┃  TAB  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-// ╷         ╷         ╷        ╷         ╷        ╷   ╷        ╷        ╷        ╷         ╷        ╷        ╷
+// ╷         ╷         ╷        ╷         ╷        ╷   ╷        ╷        ╷        ╷         ╷        ╷   ╷
 
-    ___       ___       ___      ___       ___          ___      ___      &kp UP   ___       &kp DEL
+    ___       ___       ___      ___       ___          ___      &kp BSPC &kp UP   &kp DEL   ___
     ___       ___       ___      ___       ___          &kp PGUP &kp LEFT &kp DOWN &kp RIGHT &kp HOME
-___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp PGDN ___      &kp DOWN ___       &kp END  &kp BSPC
-                        ___      &mo L_NUM &trans       &kp SPC  &kp RET  ___
+___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp PGDN ___      &kp DOWN ___       &kp END  ___
+                        ___      &mo L_NUM &trans       &kp SPC  &kp RET  &kp TAB
             >;
         };
 
@@ -509,7 +626,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //         ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃             ┃       ┃       ┃       ┃       ┃       ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃ reset ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃ reset ┃
+// ┃ flash ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃ flash ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                               ┃       ┃       ┃       ┃ ┃       ┃       ┃  ###  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
