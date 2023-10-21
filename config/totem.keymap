@@ -109,7 +109,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <500>;
-            bindings = <&bt_sel>, <&bt_clr>;
+            bindings = <&bt_clr>, <&bt_sel>;
         };
 
         ctrl_dot: mod_ctrl_dot {
@@ -343,7 +343,9 @@
             compatible = "zmk,behavior-macro-one-param";
             label = "MACRO_BT_CLEAR";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
+            bindings =
+                <&macro_param_1to1 &bt_sel MACRO_PLACEHOLDER>,
+                <&bt BT_CLR>;
         };
 
         bt_sel: bluetooth_selection_macro {
@@ -351,8 +353,8 @@
             label = "MACRO_BT_SELECT";
             #binding-cells = <1>;
             bindings =
-                <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>,
-                <&bt BT_CLR>;
+                <&out OUT_BLE>,
+                <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
         };
 
         vldr: vim_leader_macro {
@@ -622,7 +624,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
             label = "KEYBOARD"                     ;
 //                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-//         ┃  USB  ┃ QWRTY ┃ COLMK ┃ DVORK ┃  BLE  ┃             ┃       ┃       ┃       ┃       ┃       ┃
+//         ┃       ┃ QWRTY ┃ COLMK ┃ DVORK ┃  USB  ┃             ┃       ┃       ┃       ┃       ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //         ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃             ┃       ┃       ┃       ┃       ┃       ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
@@ -631,12 +633,12 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
 //                               ┃       ┃       ┃       ┃ ┃       ┃       ┃  ###  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//         ╷            ╷           ╷           ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
+//         ╷         ╷           ╷           ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
 
-            &out OUT_USB &to L_QWRTY &to L_COLMK &to L_DVORK &out OUT_BLE     ___ ___ ___ ___ ___
-            BT_KEY(0)    BT_KEY(1)   BT_KEY(2)   BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
-&bootloader ___          ___         ___         ___         ___              ___ ___ ___ ___ ___ &bootloader
-                                     ___         ___         ___              ___ ___ ___
+            ___       &to L_QWRTY &to L_COLMK &to L_DVORK &out OUT_USB     ___ ___ ___ ___ ___
+            BT_KEY(0) BT_KEY(1)   BT_KEY(2)   BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
+&bootloader ___       ___         ___         ___         ___              ___ ___ ___ ___ ___ &bootloader
+                                  ___         ___         ___              ___ ___ ___
             >;
         };
 
