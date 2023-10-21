@@ -581,7 +581,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
 //   ╷   ╷   ╷      ╷   ╷   ╷   ╷       ╷        ╷        ╷        ╷   ╷       ╷
 
       ___ ___ ___    ___ ___     &vldr W &vtab N7 &vtab N8 &vtab N9 ___
-      ___ ___ ___    ___ ___     ___     &vtab N3 &vtab N5 &vtab N6 ___
+      ___ ___ ___    ___ ___     ___     &vtab N4 &vtab N5 &vtab N6 ___
 &vimQ ___ ___ ___    ___ ___     ___     &vtab N1 &vtab N2 &vtab N3 ___ &vldr Q
               &trans ___ ___     ___     ___      &vtab N0
             >;
@@ -622,7 +622,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
             label = "KEYBOARD"                     ;
 //                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-//         ┃  USB  ┃ QWRTY ┃ DVORK ┃ COLMK ┃  BLE  ┃             ┃       ┃       ┃       ┃       ┃       ┃
+//         ┃  USB  ┃ QWRTY ┃ COLMK ┃ DVORK ┃  BLE  ┃             ┃       ┃       ┃       ┃       ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //         ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃             ┃       ┃       ┃       ┃       ┃       ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
@@ -633,7 +633,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
             bindings = <
 //         ╷            ╷           ╷           ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
 
-            &out OUT_USB &to L_QWRTY &to L_DVORK &to L_COLMK &out OUT_BLE     ___ ___ ___ ___ ___
+            &out OUT_USB &to L_QWRTY &to L_COLMK &to L_DVORK &out OUT_BLE     ___ ___ ___ ___ ___
             BT_KEY(0)    BT_KEY(1)   BT_KEY(2)   BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
 &bootloader ___          ___         ___         ___         ___              ___ ___ ___ ___ ___ &bootloader
                                      ___         ___         ___              ___ ___ ___
