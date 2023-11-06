@@ -693,7 +693,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
             ___       &to L_QWRTY &to L_COLMK &to L_DVORK &out OUT_USB     ___ ___ ___ ___ ___
             BT_KEY(0) BT_KEY(1)   BT_KEY(2)   BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
 &bootloader ___       ___         ___         ___         ___              ___ ___ ___ ___ ___ &bootloader
-                                  ___         ___         CAPSLOCK         ___ ___ &trans
+                                  ___         ___         &kp CAPSLOCK     ___ ___ &trans
             >;
         };
 
