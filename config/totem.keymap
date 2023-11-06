@@ -268,13 +268,13 @@
             bindings = <&kp LG(C)>;
         };
         combo_cmd_d {
-            layers = <L_COLMK L_QWRTY>;
+            layers = <L_COLMK>;
             timeout-ms = <30>;
             key-positions = <KP KT>;
             bindings = <&kp LG(D)>;
         };
         combo_cmd_v {
-            layers = <L_COLMK L_QWRTY>;
+            layers = <L_COLMK>;
             timeout-ms = <30>;
             key-positions = <KB KG>;
             bindings = <&kp LG(V)>;
@@ -298,19 +298,19 @@
             bindings = <&kp LC(C)>;
         };
         combo_ctrl_d {
-            layers = <L_COLMK L_QWRTY>;
+            layers = <L_COLMK>;
             timeout-ms = <30>;
             key-positions = <KT KD>;
             bindings = <&kp LC(D)>;
         };
         combo_ctrl_v {
-            layers = <L_COLMK L_QWRTY>;
+            layers = <L_COLMK>;
             timeout-ms = <30>;
             key-positions = <KG KV>;
             bindings = <&kp LC(V)>;
         };
         combo_ctrl_u {
-            layers = <L_COLMK L_QWRTY>;
+            layers = <L_COLMK>;
             timeout-ms = <30>;
             key-positions = <KU KE>;
             bindings = <&kp LC(U)>;
@@ -320,6 +320,61 @@
             timeout-ms = <30>;
             key-positions = <KI Kdot>;
             bindings = <&kp LA(DOT)>;
+        };
+        combo_cmd_v_qwerty {
+            layers = <L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KP KT>;
+            bindings = <&kp LG(V)>;
+        };
+        combo_ctrl_v_qwerty {
+            layers = <L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KT KD>;
+            bindings = <&kp LC(V)>;
+        };
+        combo_ctrl_u_qwerty {
+            layers = <L_QWRTY>;
+            timeout-ms = <30>;
+            key-positions = <KL KN>;
+            bindings = <&kp LC(U)>;
+        };
+
+        combo_alt_dot_dvorak {
+            layers = <L_DVORK>;
+            timeout-ms = <30>;
+            key-positions = <KF KS>;
+            bindings = <&kp LA(DOT)>;
+        };
+        combo_ctrl_u_dvorak {
+            layers = <L_DVORK>;
+            timeout-ms = <30>;
+            key-positions = <KP KT>;
+            bindings = <&kp LC(U)>;
+        };
+        combo_ctrl_x_dvorak {
+            layers = <L_DVORK>;
+            timeout-ms = <30>;
+            key-positions = <KG KV>;
+            bindings = <&kp LC(X)>;
+        };
+        combo_ctrl_c_dvorak {
+            layers = <L_DVORK>;
+            timeout-ms = <30>;
+            key-positions = <KU KE>;
+            bindings = <&kp LC(C)>;
+        };
+        combo_ctrl_v_dvorak {
+            layers = <L_DVORK>;
+            timeout-ms = <30>;
+            key-positions = <KI Kdot>;
+            bindings = <&kp LC(V)>;
+        };
+        combo_ctrl_z_dvorak {
+            layers = <L_DVORK>;
+            timeout-ms = <30>;
+            key-positions = <KO Kslash>;
+            bindings = <&kp LC(Z)>;
         };
     };
 
