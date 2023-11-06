@@ -373,7 +373,7 @@
         combo_ctrl_z_dvorak {
             layers = <L_DVORK>;
             timeout-ms = <30>;
-            key-positions = <KO Kslash>;
+            key-positions = <KO Kslh>;
             bindings = <&kp LC(Z)>;
         };
     };
