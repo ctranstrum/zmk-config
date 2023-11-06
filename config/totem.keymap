@@ -589,7 +589,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2
 
           &kp GRAVE &kp HASH &kp LPAR  &kp RPAR &kp PRCNT     ___      ___      ___      ___       ___
           &kp LT    &kp GT   &kp LBRC  &kp RBRC &kp DLLR      ___      ___      ___      ___       ___
-&kp CARET &kp TILDE &kp AT   &kp LBKT  &kp RBKT ___           &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp RALT ___
+&kp CARET &kp TILDE &kp AT   &kp LBKT  &kp RBKT ___           &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp LSHFT ___
                              &arrow_fn &kp PIPE &kp AMPS      &trans   ___      ___
             >;
         };
@@ -685,7 +685,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃ flash ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃ flash ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃       ┃       ┃       ┃ ┃       ┃       ┃  ###  ┃
+//                               ┃       ┃       ┃ CAPS  ┃ ┃       ┃       ┃  ###  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
 //         ╷         ╷           ╷           ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
@@ -693,7 +693,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___ &kp F1 &kp F2 &kp F3 
             ___       &to L_QWRTY &to L_COLMK &to L_DVORK &out OUT_USB     ___ ___ ___ ___ ___
             BT_KEY(0) BT_KEY(1)   BT_KEY(2)   BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
 &bootloader ___       ___         ___         ___         ___              ___ ___ ___ ___ ___ &bootloader
-                                  ___         ___         ___              ___ ___ ___
+                                  ___         ___         CAPSLOCK         ___ ___ &trans
             >;
         };
 
