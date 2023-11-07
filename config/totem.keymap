@@ -614,7 +614,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2
 
     ___       ___       ___      ___      ___          ___     &kp F7  &kp F8  &kp F9 ___
     ___       ___       ___      ___      ___          ___     &kp F3  &kp F5  &kp F6 ___
-___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___     &kp F1  &kb F2  &kp F3 ___ ___
+___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___     &kp F1  &kp F2  &kp F3 ___ ___
                         ___      &trans   &trans       &kp F10 &kp F11 &kp F12
             >;
         };
