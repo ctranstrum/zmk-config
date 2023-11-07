@@ -339,7 +339,12 @@
             key-positions = <KL KN>;
             bindings = <&kp LC(U)>;
         };
-
+        combo_ctrl_a_dvorak {
+            layers = <L_DVORK>;
+            timeout-ms = <30>;
+            key-positions = <KA KZ>;
+            bindings = <&kp LC(A)>;
+        };
         combo_alt_dot_dvorak {
             layers = <L_DVORK>;
             timeout-ms = <30>;
@@ -357,6 +362,12 @@
             timeout-ms = <30>;
             key-positions = <KG KV>;
             bindings = <&kp LC(X)>;
+        };
+        combo_ctrl_d_dvorak {
+            layers = <L_DVORK>;
+            timeout-ms = <30>;
+            key-positions = <KJ KM>;
+            bindings = <&kp LC(D)>;
         };
         combo_ctrl_c_dvorak {
             layers = <L_DVORK>;
@@ -679,21 +690,21 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp RALT     ___     &kp F1  &kp F2  &
             label = "KEYBOARD"                     ;
 //                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-//         ┃       ┃ QWRTY ┃ COLMK ┃ DVORK ┃  USB  ┃             ┃       ┃       ┃       ┃       ┃       ┃
+//         ┃       ┃ QWRTY ┃ COLMK ┃ DVORK ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //         ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃             ┃       ┃       ┃       ┃       ┃       ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃ flash ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃ flash ┃
+// ┃ flash ┃       ┃       ┃  USB  ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃ flash ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                               ┃       ┃       ┃ CAPS  ┃ ┃       ┃       ┃  ###  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//         ╷         ╷           ╷           ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
+//         ╷         ╷           ╷            ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
 
-            ___       &to L_QWRTY &to L_COLMK &to L_DVORK &out OUT_USB     ___ ___ ___ ___ ___
-            BT_KEY(0) BT_KEY(1)   BT_KEY(2)   BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
-&bootloader ___       ___         ___         ___         ___              ___ ___ ___ ___ ___ &bootloader
-                                  ___         ___         &kp CAPSLOCK     ___ ___ &trans
+            ___       &to L_QWRTY &to L_COLMK  &to L_DVORK ___              ___ ___ ___ ___ ___
+            BT_KEY(0) BT_KEY(1)   BT_KEY(2)    BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
+&bootloader ___       ___         &out OUT_USB ___         ___              ___ ___ ___ ___ ___ &bootloader
+                                  ___          ___         &kp CAPSLOCK     ___ ___ &trans
             >;
         };
 
