@@ -23,8 +23,9 @@
 #define L_SYM   5
 #define L_FUNC  6
 #define L_VIM   7
-#define L_MEDIA 8
-#define L_KEYBD 9
+#define L_TMUX  8
+#define L_MEDIA 9
+#define L_KEYBD 10
 
 // Define key positions for macros using Colemak key names
 //   Q W F P B J L U Y '
@@ -72,6 +73,10 @@
 
 // Make blank keys more inconspicuous
 #define ___ &none
+
+// In case you want to change your leader keys
+#define TMUX LC(B)
+#define VIM SPACE
 
 // Shortcuts for punctuation keys
 #define ALTcomma &alt_comma LALT 0
@@ -395,6 +400,10 @@
             if-layers = <L_NAV L_NUM>;
             then-layer = <L_FUNC>;
         };
+        tmux_layer {
+            if-layers = <L_NUM L_VIM>;
+            then-layer = <L_TMUX>;
+        };
     };
 
     macros {
@@ -423,12 +432,21 @@
                 <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
         };
 
+        tmux: tmux_prefix_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            label = "MACRO_PREFIX_TMUX";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap &kp TMUX>,
+                <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
         vldr: vim_leader_macro {
             compatible = "zmk,behavior-macro-one-param";
             label = "MACRO_VIM_LEADER";
             #binding-cells = <1>;
             bindings =
-                <&macro_tap &kp ESC &kp SPC>,
+                <&macro_tap &kp ESC &kp VIM>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
 
@@ -551,7 +569,7 @@
             bindings = <
 // ╷         ╷         ╷        ╷         ╷        ╷   ╷        ╷        ╷        ╷         ╷        ╷   ╷
 
-    ___       ___       ___      ___       ___          &kp PGDN &kp BSPC &kp UP   &kp DEL   ___
+    ___       ___       ___      ___       ___          &kp PGUP &kp BSPC &kp UP   &kp DEL   ___
     ___       ___       ___      ___       ___          &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp HOME
 ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     ___      ___      &kp DOWN ___       &kp END  ___
                         ___      &mo L_NUM &trans       &kp SPC  &kp RET  &kp TAB
@@ -571,15 +589,15 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     ___      ___      &kp DO
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃       ┃       ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃   :   ┃   1   ┃   2   ┃   3   ┃   =   ┃ BSPC  ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃       ┃  ###  ┃ func  ┃ ┃   0   ┃   .   ┃   ,   ┃
+//                               ┃ tmux  ┃  ###  ┃ func  ┃ ┃   0   ┃   .   ┃   ,   ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-// ╷   ╷         ╷        ╷         ╷        ╷   ╷         ╷       ╷      ╷      ╷         ╷        ╷
+// ╷   ╷         ╷         ╷         ╷        ╷   ╷         ╷       ╷      ╷      ╷         ╷        ╷
 
-    ___ ___       ___      ___       ___          &kp SLASH &kp N7  &kp N8 &kp N9 &kp MINUS
-    ___ ___       ___      ___       ___          &kp STAR  &kp N4  &kp N5 &kp N6 &kp PLUS
-___ ___ &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2 &kp N3 &kp EQUAL &kp BSPC
-                  ___      &trans    &mo L_NAV    &kp N0    &kp DOT &kp COMMA
+    ___ ___       ___       ___       ___          &kp SLASH &kp N7  &kp N8 &kp N9 &kp MINUS
+    ___ ___       ___       ___       ___          &kp STAR  &kp N4  &kp N5 &kp N6 &kp PLUS
+___ ___ &kp LCTRL &kp LALT  &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2 &kp N3 &kp EQUAL &kp BSPC
+                  &mo L_VIM &trans    &mo L_NAV    &kp N0    &kp DOT &kp COMMA
             >;
         };
 
@@ -646,15 +664,40 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI ___        ___     &kp F1  &kp F2  &kp
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃ QUIT! ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃ tab 1 ┃ tab 2 ┃ tab 3 ┃       ┃ exit  ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                               ┃  ###  ┃       ┃       ┃ ┃ save  ┃       ┃ tab10 ┃
+//                               ┃  ###  ┃ tmux  ┃       ┃ ┃ save  ┃       ┃ tab10 ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//   ╷   ╷   ╷      ╷   ╷   ╷   ╷       ╷        ╷        ╷        ╷   ╷       ╷
+//   ╷   ╷   ╷      ╷         ╷   ╷   ╷       ╷        ╷        ╷        ╷   ╷       ╷
 
-      ___ ___ ___    ___ ___     ___     &vtab N7 &vtab N8 &vtab N9 ___
-      ___ ___ ___    ___ ___     ___     &vtab N4 &vtab N5 &vtab N6 ___
-&vimQ ___ ___ ___    ___ ___     ___     &vtab N1 &vtab N2 &vtab N3 ___ &vldr Q
-              &trans ___ ___     &vldr W ___      &vtab N0
+      ___ ___ ___    ___       ___     ___     &vtab N7 &vtab N8 &vtab N9 ___
+      ___ ___ ___    ___       ___     ___     &vtab N4 &vtab N5 &vtab N6 ___
+&vimQ ___ ___ ___    ___       ___     ___     &vtab N1 &vtab N2 &vtab N3 ___ &vldr Q
+              &trans &mo L_NUM ___     &vldr W ___      &vtab N0
+            >;
+        };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        tmux_layer {
+//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            label = "TMUX"                         ;
+//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+//         ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃ tab 7 ┃ tab 8 ┃ tab 9 ┃       ┃
+//         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+//         ┃       ┃       ┃       ┃       ┃       ┃             ┃ tmux- ┃ tab 4 ┃ tab 5 ┃ tab 6 ┃       ┃
+// ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
+// ┃       ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃ tab 1 ┃ tab 2 ┃ tab 3 ┃       ┃ close ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                               ┃  ###  ┃  ###  ┃       ┃ ┃  new  ┃ name  ┃ tab10 ┃
+//                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
+            bindings = <
+// ╷   ╷   ╷      ╷      ╷   ╷   ╷        ╷        ╷        ╷        ╷   ╷       ╷
+
+    ___ ___ ___    ___    ___     ___      &tmux N7 &tmux N8 &tmux N9 ___
+    ___ ___ ___    ___    ___     &kp TMUX &tmux N4 &tmux N5 &tmux N6 ___
+___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux D
+            &trans &trans ___     &tmux C  &tmux A  &tmux N0
             >;
         };
 
