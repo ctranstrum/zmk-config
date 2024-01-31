@@ -481,7 +481,7 @@
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //         ┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃             ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃  - _  ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃             ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃  ! ?  ┃
+// ┃  [ {  ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃             ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃  ] }  ┃
 // ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃ R ALT ┃  CMD  ┃  ALT  ┃ CTRL  ┃ SHIFT ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                               ┃  ESC  ┃ BSPC  ┃ SHIFT ┃ ┃ SPACE ┃  RET  ┃  TAB  ┃
@@ -492,7 +492,7 @@
 
           &kp Q       &kp W       &kp F      &kp P      &kp B          &kp J      &kp L      &kp U    &kp Y   &kp SQT
           &kp A       &kp R       &kp S      &kp T      &kp G          &kp M      &kp N      &kp E    &kp I   &kp O
-&kp MINUS &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI D &mt RALT V     &mt RALT K &mt LGUI H ALTcomma CTRLdot SHFTslash &mod_excl
+&kp LBKT  &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI D &mt RALT V     &mt RALT K &mt LGUI H ALTcomma CTRLdot SHFTslash &kp RBKT
 &lt L_VIM ESC         &lt L_NUM BSPC         &lsscw L_NAV 0            &lt L_SYM SPACE       &lt L_MEDIA RET  &lt L_KEYBD TAB
             >;
         };
@@ -508,18 +508,18 @@
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //         ┃   A   ┃   O   ┃   E   ┃   U   ┃   I   ┃             ┃   D   ┃   H   ┃   T   ┃   N   ┃   S   ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃  - _  ┃  / \  ┃   Q   ┃   J   ┃   K   ┃   X   ┃             ┃   B   ┃   M   ┃   W   ┃   V   ┃   Z   ┃  ! ?  ┃
+// ┃  [ {  ┃  / \  ┃   Q   ┃   J   ┃   K   ┃   X   ┃             ┃   B   ┃   M   ┃   W   ┃   V   ┃   Z   ┃  ] }  ┃
 // ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃ R ALT ┃  CMD  ┃  ALT  ┃ CTRL  ┃ SHIFT ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                               ┃  ESC  ┃ BSPC  ┃ SHIFT ┃ ┃ SPACE ┃  RET  ┃  TAB  ┃
 //                               ┃  vim  ┃  num  ┃  nav  ┃ ┃  sym  ┃ media ┃ keybd ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//       ╷         ╷           ╷          ╷          ╷          ╷   ╷          ╷          ╷          ╷           ╷           ╷         ╷
+//       ╷         ╷           ╷          ╷          ╷          ╷   ╷          ╷          ╷          ╷           ╷           ╷        ╷
 
           &kp SQT   &mod_comma  &mod_dot   &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R       &kp L
           &kp A     &kp O       &kp E      &kp U      &kp I          &kp D      &kp H      &kp T      &kp N       &kp S
-&kp MINUS SHFTslash &mt LCTRL Q &mt LALT J &mt LGUI K &mt RALT X     &mt RALT B &mt LGUI M &mt LALT W &mt LCTRL V &mt LSHFT Z &mod_excl
+&kp LBKT  SHFTslash &mt LCTRL Q &mt LALT J &mt LGUI K &mt RALT X     &mt RALT B &mt LGUI M &mt LALT W &mt LCTRL V &mt LSHFT Z &kp RBKT
 &lt L_VIM ESC       &lt L_NUM BSPC         &lsscw L_NAV 0            &lt L_SYM SPACE       &lt L_MEDIA RET        &lt L_KEYBD TAB
             >;
         };
@@ -535,7 +535,7 @@
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //         ┃   A   ┃   S   ┃   D   ┃   F   ┃   G   ┃             ┃   H   ┃   J   ┃   K   ┃   L   ┃  ' "  ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃  - _  ┃   Z   ┃   X   ┃   C   ┃   V   ┃   B   ┃             ┃   N   ┃   M   ┃  , ;  ┃  . :  ┃  / \  ┃  ! ?  ┃
+// ┃  [ {  ┃   Z   ┃   X   ┃   C   ┃   V   ┃   B   ┃             ┃   N   ┃   M   ┃  , ;  ┃  . :  ┃  / \  ┃  ] }  ┃
 // ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃ R ALT ┃  CMD  ┃  ALT  ┃ CTRL  ┃ SHIFT ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                               ┃  ESC  ┃ BSPC  ┃ SHIFT ┃ ┃ SPACE ┃  RET  ┃  TAB  ┃
@@ -546,7 +546,7 @@
 
           &kp Q       &kp W       &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I    &kp O   &kp P
           &kp A       &kp S       &kp D      &kp F      &kp G          &kp H      &kp J      &kp K    &kp L   &kp SQT
-&kp MINUS &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI V &mt RALT B     &mt RALT N &mt LGUI M ALTcomma CTRLdot SHFTslash &mod_excl
+&kp LBKT  &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI V &mt RALT B     &mt RALT N &mt LGUI M ALTcomma CTRLdot SHFTslash &kp RBKT
 &lt L_VIM ESC         &lt L_NUM BSPC         &lsscw L_NAV 0            &lt L_SYM SPACE       &lt L_MEDIA RET  &lt L_KEYBD TAB
             >;
         };
@@ -558,20 +558,20 @@
             label = "NAVIGATION"                   ;
 //                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-//         ┃       ┃       ┃       ┃       ┃       ┃             ┃ PG UP ┃ BSPC  ┃  UP   ┃  DEL  ┃       ┃
+//         ┃       ┃       ┃       ┃       ┃       ┃             ┃ PG UP ┃       ┃       ┃       ┃  DEL  ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-//         ┃       ┃       ┃       ┃       ┃       ┃             ┃ PG DN ┃ LEFT  ┃ DOWN  ┃ RIGHT ┃ HOME  ┃
+//         ┃       ┃       ┃       ┃       ┃       ┃             ┃ HOME  ┃ LEFT  ┃  UP   ┃ RIGHT ┃  END  ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃       ┃       ┃ DOWN  ┃       ┃  END  ┃       ┃
+// ┃       ┃ SHIFT ┃ CTRL  ┃  ALT  ┃  CMD  ┃ R ALT ┃             ┃ PG DN ┃       ┃ DOWN  ┃       ┃       ┃ BSPC  ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                               ┃       ┃ func  ┃  ###  ┃ ┃  SPC  ┃  RET  ┃  TAB  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-// ╷         ╷         ╷        ╷         ╷        ╷   ╷        ╷        ╷        ╷         ╷        ╷   ╷
+// ╷         ╷         ╷        ╷         ╷        ╷   ╷        ╷        ╷        ╷         ╷       ╷        ╷
 
-    ___       ___       ___      ___       ___          &kp PGUP &kp BSPC &kp UP   &kp DEL   ___
-    ___       ___       ___      ___       ___          &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp HOME
-___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     ___      ___      &kp DOWN ___       &kp END  ___
+    ___       ___       ___      ___       ___          &kp PGUP ___      ___      ___       &kp DEL
+    ___       ___       ___      ___       ___          &kp HOME &kp LEFT &kp UP   &kp RIGHT &kp END
+___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp PGDN ___      &kp DOWN ___       ___     &kp BSPC
                         ___      &mo L_NUM &trans       &kp SPC  &kp RET  &kp TAB
             >;
         };
@@ -608,21 +608,21 @@ ___ ___ &kp LCTRL &kp LALT  &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2 &kp 
             label = "SYMBOLS"                      ;
 //                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-//         ┃   `   ┃   #   ┃   (   ┃   )   ┃   %   ┃             ┃       ┃       ┃       ┃       ┃       ┃
+//         ┃   `   ┃   !   ┃   %   ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-//         ┃   <   ┃   >   ┃   {   ┃   }   ┃   $   ┃             ┃       ┃       ┃       ┃       ┃       ┃
+//         ┃   <   ┃   >   ┃   (   ┃   )   ┃   $   ┃             ┃       ┃       ┃       ┃       ┃       ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃   ^   ┃   ~   ┃   @   ┃   [   ┃   ]   ┃       ┃             ┃ R ALT ┃  CMD  ┃  ALT  ┃ CTRL  ┃       ┃       ┃
+// ┃   ^   ┃   ~   ┃   @   ┃   #   ┃   _   ┃   ?   ┃             ┃ R ALT ┃  CMD  ┃  ALT  ┃ CTRL  ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                               ┃  =>   ┃   |   ┃   &   ┃ ┃  ###  ┃       ┃       ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//       ╷         ╷        ╷         ╷        ╷         ╷   ╷        ╷        ╷        ╷         ╷   ╷   ╷
+//       ╷         ╷        ╷         ╷         ╷         ╷   ╷        ╷        ╷        ╷         ╷   ╷   ╷
 
-          &kp GRAVE &kp HASH &kp LPAR  &kp RPAR &kp PRCNT     ___      ___      ___      ___       ___
-          &kp LT    &kp GT   &kp LBRC  &kp RBRC &kp DLLR      ___      ___      ___      ___       ___
-&kp CARET &kp TILDE &kp AT   &kp LBKT  &kp RBKT ___           &kp RALT &kp LCMD &kp LALT &kp LCTRL ___ ___
-                             &arrow_fn &kp PIPE &kp AMPS      &trans   ___      ___
+          &kp GRAVE &kp EXCL &kp PRCNT ___       ___           ___      ___      ___      ___       ___
+          &kp LT    &kp GT   &kp LPAR  &kp RPAR  &kp DLLR      ___      ___      ___      ___       ___
+&kp CARET &kp TILDE &kp AT   &kp HASH  &kp UNDER &kp QMARK     &kp RALT &kp LCMD &kp LALT &kp LCTRL ___ ___
+                             &arrow_fn &kp PIPE  &kp AMPS      &trans   ___      ___
             >;
         };
 
@@ -736,20 +736,20 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
             label = "KEYBOARD"                     ;
 //                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-//         ┃       ┃ QWRTY ┃ COLMK ┃ DVORK ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃
+//         ┃ qwrty ┃       ┃  USB  ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //         ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃             ┃       ┃       ┃       ┃       ┃       ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃ flash ┃       ┃       ┃  USB  ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃ flash ┃
+// ┃ flash ┃       ┃       ┃ COLMK ┃ DVORK ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃ flash ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━┳━┻━━━━━┳━┻━━━━━┳━┻━━━━━┓ ┏━━━━━┻━┳━━━━━┻━┳━━━━━┻━┳━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                               ┃       ┃       ┃ CAPS  ┃ ┃       ┃       ┃  ###  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//         ╷         ╷           ╷            ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
+//         ╷           ╷         ╷            ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
 
-            ___       &to L_QWRTY &to L_COLMK  &to L_DVORK ___              ___ ___ ___ ___ ___
-            BT_KEY(0) BT_KEY(1)   BT_KEY(2)    BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
-&bootloader ___       ___         &out OUT_USB ___         ___              ___ ___ ___ ___ ___ &bootloader
+            &to L_QWRTY           &out OUT_USB ___         ___              ___ ___ ___ ___ ___
+            BT_KEY(0)   BT_KEY(1) BT_KEY(2)    BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
+&bootloader ___         ___       &to L_COLMK  &to L_DVORK ___              ___ ___ ___ ___ ___ &bootloader
                                   ___          ___         &kp CAPSLOCK     ___ ___ &trans
             >;
         };
