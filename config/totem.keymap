@@ -101,7 +101,6 @@
     behaviors {
         alt_comma: mod_alt_comma {
             compatible = "zmk,behavior-hold-tap";
-            label = "MOD_ALT_COMMA";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
@@ -110,7 +109,6 @@
 
         bt_key: bluetooth_key {
             compatible = "zmk,behavior-hold-tap";
-            label = "BLUETOOTH_KEY";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <500>;
@@ -119,7 +117,6 @@
 
         ctrl_dot: mod_ctrl_dot {
             compatible = "zmk,behavior-hold-tap";
-            label = "MOD_CTRL_DOT";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
@@ -128,7 +125,6 @@
 
         hypr: hyper_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_MOD_HYPER";
             #binding-cells = <1>;
             bindings =
                 <&macro_press &kp LCMD &kp LALT &kp LCTRL &kp LSHFT>,
@@ -138,7 +134,6 @@
 
         lsscw: layer_sticky_shift_caps_word {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_STICKY_SHIFT_CAPS_WORD";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
@@ -147,7 +142,6 @@
 
         mod_comma: mod_comma_semi {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_COMMA_SEMI";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -155,7 +149,6 @@
 
         mod_dot: mod_dot_colon {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_DOT_COLON";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -163,7 +156,6 @@
 
         mod_excl: mod_excl_qmark {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_EXCL_QMARK";
             #binding-cells = <0>;
             bindings = <&kp EXCL>, <&kp QMARK>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -171,7 +163,6 @@
 
         mod_gc: gui_ctrl_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "GUI_CTRL_MOD_MACRO";
             #binding-cells = <1>;
             bindings =
                 <&macro_press &kp LCMD &kp LCTRL>,
@@ -181,7 +172,6 @@
 
         mod_gcs: gui_ctrl_shft_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "GUI_CTRL_SHIFT_MOD_MACRO";
             #binding-cells = <1>;
             bindings =
                 <&macro_press &kp LCMD &kp LCTRL &kp LSHFT>,
@@ -191,7 +181,6 @@
 
         mod_gs: gui_shft_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "GUI_SHIFT_MOD_MACRO";
             #binding-cells = <1>;
             bindings =
                 <&macro_press &kp LCMD &kp LSHFT>,
@@ -201,7 +190,6 @@
 
         mod_slash: mod_slash_back {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_SLASH_BACKSLASH";
             #binding-cells = <0>;
             bindings = <&kp SLASH>, <&kp BACKSLASH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -209,28 +197,24 @@
 
         scrn_clip: screen_capture_to_clipboard_macro {
             compatible = "zmk,behavior-macro";
-            label = "SCREENCAPTURE_CLIPBOARD_MACRO";
             #binding-cells = <0>;
             bindings = <&mod_gcs N4>;
         };
 
         scrn_file: screen_capture_to_file_macro {
             compatible = "zmk,behavior-macro";
-            label = "SCREENCAPTURE_FILE_MACRO";
             #binding-cells = <0>;
             bindings = <&mod_gs N4>;
         };
 
         scrn_lock: screen_lock_macro {
             compatible = "zmk,behavior-macro";
-            label = "SCREEN_LOCK_MACRO";
             #binding-cells = <0>;
             bindings = <&mod_gc Q>;
         };
 
         shft_slash: mod_shft_slash {
             compatible = "zmk,behavior-hold-tap";
-            label = "MOD_SHIFT_SLASH";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
@@ -239,7 +223,6 @@
 
         sscw: sticky_shift_caps_word {
             compatible = "zmk,behavior-mod-morph";
-            label = "STICKY_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             bindings = <&sk LSHIFT>, <&caps_word>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -409,14 +392,12 @@
     macros {
         arrow_fn: arrow_function_macro {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_ARROW_FN";
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp GT &kp SPACE>;
         };
 
         bt_clr: bluetooth_clear_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_BT_CLEAR";
             #binding-cells = <1>;
             bindings =
                 <&macro_param_1to1 &bt_sel MACRO_PLACEHOLDER>,
@@ -425,7 +406,6 @@
 
         bt_sel: bluetooth_selection_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_BT_SELECT";
             #binding-cells = <1>;
             bindings =
                 <&out OUT_BLE>,
@@ -434,7 +414,6 @@
 
         tmux: tmux_prefix_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_PREFIX_TMUX";
             #binding-cells = <1>;
             bindings =
                 <&macro_tap &kp TMUX>,
@@ -443,7 +422,6 @@
 
         vldr: vim_leader_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_VIM_LEADER";
             #binding-cells = <1>;
             bindings =
                 <&macro_tap &kp ESC &kp VIM>,
@@ -452,14 +430,12 @@
 
         vimQ: vim_hard_quit {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_VIM_QUIT";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp ESC>, <&kp COLON &kp Q &kp EXCL &kp RET>;
         };
 
         vtab: vim_tab_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_VIM_TAB";
             #binding-cells = <1>;
             bindings =
                 <&macro_tap &kp ESC>,
@@ -473,9 +449,9 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         colemak_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "COLEMAK"                      ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "COLEMAK"               ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃   Q   ┃   W   ┃   F   ┃   P   ┃   B   ┃             ┃   J   ┃   L   ┃   U   ┃   Y   ┃  ' "  ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
@@ -500,9 +476,9 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         dvorak_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "DVORAK"                       ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "DVORAK"                ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃  ' "  ┃  , ;  ┃  . :  ┃   P   ┃   Y   ┃             ┃   F   ┃   G   ┃   C   ┃   R   ┃   L   ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
@@ -527,9 +503,9 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         qwerty_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "QWERTY"                       ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "QWERTY"                ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃   Q   ┃   W   ┃   E   ┃   R   ┃   T   ┃             ┃   Y   ┃   U   ┃   I   ┃   O   ┃   P   ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
@@ -554,9 +530,9 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         nav_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "NAVIGATION"                   ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "NAVIGATION"            ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃       ┃       ┃       ┃       ┃       ┃             ┃ PG UP ┃       ┃       ┃       ┃  DEL  ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
@@ -579,9 +555,9 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &kp RALT     &kp PGDN ___      &kp DO
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         num_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "NUMPAD"                       ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "NUMPAD"                ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃       ┃       ┃       ┃       ┃       ┃             ┃   /   ┃   7   ┃   8   ┃   9   ┃   -   ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
@@ -604,9 +580,9 @@ ___ ___ &kp LCTRL &kp LALT  &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2 &kp 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         sym_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "SYMBOLS"                      ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "SYMBOLS"               ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃   `   ┃   !   ┃   %   ┃   #   ┃   _   ┃             ┃       ┃       ┃       ┃       ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
@@ -629,9 +605,9 @@ ___ ___ &kp LCTRL &kp LALT  &kp LGUI  &kp RALT     &kp COLON &kp N1  &kp N2 &kp 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         func_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "FUNCTION"                     ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "FUNCTION"              ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃  F7   ┃  F8   ┃  F9   ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
@@ -654,9 +630,9 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI ___        ___     &kp F1  &kp F2  &kp
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         vim_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "VIM"                          ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "VIM"                   ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃ tab 7 ┃ tab 8 ┃ tab 9 ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
@@ -679,9 +655,9 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI ___        ___     &kp F1  &kp F2  &kp
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         tmux_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "TMUX"                         ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "TMUX"                  ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃       ┃       ┃       ┃       ┃       ┃             ┃       ┃ tab 7 ┃ tab 8 ┃ tab 9 ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
@@ -704,9 +680,9 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         media_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "MEDIA"                              ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "MEDIA"                       ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //          ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓              ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //          ┃ launch ┃        ┃ screen ┃ volume ┃        ┃              ┃       ┃       ┃       ┃       ┃       ┃
 //          ┃  pad   ┃        ┃  file  ┃   up   ┃        ┃              ┃       ┃       ┃       ┃       ┃       ┃
@@ -732,9 +708,9 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         keyboard_layer {
-//                ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-            label = "KEYBOARD"                     ;
-//                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display_name = "KEYBOARD"              ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 //         ┃ qwrty ┃       ┃  USB  ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
