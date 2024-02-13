@@ -106,7 +106,6 @@
     behaviors {
         alt_comma: mod_alt_comma {
             compatible = "zmk,behavior-hold-tap";
-            label = "MOD_ALT_COMMA";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
@@ -115,7 +114,6 @@
 
         bt_key: bluetooth_key {
             compatible = "zmk,behavior-hold-tap";
-            label = "BLUETOOTH_KEY";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <500>;
@@ -124,14 +122,12 @@
 
         bt_magic: bluetooth_magic {
             compatible = "zmk,behavior-tap-dance";
-            label = "BLUETOOTH_MAGIC";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 4>, <&none>, <&bt BT_CLR>;
         };
 
         ctrl_dot: mod_ctrl_dot {
             compatible = "zmk,behavior-hold-tap";
-            label = "MOD_CTRL_DOT";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
@@ -140,7 +136,6 @@
 
         lsscw: layer_sticky_shift_caps_word {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_STICKY_SHIFT_CAPS_WORD";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
@@ -149,7 +144,6 @@
 
         mod_comma: mod_comma_semi {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_COMMA_SEMI";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -157,7 +151,6 @@
 
         mod_dot: mod_dot_colon {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_DOT_COLON";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -165,7 +158,6 @@
 
         mod_slash: mod_slash_semi {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_SLASH_BACKSLASH";
             #binding-cells = <0>;
             bindings = <&kp SLASH>, <&kp BACKSLASH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -173,14 +165,12 @@
 
         rgb_tog: rgb_toggle {
             compatible = "zmk,behavior-tap-dance";
-            label = "RGB_TOGGLE";
             #binding-cells = <0>;
             bindings = <&ext_power EP_TOG>, <&rgb_ug RGB_TOG>;
         };
 
         shft_slash: mod_shft_slash {
             compatible = "zmk,behavior-hold-tap";
-            label = "MOD_SHIFT_SLASH";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
@@ -189,7 +179,6 @@
 
         sscw: sticky_shift_caps_word {
             compatible = "zmk,behavior-mod-morph";
-            label = "STICKY_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
             bindings = <&sk LSHIFT>, <&caps_word>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -301,21 +290,18 @@
     macros {
         arrow_fn: arrow_function_macro {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_ARROW_FN";
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp GT &kp SPACE>;
         };
 
         bt_clr: bluetooth_clear_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_BT_CLEAR";
             #binding-cells = <1>;
             bindings = <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
         };
 
         bt_sel: bluetooth_selection_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_BT_SELECT";
             #binding-cells = <1>;
             bindings =
                 <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>,
@@ -324,7 +310,6 @@
 
         hypr: hyper_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_MOD_HYPER";
             #binding-cells = <1>;
             bindings =
                 <&macro_press &kp LCMD &kp LALT &kp LCTRL &kp LSHFT>,
@@ -334,7 +319,6 @@
 
         meh: meh_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_MOD_MEH";
             #binding-cells = <1>;
             bindings =
                 <&macro_press &kp LALT &kp LCTRL &kp LSHFT>,
@@ -344,7 +328,6 @@
 
         mod_gc: gui_ctrl_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "GUI_CTRL_MOD_MACRO";
             #binding-cells = <1>;
             bindings =
                 <&macro_press &kp LCMD &kp LCTRL>,
@@ -354,7 +337,6 @@
 
         mod_gcs: gui_ctrl_shft_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "GUI_CTRL_SHIFT_MOD_MACRO";
             #binding-cells = <1>;
             bindings =
                 <&macro_press &kp LCMD &kp LCTRL &kp LSHFT>,
@@ -364,7 +346,6 @@
 
         mod_gs: gui_shft_mod_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "GUI_SHIFT_MOD_MACRO";
             #binding-cells = <1>;
             bindings =
                 <&macro_press &kp LCMD &kp LSHFT>,
@@ -374,28 +355,24 @@
 
         scrn_clip: screen_capture_to_clipboard_macro {
             compatible = "zmk,behavior-macro";
-            label = "SCREENCAPTURE_CLIPBOARD_MACRO";
             #binding-cells = <0>;
             bindings = <&mod_gcs N4>;
         };
 
         scrn_file: screen_capture_to_file_macro {
             compatible = "zmk,behavior-macro";
-            label = "SCREENCAPTURE_FILE_MACRO";
             #binding-cells = <0>;
             bindings = <&mod_gs N4>;
         };
 
         scrn_lock: screen_lock_macro {
             compatible = "zmk,behavior-macro";
-            label = "SCREEN_LOCK_MACRO";
             #binding-cells = <0>;
             bindings = <&mod_gc Q>;
         };
 
         tmux: tmux_prefix_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_PREFIX_TMUX";
             #binding-cells = <1>;
             bindings =
                 <&macro_tap &kp LC(B)>,
@@ -404,7 +381,6 @@
 
         vtab: vim_tab_macro {
             compatible = "zmk,behavior-macro-one-param";
-            label = "MACRO_VIM_TAB";
             #binding-cells = <1>;
             bindings =
                 <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
@@ -413,14 +389,12 @@
 
         vtabnxt: vim_tab_next_macro {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_VIM_TAB_NEXT";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp G &kp T>;
         };
 
         vtabprv: vim_tab_prv_macro {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_VIM_TAB_PREV";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp G &kp LS(T)>;
         };
@@ -430,7 +404,7 @@
         compatible = "zmk,keymap";
 
         colemak_layer {
-            label = "colemak";
+            display_name = "colemak";
             bindings = <
 // =====================================================  ================================================
 &kp Q       &kp W       &kp F      &kp P      &kp B       &kp J      &kp L      &kp U    &kp Y   &kp SQT
@@ -441,7 +415,7 @@
         };
 
         dvorak_layer {
-            label = "dvorak";
+            display_name = "dvorak";
             bindings = <
 // =====================================================  ======================================================
 &kp SQT   &mod_comma  &mod_dot   &kp P      &kp Y       &kp F      &kp G      &kp C      &kp R       &kp L
@@ -452,7 +426,7 @@ SHFTslash &mt LCTRL Q &mt LALT J &mt LCMD K &mt RALT X  &mt RALT B &mt LCMD M &m
         };
 
         qwerty_layer {
-            label = "qwerty";
+            display_name = "qwerty";
             bindings = <
 // =====================================================  =================================================================
 &kp Q       &kp W       &kp E      &kp R      &kp T       &kp Y      &kp U      &kp I    &kp O   &kp P
@@ -463,7 +437,7 @@ SHFTslash &mt LCTRL Q &mt LALT J &mt LCMD K &mt RALT X  &mt RALT B &mt LCMD M &m
         };
 
         nav_layer {
-            label = "nav";
+            display_name = "nav";
             bindings = <
 // ===========================================  =============================================
 ___       ___       ___      ___      ___       &kp SPC  &kp RET  &kp UP   &kp BSPC  &kp DEL
@@ -474,7 +448,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
         };
 
         code_layer {
-            label = "code";
+            display_name = "code";
             bindings = <
 // =============================================  ==============================================
 &arrow_fn &kp GRAVE &kp LPAR &kp RPAR  &kp PLUS   ___      ___      ___      ___       ___
@@ -485,7 +459,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
         };
 
         num_layer {
-            label = "num";
+            display_name = "num";
             bindings = <
 // ===========================================  ========================================
 ___       ___       ___      ___      ___       &kp SLASH &kp N7 &kp N8 &kp N9 &kp MINUS
@@ -496,7 +470,7 @@ ___       ___       ___      ___      ___       &kp STAR  &kp N4 &kp N5 &kp N6 &
         };
 
         punct_layer {
-            label = "punct";
+            display_name = "punct";
             bindings = <
 // ==================================  ==============================================
 ___ &kp HASH  &kp DLLR  &kp PRCNT ___  ___      ___      ___      ___       ___
@@ -507,7 +481,7 @@ ___ &kp AT    ___       &kp QMARK ___  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp 
         };
 
         func_layer {
-            label = "fn";
+            display_name = "fn";
             bindings = <
 // ===========================================  ======================================
 ___       ___       ___      ___      ___       ___       &kp F7 &kp F8 &kp F9 ___
@@ -518,7 +492,7 @@ ___       ___       ___      ___      ___       &arrow_fn &kp F4 &kp F5 &kp F6 &
         };
 
         tmux_layer {
-            label = "tmux";
+            display_name = "tmux";
             bindings = <
 // =========================================  =================================
 &tmux N  &tmux C  &tmux A  &tmux D  &tmux N   ___    ___    ___    ___    ___
@@ -529,7 +503,7 @@ ___       ___       ___      ___      ___       &arrow_fn &kp F4 &kp F5 &kp F6 &
         };
 
         media_layer {
-            label = "media";
+            display_name = "media";
             bindings = <
 // ===============================================  ============================================================
 ___   ___     &scrn_file &kp C_VOL_UP ___           ___        &scrn_lock   ___              &hypr N4 ___
@@ -540,7 +514,7 @@ ___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp 
         };
 
         keyboard_layer {
-            label = "keyboard";
+            display_name = "keyboard";
             bindings = <
 // ============================================================================  ====================================================
 &rgb_ug RGB_TOG &to L_QWRTY     &to L_DVORK     &to L_CLMAK     &out OUT_BLE     ___       ___       &out OUT_USB ___       ___
