@@ -404,7 +404,7 @@
         compatible = "zmk,keymap";
 
         colemak_layer {
-            display_name = "colemak";
+            display-name = "colemak";
             bindings = <
 // =====================================================  ================================================
 &kp Q       &kp W       &kp F      &kp P      &kp B       &kp J      &kp L      &kp U    &kp Y   &kp SQT
@@ -415,7 +415,7 @@
         };
 
         dvorak_layer {
-            display_name = "dvorak";
+            display-name = "dvorak";
             bindings = <
 // =====================================================  ======================================================
 &kp SQT   &mod_comma  &mod_dot   &kp P      &kp Y       &kp F      &kp G      &kp C      &kp R       &kp L
@@ -426,7 +426,7 @@ SHFTslash &mt LCTRL Q &mt LALT J &mt LCMD K &mt RALT X  &mt RALT B &mt LCMD M &m
         };
 
         qwerty_layer {
-            display_name = "qwerty";
+            display-name = "qwerty";
             bindings = <
 // =====================================================  =================================================================
 &kp Q       &kp W       &kp E      &kp R      &kp T       &kp Y      &kp U      &kp I    &kp O   &kp P
@@ -437,7 +437,7 @@ SHFTslash &mt LCTRL Q &mt LALT J &mt LCMD K &mt RALT X  &mt RALT B &mt LCMD M &m
         };
 
         nav_layer {
-            display_name = "nav";
+            display-name = "nav";
             bindings = <
 // ===========================================  =============================================
 ___       ___       ___      ___      ___       &kp SPC  &kp RET  &kp UP   &kp BSPC  &kp DEL
@@ -448,7 +448,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
         };
 
         code_layer {
-            display_name = "code";
+            display-name = "code";
             bindings = <
 // =============================================  ==============================================
 &arrow_fn &kp GRAVE &kp LPAR &kp RPAR  &kp PLUS   ___      ___      ___      ___       ___
@@ -459,7 +459,7 @@ ___       ___       ___      ___      ___       &kp PGUP &kp LEFT &kp DOWN &kp R
         };
 
         num_layer {
-            display_name = "num";
+            display-name = "num";
             bindings = <
 // ===========================================  ========================================
 ___       ___       ___      ___      ___       &kp SLASH &kp N7 &kp N8 &kp N9 &kp MINUS
@@ -470,7 +470,7 @@ ___       ___       ___      ___      ___       &kp STAR  &kp N4 &kp N5 &kp N6 &
         };
 
         punct_layer {
-            display_name = "punct";
+            display-name = "punct";
             bindings = <
 // ==================================  ==============================================
 ___ &kp HASH  &kp DLLR  &kp PRCNT ___  ___      ___      ___      ___       ___
@@ -481,7 +481,7 @@ ___ &kp AT    ___       &kp QMARK ___  &kp RALT &kp LCMD &kp LALT &kp LCTRL &kp 
         };
 
         func_layer {
-            display_name = "fn";
+            display-name = "fn";
             bindings = <
 // ===========================================  ======================================
 ___       ___       ___      ___      ___       ___       &kp F7 &kp F8 &kp F9 ___
@@ -492,7 +492,7 @@ ___       ___       ___      ___      ___       &arrow_fn &kp F4 &kp F5 &kp F6 &
         };
 
         tmux_layer {
-            display_name = "tmux";
+            display-name = "tmux";
             bindings = <
 // =========================================  =================================
 &tmux N  &tmux C  &tmux A  &tmux D  &tmux N   ___    ___    ___    ___    ___
@@ -503,7 +503,7 @@ ___       ___       ___      ___      ___       &arrow_fn &kp F4 &kp F5 &kp F6 &
         };
 
         media_layer {
-            display_name = "media";
+            display-name = "media";
             bindings = <
 // ===============================================  ============================================================
 ___   ___     &scrn_file &kp C_VOL_UP ___           ___        &scrn_lock   ___              &hypr N4 ___
@@ -514,7 +514,7 @@ ___   &hypr M &kp CAPS   &kp K_MUTE   &kp C_BRI_DN  &kp C_PREV &kp C_REWIND &kp 
         };
 
         keyboard_layer {
-            display_name = "keyboard";
+            display-name = "keyboard";
             bindings = <
 // ============================================================================  ====================================================
 &rgb_ug RGB_TOG &to L_QWRTY     &to L_DVORK     &to L_CLMAK     &out OUT_BLE     ___       ___       &out OUT_USB ___       ___
