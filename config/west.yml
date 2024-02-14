@@ -4,9 +4,11 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: rgb
       url-base: https://github.com/muriworks
+    - name: chadzmk
+      url-base: https://github.com/ctranstrum
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: chadzmk
       revision: main
       # remote: rgb
       # revision: feature/animations
