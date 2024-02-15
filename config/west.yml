@@ -8,7 +8,7 @@ manifest:
       url-base: https://github.com/ctranstrum
   projects:
     - name: zmk
-      remote: chadzmk
+      remote: zmkfirmware
       revision: main
       # remote: rgb
       # revision: feature/animations
