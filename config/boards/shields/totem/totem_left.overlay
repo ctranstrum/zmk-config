@@ -15,3 +15,5 @@
         , <&xiao_d 8 GPIO_ACTIVE_HIGH>
         ;
 };
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=devicetree
