@@ -24,7 +24,6 @@ include:
   # Totem
   - board: seeeduino_xiao_ble
     shield: totem_dongle dongle_display
-    cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
     artifact-name: totem_dongle
   - board: seeeduino_xiao_ble
     shield: totem_left
