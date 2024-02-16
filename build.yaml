@@ -24,6 +24,7 @@ include:
   # Totem
   - board: seeeduino_xiao_ble
     shield: totem_dongle dongle_display
+    cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
     artifact-name: totem_dongle
   - board: seeeduino_xiao_ble
     shield: totem_left
@@ -35,5 +36,7 @@ include:
   # Settings Reset
   - board: nice_nano_v2
     shield: settings_reset
+    artifact-name: nano_reset
   - board: seeeduino_xiao_ble
     shield: settings_reset
+    artifact-name: xiao_reset
