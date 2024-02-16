@@ -25,7 +25,7 @@
 &xiao_i2c {
     status = "okay";
 
-    oled: ssd1306@3c {
+    oled: ssd1306@7b {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
