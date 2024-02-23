@@ -117,14 +117,14 @@ static void set_status_symbol(lv_obj_t *widget, struct output_status_state state
     case ZMK_TRANSPORT_USB:
         if (current_selection_line_state != selection_line_state_usb) {
             move_object_x(selection_line, lv_obj_get_x(bt) - 1, lv_obj_get_x(usb) - 1);
-            change_size_object(selection_line, 18, 11);
+            // change_size_object(selection_line, 18, 11);
             current_selection_line_state = selection_line_state_usb;
         }
         break;
     case ZMK_TRANSPORT_BLE:
         if (current_selection_line_state != selection_line_state_bt) {
             move_object_x(selection_line, lv_obj_get_x(usb) - 1, lv_obj_get_x(bt) - 1);
-            change_size_object(selection_line, 11, 18);
+            // change_size_object(selection_line, 11, 18);
             current_selection_line_state = selection_line_state_bt;
         }
         break;
@@ -181,10 +181,10 @@ int zmk_widget_output_status_init(struct zmk_widget_output_status *widget, lv_ob
     lv_img_set_src(bt, &sym_bt);
 
     lv_obj_t *bt_number = lv_img_create(widget->obj);
-    lv_obj_align_to(bt_number, bt, LV_ALIGN_OUT_RIGHT_TOP, 2, 7);
+    lv_obj_align_to(bt_number, bt, LV_ALIGN_OUT_RIGHT_TOP, 2, -1);
 
     lv_obj_t *bt_status = lv_img_create(widget->obj);
-    lv_obj_align_to(bt_status, bt, LV_ALIGN_OUT_RIGHT_TOP, 2, 1);
+    lv_obj_align_to(bt_number, bt, LV_ALIGN_OUT_RIGHT_TOP, 2, 0);
 
     static lv_style_t style_line;
     lv_style_init(&style_line);

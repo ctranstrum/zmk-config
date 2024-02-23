@@ -71,7 +71,7 @@ static void set_battery_symbol(lv_obj_t *widged, struct battery_status_state sta
 
         char text[5] = {};
 
-        if (level > 0 && level < 55) {
+        if (level > 0 && level < 99) {
             snprintf(text, sizeof(text), "%3u ", level);
         }
 
