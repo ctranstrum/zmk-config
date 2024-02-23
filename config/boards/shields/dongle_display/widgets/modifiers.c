@@ -48,18 +48,30 @@ struct modifier_symbol ms_alt = {
     .symbol_dsc = &alt_icon,
 };
 
-LV_IMG_DECLARE(gui_icon);
-struct modifier_symbol ms_gui = {
+LV_IMG_DECLARE(win_icon);
+struct modifier_symbol ms_win = {
     .modifier = MOD_LGUI | MOD_RGUI,
-    .symbol_dsc = &gui_icon,
+    .symbol_dsc = &win_icon,
+};
+
+LV_IMG_DECLARE(opt_icon);
+struct modifier_symbol ms_opt = {
+    .modifier = MOD_LALT | MOD_RALT,
+    .symbol_dsc = &opt_icon,
+};
+
+LV_IMG_DECLARE(cmd_icon);
+struct modifier_symbol ms_cmd = {
+    .modifier = MOD_LGUI | MOD_RGUI,
+    .symbol_dsc = &cmd_icon,
 };
 
 struct modifier_symbol *modifier_symbols[] = {
     // this order determines the order of the symbols
-    &ms_gui,
-    &ms_alt,
-    &ms_control,
     &ms_shift
+    &ms_control,
+    &ms_opt,
+    &ms_cmd,
 };
 
 #define NUM_SYMBOLS (sizeof(modifier_symbols) / sizeof(struct modifier_symbol *))
