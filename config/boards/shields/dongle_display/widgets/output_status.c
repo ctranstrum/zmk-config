@@ -51,6 +51,7 @@ enum output_symbol {
 };
 
 enum selection_line_state {
+    selection_line_state_unknown,
     selection_line_state_usb,
     selection_line_state_bt
 } current_selection_line_state;

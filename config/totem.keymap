@@ -27,7 +27,7 @@
 #define L_MEDIA 9
 #define L_KEYBD 10
 
-// Define key positions for macros using Colemak key names
+// Define key positions for combos using Colemak key names
 //     Q W F P B J L U Y '
 //     A R S T G M N E I O
 // bsp Z X C D V K H , . / ret
@@ -412,6 +412,12 @@
                 <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
         };
 
+        flash: dongle_bootloader_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bootloader>;
+        };
+
         tmux: tmux_prefix_macro {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -712,7 +718,7 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
             display-name = "keyboard"              ;
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //         ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓             ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-//         ┃ qwrty ┃       ┃  usb  ┃       ┃       ┃             ┃       ┃       ┃       ┃       ┃       ┃
+//         ┃ qwrty ┃       ┃  usb  ┃       ┃       ┃             ┃       ┃       ┃ dongl ┃       ┃       ┃
 //         ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //         ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃             ┃       ┃       ┃       ┃       ┃       ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫             ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
@@ -721,11 +727,11 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
 //                               ┃       ┃       ┃ CAPS  ┃ ┃       ┃       ┃  ###  ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//         ╷           ╷         ╷            ╷           ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷           ╷
+//         ╷           ╷         ╷            ╷           ╷            ╷   ╷   ╷   ╷      ╷   ╷   ╷           ╷
 
-            &to L_QWRTY ___       &out OUT_USB ___         ___              ___ ___ ___ ___ ___
-            BT_KEY(0)   BT_KEY(1) BT_KEY(2)    BT_KEY(3)   BT_KEY(4)        ___ ___ ___ ___ ___
-&bootloader ___         ___       &to L_COLMK  &to L_DVORK ___              ___ ___ ___ ___ ___ &bootloader
+            &to L_QWRTY ___       &out OUT_USB ___         ___              ___ ___ &flash ___ ___
+            BT_KEY(0)   BT_KEY(1) BT_KEY(2)    BT_KEY(3)   BT_KEY(4)        ___ ___ ___    ___ ___
+&bootloader ___         ___       &to L_COLMK  &to L_DVORK ___              ___ ___ ___    ___ ___ &bootloader
                                   ___          ___         &kp CAPSLOCK     ___ ___ &trans
             >;
         };
