@@ -26,6 +26,7 @@
 #define L_TMUX  8
 #define L_MEDIA 9
 #define L_KEYBD 10
+#define L_BOOT  11
 
 // Define key positions for combos using Colemak key names
 //     Q W F P B J L U Y '
@@ -415,7 +416,7 @@
         flash: dongle_bootloader_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bootloader>;
+            bindings = <&to L_BOOT>, <&bootloader>;
         };
 
         tmux: tmux_prefix_macro {
@@ -734,6 +735,17 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
 &bootloader ___         ___       &to L_COLMK  &to L_DVORK ___              ___ ___ ___    ___ ___ &bootloader
                                   ___          ___         &kp CAPSLOCK     ___ ___ &trans
             >;
+        };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        bootloader_layer {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "flash mode"            ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//          This layer is just to get the oled to display the "layer name" immediately before it enters boot loader
+//          mode and stops responding to other keypresses
+            bindings = < &bootloader >;
         };
 
     };
