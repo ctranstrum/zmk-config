@@ -743,8 +743,10 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
 //                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
             display-name = "flash mode"            ;
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
-//          This layer is just to get the oled to display the "layer name" immediately before it enters boot loader
-//          mode and stops responding to other keypresses
+//          This layer is just to get the oled to display
+//          the "layer name" immediately before it enters
+//          boot loader mode and stops responding to any
+//          other keypresses
             bindings = < &bootloader >;
         };
 
