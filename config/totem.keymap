@@ -87,6 +87,7 @@
 // Macro for bluetooth connections
 #define BT_KEY(btnum) &bt_key btnum btnum
 
+// Change mod-tap defaults
 &mt {
     quick-tap-ms = <200>;
     require-prior-idle-ms = <150>;
@@ -94,6 +95,13 @@
     tapping-term-ms = <300>;
 };
 
+// Change sticky key defaults
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+// Change caps word defaults
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
 };
@@ -691,8 +699,8 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
             display-name = "media"                       ;
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //          ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓              ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-//          ┃ launch ┃        ┃ screen ┃ volume ┃        ┃              ┃       ┃       ┃       ┃       ┃       ┃
-//          ┃  pad   ┃        ┃  file  ┃   up   ┃        ┃              ┃       ┃       ┃       ┃       ┃       ┃
+//          ┃ launch ┃        ┃ screen ┃ volume ┃ mssion ┃              ┃       ┃       ┃       ┃       ┃       ┃
+//          ┃  pad   ┃        ┃  file  ┃   up   ┃ contrl ┃              ┃       ┃       ┃       ┃       ┃       ┃
 //          ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫              ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 //          ┃        ┃        ┃ screen ┃ volume ┃ screen ┃              ┃       ┃       ┃       ┃       ┃       ┃
 //          ┃        ┃        ┃  copy  ┃  down  ┃ bright ┃              ┃       ┃       ┃       ┃       ┃       ┃
@@ -705,7 +713,7 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
             bindings = <
 //        ╷        ╷       ╷          ╷            ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷   ╷
 
-           &hypr N4 ___     &scrn_file &kp C_VOL_UP ___              ___ ___ ___ ___ ___
+           &hypr N4 ___     &scrn_file &kp C_VOL_UP &kp LC(UP)       ___ ___ ___ ___ ___
            ___      ___     &scrn_clip &kp C_VOL_DN &kp C_BRI_UP     ___ ___ ___ ___ ___
 &scrn_lock ___      &hypr M ___        &kp K_MUTE   &kp C_BRI_DN     ___ ___ ___ ___ ___ ___
            &kp C_PREV       &kp C_PLAY_PAUSE        &kp C_NEXT       ___ &trans  ___
@@ -743,10 +751,9 @@ ___ ___ ___ ___    ___    ___     ___      &tmux N1 &tmux N2 &tmux N3 ___ &tmux 
 //                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
             display-name = "flash mode"            ;
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
-//          This layer is just to get the oled to display
-//          the "layer name" immediately before it enters
-//          boot loader mode and stops responding to any
-//          other keypresses
+//          This layer is just to get the oled to display the "layer name" immediately before it enters
+//          boot loader mode and stops responding to any other keypresses.
+//          Although "bindings" is required, none of these actually do anything.
             bindings = < &bootloader >;
         };
 
