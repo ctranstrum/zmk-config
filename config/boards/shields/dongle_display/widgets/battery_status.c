@@ -47,6 +47,11 @@ static void draw_battery(lv_obj_t *canvas, uint8_t level) {
     lv_canvas_set_px(canvas, 11, 6, lv_color_white());
     lv_canvas_set_px(canvas, 11, 7, lv_color_white());
 
+    if (level <= 90) {
+      lv_canvas_set_px(canvas, 10, 3, lv_color_white());
+      lv_canvas_set_px(canvas, 10, 4, lv_color_white());
+    }
+
     if (level > 90) {
         // full
     } else if (level > 80) {
@@ -110,13 +115,13 @@ ZMK_SUBSCRIPTION(widget_battery_status, zmk_peripheral_battery_state_changed);
 int zmk_widget_peripheral_battery_status_init(struct zmk_widget_peripheral_battery_status *widget, lv_obj_t *parent) {
     widget->obj = lv_obj_create(parent);
 
-    lv_obj_set_size(widget->obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+    lv_obj_set_size(widget->obj, 35, LV_SIZE_CONTENT);
 
     for (int i = 0; i < ZMK_SPLIT_BLE_PERIPHERAL_COUNT; i++) {
         battery_widget_objects[i].battery_image_canvas = lv_canvas_create(widget->obj);
         battery_widget_objects[i].battery_label = lv_label_create(widget->obj);
 
-        lv_canvas_set_buffer(battery_widget_objects[i].battery_image_canvas, battery_widget_objects[i].battery_image_buffer, 11, 8, LV_IMG_CF_TRUE_COLOR);
+        lv_canvas_set_buffer(battery_widget_objects[i].battery_image_canvas, battery_widget_objects[i].battery_image_buffer, 12, 8, LV_IMG_CF_TRUE_COLOR);
 
         lv_obj_align(battery_widget_objects[i].battery_image_canvas, LV_ALIGN_TOP_RIGHT, 0, i * 10);
         lv_obj_align(battery_widget_objects[i].battery_label, LV_ALIGN_TOP_RIGHT, -13, i * 10);
