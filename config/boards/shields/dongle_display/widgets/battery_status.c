@@ -29,7 +29,7 @@ struct battery_status_state {
 
 struct battery_widget_object {
     lv_obj_t *battery_image_canvas;
-    uint8_t battery_image_buffer[5 * 8];
+    uint8_t battery_image_buffer[13 * 8];
     lv_obj_t *battery_label;
 };
 
@@ -42,21 +42,29 @@ static void draw_battery(lv_obj_t *canvas, uint8_t level) {
     lv_draw_rect_dsc_init(&rect_fill_dsc);
     rect_fill_dsc.bg_color = lv_color_white();
 
-    lv_canvas_set_px(canvas, 0, 0, lv_color_white());
-    lv_canvas_set_px(canvas, 4, 0, lv_color_white());
+    lv_canvas_set_px(canvas, 12, 0, lv_color_white());
+    lv_canvas_set_px(canvas, 12, 7, lv_color_white());
 
     if (level > 90) {
         // full
+    } else if (level > 80) {
+        lv_canvas_draw_rect(canvas, 9, 1, 1, 6, &rect_fill_dsc);
     } else if (level > 70) {
-        lv_canvas_draw_rect(canvas, 1, 2, 3, 1, &rect_fill_dsc);
+        lv_canvas_draw_rect(canvas, 8, 1, 2, 6, &rect_fill_dsc);
+    } else if (level > 60) {
+        lv_canvas_draw_rect(canvas, 7, 1, 3, 6, &rect_fill_dsc);
     } else if (level > 50) {
-        lv_canvas_draw_rect(canvas, 1, 2, 3, 2, &rect_fill_dsc);
+        lv_canvas_draw_rect(canvas, 6, 1, 4, 6, &rect_fill_dsc);
+    } else if (level > 40) {
+        lv_canvas_draw_rect(canvas, 5, 1, 5, 6, &rect_fill_dsc);
     } else if (level > 30) {
-        lv_canvas_draw_rect(canvas, 1, 2, 3, 3, &rect_fill_dsc);
+        lv_canvas_draw_rect(canvas, 4, 1, 6, 6, &rect_fill_dsc);
+    } else if (level > 20) {
+        lv_canvas_draw_rect(canvas, 3, 1, 7, 6, &rect_fill_dsc);
     } else if (level > 10) {
-        lv_canvas_draw_rect(canvas, 1, 2, 3, 4, &rect_fill_dsc);
+        lv_canvas_draw_rect(canvas, 2, 1, 8, 6, &rect_fill_dsc);
     } else if (level > 0) {
-        lv_canvas_draw_rect(canvas, 1, 2, 3, 5, &rect_fill_dsc);
+        lv_canvas_draw_rect(canvas, 1, 1, 9, 6, &rect_fill_dsc);
     } else {
         lv_canvas_fill_bg(canvas, lv_color_white(), LV_OPA_COVER);
     }
@@ -71,7 +79,7 @@ static void set_battery_symbol(lv_obj_t *widged, struct battery_status_state sta
 
         char text[5] = {};
 
-        if (level > 0 && level < 25) {
+        if (level > 0) { // && level < 25) {
             snprintf(text, sizeof(text), "%3u%%", level);
         }
 
@@ -106,7 +114,7 @@ int zmk_widget_peripheral_battery_status_init(struct zmk_widget_peripheral_batte
         battery_widget_objects[i].battery_image_canvas = lv_canvas_create(widget->obj);
         battery_widget_objects[i].battery_label = lv_label_create(widget->obj);
 
-        lv_canvas_set_buffer(battery_widget_objects[i].battery_image_canvas, battery_widget_objects[i].battery_image_buffer, 5, 8, LV_IMG_CF_TRUE_COLOR);
+        lv_canvas_set_buffer(battery_widget_objects[i].battery_image_canvas, battery_widget_objects[i].battery_image_buffer, 13, 8, LV_IMG_CF_TRUE_COLOR);
 
         lv_obj_align(battery_widget_objects[i].battery_image_canvas, LV_ALIGN_TOP_RIGHT, 0, i * 10);
         lv_obj_align(battery_widget_objects[i].battery_label, LV_ALIGN_TOP_RIGHT, -7, i * 10);
