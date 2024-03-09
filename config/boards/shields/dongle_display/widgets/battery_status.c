@@ -48,9 +48,9 @@ static void draw_battery(lv_obj_t *canvas, uint8_t level) {
     lv_canvas_draw_rect(canvas, 12, 3, 1, 2, &rect_fill_dsc);
 
     // Outline of the inner fuel
-    lv_canvas_draw_rect(canvas, 1, 1, 10, 1, &rect_fill_dsc);
+    lv_canvas_draw_rect(canvas, 1, 1, 11, 1, &rect_fill_dsc);
     lv_canvas_draw_rect(canvas, 1, 2, 1, 4, &rect_fill_dsc);
-    lv_canvas_draw_rect(canvas, 1, 6, 10, 1, &rect_fill_dsc);
+    lv_canvas_draw_rect(canvas, 1, 6, 11, 1, &rect_fill_dsc);
     lv_canvas_draw_rect(canvas, 11, 2, 1, 4, &rect_fill_dsc);
 
 
@@ -126,7 +126,7 @@ int zmk_widget_peripheral_battery_status_init(struct zmk_widget_peripheral_batte
         lv_canvas_set_buffer(battery_widget_objects[i].battery_image_canvas, battery_widget_objects[i].battery_image_buffer, 14, 8, LV_IMG_CF_TRUE_COLOR);
 
         lv_obj_align(battery_widget_objects[i].battery_image_canvas, LV_ALIGN_TOP_RIGHT, 0, i * 10 + 1);
-        lv_obj_align(battery_widget_objects[i].battery_label, LV_ALIGN_TOP_RIGHT, -16, i * 10 + 1);
+        lv_obj_align(battery_widget_objects[i].battery_label, LV_ALIGN_TOP_RIGHT, -17, i * 10 + 1);
     }
 
     sys_slist_append(&widgets, &widget->node);
