@@ -4,4 +4,6 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "totem.dtsi"
+
 // vim: expandtab softtabstop=4 shiftwidth=4 filetype=devicetree
