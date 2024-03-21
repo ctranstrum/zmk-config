@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "kyria.dtsi"
+#include "trikyria.dtsi"
 
 / {
     chosen {

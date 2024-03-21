@@ -2,7 +2,7 @@
 //
 // Nice!nano boards on each half, with no rgb strip or oled
 //
-// Seeed Studio Round Display for XIAO with a Xioa BLE as the central dongle
+// Seeed Studio Round Display for XIAO with a Xiao BLE as the central dongle
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -341,10 +341,10 @@
 // ┃  ###  ┃       ┃       ┃       ┃       ┃       ┃                                 ┃ tmux- ┃ tab 4 ┃ tab 5 ┃ tab 6 ┃       ┃       ┃
      X___X    ___     ___     ___     ___     ___                                   &kp TMUX &vtab N4 &vtab N5 &vtab N6 ___     ___
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┓ ┏━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃       ┃       ┃       ┃       ┃       ┃       ┃       ┃       ┃ ┃ t bye ┃       ┃ t tab ┃ tab 1 ┃ tab 2 ┃ tab 3 ┃       ┃ exit  ┃
-      ___     ___     ___     ___     ___     ___     ___     ___     &tmux D   ___  &tmux N &vtab N1 &vtab N2 &vtab N3 ___   &vldr Q
+// ┃       ┃       ┃       ┃       ┃       ┃       ┃       ┃       ┃ ┃ t bye ┃ tname ┃ t tab ┃ tab 1 ┃ tab 2 ┃ tab 3 ┃       ┃ exit  ┃
+      ___     ___     ___     ___     ___     ___     ___     ___    &tmux D &tmux A &tmux N &vtab N1 &vtab N2 &vtab N3 ___   &vldr Q
 // ┗━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┛ ┗━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┛
-//                     ┃       ┃       ┃       ┃       ┃       ┃         ┃ save  ┃ tmux  ┃ tname ┃       ┃       ┃
+//                     ┃       ┃       ┃       ┃       ┃       ┃         ┃ save  ┃ tmux  ┃ tab10 ┃       ┃       ┃
                           ___     ___     ___     ___     ___             &vldr W &tmux C &vtab N0  ___     ___
 //                     ┗━━━━━━━┻━━━━━━━┻━━━━━━━┫       ┣━━━━━━━┛         ┗━━━━━━━┫  new  ┣━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                             ┗━━━━━━━┛                         ┗━━━━━━━┛

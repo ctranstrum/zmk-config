@@ -1,5 +1,5 @@
 file_format: "1"
-id: kyria
+id: trikyria
 name: Kyria r3.1 dongle
 type: shield
 url: https://splitkb.com/products/kyria-pcb-kit
@@ -12,6 +12,6 @@ features:
   - keys
   - display
 siblings:
-  - kyria_left
-  - kyria_right
-  - kyria_dongle
+  - trikyria_left
+  - trikyria_right
+  - trikyria_dongle

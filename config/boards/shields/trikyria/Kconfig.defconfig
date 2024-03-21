@@ -1,7 +1,7 @@
-if SHIELD_KYRIA_DONGLE
+if SHIELD_TRIKYRIA_DONGLE
 
 config ZMK_KEYBOARD_NAME
-    default "Kyria"
+    default "Dongled Kyria"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -11,7 +11,7 @@ config ZMK_USB
 
 endif
 
-if SHIELD_KYRIA_LEFT || SHIELD_KYRIA_RIGHT || SHIELD_KYRIA_DONGLE
+if SHIELD_TRIKYRIA_LEFT || SHIELD_TRIKYRIA_RIGHT || SHIELD_TRIKYRIA_DONGLE
 
 config ZMK_SPLIT
     default y
