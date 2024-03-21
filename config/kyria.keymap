@@ -106,7 +106,7 @@
         compatible = "zmk,conditional-layers";
         func_layer {
             if-layers = <L_NAV L_NUM>;
-            then-layer = <L_FUNC>;
+            then-layer = <L_FNC>;
         };
     };
 
