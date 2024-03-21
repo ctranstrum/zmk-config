@@ -181,7 +181,7 @@
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                 ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 // ┃  TAB  ┃   Q   ┃   W   ┃   F   ┃   P   ┃   B   ┃                                 ┃   J   ┃   L   ┃   U   ┃   Y   ┃  ' "  ┃ BKSPC ┃
-    &kp TAB  &kp Q   &kp W   &kp F   &kp P   &kp B                                     &kp J   &kp L   &kp U   &kp Y  &kp SQT &kp BSBC
+    &kp TAB  &kp Q   &kp W   &kp F   &kp P   &kp B                                     &kp J   &kp L   &kp U   &kp Y  &kp SQT &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                                 ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ESC vim┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃                                 ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃ ENTER ┃
 &lt L_VIM ESC &kp A  &kp R   &kp S   &kp T   &kp G                                     &kp M   &kp N   &kp E   &kp I   &kp O  &kp RET
