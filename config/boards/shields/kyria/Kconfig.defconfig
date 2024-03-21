@@ -1,0 +1,22 @@
+if SHIELD_KYRIA_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "Kyria"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+    default y
+
+endif
+
+if SHIELD_KYRIA_LEFT || SHIELD_KYRIA_RIGHT || SHIELD_KYRIA_DONGLE
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_BLE
+    default y
+
+endif

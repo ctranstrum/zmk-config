@@ -1,0 +1,7 @@
+file_format: "1"
+id: seeed_round_display
+name: Seeed Round Display for XIAO
+type: shield
+url: https://github.com/ctranstrum/zmk-config
+requires:
+  - spi

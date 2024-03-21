@@ -1,0 +1,42 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+ #include "kyria.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zephyr,display = &round_display;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+&xiao_spi {
+    status = "okay";
+    cs-gpios = <&xiao_d 1>;
+
+    round_display: gc9a01@0 {
+        compatible = "waveshare,gc9a01a";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        width = <240>;
+        height = <240>;
+        backlight-gpios = <&xiao_d 6 GPIO_ACTIVE_HIGH>;
+        cmd-data-gpios = <&xiao_d 3 GPIO_ACTIVE_HIGH>;
+        // reset-gpios = <>;
+        rotation = <0>;
+        // display-inversion;
+        status = "okay";
+    };
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=devicetree

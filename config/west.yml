@@ -2,16 +2,16 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: rgb
-      url-base: https://github.com/muriworks
-    - name: chadzmk
-      url-base: https://github.com/ctranstrum
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
-      # remote: rgb
-      # revision: feature/animations
       import: app/west.yml
+    - name: gc9a01a_zephyr_driver
+      description: Seeed Round Display out-of-tree driver
+      remote: petejohanson
+      revision: main
   self:
     path: config
