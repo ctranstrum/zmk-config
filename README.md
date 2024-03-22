@@ -22,7 +22,7 @@ Fell in love with this design, decided to try it out, no extras to deplete the b
 
 And I eventually added:
 
-- OLED dongle
+- OLED dongle (see [the diff](https://github.com/ctranstrum/zmk-config/compare/13bcedf..36b5014) if you want to make one, too)
 
 and with that, the batteries, which used to need recharged after about six days, now last about two months, even though they are tiny.
 

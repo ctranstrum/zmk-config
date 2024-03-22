@@ -22,7 +22,7 @@
 
 &xiao_spi {
     status = "okay";
-    cs-gpios = <&xiao_d 1 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&xiao_d 1 GPIO_ACTIVE_HIGH>;
 
     round_display: gc9a01@0 {
         compatible = "waveshare,gc9a01a";
