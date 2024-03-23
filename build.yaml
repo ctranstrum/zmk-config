@@ -24,6 +24,9 @@ include:
   - board: seeeduino_xiao_ble
     shield: trikyria_dongle seeed_round_display
     artifact-name: kyria-dongle
+  - board: seeeduino_xiao_ble
+    shield: trikyria_dongle_oled dongle_display
+    artifact-name: kyria-dongle-oled
   - board: nice_nano_v2
     shield: trikyria_left
     artifact-name: kyria-left

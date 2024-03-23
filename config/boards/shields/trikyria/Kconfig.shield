@@ -6,3 +6,6 @@ config SHIELD_TRIKYRIA_RIGHT
 
 config SHIELD_TRIKYRIA_DONGLE
     def_bool $(shields_list_contains,trikyria_dongle)
+
+config SHIELD_TRIKYRIA_DONGLE_OLED
+    def_bool $(shields_list_contains,trikyria_dongle_oled)
