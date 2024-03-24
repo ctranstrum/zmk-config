@@ -10,9 +10,9 @@ include:
   #   artifact-name: sweep-right
 
   # Totem with OLED dongle
-  # - board: seeeduino_xiao_ble
-  #   shield: totem_dongle dongle_display
-  #   artifact-name: totem-dongle
+  - board: seeeduino_xiao_ble
+    shield: totem_dongle dongle_display
+    artifact-name: totem-dongle
   # - board: seeeduino_xiao_ble
   #   shield: totem_left
   #   artifact-name: totem-left
@@ -35,9 +35,9 @@ include:
     artifact-name: kyria-right
 
   # Settings Reset
-  # - board: nice_nano_v2
-  #   shield: settings_reset
-  #   artifact-name: nano-reset
-  # - board: seeeduino_xiao_ble
-  #   shield: settings_reset
-  #   artifact-name: xiao-reset
+  - board: nice_nano_v2
+    shield: settings_reset
+    artifact-name: nano-reset
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+    artifact-name: xiao-reset
