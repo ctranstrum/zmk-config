@@ -36,7 +36,6 @@ Pretty sweet board, all in all. However:
 My biggest split yet.
 
 - 50 keys
+- OLED dongle
 
-Work in progress, and hopefully I can also get it to work with
-
-- Seeed Round dongle
+Work in progress...
