@@ -42,41 +42,43 @@ static void draw_battery(lv_obj_t *canvas, uint8_t level) {
     lv_draw_rect_dsc_init(&rect_fill_dsc);
     rect_fill_dsc.bg_color = lv_color_white();
 
-    // Shape of the positive terminal
-    lv_canvas_draw_rect(canvas, 13, 0, 1, 2, &rect_fill_dsc);
-    lv_canvas_draw_rect(canvas, 13, 6, 1, 2, &rect_fill_dsc);
-    lv_canvas_draw_rect(canvas, 12, 3, 1, 2, &rect_fill_dsc);
+    lv_canvas_draw_arc(canvas, 0,0, 200, 15, 65, &rect_fill_dsc);
 
-    // Outline of the inner fuel
-    lv_canvas_draw_rect(canvas, 1, 1, 11, 1, &rect_fill_dsc);
-    lv_canvas_draw_rect(canvas, 1, 2, 1, 4, &rect_fill_dsc);
-    lv_canvas_draw_rect(canvas, 1, 6, 11, 1, &rect_fill_dsc);
-    lv_canvas_draw_rect(canvas, 11, 2, 1, 4, &rect_fill_dsc);
-
-
-    if (level > 90) {
-        // full
-    } else if (level > 80) {
-        lv_canvas_draw_rect(canvas, 10, 2, 1, 4, &rect_fill_dsc);
-    } else if (level > 70) {
-        lv_canvas_draw_rect(canvas, 9, 2, 2, 4, &rect_fill_dsc);
-    } else if (level > 60) {
-        lv_canvas_draw_rect(canvas, 8, 2, 3, 4, &rect_fill_dsc);
-    } else if (level > 50) {
-        lv_canvas_draw_rect(canvas, 7, 2, 4, 4, &rect_fill_dsc);
-    } else if (level > 40) {
-        lv_canvas_draw_rect(canvas, 6, 2, 5, 4, &rect_fill_dsc);
-    } else if (level > 30) {
-        lv_canvas_draw_rect(canvas, 5, 2, 6, 4, &rect_fill_dsc);
-    } else if (level > 20) {
-        lv_canvas_draw_rect(canvas, 4, 2, 7, 4, &rect_fill_dsc);
-    } else if (level > 10) {
-        lv_canvas_draw_rect(canvas, 3, 2, 8, 4, &rect_fill_dsc);
-    } else if (level > 0) {
-        lv_canvas_draw_rect(canvas, 2, 2, 9, 4, &rect_fill_dsc);
-    } else {
-        lv_canvas_fill_bg(canvas, lv_color_white(), LV_OPA_COVER);
-    }
+    /* // Shape of the positive terminal */
+    /* lv_canvas_draw_rect(canvas, 13, 0, 1, 2, &rect_fill_dsc); */
+    /* lv_canvas_draw_rect(canvas, 13, 6, 1, 2, &rect_fill_dsc); */
+    /* lv_canvas_draw_rect(canvas, 12, 3, 1, 2, &rect_fill_dsc); */
+    /**/
+    /* // Outline of the inner fuel */
+    /* lv_canvas_draw_rect(canvas, 1, 1, 11, 1, &rect_fill_dsc); */
+    /* lv_canvas_draw_rect(canvas, 1, 2, 1, 4, &rect_fill_dsc); */
+    /* lv_canvas_draw_rect(canvas, 1, 6, 11, 1, &rect_fill_dsc); */
+    /* lv_canvas_draw_rect(canvas, 11, 2, 1, 4, &rect_fill_dsc); */
+    /**/
+    /**/
+    /* if (level > 90) { */
+    /*     // full */
+    /* } else if (level > 80) { */
+    /*     lv_canvas_draw_rect(canvas, 10, 2, 1, 4, &rect_fill_dsc); */
+    /* } else if (level > 70) { */
+    /*     lv_canvas_draw_rect(canvas, 9, 2, 2, 4, &rect_fill_dsc); */
+    /* } else if (level > 60) { */
+    /*     lv_canvas_draw_rect(canvas, 8, 2, 3, 4, &rect_fill_dsc); */
+    /* } else if (level > 50) { */
+    /*     lv_canvas_draw_rect(canvas, 7, 2, 4, 4, &rect_fill_dsc); */
+    /* } else if (level > 40) { */
+    /*     lv_canvas_draw_rect(canvas, 6, 2, 5, 4, &rect_fill_dsc); */
+    /* } else if (level > 30) { */
+    /*     lv_canvas_draw_rect(canvas, 5, 2, 6, 4, &rect_fill_dsc); */
+    /* } else if (level > 20) { */
+    /*     lv_canvas_draw_rect(canvas, 4, 2, 7, 4, &rect_fill_dsc); */
+    /* } else if (level > 10) { */
+    /*     lv_canvas_draw_rect(canvas, 3, 2, 8, 4, &rect_fill_dsc); */
+    /* } else if (level > 0) { */
+    /*     lv_canvas_draw_rect(canvas, 2, 2, 9, 4, &rect_fill_dsc); */
+    /* } else { */
+    /*     lv_canvas_fill_bg(canvas, lv_color_white(), LV_OPA_COVER); */
+    /* } */
 }
 
 static void set_battery_symbol(lv_obj_t *widged, struct battery_status_state state) {
@@ -88,7 +90,7 @@ static void set_battery_symbol(lv_obj_t *widged, struct battery_status_state sta
 
         char text[5] = {};
 
-        if (level > 0 && level < 25) {
+        if (level > 0 && level < 99) {
             snprintf(text, sizeof(text), "%3u%%", level);
         }
 
@@ -117,7 +119,7 @@ ZMK_SUBSCRIPTION(widget_battery_status, zmk_peripheral_battery_state_changed);
 int zmk_widget_peripheral_battery_status_init(struct zmk_widget_peripheral_battery_status *widget, lv_obj_t *parent) {
     widget->obj = lv_obj_create(parent);
 
-    lv_obj_set_size(widget->obj, 55, LV_SIZE_CONTENT);
+    lv_obj_set_size(widget->obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
 
     for (int i = 0; i < ZMK_SPLIT_BLE_PERIPHERAL_COUNT; i++) {
         battery_widget_objects[i].battery_image_canvas = lv_canvas_create(widget->obj);
@@ -125,8 +127,8 @@ int zmk_widget_peripheral_battery_status_init(struct zmk_widget_peripheral_batte
 
         lv_canvas_set_buffer(battery_widget_objects[i].battery_image_canvas, battery_widget_objects[i].battery_image_buffer, 14, 8, LV_IMG_CF_TRUE_COLOR);
 
-        lv_obj_align(battery_widget_objects[i].battery_image_canvas, LV_ALIGN_TOP_RIGHT, 0, i * 10 + 1);
-        lv_obj_align(battery_widget_objects[i].battery_label, LV_ALIGN_TOP_RIGHT, -17, i * 10 + 1);
+        lv_obj_align(battery_widget_objects[i].battery_image_canvas, LV_ALIGN_CENTER, 0, i * 10 + 1);
+        lv_obj_align(battery_widget_objects[i].battery_label, LV_ALIGN_CENTER, -17, i * 10 + 1);
     }
 
     sys_slist_append(&widgets, &widget->node);
