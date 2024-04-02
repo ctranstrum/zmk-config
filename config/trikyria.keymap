@@ -13,12 +13,14 @@
 #define L_DVRK 1
 #define L_QRTY 2
 #define L_NAV  3
-#define L_NUM  4
-#define L_SYM  5
-#define L_FNC  6
-#define L_VIM  7
-#define L_KBD  8
-#define L_BOOT 9
+#define LMO_N  4
+#define LTOGN  5
+#define L_NUM  6
+#define L_SYM  7
+#define L_FNC  8
+#define L_VIM  9
+#define L_KBD  10
+#define L_BOOT 11
 
 // Make blank keys more inconspicuous
 #define X___X &trans
@@ -46,7 +48,7 @@
 
 // Change sticky key defaults
 &sk {
-    release-after-ms = <2000>;
+    release-after-ms = <1500>;
     quick-release;
 };
 
@@ -104,8 +106,16 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
+        momentary_numpad {
+            if-layers = < LMO_N >;
+            then-layer = < L_NUM >;
+        };
+        toggle_numpad {
+            if-layers = < LTOGN >;
+            then-layer = < L_NUM >;
+        };
         func_layer {
-            if-layers = <L_NAV L_NUM>;
+            if-layers = <L_NAV LMO_N>;
             then-layer = <L_FNC>;
         };
     };
@@ -190,7 +200,7 @@
 &mt LSHFT LBKT &kp Z &kp X   &kp C   &kp D   &kp V GS(N4) &kp K_MUTE HYPR(N4) &kp LC(UP) &kp K &kp H   &mcs    &mdc    &msb &mt RSHFT RBKT
 // ┗━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┛ ┗━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┛
 //                     ┃ < ctrl┃ { opt ┃ ( num ┃ SHIFT ┃ * cmd ┃         ┃ - cmd ┃ SPACE ┃ ) kbd ┃ } opt ┃ > ctrl┃
-&mt LCTRL LT &mt LALT LBRC &lt L_NUM LPAR &lsscw L_NAV 0 &mt LCMD STAR &mt RCMD MINUS &lt L_SYM SPC &lt L_KBD RPAR &mt RALT RBRC &mt RCTRL GT
+&mt LCTRL LT &mt LALT LBRC &lt LMO_N LPAR &lsscw L_NAV 0 &mt LCMD STAR &mt RCMD MINUS &lt L_SYM SPC &lt L_KBD RPAR &mt RALT RBRC &mt RCTRL GT
 //                     ┗━━━━━━━┻━━━━━━━┻━━━━━━━┫  nav  ┣━━━━━━━┛         ┗━━━━━━━┫  sym  ┣━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                             ┗━━━━━━━┛                         ┗━━━━━━━┛
             >;
@@ -249,17 +259,29 @@
 // ┃       ┃       ┃       ┃       ┃       ┃       ┃                                 ┃ PG UP ┃       ┃       ┃       ┃       ┃  DEL  ┃
       ___     ___     ___     ___     ___     ___                                    &kp PG_UP  ___     ___     ___     ___   &kp DEL
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                                 ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ TOGGL ┃ shift ┃  ctrl ┃  opt  ┃  cmd  ┃  alt  ┃                                 ┃       ┃ LEFT  ┃  UP   ┃ RIGHT ┃       ┃       ┃
-&tog L_NAV &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT                               ___  &kp LEFT &kp UP &kp RIGHT  ___     ___
+// ┃       ┃ shift ┃  ctrl ┃  opt  ┃  cmd  ┃  alt  ┃                                 ┃       ┃ LEFT  ┃  UP   ┃ RIGHT ┃       ┃       ┃
+    ___ &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT                                  ___  &kp LEFT &kp UP &kp RIGHT  ___     ___
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┓ ┏━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ shift ┃       ┃       ┃       ┃       ┃       ┃       ┃       ┃ ┃       ┃       ┃ PG DN ┃       ┃ DOWN  ┃       ┃       ┃       ┃
    &kp LSHFT  ___     ___     ___     ___     ___     ___     ___       ___     ___  &kp PG_DN  ___  &kp DOWN   ___     ___     ___
 // ┗━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┛ ┗━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┛
 //                     ┃ ctrl  ┃  opt  ┃  fnc  ┃  ###  ┃  cmd  ┃         ┃       ┃ SPACE ┃       ┃ HOME  ┃  END  ┃
-                    &kp LCTRL &kp LALT &mo L_NUM X___X &kp LCMD             ___   &kp SPC   ___  &kp HOME &kp END
+                    &kp LCTRL &kp LALT &mo LMO_N X___X &kp LCMD             ___   &kp SPC   ___  &kp HOME &kp END
 //                     ┗━━━━━━━┻━━━━━━━┻━━━━━━━┫  ###  ┣━━━━━━━┛         ┗━━━━━━━┫       ┣━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                             ┗━━━━━━━┛                         ┗━━━━━━━┛
             >;
+        };
+
+        momentary_numpad {
+//          This layer only exists as a workaround to trigger the num layer through two mechanisms, &mo and &tog
+//          The real magic for it happens in conditional layers
+            bindings = < ___ >;
+        };
+
+        toggle_numpad {
+//          This layer only exists as a workaround to trigger the num layer through two mechanisms, &mo and &tog
+//          The real magic for it happens in conditional layers
+            bindings = < ___ >;
         };
 
         numpad {
@@ -272,7 +294,7 @@
       ___     ___     ___     ___     ___     ___                                    &kp SEMI &kp N7 &kp N8  &kp N9 &kp MINUS &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                                 ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ TOGGL ┃       ┃  ctrl ┃  opt  ┃  cmd  ┃  alt  ┃                                 ┃   :   ┃   4   ┃   5   ┃   6   ┃   +   ┃   *   ┃
-  &tog L_NUM ___ &kp LCTRL &kp LALT &kp LCMD &kp RALT                                &kp COLON &kp N4 &kp N5  &kp N6 &kp PLUS &kp STAR
+  &tog LTOGN ___ &kp LCTRL &kp LALT &kp LCMD &kp RALT                                &kp COLON &kp N4 &kp N5  &kp N6 &kp PLUS &kp STAR
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┓ ┏━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ shift ┃       ┃       ┃       ┃       ┃       ┃       ┃       ┃ ┃   (   ┃   )   ┃   ,   ┃   1   ┃   2   ┃   3   ┃   =   ┃   /   ┃
    &kp LSHFT  ___     ___     ___     ___     ___     ___     ___   &kp LPAR &kp RPAR &kp COMMA &kp N1 &kp N2 &kp N3 &kp EQUAL &kp SLASH
