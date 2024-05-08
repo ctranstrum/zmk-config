@@ -54,23 +54,23 @@ static void draw_battery(lv_obj_t *canvas, uint8_t level) {
     lv_canvas_draw_rect(canvas, 11, 2, 1, 4, &rect_fill_dsc);
 
 
-    if (level > 90) {
+    if (level > 85) {
         // full
-    } else if (level > 80) {
+    } else if (level > 75) {
         lv_canvas_draw_rect(canvas, 10, 2, 1, 4, &rect_fill_dsc);
-    } else if (level > 70) {
+    } else if (level > 65) {
         lv_canvas_draw_rect(canvas, 9, 2, 2, 4, &rect_fill_dsc);
-    } else if (level > 60) {
+    } else if (level > 55) {
         lv_canvas_draw_rect(canvas, 8, 2, 3, 4, &rect_fill_dsc);
-    } else if (level > 50) {
+    } else if (level > 45) {
         lv_canvas_draw_rect(canvas, 7, 2, 4, 4, &rect_fill_dsc);
-    } else if (level > 40) {
+    } else if (level > 35) {
         lv_canvas_draw_rect(canvas, 6, 2, 5, 4, &rect_fill_dsc);
-    } else if (level > 30) {
+    } else if (level > 25) {
         lv_canvas_draw_rect(canvas, 5, 2, 6, 4, &rect_fill_dsc);
-    } else if (level > 20) {
+    } else if (level > 15) {
         lv_canvas_draw_rect(canvas, 4, 2, 7, 4, &rect_fill_dsc);
-    } else if (level > 10) {
+    } else if (level > 5) {
         lv_canvas_draw_rect(canvas, 3, 2, 8, 4, &rect_fill_dsc);
     } else if (level > 0) {
         lv_canvas_draw_rect(canvas, 2, 2, 9, 4, &rect_fill_dsc);
@@ -88,7 +88,7 @@ static void set_battery_symbol(lv_obj_t *widged, struct battery_status_state sta
 
         char text[5] = {};
 
-        if (level > 0 && level < 25) {
+        if (level > 0 && level < 10) {
             snprintf(text, sizeof(text), "%3u%%", level);
         }
 
