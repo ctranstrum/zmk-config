@@ -193,14 +193,14 @@
 // ┃  TAB  ┃   Q   ┃   W   ┃   F   ┃   P   ┃   B   ┃                                 ┃   J   ┃   L   ┃   U   ┃   Y   ┃  ' "  ┃ BKSPC ┃
     &kp TAB  &kp Q   &kp W   &kp F   &kp P   &kp B                                     &kp J   &kp L   &kp U   &kp Y  &kp SQT &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                                 ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ESC vim┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃                                 ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃ ENTER ┃
-&lt L_VIM ESC &kp A  &kp R   &kp S   &kp T   &kp G                                     &kp M   &kp N   &kp E   &kp I   &kp O  &kp RET
+// ┃ESC vim┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃                                 ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃RET kbd┃
+&lt L_VIM ESC &kp A  &kp R   &kp S   &kp T   &kp G                                     &kp M   &kp N   &kp E   &kp I   &kp O &lt L_KBD RET
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┓ ┏━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃[ shift┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃SCRNSHT┃ MUTE  ┃ ┃LAUNCHP┃MISSION┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃] shift┃
 &mt LSHFT LBKT &kp Z &kp X   &kp C   &kp D   &kp V GS(N4) &kp K_MUTE HYPR(N4) &kp LC(UP) &kp K &kp H   &mcs    &mdc    &msb &mt RSHFT RBKT
 // ┗━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┛ ┗━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┛
-//                     ┃ < ctrl┃ { opt ┃ ( num ┃ SHIFT ┃ * cmd ┃         ┃ - cmd ┃ SPACE ┃ ) kbd ┃ } opt ┃ > ctrl┃
-&mt LCTRL LT &mt LALT LBRC &lt LMO_N LPAR &lsscw L_NAV 0 &mt LCMD STAR &mt RCMD MINUS &lt L_SYM SPC &lt L_KBD RPAR &mt RALT RBRC &mt RCTRL GT
+//                     ┃ < ctrl┃ { opt ┃ ( num ┃ SHIFT ┃ * cmd ┃         ┃ - cmd ┃ SPACE ┃ ) cmd ┃ } opt ┃ > ctrl┃
+&mt LCTRL LT &mt LALT LBRC &lt LMO_N LPAR &lsscw L_NAV 0 &mt LCMD STAR &mt RCMD MINUS &lt L_SYM SPC &mt RCMD RPAR &mt RALT RBRC &mt RCTRL GT
 //                     ┗━━━━━━━┻━━━━━━━┻━━━━━━━┫  nav  ┣━━━━━━━┛         ┗━━━━━━━┫  sym  ┣━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                             ┗━━━━━━━┛                         ┗━━━━━━━┛
             >;
@@ -215,13 +215,13 @@
 // ┃  TAB  ┃  ' "  ┃  , ;  ┃  . :  ┃   P   ┃   Y   ┃                                 ┃   F   ┃   G   ┃   C   ┃   R   ┃   L   ┃ BKSPC ┃
      X___X  &kp SQT  &mcs    &mdc    X___X   &kp Y                                     &kp F   &kp G   &kp C   &kp R   &kp L   X___X
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                                 ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ESC vim┃   A   ┃   O   ┃   E   ┃   U   ┃   I   ┃                                 ┃   D   ┃   H   ┃   T   ┃   N   ┃   S   ┃ ENTER ┃
+// ┃ESC vim┃   A   ┃   O   ┃   E   ┃   U   ┃   I   ┃                                 ┃   D   ┃   H   ┃   T   ┃   N   ┃   S   ┃RET kbd┃
      X___X   X___X   &kp O   &kp E   &kp U   &kp I                                     &kp D   &kp H   &kp T   &kp N   &kp S   X___X
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┓ ┏━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃[ shift┃  / \  ┃   Q   ┃   J   ┃   K   ┃   X   ┃SCRNSHT┃ MUTE  ┃ ┃LAUNCHP┃MISSION┃   B   ┃   M   ┃   W   ┃   V   ┃   Z   ┃] shift┃
      X___X   X___X   &kp Q   &kp J   &kp K   &kp X   X___X   X___X     X___X   X___X   &kp B   &kp M   &kp W   &kp V   &kp Z   X___X
 // ┗━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┛ ┗━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┛
-//                     ┃ < ctrl┃ { opt ┃ ( num ┃ SHIFT ┃ * cmd ┃         ┃ - cmd ┃ SPACE ┃ ) kbd ┃ } opt ┃ > ctrl┃
+//                     ┃ < ctrl┃ { opt ┃ ( num ┃ SHIFT ┃ * cmd ┃         ┃ - cmd ┃ SPACE ┃ ) cmd ┃ } opt ┃ > ctrl┃
                          X___X   X___X   X___X   X___X   X___X             X___X   X___X   X___X   X___X   X___X
 //                     ┗━━━━━━━┻━━━━━━━┻━━━━━━━┫  nav  ┣━━━━━━━┛         ┗━━━━━━━┫  sym  ┣━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                             ┗━━━━━━━┛                         ┗━━━━━━━┛
@@ -237,13 +237,13 @@
 // ┃  TAB  ┃   Q   ┃   W   ┃   E   ┃   R   ┃   T   ┃                                 ┃   Y   ┃   U   ┃   I   ┃   O   ┃   P   ┃ BKSPC ┃
      X___X   X___X   X___X   &kp E   &kp R   &kp T                                     &kp Y   &kp U   &kp I   &kp O   &kp P   X___X
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                                 ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ESC vim┃   A   ┃   S   ┃   D   ┃   F   ┃   G   ┃                                 ┃   H   ┃   J   ┃   K   ┃   L   ┃  ' "  ┃ ENTER ┃
+// ┃ESC vim┃   A   ┃   S   ┃   D   ┃   F   ┃   G   ┃                                 ┃   H   ┃   J   ┃   K   ┃   L   ┃  ' "  ┃RET kbd┃
      X___X   X___X   &kp S   &kp D   &kp F   X___X                                     &kp H   &kp J   &kp K   &kp L  &kp SQT  X___X
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┓ ┏━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃[ shift┃   Z   ┃   X   ┃   C   ┃   V   ┃   B   ┃SCRNSHT┃ MUTE  ┃ ┃LAUNCHP┃MISSION┃   N   ┃   M   ┃  , ;  ┃  . :  ┃  / \  ┃] shift┃
      X___X   X___X   X___X   X___X   &kp V   &kp B   X___X   X___X     X___X   X___X   &kp N   &kp M   &mcs    &mdc    &msb    X___X
 // ┗━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┛ ┗━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┛
-//                     ┃ < ctrl┃ { opt ┃ ( num ┃ SHIFT ┃ * cmd ┃         ┃ - cmd ┃ SPACE ┃ ) kbd ┃ } opt ┃ > ctrl┃
+//                     ┃ < ctrl┃ { opt ┃ ( num ┃ SHIFT ┃ * cmd ┃         ┃ - cmd ┃ SPACE ┃ ) cmd ┃ } opt ┃ > ctrl┃
                          X___X   X___X   X___X   X___X   X___X             X___X   X___X   X___X   X___X   X___X
 //                     ┗━━━━━━━┻━━━━━━━┻━━━━━━━┫  nav  ┣━━━━━━━┛         ┗━━━━━━━┫  sym  ┣━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                             ┗━━━━━━━┛                         ┗━━━━━━━┛
@@ -259,14 +259,14 @@
 // ┃       ┃       ┃       ┃       ┃       ┃       ┃                                 ┃ PG UP ┃       ┃       ┃       ┃       ┃  DEL  ┃
       ___     ___     ___     ___     ___     ___                                    &kp PG_UP  ___     ___     ___     ___   &kp DEL
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                                 ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ globe ┃ shift ┃  ctrl ┃  opt  ┃  cmd  ┃  alt  ┃                                 ┃       ┃ LEFT  ┃  UP   ┃ RIGHT ┃       ┃       ┃
-&kp GLOBE &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT                                ___  &kp LEFT &kp UP &kp RIGHT  ___     ___
+// ┃ globe ┃ shift ┃  ctrl ┃  opt  ┃  cmd  ┃  alt  ┃                                 ┃       ┃ LEFT  ┃  UP   ┃ RIGHT ┃       ┃ ENTER ┃
+&kp GLOBE &kp LSHFT &kp LCTRL &kp LALT &kp LCMD &kp RALT                                ___  &kp LEFT &kp UP &kp RIGHT  ___   &kp RET
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┓ ┏━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ shift ┃       ┃       ┃       ┃       ┃       ┃       ┃       ┃ ┃       ┃       ┃ PG DN ┃       ┃ DOWN  ┃       ┃       ┃       ┃
    &kp LSHFT  ___     ___     ___     ___     ___     ___     ___       ___     ___  &kp PG_DN  ___  &kp DOWN   ___     ___     ___
 // ┗━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┛ ┗━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┛
-//                     ┃ ctrl  ┃  opt  ┃  fnc  ┃  ###  ┃  cmd  ┃         ┃       ┃ SPACE ┃       ┃ HOME  ┃  END  ┃
-                    &kp LCTRL &kp LALT &mo LMO_N X___X &kp LCMD             ___   &kp SPC   ___  &kp HOME &kp END
+//                     ┃ ctrl  ┃  opt  ┃  fnc  ┃  ###  ┃  cmd  ┃         ┃  cmd  ┃ SPACE ┃       ┃ HOME  ┃  END  ┃
+                    &kp LCTRL &kp LALT &mo LMO_N X___X &kp LCMD          &kp RCMD &kp SPC   ___  &kp HOME &kp END
 //                     ┗━━━━━━━┻━━━━━━━┻━━━━━━━┫  ###  ┣━━━━━━━┛         ┗━━━━━━━┫       ┣━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                             ┗━━━━━━━┛                         ┗━━━━━━━┛
             >;
@@ -382,8 +382,8 @@
 // ┃       ┃ qwrty ┃       ┃  USB  ┃       ┃ vol + ┃                                 ┃       ┃       ┃ dongl ┃       ┃       ┃       ┃
       ___ &to L_QRTY  ___ &out OUT_USB ___ &kp C_VOL_UP                                 ___     ___   &flash    ___     ___     ___
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                                 ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ brt + ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃                                 ┃ dvork ┃       ┃       ┃       ┃       ┃       ┃
-&kp C_BRI_UP BT_(0)  BT_(1)  BT_(2)  BT_(3)  BT_(4)                                 &to L_DVRK  ___     ___     ___     ___     ___
+// ┃ brt + ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃                                 ┃ dvork ┃       ┃       ┃       ┃       ┃  ###  ┃
+&kp C_BRI_UP BT_(0)  BT_(1)  BT_(2)  BT_(3)  BT_(4)                                 &to L_DVRK  ___     ___     ___     ___    X___X
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┓ ┏━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ brt - ┃       ┃micmute┃ colmk ┃       ┃ vol - ┃CAPSLOK┃scrnlok┃ ┃       ┃       ┃       ┃       ┃       ┃       ┃       ┃       ┃
 &kp C_BRI_DN ___ HYPR(M) &to L_CLMK ___ &kp C_VOL_DN &kp CAPSLOCK GC(Q) ___     ___     ___     ___     ___     ___     ___     ___
