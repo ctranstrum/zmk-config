@@ -64,7 +64,7 @@
 // │   vim   │         │         │         │         │         │                    │         │         │         │         │         │         │
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   TAB   │    Z    │    X    │    C    │    D    │    V    ││  ▶ ||  ││  MUTE  ││    K    │    H    │   , ;   │   . :   │   / \   │  ENTER  │
-     Glb TAB    Sft Z     Ctl X     Opt C     Cmd D     Alt V    &kp C_PP &kp C_MUTE   Alt K     Cmd H    ALTcomma  CTRLdot  SHFTslash &lt _KBD RET
+     Glb TAB    Sft Z     Ctl X     Opt C     Cmd D     Alt V    &kp C_PP &kp C_MUTE   Alt K     Cmd H    OPTcomma  CTRLdot  SHFTslash &lt _KBD RET
 // │  globe  │  shift  │  ctrl   │   opt   │   cmd   │   alt   ││        ││        ││   alt   │   cmd   │   opt   │  ctrl   │  shift  │  keybd  │
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
 //                               │    {    │    (    │ [shift] │    *    ││    -    │  SPACE  │    )    │    }    │
@@ -92,7 +92,7 @@
 // │   vim   │         │         │         │         │         │                    │         │         │         │         │         │         │
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   TAB   │    Z    │    X    │    C    │    V    │    B    ││  ▶ ||  ││  MUTE  ││    N    │    M    │   , ;   │   . :   │   / \   │  ENTER  │
-     Glb TAB    Sft Z     Ctl X     Opt C     Cmd V     Alt B    &kp C_PP &kp C_MUTE   Alt N     Cmd M    ALTcomma  CTRLdot  SHFTslash &lt _KBD RET
+     Glb TAB    Sft Z     Ctl X     Opt C     Cmd V     Alt B    &kp C_PP &kp C_MUTE   Alt N     Cmd M    OPTcomma  CTRLdot  SHFTslash &lt _KBD RET
 // │  globe  │  shift  │  ctrl   │   opt   │   cmd   │   alt   ││        ││        ││   alt   │   cmd   │   opt   │  ctrl   │  shift  │  keybd  │
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
 //                               │    {    │    (    │ [shift] │    *    ││    -    │  SPACE  │    )    │    }    │
