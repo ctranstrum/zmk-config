@@ -187,7 +187,7 @@
         flash: dongle_bootloader_macro {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &to L_BOOT>, <&bootloader>;
+            bindings = <&macro_param_1to1 &to MACRO_PLACEHOLDER>, <&bootloader>;
         };
 
         tmux: tmux_prefix_macro {
