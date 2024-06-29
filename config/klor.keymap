@@ -300,7 +300,7 @@
      GC(Q)       ___     HYPR(M)  &to _CLMK    ___   &kp LC(UP)    ___        ___       ___       ___       ___       ___       ___      I___I
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
 //                               │  flash  │         │ caps lk │ dongle  ││ dongle  │         │         │  flash  │
-                                 &bootloader   ___    &kp CAPS   &flash     &flash      ___       ___   &bootloader
+                                 &bootloader   ___   &kp CAPS &flash _BOOT &flash _BOOT ___       ___   &bootloader
 //                               └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘
             >;
             sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>, <&inc_dec_kp C_VOL_UP C_VOL_DN>;

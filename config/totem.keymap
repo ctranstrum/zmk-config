@@ -235,11 +235,11 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI ___        ___     &kp F1  &kp F2  &kp
 //                               ┃ flash ┃ tmux  ┃ dongl ┃ ┃ save  ┃       ┃ tab10 ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//    ╷   ╷   ╷           ╷         ╷      ╷   ╷       ╷        ╷        ╷        ╷     ╷       ╷
-       ___ ___ ___         ___       ___        ___     &vtab N7 &vtab N8 &vtab N9 &vimQ
-       ___ ___ ___         ___       ___        ___     &vtab N4 &vtab N5 &vtab N6 ___
-&trans ___ ___ ___         ___       ___        ___     &vtab N1 &vtab N2 &vtab N3 ___   &vldr Q
-               &bootloader &mo L_NUM &flash     &vldr W ___      &vtab N0
+//    ╷           ╷   ╷     ╷   ╷        ╷   ╷       ╷        ╷        ╷        ╷     ╷       ╷
+       ___         ___ ___   ___ ___          ___     &vtab N7 &vtab N8 &vtab N9 &vimQ
+       ___         ___ ___   ___ ___          ___     &vtab N4 &vtab N5 &vtab N6 ___
+&trans ___         ___ ___   ___ ___          ___     &vtab N1 &vtab N2 &vtab N3 ___   &vldr Q
+       &bootloader &mo L_NUM &flash _BOOT     &vldr W ___      &vtab N0
             >;
         };
 
@@ -310,11 +310,11 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI ___        ___     &kp F1  &kp F2  &kp
 //                               ┃ flash ┃       ┃ CAPS  ┃ ┃ dongl ┃       ┃ flash ┃
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-// ╷           ╷      ╷            ╷           ╷            ╷   ╷      ╷   ╷           ╷   ╷   ╷           ╷
-    &to L_QWRTY ___    &out OUT_USB ___         ___              ___    ___ ___         ___ ___
-    BT_(0)      BT_(1) BT_(2)       BT_(3)      BT_(4)           ___    ___ ___         ___ ___
-___ ___         ___    &to L_COLMK  &to L_DVORK ___              ___    ___ ___         ___ ___ &trans
-                       &bootloader  ___         &kp CAPSLOCK     &flash ___ &bootloader
+// ╷           ╷      ╷            ╷           ╷            ╷   ╷             ╷   ╷           ╷   ╷   ╷           ╷
+    &to L_QWRTY ___    &out OUT_USB ___         ___              ___           ___ ___         ___ ___
+    BT_(0)      BT_(1) BT_(2)       BT_(3)      BT_(4)           ___           ___ ___         ___ ___
+___ ___         ___    &to L_COLMK  &to L_DVORK ___              ___           ___ ___         ___ ___ &trans
+                       &bootloader  ___         &kp CAPSLOCK     &flash L_BOOT ___ &bootloader
             >;
         };
 
