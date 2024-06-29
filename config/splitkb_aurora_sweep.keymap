@@ -109,7 +109,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
-            bindings = <&kp>, <&mod_comma>;
+            bindings = <&kp>, <&mcs>;
         };
 
         bt_key: bluetooth_key {
@@ -131,7 +131,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <200>;
-            bindings = <&kp>, <&mod_dot>;
+            bindings = <&kp>, <&mdc>;
         };
 
         lsscw: layer_sticky_shift_caps_word {
@@ -142,14 +142,14 @@
             bindings = <&mo>, <&sscw>;
         };
 
-        mod_comma: mod_comma_semi {
+        mcs: mod_comma_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mod_dot: mod_dot_colon {
+        mdc: mod_dot_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
@@ -418,7 +418,7 @@
             display-name = "dvorak";
             bindings = <
 // =====================================================  ======================================================
-&kp SQT   &mod_comma  &mod_dot   &kp P      &kp Y       &kp F      &kp G      &kp C      &kp R       &kp L
+&kp SQT   &mcs        &mdc       &kp P      &kp Y       &kp F      &kp G      &kp C      &kp R       &kp L
 &kp A     &kp O       &kp E      &kp U      &kp I       &kp D      &kp H      &kp T      &kp N       &kp S
 SHFTslash &mt LCTRL Q &mt LALT J &mt LCMD K &mt RALT X  &mt RALT B &mt LCMD M &mt LALT W &mt LCTRL V &mt LSHFT Z
           &lt L_NUM BSPC         &lsscw L_NAV 0         &lt L_CODE SPACE      &lt L_PUNCT RETURN

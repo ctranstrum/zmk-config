@@ -89,7 +89,7 @@
 //                               ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
 //       ╷         ╷           ╷          ╷          ╷          ╷   ╷          ╷          ╷          ╷           ╷           ╷      ╷
-          &kp SQT   &mod_comma  &mod_dot   &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R       &kp L
+          &kp SQT   &mcs        &mdc       &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R       &kp L
           &kp A     &kp O       &kp E      &kp U      &kp I          &kp D      &kp H      &kp T      &kp N       &kp S
 &trans    SHFTslash &mt LCTRL Q &mt LALT J &mt LGUI K &mt RALT X     &mt RALT B &mt LGUI M &mt LALT W &mt LCTRL V &mt LSHFT Z &trans
           &mt LCTRL LBRC   &lt L_NUM LPAR  &lsscw L_NAV 0            &lt L_SYM SPACE       &lt L_MEDIA RPAR       &mt LALT RBRC

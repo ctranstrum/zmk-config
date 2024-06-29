@@ -113,7 +113,7 @@
             bindings = <
 //           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
 //           │   ' "   │   , ;   │   . :   │    P    │    Y    │                    │    F    │    G    │    C    │    R    │    L    │
-              &kp SQT   &mod_comma &mod_dot &kp P     &kp Y                          &kp F     &kp G     &kp C     &kp R     &kp L
+              &kp SQT   &mcs      &mdc      &kp P     &kp Y                          &kp F     &kp G     &kp C     &kp R     &kp L
 // ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
 // │   ESC   │    A    │    O    │    E    │    U    │    I    │                    │    D    │    H    │    T    │    N    │    S    │ BACKSPC │
  &lt _VIM ESC &kp A     &kp O     &kp E     &kp U     &kp I                          &kp D     &kp H     &kp T     &kp N     &kp S     &kp BSPC
