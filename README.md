@@ -31,11 +31,18 @@ Pretty sweet board, all in all. However:
 - I'm not sure I love the choc spacing
 - That one extra pinky key is surprisingly nice, leaves me wanting more now ...
 
+## Klor
+
+I bought one of these and set it up with QMK, and I really liked it, but I wanted choc and wireless, and finally set it up.
+
+- 42 keys
+- 2 encoders
+- OLED dongle
+- per-key RGB on the QMK version, but not on my wireless
+
 ## Kyria
 
 My biggest split yet.
 
 - 50 keys
 - OLED dongle
-
-Work in progress...

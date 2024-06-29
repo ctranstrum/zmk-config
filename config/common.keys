@@ -1,0 +1,245 @@
+// Common settings for keymaps
+
+// Make blank keys more inconspicuous
+#define ___ &none
+#define I___I &trans
+
+// In case you want to change your leader keys
+#define TMUX LC(B)
+#define VIM SPACE
+
+// Modifier key combinations
+#define GC(key) &kp LG(LC(key))
+#define GCS(key) &kp LG(LC(LS(key)))
+#define GS(key) &kp LG(LS(key))
+#define HYPR(key) &kp LG(LA(LC(LS(key))))
+#define MEH(key) &kp LG(LA(LC(key)))
+
+// Shortcuts for punctuation keys
+#define OPTcomma &alt_comma LALT 0
+#define CTRLdot &ctrl_dot LCTRL 0
+#define SHFTslash &shft_slash LSHFT 0
+
+// Shortcuts for home row mods
+#define Glb &hm GLOBE
+#define Sft &hm LSHFT
+#define Ctl &hm LCTRL
+#define Opt &hm LALT
+#define Cmd &hm LGUI
+#define Alt &hm RALT
+
+// Macro for bluetooth connections
+#define BT_(btnum) &bt_key btnum btnum
+
+// Change mod-tap defaults
+&mt {
+    quick-tap-ms = <200>;
+    require-prior-idle-ms = <150>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <300>;
+};
+
+// Change sticky key defaults
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+// Change caps word defaults
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
+};
+
+/ {
+    behaviors {
+        alt_comma: mod_alt_comma {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&mcs>;
+        };
+
+        bt_key: bluetooth_key {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            bindings = <&bt_clr>, <&bt_sel>;
+        };
+
+        ctrl_dot: mod_ctrl_dot {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&mdc>;
+        };
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            require-prior-idle-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        lsscw: layer_sticky_shift_caps_word {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&sscw>;
+        };
+
+        mcs: mod_comma_semi {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mdc: mod_dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        meq: mod_excl_qmark {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        msb: mod_slash_back {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        scroll: encoder_scroll {
+            compatible: "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&turbo DOWN>, <&turbo UP>;
+        };
+
+        shft_slash: mod_shft_slash {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&msb>;
+        };
+
+        sscw: sticky_shift_caps_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sk LSHIFT>, <&caps_word>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        tmux_tabs: tmux_encoder_tabs {
+            compatible: "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&tmux N>, <&tmux P>;
+        };
+
+        vim_tabs: vim_encoder_tabs {
+            compatible: "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&vtabnxt>, <&vtabprv>;
+        };
+    };
+
+    macros {
+        arrow: javascript_arrow_function_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT &kp SPACE>;
+        };
+
+        bt_clr: bluetooth_clear_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_param_1to1 &bt_sel MACRO_PLACEHOLDER>,
+                <&bt BT_CLR>;
+        };
+
+        bt_sel: bluetooth_selection_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&out OUT_BLE>,
+                <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
+        };
+
+        flash: dongle_bootloader_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to L_BOOT>, <&bootloader>;
+        };
+
+        tmux: tmux_prefix_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap &kp TMUX>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+        };
+
+        turbo: key_x_5 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap>;
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+        };
+
+        vldr: vim_leader_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap &kp ESC &kp VIM>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+        };
+
+        vimQ: vim_hard_quit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp ESC>, <&kp COLON &kp Q &kp EXCL &kp RET>;
+        };
+
+        vtab: vim_tab_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap &kp ESC>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&kp G &kp T>;
+        };
+
+        vtabnxt: vim_tab_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp ESC>, <&kp G &kp T>;
+        };
+
+        vtabprv: vim_tab_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp ESC>, <&kp G &kp LS(T)>;
+        };
+    };
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=devicetree
