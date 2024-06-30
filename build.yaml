@@ -10,26 +10,15 @@ include:
   #   artifact-name: sweep-right
 
   # Totem with OLED dongle
-  # - board: seeeduino_xiao_ble
-  #   shield: totem_dongle dongle_display
-  #   artifact-name: totem-dongle
-  # - board: seeeduino_xiao_ble
-  #   shield: totem_left
-  #   artifact-name: totem-left
-  # - board: seeeduino_xiao_ble
-  #   shield: totem_right
-  #   artifact-name: totem-right
-  #
-  # # Kyria rev 3.1 with OLED dongle
-  # - board: seeeduino_xiao_ble
-  #   shield: trikyria_dongle dongle_display
-  #   artifact-name: kyria-dongle
-  # - board: nice_nano_v2
-  #   shield: trikyria_left
-  #   artifact-name: kyria-left
-  # - board: nice_nano_v2
-  #   shield: trikyria_right
-  #   artifact-name: kyria-right
+  - board: seeeduino_xiao_ble
+    shield: totem_dongle dongle_display
+    artifact-name: totem-dongle
+  - board: seeeduino_xiao_ble
+    shield: totem_left
+    artifact-name: totem-left
+  - board: seeeduino_xiao_ble
+    shield: totem_right
+    artifact-name: totem-right
 
   # Klor with OLED dongle
   - board: seeeduino_xiao_ble
@@ -41,6 +30,17 @@ include:
   - board: nice_nano_v2
     shield: klor_right
     artifact-name: klor-right
+
+  # Kyria rev 3.1 with OLED dongle
+  - board: seeeduino_xiao_ble
+    shield: trikyria_dongle dongle_display
+    artifact-name: kyria-dongle
+  - board: nice_nano_v2
+    shield: trikyria_left
+    artifact-name: kyria-left
+  - board: nice_nano_v2
+    shield: trikyria_right
+    artifact-name: kyria-right
 
   # Settings Reset
   - board: nice_nano_v2
