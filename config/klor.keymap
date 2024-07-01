@@ -150,7 +150,7 @@
     &kp GLOBE &kp LSFT  &kp LCTL  &kp LALT  &kp LCMD  &kp RALT     ___        ___    &kp PG_DN    ___    &kp DOWN     ___       ___    &kp DEL
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
 //                               │         │   func  │   ###   │         ││         │  SPACE  │         │         │
-                                     ___    &mo _FUNC   I___I      ___       ___     &kp SPC     ___       ___
+                                     ___    &mo _NUM    I___I      ___       ___     &kp SPC     ___       ___
 //                               └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘
             >;
             sensor-bindings = <&scroll>, <&inc_dec_kp LC(TAB) LS(LC(TAB))>;
@@ -175,7 +175,7 @@
     &kp GLOBE &kp LSFT  &kp LCTL  &kp LALT  &kp LCMD  &kp RALT     ___        ___    &kp COLON &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp EQUAL &kp SEMI
 // └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
 //                               │         │   ###   │   func  │         ││   ,     │  SPACE  │    0    │    .    │
-                                     ___      I___I   &mo _FUNC    ___     &kp COMMA &kp SPC   &kp KP_N0 &kp DOT
+                                     ___      I___I   &mo _NAV     ___     &kp COMMA &kp SPC   &kp KP_N0 &kp DOT
 //                               └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘
             >;
             sensor-bindings = <&scroll>, <&inc_dec_kp C_VOL_UP C_VOL_DN>;
