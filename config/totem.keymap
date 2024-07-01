@@ -29,7 +29,7 @@
 #define L_KEYBD 10
 #define L_BOOT  11
 
-\ {
+/ {
     conditional_layers {
         compatible = "zmk,conditional-layers";
         func_layer {
