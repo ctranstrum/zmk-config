@@ -239,7 +239,7 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI ___        ___     &kp F1  &kp F2  &kp
        ___         ___ ___   ___ ___          ___     &vtab N7 &vtab N8 &vtab N9 &vimQ
        ___         ___ ___   ___ ___          ___     &vtab N4 &vtab N5 &vtab N6 ___
 &trans ___         ___ ___   ___ ___          ___     &vtab N1 &vtab N2 &vtab N3 ___   &vldr Q
-       &bootloader &mo L_NUM &flash _BOOT     &vldr W ___      &vtab N0
+       &bootloader &mo L_NUM &flash L_BOOT     &vldr W ___      &vtab N0
             >;
         };
 
