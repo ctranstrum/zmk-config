@@ -36,9 +36,7 @@ lv_obj_t *zmk_display_status_screen() {
     lv_obj_t *test_widget;
     test_widget = lv_label_create(screen);
     lv_obj_align(test_widget, LV_ALIGN_CENTER, 0, 0);
-    char test_text[15] = {};
-    snprintf(test_text, sizeof(test_text), '%s', 'chad was here')
-    lv_label_set_text(test_widget, test_text);
+    lv_label_set_text(test_widget, "chad was here");
 
     /* zmk_widget_output_status_init(&output_status_widget, screen); */
     /* lv_obj_align(zmk_widget_output_status_obj(&output_status_widget), LV_ALIGN_TOP_LEFT, 0, 0); */
