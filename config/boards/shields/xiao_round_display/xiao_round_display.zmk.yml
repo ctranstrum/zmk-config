@@ -1,0 +1,7 @@
+file_format: "1"
+id: xiao_round_display
+name: xiao_round_display
+type: shield
+url: https://github.com/ctranstrum/zmk-config
+requires:
+  - xiao_spi
