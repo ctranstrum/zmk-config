@@ -33,7 +33,7 @@ lv_obj_t *zmk_display_status_screen() {
     lv_style_set_text_line_space(&global_style, 1);
     lv_obj_add_style(screen, &global_style, LV_PART_MAIN);
 
-    lv_obj_t test_widget;
+    lv_obj_t *test_widget;
     test_widget = lv_label_create(screen);
     lv_obj_align(test_widget, LV_ALIGN_CENTER, 0, 0);
     char test_text[13] = {};
