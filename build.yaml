@@ -38,17 +38,17 @@ include:
   - board: seeeduino_xiao_ble
     shield: trikyria_dongle xiao_round_display
     artifact-name: kyria-round-dongle
-  - board: nice_nano_v2
-    shield: trikyria_left
-    artifact-name: kyria-left
-  - board: nice_nano_v2
-    shield: trikyria_right
-    artifact-name: kyria-right
+  # - board: nice_nano_v2
+  #   shield: trikyria_left
+  #   artifact-name: kyria-left
+  # - board: nice_nano_v2
+  #   shield: trikyria_right
+  #   artifact-name: kyria-right
 
   # Settings Reset
-  - board: nice_nano_v2
-    shield: settings_reset
-    artifact-name: nano-reset
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
-    artifact-name: xiao-reset
+  # - board: nice_nano_v2
+  #   shield: settings_reset
+  #   artifact-name: nano-reset
+  # - board: seeeduino_xiao_ble
+  #   shield: settings_reset
+  #   artifact-name: xiao-reset
