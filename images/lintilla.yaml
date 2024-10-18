@@ -1,0 +1,345 @@
+layers:
+  Colemak:
+  - '&lp_mc'
+  - {t: MUTE, h: keyboard}
+  - {t: ESC, h: vim}
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - {t: TAB, h: GLOBE}
+  - {t: A, h: LSHFT}
+  - {t: S, h: LCTRL}
+  - {t: D, h: LALT}
+  - {t: F, h: LGUI}
+  - {t: G, h: RALT}
+  - {t: H, h: RALT}
+  - {t: J, h: LGUI}
+  - {t: K, h: LALT}
+  - {t: L, h: LCTRL}
+  - {t: '''', h: LSHFT}
+  - {t: RET, h: GLOBE}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
+  - {t: /, s: \}
+  - {t: (, h: numpad}
+  - {t: LSHIFT, h: navigation, s: '&caps_word'}
+  - {t: '{', h: LCMD}
+  - {t: '}', h: RCMD}
+  - {t: SPC, h: symbols}
+  - {t: ), h: LALT}
+  numpad:
+  - ''
+  - DEL
+  - vim
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - KP SLASH
+  - KP 7
+  - KP 8
+  - KP 9
+  - KP MINUS
+  - BSPC
+  - GLOBE
+  - Ctl+ A
+  - LCTL
+  - LALT
+  - LGUI
+  - RALT
+  - KP MULTIPLY
+  - KP 4
+  - KP 5
+  - KP 6
+  - KP PLUS
+  - KP ENTER
+  - Ctl+ Z
+  - Ctl+ X
+  - Ctl+ C
+  - Ctl+ D
+  - Ctl+ V
+  - ':'
+  - KP 1
+  - KP 2
+  - KP 3
+  - KP EQUAL
+  - {type: held}
+  - navigation
+  - ''
+  - .
+  - SPC
+  - KP 0
+  navigation:
+  - ''
+  - DEL
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - PG UP
+  - ''
+  - ''
+  - ''
+  - ''
+  - BSPC
+  - GLOBE
+  - LSFT
+  - LCTL
+  - LALT
+  - LGUI
+  - RALT
+  - HOME
+  - LEFT
+  - UP
+  - RIGHT
+  - END
+  - RET
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - PG DN
+  - ''
+  - DOWN
+  - ''
+  - ''
+  - numpad
+  - {type: held}
+  - ''
+  - ''
+  - SPC
+  - ''
+  function:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F7
+  - F8
+  - F9
+  - ''
+  - ''
+  - GLOBE
+  - LSFT
+  - LCTL
+  - LALT
+  - LGUI
+  - RALT
+  - ''
+  - F4
+  - F5
+  - F6
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F1
+  - F2
+  - F3
+  - ''
+  - {type: held}
+  - {type: held}
+  - ''
+  - F12
+  - F11
+  - F10
+  symbols:
+  - '&arrow'
+  - ''
+  - '`'
+  - '|'
+  - '&'
+  - +
+  - '%'
+  - _
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '~'
+  - ^
+  - '@'
+  - '!'
+  - '='
+  - $
+  - RALT
+  - LGUI
+  - LALT
+  - LCTL
+  - ''
+  - GLOBE
+  - <
+  - '>'
+  - '['
+  - ']'
+  - '?'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '#'
+  - '-'
+  - '*'
+  - ''
+  - {type: held}
+  - ''
+  vim:
+  - ''
+  - '&vimQ'
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&vtab N7'
+  - '&vtab N8'
+  - '&vtab N9'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&vtab N4'
+  - '&vtab N5'
+  - '&vtab N6'
+  - ''
+  - '&vldr Q'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&vtab N1'
+  - '&vtab N2'
+  - '&vtab N3'
+  - ''
+  - numpad
+  - ''
+  - ''
+  - '&vldr W'
+  - ''
+  - '&vtab N0'
+  tmux:
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&tmux N7'
+  - '&tmux N8'
+  - '&tmux N9'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&tmux P'
+  - '&tmux N4'
+  - '&tmux N5'
+  - '&tmux N6'
+  - '&tmux N'
+  - '&tmux D'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&tmux C'
+  - '&tmux N1'
+  - '&tmux N2'
+  - '&tmux N3'
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - '&tmux A'
+  - Ctl+ B
+  - '&tmux N0'
+  keyboard:
+  - Gui+Ctl+ Q
+  - {type: held}
+  - BRI UP
+  - ''
+  - ''
+  - Gui+Sft+ 4
+  - Gui+Ctl+Sft+ 4
+  - '&ind_bat'
+  - ''
+  - ''
+  - OUT USB
+  - ''
+  - ''
+  - ''
+  - BRI DN
+  - {t: '&bt_sel', h: '&bt_clr'}
+  - {t: '&bt_sel 1', h: '&bt_clr 1'}
+  - {t: '&bt_sel 2', h: '&bt_clr 2'}
+  - {t: '&bt_sel 3', h: '&bt_clr 3'}
+  - {t: '&bt_sel 4', h: '&bt_clr 4'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Hyper+ M
+  - VOL DN
+  - VOL UP
+  - '&ind_con'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - KP NUM
+  - CAPS
+  - '&ind_lyr'
+  - ''
+  - ''
+  - ''

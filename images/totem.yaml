@@ -1,0 +1,432 @@
+layout: {qmk_keyboard: totem}
+layers:
+  Colemak:
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - A
+  - R
+  - S
+  - T
+  - G
+  - M
+  - N
+  - E
+  - I
+  - O
+  - {t: ESC, h: vim}
+  - {t: Z, h: LSHFT}
+  - {t: X, h: LCTRL}
+  - {t: C, h: LALT}
+  - {t: D, h: LGUI}
+  - {t: V, h: RALT}
+  - {t: K, h: RALT}
+  - {t: H, h: LGUI}
+  - {t: ',', h: LALT, s: ;}
+  - {t: ., h: LCTRL, s: ':'}
+  - {t: /, h: LSHFT, s: \}
+  - {t: RET, h: keyboard}
+  - {t: '{', h: LCTRL}
+  - {t: (, h: numpad}
+  - {t: LSHIFT, h: navigation, s: '&caps_word'}
+  - {t: SPACE, h: symbols}
+  - {t: ), h: os / media}
+  - {t: '}', h: LALT}
+  Dvorak:
+  - ''''
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
+  - P
+  - Y
+  - F
+  - G
+  - C
+  - R
+  - L
+  - A
+  - O
+  - E
+  - U
+  - I
+  - D
+  - H
+  - T
+  - N
+  - S
+  - {t: ▽, type: trans}
+  - {t: /, h: LSHFT, s: \}
+  - {t: Q, h: LCTRL}
+  - {t: J, h: LALT}
+  - {t: K, h: LGUI}
+  - {t: X, h: RALT}
+  - {t: B, h: RALT}
+  - {t: M, h: LGUI}
+  - {t: W, h: LALT}
+  - {t: V, h: LCTRL}
+  - {t: Z, h: LSHFT}
+  - {t: ▽, type: trans}
+  - {t: '{', h: LCTRL}
+  - {t: (, h: numpad}
+  - {t: LSHIFT, h: navigation, s: '&caps_word'}
+  - {t: SPACE, h: symbols}
+  - {t: ), h: os / media}
+  - {t: '}', h: LALT}
+  Qwerty:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ''''
+  - {t: ▽, type: trans}
+  - {t: Z, h: LSHFT}
+  - {t: X, h: LCTRL}
+  - {t: C, h: LALT}
+  - {t: V, h: LGUI}
+  - {t: B, h: RALT}
+  - {t: N, h: RALT}
+  - {t: M, h: LGUI}
+  - {t: ',', h: LALT, s: ;}
+  - {t: ., h: LCTRL, s: ':'}
+  - {t: /, h: LSHFT, s: \}
+  - {t: ▽, type: trans}
+  - {t: '{', h: LCTRL}
+  - {t: (, h: numpad}
+  - {t: LSHIFT, h: navigation, s: '&caps_word'}
+  - {t: SPACE, h: symbols}
+  - {t: ), h: os / media}
+  - {t: '}', h: LALT}
+  navigation:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - PGUP
+  - ''
+  - ''
+  - DEL
+  - BSPC
+  - Gui+ A
+  - ''
+  - ''
+  - ''
+  - ''
+  - HOME
+  - LEFT
+  - UP
+  - RIGHT
+  - END
+  - ''
+  - {t: Gui+ Z, h: LSHFT}
+  - {t: Gui+ X, h: LCTRL}
+  - {t: Gui+ C, h: LALT}
+  - {t: Gui+ D, h: LGUI}
+  - {t: Gui+ V, h: RALT}
+  - PGDN
+  - ''
+  - DOWN
+  - ''
+  - ''
+  - RET
+  - ''
+  - numpad
+  - {type: held}
+  - SPC
+  - TAB
+  - {t: GLOBE, h: sticky}
+  numpad:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - /
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '*'
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - vim
+  - ''
+  - LCTRL
+  - LALT
+  - LGUI
+  - RALT
+  - ':'
+  - '1'
+  - '2'
+  - '3'
+  - '='
+  - BSPC
+  - ''
+  - {type: held}
+  - navigation
+  - ','
+  - '0'
+  - .
+  symbols:
+  - '`'
+  - '#'
+  - '*'
+  - '%'
+  - _
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - <
+  - '>'
+  - '!'
+  - '='
+  - $
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ^
+  - '~'
+  - '@'
+  - '['
+  - ']'
+  - '?'
+  - RALT
+  - LCMD
+  - LALT
+  - LCTRL
+  - ''
+  - ''
+  - '&arrow'
+  - '|'
+  - '&'
+  - {type: held}
+  - ''
+  - ''
+  function:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F7
+  - F8
+  - F9
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F3
+  - F5
+  - F6
+  - ''
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - ''
+  - F1
+  - F2
+  - F3
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {type: held}
+  - F10
+  - F11
+  - F12
+  vim:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&vtab N7'
+  - '&vtab N8'
+  - '&vtab N9'
+  - '&vimQ'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&vtab N4'
+  - '&vtab N5'
+  - '&vtab N6'
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&vtab N1'
+  - '&vtab N2'
+  - '&vtab N3'
+  - ''
+  - '&vldr Q'
+  - '&bootloader'
+  - numpad
+  - '&flash 11'
+  - '&vldr W'
+  - ''
+  - '&vtab N0'
+  tmux:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&tmux N7'
+  - '&tmux N8'
+  - '&tmux N9'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Ctl+ B
+  - '&tmux N4'
+  - '&tmux N5'
+  - '&tmux N6'
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&tmux N1'
+  - '&tmux N2'
+  - '&tmux N3'
+  - ''
+  - '&tmux D'
+  - ''
+  - {type: held}
+  - ''
+  - '&tmux C'
+  - '&tmux A'
+  - '&tmux N0'
+  os / media:
+  - Hyper+ 4
+  - ''
+  - Gui+Sft+ 4
+  - VOL UP
+  - Ctl+ UP
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Gui+Ctl+Sft+ 4
+  - VOL DN
+  - BRI UP
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Gui+Ctl+ Q
+  - ''
+  - Hyper+ M
+  - ''
+  - MUTE
+  - BRI DN
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - PREV
+  - PLAY PAUSE
+  - NEXT
+  - ''
+  - {type: held}
+  - ''
+  keyboard:
+  - {t: Qwerty, h: toggle}
+  - ''
+  - OUT USB
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '&bt_sel', h: '&bt_clr'}
+  - {t: '&bt_sel 1', h: '&bt_clr 1'}
+  - {t: '&bt_sel 2', h: '&bt_clr 2'}
+  - {t: '&bt_sel 3', h: '&bt_clr 3'}
+  - {t: '&bt_sel 4', h: '&bt_clr 4'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: Colemak, h: toggle}
+  - {t: Dvorak, h: toggle}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - '&bootloader'
+  - ''
+  - CAPSLOCK
+  - '&flash 11'
+  - ''
+  - '&bootloader'
+  flash mode: ['&bootloader']

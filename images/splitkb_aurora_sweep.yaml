@@ -1,0 +1,427 @@
+layout: {qmk_keyboard: ferris_rotated}
+layers:
+  colemak:
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - A
+  - R
+  - S
+  - T
+  - G
+  - M
+  - N
+  - E
+  - I
+  - O
+  - {t: Z, h: LSHFT}
+  - {t: X, h: LCTRL}
+  - {t: C, h: LALT}
+  - {t: D, h: LCMD}
+  - {t: V, h: RALT}
+  - {t: K, h: RALT}
+  - {t: H, h: LCMD}
+  - {t: ',', h: LALT, s: ;}
+  - {t: ., h: LCTRL, s: ':'}
+  - {t: /, h: LSHFT, s: \}
+  - {t: BSPC, h: num}
+  - {t: LSHIFT, h: nav, s: '&caps_word'}
+  - {t: SPACE, h: code}
+  - {t: RETURN, h: punct}
+  dvorak:
+  - ''''
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
+  - P
+  - Y
+  - F
+  - G
+  - C
+  - R
+  - L
+  - A
+  - O
+  - E
+  - U
+  - I
+  - D
+  - H
+  - T
+  - N
+  - S
+  - {t: /, h: LSHFT, s: \}
+  - {t: Q, h: LCTRL}
+  - {t: J, h: LALT}
+  - {t: K, h: LCMD}
+  - {t: X, h: RALT}
+  - {t: B, h: RALT}
+  - {t: M, h: LCMD}
+  - {t: W, h: LALT}
+  - {t: V, h: LCTRL}
+  - {t: Z, h: LSHFT}
+  - {t: BSPC, h: num}
+  - {t: LSHIFT, h: nav, s: '&caps_word'}
+  - {t: SPACE, h: code}
+  - {t: RETURN, h: punct}
+  qwerty:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ''''
+  - {t: Z, h: LSHFT}
+  - {t: X, h: LCTRL}
+  - {t: C, h: LALT}
+  - {t: V, h: LCMD}
+  - {t: B, h: RALT}
+  - {t: N, h: RALT}
+  - {t: M, h: LCMD}
+  - {t: ',', h: LALT, s: ;}
+  - {t: ., h: LCTRL, s: ':'}
+  - {t: /, h: LSHFT, s: \}
+  - {t: BSPC, h: num}
+  - {t: LSHIFT, h: nav, s: '&caps_word'}
+  - {t: SPACE, h: code}
+  - {t: RETURN, h: punct}
+  nav:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - SPC
+  - RET
+  - UP
+  - BSPC
+  - DEL
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - PGUP
+  - LEFT
+  - DOWN
+  - RIGHT
+  - HOME
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LCMD
+  - RALT
+  - PGDN
+  - '&vtabprv'
+  - DOWN
+  - '&vtabnxt'
+  - END
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: TAB, h: code}
+  - ESC
+  code:
+  - '&arrow_fn'
+  - '`'
+  - (
+  - )
+  - +
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - <
+  - '>'
+  - '{'
+  - '}'
+  - '-'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ^
+  - '~'
+  - '['
+  - ']'
+  - _
+  - RALT
+  - LCMD
+  - LALT
+  - LCTRL
+  - LSHFT
+  - '|'
+  - {t: '&', h: nav}
+  - {type: held}
+  - {t: ▽, type: trans}
+  num:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - /
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '*'
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LCMD
+  - RALT
+  - ':'
+  - '1'
+  - '2'
+  - '3'
+  - '='
+  - {type: held}
+  - {t: ▽, type: trans}
+  - .
+  - {t: '0', h: punct}
+  punct:
+  - ''
+  - '#'
+  - $
+  - '%'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '='
+  - ''
+  - '!'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '@'
+  - ''
+  - '?'
+  - ''
+  - RALT
+  - LCMD
+  - LALT
+  - LCTRL
+  - LSHFT
+  - {t: ▽, type: trans}
+  - ''
+  - {t: ▽, type: trans}
+  - {type: held}
+  fn:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F7
+  - F8
+  - F9
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&arrow_fn'
+  - F4
+  - F5
+  - F6
+  - F12
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LCMD
+  - RALT
+  - ''
+  - F1
+  - F2
+  - F3
+  - F11
+  - {type: held}
+  - {type: held}
+  - ''
+  - F10
+  tmux:
+  - '&tmux N'
+  - '&tmux C'
+  - '&tmux A'
+  - '&tmux D'
+  - '&tmux N'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&vtab N1'
+  - '&vtab N2'
+  - '&vtab N3'
+  - '&vtab N4'
+  - '&vtab N5'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&tmux N1'
+  - '&tmux N2'
+  - '&tmux N3'
+  - '&tmux N4'
+  - '&tmux N5'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&vtabprv'
+  - '&vtabnxt'
+  - {type: held}
+  - {type: held}
+  media:
+  - ''
+  - ''
+  - '&scrn_file'
+  - VOL UP
+  - ''
+  - ''
+  - '&scrn_lock'
+  - ''
+  - '&hypr N4'
+  - ''
+  - ''
+  - ''
+  - '&scrn_clip'
+  - VOL DN
+  - BRI UP
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&hypr M'
+  - CAPS
+  - MUTE
+  - BRI DN
+  - PREV
+  - REWIND
+  - PLAY PAUSE
+  - FF
+  - NEXT
+  - ''
+  - {type: held}
+  - {type: held}
+  - ''
+  keyboard:
+  - RGB TOG
+  - {t: qwerty, h: toggle}
+  - {t: dvorak, h: toggle}
+  - {t: colemak, h: toggle}
+  - OUT BLE
+  - ''
+  - ''
+  - OUT USB
+  - ''
+  - ''
+  - RGB EFF
+  - RGB SPI
+  - RGB HUI
+  - RGB SAI
+  - RGB BRI
+  - {t: '&bt_clr', h: '&bt_sel'}
+  - {t: '&bt_clr 1', h: '&bt_sel 1'}
+  - {t: '&bt_clr 2', h: '&bt_sel 2'}
+  - {t: '&bt_clr 3', h: '&bt_sel 3'}
+  - {t: '&bt_clr 4', h: '&bt_sel 4'}
+  - RGB EFR
+  - RGB SPD
+  - RGB HUD
+  - RGB SAD
+  - RGB BRD
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - {type: held}
+combos:
+- p: [20, 29]
+  k: '&caps_word'
+  l: [colemak, qwerty]
+- p: [0, 10]
+  k: Gui+ Z
+  l: [colemak, qwerty]
+- p: [1, 11]
+  k: Gui+ X
+  l: [colemak, qwerty]
+- p: [2, 12]
+  k: Gui+ C
+  l: [colemak, qwerty]
+- p: [3, 13]
+  k: Gui+ D
+  l: [colemak, qwerty]
+- p: [4, 14]
+  k: Gui+ V
+  l: [colemak, qwerty]
+- p: [10, 20]
+  k: Ctl+ Z
+  l: [colemak, qwerty]
+- p: [11, 21]
+  k: Ctl+ X
+  l: [colemak, qwerty]
+- p: [12, 22]
+  k: Ctl+ C
+  l: [colemak, qwerty]
+- p: [13, 23]
+  k: Ctl+ D
+  l: [colemak, qwerty]
+- p: [14, 24]
+  k: Ctl+ V
+  l: [colemak, qwerty]
+- p: [7, 17]
+  k: Ctl+ U
+  l: [colemak, qwerty]
+- p: [18, 28]
+  k: Alt+ .
+  l: [colemak, qwerty]
