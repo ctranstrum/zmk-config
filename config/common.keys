@@ -91,6 +91,13 @@
             bindings = <&kp>, <&kp>;
         };
 
+        lp_mc: launch_pad_mission_control {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <HYPR(N4)>, <&kp LC(UP)>;
+        };
+
         lsscw: layer_sticky_shift_caps_word {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;

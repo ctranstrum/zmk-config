@@ -46,3 +46,15 @@ My biggest split yet.
 
 - 50 keys
 - OLED dongle
+
+## Lintilla
+
+I got tired of everything being close enough but not quite, so I finally took the plunge with ergogen and designed my own keyboard.
+
+The key layout is heavily influenced by the Klor, with the case influenced by the Ergonaut One.
+
+- 42 keys
+- reversible board with the xiao ble
+- rgbled widget
+- large battery "hidden" in a pcb cutout
+- 3D printed sandwich case without standoffs

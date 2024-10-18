@@ -42,6 +42,14 @@ include:
     shield: trikyria_right
     artifact-name: kyria-right
 
+  # Lintilla
+  - board: seeeduino_xiao_ble
+    shield: lintilla_left_central rgbled_adapter
+    artifact-name: lintilla-left
+  - board: seeeduino_xiao_ble
+    shield: lintilla_right_peripheral rgbled_adapter
+    artifact-name: lintilla-right
+
   # Settings Reset
   - board: nice_nano_v2
     shield: settings_reset
