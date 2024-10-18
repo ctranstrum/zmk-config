@@ -40,15 +40,15 @@
             &lp_mc                                                                                          &lt _KBD K_MUTE
 //         ┃MISSION┃                                                                                          ┃ keybd ┃
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃  ESC  ┃   Q   ┃   W   ┃   E   ┃   R   ┃   T   ┃                          ┃   Y   ┃   U   ┃   I   ┃   O   ┃   P   ┃ BKSPC ┃
-&lt _VIM ESC &kp Q   &kp W   &kp E   &kp R   &kp T                              &kp Y   &kp U   &kp I   &kp O   &kp P  &kp BSPC
+// ┃  ESC  ┃   Q   ┃   W   ┃   F   ┃   P   ┃   B   ┃                          ┃   J   ┃   L   ┃   U   ┃   Y   ┃  ' "  ┃ BKSPC ┃
+&lt _VIM ESC &kp Q   &kp W   &kp F   &kp P   &kp B                              &kp J   &kp L   &kp U   &kp Y  &kp SQT &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃  TAB  ┃   A   ┃   S   ┃   D   ┃   F   ┃   G   ┃                          ┃   H   ┃   J   ┃   K   ┃   L   ┃  ' "  ┃RETURN ┃
-    Glb TAB  Sft A   Ctl S   Opt D   Cmd F   Alt G                              Alt H   Cmd J   Opt K   Ctl L  Sft SQT Glb RET
+// ┃  TAB  ┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃                          ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃RETURN ┃
+    Glb TAB  Sft A   Ctl R   Opt S   Cmd T   Alt G                              Alt M   Cmd N   Opt E   Ctl I   Sft O  Glb RET
 // ┃ Globe ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                          ┃ R Alt ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃ Shift ┃ Globe ┃
 // ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
-//         ┃   Z   ┃   X   ┃   C   ┃   V   ┃   B   ┃                          ┃   N   ┃   M   ┃  , ;  ┃  . :  ┃  / \  ┃
-             &kp Z   &kp X   &kp C   &kp V   &kp B                              &kp N   &kp M   &mcs    &mdc    &msb
+//         ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃                          ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
+             &kp Z   &kp X   &kp C   &kp D   &kp V                              &kp K   &kp H   &mcs    &mdc    &msb
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃ ( num ┃ SHIFT ┃ { cmd ┃  ┃ } cmd ┃ SPACE ┃ ) alt ┃
                        &lt _NUM LPAR &lsscw _NAV 0 &mt LCMD LBRC  &mt RCMD RBRC &lt _SYM SPC &mt LALT RPAR
