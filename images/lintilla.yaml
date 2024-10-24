@@ -38,10 +38,10 @@ layers:
   - {t: /, s: \}
   - {t: (, h: numpad}
   - {t: LSHIFT, h: navigation, s: '&caps_word'}
-  - {t: '{', h: LCMD}
-  - {t: '}', h: RCMD}
+  - {t: ), h: navigation}
+  - {t: '{', h: symbols}
   - {t: SPC, h: symbols}
-  - {t: ), h: LALT}
+  - {t: '}', h: symbols}
   numpad:
   - ''
   - DEL
@@ -101,7 +101,7 @@ layers:
   - ''
   - BSPC
   - GLOBE
-  - LSFT
+  - {t: Gui+ A, h: LSHFT}
   - LCTL
   - LALT
   - LGUI
@@ -112,11 +112,11 @@ layers:
   - RIGHT
   - END
   - RET
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Gui+ Z
+  - Gui+ X
+  - Gui+ C
+  - Gui+ D
+  - Gui+ V
   - PG DN
   - ''
   - DOWN
@@ -172,7 +172,7 @@ layers:
   - F11
   - F10
   symbols:
-  - '&arrow'
+  - ''
   - ''
   - '`'
   - '|'
@@ -204,15 +204,15 @@ layers:
   - ']'
   - '?'
   - ''
-  - ''
+  - '&arrow'
   - ''
   - ''
   - ''
   - '#'
   - '-'
   - '*'
-  - ''
   - {type: held}
+  - {t: ▽, type: trans}
   - ''
   vim:
   - ''
@@ -339,7 +339,7 @@ layers:
   - ''
   - KP NUM
   - CAPS
-  - '&ind_lyr'
+  - ''
   - ''
   - ''
   - ''
