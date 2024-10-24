@@ -50,8 +50,8 @@
 //         ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃                          ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
              &kp Z   &kp X   &kp C   &kp D   &kp V                              &kp K   &kp H   &mcs    &mdc    &msb
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃ ( num ┃ SHIFT ┃ { cmd ┃  ┃ } cmd ┃ SPACE ┃ ) alt ┃
-                       &lt _NUM LPAR &lsscw _NAV 0 &mt LCMD LBRC  &mt RCMD RBRC &lt _SYM SPC &mt LALT RPAR
+//                                     ┃ ( num ┃ SHIFT ┃   )   ┃  ┃   {   ┃ SPACE ┃   }   ┃
+                       &lt _NUM LPAR &lsscw _NAV 0 &lt _NAV RPAR  &lt _SYM LBRC &lt _SYM SPC &lt _SYM RBRC
 //                                     ┗━━━━━━━┫  nav  ┣━━━━━━━┛  ┗━━━━━━━┫  sym  ┣━━━━━━━┛
 //                                             ┗━━━━━━━┛                  ┗━━━━━━━┛
             >;
@@ -95,11 +95,12 @@
 // ┃       ┃       ┃       ┃       ┃       ┃       ┃                          ┃ Pg Up ┃       ┃       ┃       ┃       ┃ BKSPC ┃
       ___     ___     ___     ___     ___     ___                             &kp PG_UP  ___     ___     ___     ___   &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃ Globe ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                          ┃ Home  ┃ Left  ┃  Up   ┃ Right ┃  End  ┃RETURN ┃
-&kp GLOBE &kp LSFT &kp LCTL &kp LALT &kp LGUI &kp RALT                       &kp HOME &kp LEFT &kp UP &kp RIGHT &kp END &kp RET
+// ┃       ┃ Cmd A ┃       ┃       ┃       ┃       ┃                          ┃ Home  ┃ Left  ┃  Up   ┃ Right ┃  End  ┃RETURN ┃
+&kp GLOBE Sft LG(A) &kp LCTL &kp LALT &kp LGUI &kp RALT                      &kp HOME &kp LEFT &kp UP &kp RIGHT &kp END &kp RET
+// ┃ Globe ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
-//         ┃       ┃       ┃       ┃       ┃       ┃                          ┃ Pg Dn ┃       ┃ Down  ┃       ┃       ┃
-              ___     ___     ___     ___     ___                             &kp PG_DN  ___   &kp DOWN  ___     ___
+//         ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ Cmd D ┃ Cmd V ┃                          ┃ Pg Dn ┃       ┃ Down  ┃       ┃       ┃
+         &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(D) &kp LG(V)                    &kp PG_DN  ___   &kp DOWN  ___     ___
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃  fn   ┃ ##### ┃       ┃  ┃       ┃ SPACE ┃       ┃
                                         &mo _NUM I___I    ___        ___   &kp SPC   ___
@@ -139,8 +140,8 @@
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
 //         ┏━━━━━━━┓                                                                                          ┏━━━━━━━┓
-//         ┃  =>   ┃                                                                                          ┃       ┃
-            &arrow                                                                                               ___
+//         ┃       ┃                                                                                          ┃       ┃
+              ___                                                                                                ___
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃   `   ┃   |   ┃   &   ┃   +   ┃   %   ┃   _   ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
 &kp GRAVE &kp PIPE &kp AMPS &kp PLUS &kp PRCNT &kp UNDER                         ___     ___     ___     ___     ___     ___
@@ -148,8 +149,8 @@
 // ┃   ~   ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                          ┃ R Alt ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃ Globe ┃
 &kp TILDE &kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                      &kp RALT &kp LGUI &kp LALT &kp LCTL  ___  &kp GLOBE
 // ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
-//         ┃   <   ┃   >   ┃   [   ┃   ]   ┃   ?   ┃                          ┃       ┃       ┃       ┃       ┃       ┃
-             &kp LT &kp GT &kp LBKT &kp RBKT &kp QMARK                           ___     ___     ___     ___     ___
+//         ┃   <   ┃   >   ┃   [   ┃   ]   ┃   ?   ┃                          ┃       ┃  =>   ┃       ┃       ┃       ┃
+             &kp LT &kp GT &kp LBKT &kp RBKT &kp QMARK                           ___   &arrow    ___     ___     ___
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃   #   ┃   -   ┃   *   ┃  ┃       ┃ ##### ┃       ┃
                                       &kp HASH &kp MINUS &kp STAR    ___    I___I    ___
@@ -226,8 +227,8 @@
 //         ┃       ┃micmute┃ vol - ┃ vol + ┃connect┃                          ┃       ┃       ┃       ┃       ┃       ┃
            ___ HYPR(M) &kp C_VOL_DN &kp C_VOL_UP &ind_con                        ___     ___     ___     ___     ___
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃numlock┃capslok┃ layer ┃  ┃       ┃       ┃       ┃
-                                     &kp KP_NUM &kp CAPS &ind_lyr    ___     ___     ___
+//                                     ┃numlock┃capslok┃       ┃  ┃       ┃       ┃       ┃
+                                      &kp KP_NUM &kp CAPS ___        ___     ___     ___
 //                                     ┗━━━━━━━┫       ┣━━━━━━━┛  ┗━━━━━━━┫       ┣━━━━━━━┛
 //                                             ┗━━━━━━━┛                  ┗━━━━━━━┛
             >;
