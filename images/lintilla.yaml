@@ -87,7 +87,7 @@ layers:
   - KP 0
   navigation:
   - ''
-  - DEL
+  - ''
   - ''
   - ''
   - ''
@@ -99,7 +99,7 @@ layers:
   - ''
   - ''
   - ''
-  - BSPC
+  - DEL
   - GLOBE
   - {t: Gui+ A, h: LSHFT}
   - LCTL
@@ -125,7 +125,7 @@ layers:
   - numpad
   - {type: held}
   - ''
-  - ''
+  - TAB
   - SPC
   - ''
   function:
