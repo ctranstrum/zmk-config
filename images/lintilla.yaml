@@ -39,9 +39,9 @@ layers:
   - {t: (, h: numpad}
   - {t: LSHIFT, h: navigation, s: '&caps_word'}
   - {t: ), h: navigation}
-  - {t: '{', h: symbols}
+  - {t: '[', h: symbols}
   - {t: SPC, h: symbols}
-  - {t: '}', h: symbols}
+  - {t: ']', h: symbols}
   numpad:
   - ''
   - DEL
@@ -175,8 +175,8 @@ layers:
   - ''
   - ''
   - '`'
-  - '|'
-  - '&'
+  - '&arrow'
+  - '&arrowfn'
   - +
   - '%'
   - _
@@ -200,11 +200,11 @@ layers:
   - GLOBE
   - <
   - '>'
-  - '['
-  - ']'
+  - '|'
+  - '&'
   - '?'
   - ''
-  - '&arrow'
+  - ''
   - ''
   - ''
   - ''
