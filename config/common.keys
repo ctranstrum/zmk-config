@@ -169,10 +169,19 @@
     };
 
     macros {
-        arrow: javascript_arrow_function_macro {
+        arrow: javascript_arrow_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp GT &kp SPACE>;
+        };
+
+        arrowfn: javascript_arrow_function_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+              <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp SPACE>,
+              <&kp EQUAL &kp GT &kp SPACE>,
+              <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
         };
 
         bt_clr: bluetooth_clear_macro {

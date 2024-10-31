@@ -50,8 +50,8 @@
 //         ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃                          ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
              &kp Z   &kp X   &kp C   &kp D   &kp V                              &kp K   &kp H   &mcs    &mdc    &msb
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃ ( num ┃ SHIFT ┃   )   ┃  ┃   {   ┃ SPACE ┃   }   ┃
-                       &lt _NUM LPAR &lsscw _NAV 0 &lt _NAV RPAR  &lt _SYM LBRC &lt _SYM SPC &lt _SYM RBRC
+//                                     ┃ ( num ┃ SHIFT ┃   )   ┃  ┃  [ {  ┃ SPACE ┃  ] }  ┃
+                       &lt _NUM LPAR &lsscw _NAV 0 &lt _NAV RPAR  &lt _SYM LBKT &lt _SYM SPC &lt _SYM RBKT
 //                                     ┗━━━━━━━┫  nav  ┣━━━━━━━┛  ┗━━━━━━━┫  sym  ┣━━━━━━━┛
 //                                             ┗━━━━━━━┛                  ┗━━━━━━━┛
             >;
@@ -143,14 +143,14 @@
 //         ┃       ┃                                                                                          ┃       ┃
               ___                                                                                                ___
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
-// ┃   `   ┃   |   ┃   &   ┃   +   ┃   %   ┃   _   ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
-&kp GRAVE &kp PIPE &kp AMPS &kp PLUS &kp PRCNT &kp UNDER                         ___     ___     ___     ___     ___     ___
+// ┃   `   ┃  =>   ┃()=>{ }┃   +   ┃   %   ┃   _   ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
+&kp GRAVE &arrow &arrowfn &kp PLUS &kp PRCNT &kp UNDER                           ___     ___     ___     ___     ___     ___
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ~   ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                          ┃ R Alt ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃ Globe ┃
 &kp TILDE &kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                      &kp RALT &kp LGUI &kp LALT &kp LCTL  ___  &kp GLOBE
 // ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
-//         ┃   <   ┃   >   ┃   [   ┃   ]   ┃   ?   ┃                          ┃       ┃  =>   ┃       ┃       ┃       ┃
-             &kp LT &kp GT &kp LBKT &kp RBKT &kp QMARK                           ___   &arrow    ___     ___     ___
+//         ┃   <   ┃   >   ┃   |   ┃   &   ┃   ?   ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+             &kp LT &kp GT &kp PIPE &kp AMPS &kp QMARK                           ___     ___     ___     ___     ___
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃   #   ┃   -   ┃   *   ┃  ┃       ┃ ##### ┃       ┃
                                       &kp HASH &kp MINUS &kp STAR    ___    I___I    ___
