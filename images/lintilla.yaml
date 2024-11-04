@@ -82,8 +82,8 @@ layers:
   - {type: held}
   - navigation
   - ''
+  - ','
   - .
-  - SPC
   - KP 0
   navigation:
   - ''
