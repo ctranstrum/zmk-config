@@ -2,6 +2,8 @@
 
 ## Aurora Sweep
 
+[Sweep Keymap](images/splitkb_aurora_sweep.svg)
+
 My first wireless split, after using the Planck EZ.
 
 - 34 keys
@@ -15,6 +17,8 @@ Got this working great, but two main issues:
 - batteries last for shit
 
 ## Totem
+
+[Totem Keymap](config/totem.keymap)
 
 Fell in love with this design, decided to try it out, no extras to deplete the batteries.
 
@@ -33,6 +37,8 @@ Pretty sweet board, all in all. However:
 
 ## Klor
 
+[Klor Keymap](images/klor.svg)
+
 I bought one of these and set it up with QMK, and I really liked it, but I wanted choc and wireless, and finally set it up.
 
 - 42 keys
@@ -42,12 +48,16 @@ I bought one of these and set it up with QMK, and I really liked it, but I wante
 
 ## Kyria
 
+[Kyria Keymap](config/trikyria.keymap)
+
 My biggest split yet.
 
 - 50 keys
 - OLED dongle
 
 ## Lintilla
+
+[Lintilla Keymap](config/lintilla.keymap)
 
 I got tired of everything being close enough but not quite, so I finally took the plunge with ergogen and designed my own keyboard.
 

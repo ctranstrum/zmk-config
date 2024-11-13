@@ -69,8 +69,8 @@
 // ┃ tmux  ┃       ┃       ┃       ┃       ┃ BKSPC ┃                          ┃   /   ┃   7   ┃   8   ┃   9   ┃   -   ┃ BKSPC ┃
    &mo _VIM   ___     ___     ___     ___  &kp BSPC                &kp KP_SLASH &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃       ┃ CtrlA ┃RETURN ┃ SPACE ┃       ┃       ┃                          ┃   *   ┃   4   ┃   5   ┃   6   ┃   +   ┃RETURN ┃
-&kp GLOBE &kp LC(A) Ctl RET Opt SPC &kp LGUI &kp RALT             &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS &kp KP_ENTER
+// ┃       ┃ CtrlA ┃       ┃       ┃ SPACE ┃RETURN ┃                          ┃   *   ┃   4   ┃   5   ┃   6   ┃   +   ┃RETURN ┃
+&kp GLOBE &kp LC(A) &kp LCTL &kp LALT Cmd SPC Alt RET             &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS &kp KP_ENTER
 // ┃ Globe ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
 //         ┃ CtrlZ ┃ CtrlX ┃ CtrlC ┃ CtrlD ┃ CtrlV ┃                          ┃   :   ┃   1   ┃   2   ┃   3   ┃   =   ┃
@@ -95,8 +95,8 @@
 // ┃       ┃       ┃       ┃       ┃       ┃ BKSPC ┃                          ┃ Pg Up ┃       ┃       ┃       ┃       ┃  DEL  ┃
       ___     ___     ___     ___     ___  &kp BSPC                           &kp PG_UP  ___     ___     ___     ___   &kp DEL
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-// ┃       ┃ Cmd A ┃RETURN ┃ SPACE ┃       ┃       ┃                          ┃ Home  ┃ Left  ┃  Up   ┃ Right ┃  End  ┃RETURN ┃
-&kp GLOBE Sft LG(A) Ctl RET Opt SPC &kp LGUI &kp RALT                        &kp HOME &kp LEFT &kp UP &kp RIGHT &kp END &kp RET
+// ┃       ┃ Cmd A ┃       ┃       ┃ SPACE ┃RETURN ┃                          ┃ Home  ┃ Left  ┃  Up   ┃ Right ┃  End  ┃RETURN ┃
+&kp GLOBE Sft LG(A) &kp LCTL &kp LALT Cmd SPC Alt RET                        &kp HOME &kp LEFT &kp UP &kp RIGHT &kp END &kp RET
 // ┃ Globe ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
 //         ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ Cmd D ┃ Cmd V ┃                          ┃ Pg Dn ┃       ┃ Down  ┃       ┃       ┃
