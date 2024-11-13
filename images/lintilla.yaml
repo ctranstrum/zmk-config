@@ -59,10 +59,10 @@ layers:
   - BSPC
   - GLOBE
   - Ctl+ A
-  - {t: RET, h: LCTRL}
-  - {t: SPC, h: LALT}
-  - LGUI
-  - RALT
+  - LCTL
+  - LALT
+  - {t: SPC, h: LGUI}
+  - {t: RET, h: RALT}
   - KP MULTIPLY
   - KP 4
   - KP 5
@@ -102,10 +102,10 @@ layers:
   - DEL
   - GLOBE
   - {t: Gui+ A, h: LSHFT}
-  - {t: RET, h: LCTRL}
-  - {t: SPC, h: LALT}
-  - LGUI
-  - RALT
+  - LCTL
+  - LALT
+  - {t: SPC, h: LGUI}
+  - {t: RET, h: RALT}
   - HOME
   - LEFT
   - UP
