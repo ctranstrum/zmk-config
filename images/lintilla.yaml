@@ -50,7 +50,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - BSPC
   - KP SLASH
   - KP 7
   - KP 8
@@ -59,8 +59,8 @@ layers:
   - BSPC
   - GLOBE
   - Ctl+ A
-  - LCTL
-  - LALT
+  - {t: RET, h: LCTRL}
+  - {t: SPC, h: LALT}
   - LGUI
   - RALT
   - KP MULTIPLY
@@ -93,7 +93,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - BSPC
   - PG UP
   - ''
   - ''
@@ -102,8 +102,8 @@ layers:
   - DEL
   - GLOBE
   - {t: Gui+ A, h: LSHFT}
-  - LCTL
-  - LALT
+  - {t: RET, h: LCTRL}
+  - {t: SPC, h: LALT}
   - LGUI
   - RALT
   - HOME
