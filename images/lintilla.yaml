@@ -84,7 +84,7 @@ layers:
   - ''
   - ','
   - KP 0
-  - '&kb DOT'
+  - .
   navigation:
   - ''
   - ''
