@@ -83,8 +83,8 @@ layers:
   - navigation
   - ''
   - ','
-  - .
   - KP 0
+  - '&kb DOT'
   navigation:
   - ''
   - ''
@@ -168,9 +168,9 @@ layers:
   - {type: held}
   - {type: held}
   - ''
-  - F12
-  - F11
   - F10
+  - F11
+  - F12
   symbols:
   - ''
   - ''
@@ -235,11 +235,11 @@ layers:
   - ''
   - ''
   - ''
-  - '&vtabprv'
+  - ''
   - '&vtab N4'
   - '&vtab N5'
   - '&vtab N6'
-  - '&vtabnxt'
+  - ''
   - '&vldr Q'
   - ''
   - ''
@@ -254,9 +254,9 @@ layers:
   - numpad
   - ''
   - ''
+  - '&vtabprv'
   - '&vldr W'
-  - ''
-  - '&vtab N0'
+  - '&vtabnxt'
   tmux:
   - ''
   - ''
@@ -278,18 +278,18 @@ layers:
   - ''
   - ''
   - ''
-  - '&tmux P'
+  - '&tmux C'
   - '&tmux N4'
   - '&tmux N5'
   - '&tmux N6'
-  - '&tmux N'
+  - ''
   - '&tmux D'
   - ''
   - ''
   - ''
   - ''
   - ''
-  - '&tmux C'
+  - '&tmux A'
   - '&tmux N1'
   - '&tmux N2'
   - '&tmux N3'
@@ -297,9 +297,9 @@ layers:
   - {type: held}
   - ''
   - ''
-  - '&tmux A'
+  - '&tmux P'
   - Ctl+ B
-  - '&tmux N0'
+  - '&tmux N'
   keyboard:
   - Gui+Ctl+ Q
   - {type: held}
