@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: klor, qmk_layout: LAYOUT_polydactyl}
+layout: {qmk_keyboard: klor, layout_name: LAYOUT_polydactyl}
 layers:
   Colemak:
   - Q
