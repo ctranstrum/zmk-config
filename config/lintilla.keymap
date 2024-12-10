@@ -14,9 +14,7 @@
 #define _TMUX 6
 #define _KBD  7
 
-/ {
-    combos {
-        compatible = "zmk,combos";
+// Key Positions
 //      ┏━━━━┓                                                      ┏━━━━┓
 //      ┃  0 ┃                                                      ┃  1 ┃
 // ┏━━━━╋━━━━╋━━━━┳━━━━┳━━━━┳━━━━┓              ┏━━━━┳━━━━┳━━━━┳━━━━╋━━━━╋━━━━┓
@@ -28,37 +26,118 @@
 //      ┗━━━━┻━━━━┻━━━━┻┳━━━┻┳━━━┻┳━━━━┓  ┏━━━━┳┻━━━┳┻━━━┳┻━━━━┻━━━━┻━━━━┛
 //                      ┃ 36 ┃<37>┃ 38 ┃  ┃ 39 ┃<40>┃ 41 ┃
 //                      ┗━━━━┻━━━━┻━━━━┛  ┗━━━━┻━━━━┻━━━━┛
+#define LEFT_MACRO 0
+#define RIGHT_MACRO 1
+#define LEFT_OUTER_TOP 2
+#define LEFT_PINKY_TOP 3
+#define LEFT_RING_TOP 4
+#define LEFT_MIDDLE_TOP 5
+#define LEFT_INDEX_TOP 6
+#define LEFT_INNER_TOP 7
+#define RIGHT_INNER_TOP 8
+#define RIGHT_INDEX_TOP 9
+#define RIGHT_MIDDLE_TOP 10
+#define RIGHT_RING_TOP 11
+#define RIGHT_PINKY_TOP 12
+#define RIGHT_OUTER_TOP 13
+#define LEFT_OUTER_HOME 14
+#define LEFT_PINKY_HOME 15
+#define LEFT_RING_HOME 16
+#define LEFT_MIDDLE_HOME 17
+#define LEFT_INDEX_HOME 18
+#define LEFT_INNER_HOME 19
+#define RIGHT_INNER_HOME 20
+#define RIGHT_INDEX_HOME 21
+#define RIGHT_MIDDLE_HOME 22
+#define RIGHT_RING_HOME 23
+#define RIGHT_PINKY_HOME 24
+#define RIGHT_OUTER_HOME 25
+#define LEFT_PINKY_BOTTOM 26
+#define LEFT_RING_BOTTOM 27
+#define LEFT_MIDDLE_BOTTOM 28
+#define LEFT_INDEX_BOTTOM 29
+#define LEFT_INNER_BOTTOM 30
+#define RIGHT_INNER_BOTTOM 31
+#define RIGHT_INDEX_BOTTOM 32
+#define RIGHT_MIDDLE_BOTTOM 33
+#define RIGHT_RING_BOTTOM 34
+#define RIGHT_PINKY_BOTTOM 35
+#define LEFT_THUMB_TUCKY 36
+#define LEFT_THUMB_HOME 37
+#define LEFT_THUMB_REACHY 38
+#define RIGHT_THUMB_REACKY 39
+#define RIGHT_THUMB_HOME 40
+#define RIGHT_THUMB_TUCKY 41
+/ {
+    combos {
+        compatible = "zmk,combos";
         combo_lpar {
-            key-positions = <16 17>;
+            key-positions = <LEFT_RING_HOME LEFT_MIDDLE_HOME>;
             bindings = <&kp LPAR>;
         };
         combo_rpar {
-            key-positions = <22 23>;
+            key-positions = <RIGHT_MIDDLE_HOME RIGHT_RING_HOME>;
             bindings = <&kp RPAR>;
         };
         combo_lbrc {
-            key-positions = <17 18>;
+            key-positions = <LEFT_MIDDLE_HOME LEFT_INDEX_HOME>;
             bindings = <&kp LBRC>;
         };
         combo_rbrc {
-            key-positions = <21 22>;
+            key-positions = <RIGHT_INDEX_HOME RIGHT_MIDDLE_HOME>;
             bindings = <&kp RBRC>;
         };
         combo_lbkt {
-            key-positions = <28 29>;
+            key-positions = <LEFT_MIDDLE_BOTTOM LEFT_INDEX_BOTTOM>;
             bindings = <&kp LBKT>;
         };
         combo_rbkt {
-            key-positions = <32 33>;
+            key-positions = <RIGHT_INDEX_BOTTOM RIGHT_MIDDLE_BOTTOM>;
             bindings = <&kp RBKT>;
         };
         combo_lt {
-            key-positions = <27 28>;
+            key-positions = <LEFT_RING_BOTTOM LEFT_MIDDLE_BOTTOM>;
             bindings = <&kp LT>;
         };
         combo_gt {
-            key-positions = <33 34>;
+            key-positions = <RIGHT_MIDDLE_BOTTOM RIGHT_RING_BOTTOM>;
             bindings = <&kp GT>;
+        };
+        combo_up {
+            key-positions = <RIGHT_MIDDLE_TOP RIGHT_MIDDLE_HOME>;
+            bindings = <&kp UP>;
+        };
+        combo_left {
+            key-positions = <RIGHT_INDEX_TOP RIGHT_INDEX_HOME>;
+            bindings = <&kp LEFT>;
+        };
+        combo_right {
+            key-positions = <RIGHT_RING_TOP RIGHT_RING_HOME>;
+            bindings = <&kp RIGHT>;
+        };
+        combo_down {
+            key-positions = <RIGHT_MIDDLE_HOME RIGHT_MIDDLE_BOTTOM>;
+            bindings = <&kp DOWN>;
+        };
+        combo_pgup {
+            key-positions = <RIGHT_INNER_TOP RIGHT_INNER_HOME>;
+            bindings = <&kp PG_UP>;
+        };
+        combo_pgdn {
+            key-positions = <RIGHT_INNER_HOME RIGHT_INNER_BOTTOM>;
+            bindings = <&kp PG_DN>;
+        };
+        combo_home {
+            key-positions = <RIGHT_INDEX_HOME RIGHT_INDEX_BOTTOM>;
+            bindings = <&kp HOME>;
+        };
+        combo_end {
+            key-positions = <RIGHT_RING_HOME RIGHT_RING_BOTTOM>;
+            bindings = <&kp END>;
+        };
+        combo_del {
+            key-positions = <RIGHT_PINKY_TOP RIGHT_OUTER_TOP>;
+            bindings = <&kp DEL>;
         };
     };
 
