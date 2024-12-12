@@ -286,11 +286,11 @@ ___ &kp LSHFT &kp LCTRL &kp LALT &kp LGUI ___        ___     &kp F1  &kp F2  &kp
 //                                   ┃  prev  ┃  play  ┃  next  ┃ ┃       ┃  ###  ┃       ┃
 //                                   ┗━━━━━━━━┻━━━━━━━━┻━━━━━━━━┛ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
             bindings = <
-//   ╷        ╷       ╷       ╷            ╷            ╷   ╷   ╷   ╷   ╷   ╷   ╷   ╷
-      HYPR(N4) ___     GS(N4)  &kp C_VOL_UP &kp LC(UP)       ___ ___ ___ ___ ___
-      ___      ___     GCS(N4) &kp C_VOL_DN &kp C_BRI_UP     ___ ___ ___ ___ ___
-GC(Q) ___      HYPR(M) ___     &kp K_MUTE   &kp C_BRI_DN     ___ ___ ___ ___ ___ ___
-      &kp C_PREV       &kp C_PLAY_PAUSE     &kp C_NEXT       ___ &trans  ___
+//   ╷        ╷       ╷       ╷          ╷          ╷   ╷   ╷   ╷   ╷   ╷   ╷   ╷
+      HYPR(N4) ___     GS(N4)  VOL_UP     &kp LC(UP)     ___ ___ ___ ___ ___
+      ___      ___     GCS(N4) VOL_DN     BRI_UP         ___ ___ ___ ___ ___
+GC(Q) ___      HYPR(M) ___     &kp K_MUTE BRI_DN         ___ ___ ___ ___ ___ ___
+      &kp C_PREV       &kp C_PLAY_PAUSE   &kp C_NEXT     ___ &trans  ___
             >;
         };
 
