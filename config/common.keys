@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 // Make blank keys more inconspicuous
 #define ___ &none
@@ -35,6 +36,24 @@
 
 // Macro for bluetooth connections
 #define BT_(btnum) &bt_key btnum btnum
+
+// Shortcuts for mouse movements
+#define CLICK_L &mkp LCLK
+#define CLICK_R &mkp RCLK
+#define MOUSE_U &mmv MOVE_UP
+#define MOUSE_D &mmv MOVE_DOWN
+#define MOUSE_L &mmv MOVE_LEFT
+#define MOUSE_R &mmv MOVE_RIGHT
+#define SCROL_U &msc SCRL_UP
+#define SCROL_D &msc SCRL_DOWN
+#define SCROL_L &msc SCRL_LEFT
+#define SCROL_R &msc SCRL_RIGHT
+
+// Shortcuts for brightness and volume controls
+#define BRI_UP &kp C_BRI_UP
+#define BRI_DN &kp C_BRI_DN
+#define VOL_UP &kp C_VOL_UP
+#define VOL_DN &kp C_VOL_DN
 
 // Change mod-tap defaults
 &mt {
@@ -137,7 +156,7 @@
         scroll: encoder_scroll {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&turbo DOWN>, <&turbo UP>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
         };
 
         shft_slash: mod_shft_slash {

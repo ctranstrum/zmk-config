@@ -2,17 +2,19 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <behaviors/rgbled_widget.dtsi>
 #include "common.keys"
 
 #define _CLMK 0
 #define _NUM  1
 #define _NAV  2
-#define _FUNC 3
-#define _SYM  4
-#define _VIM  5
-#define _TMUX 6
-#define _KBD  7
+#define _MOUS 3
+#define _FUNC 4
+#define _SYM  5
+#define _VIM  6
+#define _TMUX 7
+#define _KBD  8
 
 // Key Positions
 //      ┏━━━━┓                                                      ┏━━━━┓
@@ -176,8 +178,8 @@
 //         ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃                          ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
              &kp Z   &kp X   &kp C   &kp D   &kp V                              &kp K   &kp H   &mcs    &mdc    &msb
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
-//                                     ┃ ( num ┃ SHIFT ┃   )   ┃  ┃  [ {  ┃ SPACE ┃  ] }  ┃
-                       &lt _NUM LPAR &lsscw _NAV 0 &lt _NAV RPAR  &lt _SYM LBKT &lt _SYM SPC &lt _SYM RBKT
+//                                     ┃ ( num ┃ SHIFT ┃ ) mous┃  ┃  [ {  ┃ SPACE ┃  ] }  ┃
+                      &lt _NUM LPAR &lsscw _NAV 0 &lt _MOUS RPAR  &lt _SYM LBKT &lt _SYM SPC &lt _SYM RBKT
 //                                     ┗━━━━━━━┫  nav  ┣━━━━━━━┛  ┗━━━━━━━┫  sym  ┣━━━━━━━┛
 //                                             ┗━━━━━━━┛                  ┗━━━━━━━┛
             >;
@@ -230,6 +232,32 @@
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃  fn   ┃ ##### ┃       ┃  ┃  TAB  ┃ SPACE ┃       ┃
                                         &mo _NUM I___I    ___      &kp TAB &kp SPC   ___
+//                                     ┗━━━━━━━┫       ┣━━━━━━━┛  ┗━━━━━━━┫       ┣━━━━━━━┛
+//                                             ┗━━━━━━━┛                  ┗━━━━━━━┛
+            >;
+        };
+
+        mouse {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "mouse"                 ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+//         ┏━━━━━━━┓                                                                                          ┏━━━━━━━┓
+//         ┃       ┃                                                                                          ┃       ┃
+              ___                                                                                                ___
+// ┏━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
+// ┃       ┃       ┃       ┃       ┃       ┃       ┃                          ┃ScrolUp┃       ┃       ┃       ┃       ┃       ┃
+      ___     ___     ___     ___     ___     ___                              SCROL_U   ___     ___     ___     ___     ___
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃ Cmd A ┃       ┃       ┃       ┃       ┃                          ┃ScrolLt┃ Left  ┃  Up   ┃ Right ┃ScrolRt┃       ┃
+&kp GLOBE Sft LG(A) &kp LCTL &kp LALT &kp LCMD &kp RALT                        SCROL_L MOUSE_L MOUSE_U MOUSE_R SCROL_R   ___
+// ┃ Globe ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ R Alt ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
+//         ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ Cmd D ┃ Cmd V ┃                          ┃ScrolDn┃       ┃ Down  ┃       ┃       ┃
+         &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(D) &kp LG(V)                     SCROL_D   ___   MOUSE_D   ___     ___
+//         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                     ┃       ┃       ┃ ##### ┃  ┃       ┃l click┃r click┃
+                                          ___     ___    I___I       ___   CLICK_L CLICK_R
 //                                     ┗━━━━━━━┫       ┣━━━━━━━┛  ┗━━━━━━━┫       ┣━━━━━━━┛
 //                                             ┗━━━━━━━┛                  ┗━━━━━━━┛
             >;
@@ -345,13 +373,13 @@
              GC(Q)                                                                                              I___I
 // ┏━━━━━━━╋━━━━━━━╋━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━╋━━━━━━━╋━━━━━━━┓
 // ┃ brt + ┃       ┃       ┃scrnsht┃scrn cp┃battery┃                          ┃       ┃       ┃  USB  ┃       ┃       ┃       ┃
-&kp C_BRI_UP  ___     ___   GS(N4)  GCS(N4) &ind_bat                             ___     ___ &out OUT_USB ___    ___     ___
+     BRI_UP   ___     ___   GS(N4)  GCS(N4) &ind_bat                             ___     ___ &out OUT_USB ___    ___     ___
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ brt - ┃  BT1  ┃  BT2  ┃  BT3  ┃  BT4  ┃  BT5  ┃                          ┃       ┃       ┃       ┃       ┃       ┃       ┃
-&kp C_BRI_DN BT_(0)  BT_(1)  BT_(2)  BT_(3)  BT_(4)                              ___     ___     ___     ___     ___     ___
+     BRI_DN  BT_(0)  BT_(1)  BT_(2)  BT_(3)  BT_(4)                              ___     ___     ___     ___     ___     ___
 // ┗━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫                          ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┛
 //         ┃       ┃micmute┃ vol - ┃ vol + ┃connect┃                          ┃       ┃       ┃       ┃       ┃       ┃
-           ___ HYPR(M) &kp C_VOL_DN &kp C_VOL_UP &ind_con                        ___     ___     ___     ___     ___
+              ___   HYPR(M)  VOL_DN  VOL_UP &ind_con                             ___     ___     ___     ___     ___
 //         ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━┳━━━┻━━━┳━━━┻━━━┳━━━━━━━┓  ┏━━━━━━━┳━━━┻━━━┳━━━┻━━━┳━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                     ┃numlock┃capslok┃       ┃  ┃       ┃       ┃       ┃
                                       &kp KP_NUM &kp CAPS ___        ___     ___     ___
