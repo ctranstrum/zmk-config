@@ -38,7 +38,7 @@ layers:
   - {t: /, s: \}
   - {t: (, h: numpad}
   - {t: LSHIFT, h: navigation, s: '&caps_word'}
-  - {t: ), h: navigation}
+  - {t: ), h: mouse}
   - {t: '[', h: symbols}
   - {t: SPC, h: symbols}
   - {t: ']', h: symbols}
@@ -128,6 +128,49 @@ layers:
   - TAB
   - SPC
   - ''
+  mouse:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&msc SCRL_UP'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - GLOBE
+  - {t: Gui+ A, h: LSHFT}
+  - LCTL
+  - LALT
+  - LCMD
+  - RALT
+  - '&msc SCRL_LEFT'
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_UP'
+  - '&mmv MOVE_RIGHT'
+  - '&msc SCRL_RIGHT'
+  - ''
+  - Gui+ Z
+  - Gui+ X
+  - Gui+ C
+  - Gui+ D
+  - Gui+ V
+  - '&msc SCRL_DOWN'
+  - ''
+  - '&mmv MOVE_DOWN'
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - '&mkp LCLK'
+  - '&mkp RCLK'
   function:
   - ''
   - ''
