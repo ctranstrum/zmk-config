@@ -44,8 +44,8 @@ include:
 
   # Lintilla
   - board: seeeduino_xiao_ble
-    shield: lintilla_left_dongle prospector_adapter
-    artifact-name: lintilla-left-central
+    shield: lintilla_dongle prospector_adapter
+    artifact-name: lintilla-dongle
   - board: seeeduino_xiao_ble
     shield: lintilla_left_central rgbled_adapter
     artifact-name: lintilla-left-central
