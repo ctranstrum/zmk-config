@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: Nick-Munnich
-      url-base: https://githug.com/Nick-Munnich
+      url-base: https://github.com/Nick-Munnich
     - name: ctranstrum
       url-base: https://github.com/ctranstrum
     - name: caksoylar
