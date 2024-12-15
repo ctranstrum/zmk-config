@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: Nick-Munnich
+      url-base: https://githug.com/Nick-Munnich
     - name: ctranstrum
       url-base: https://github.com/ctranstrum
     - name: caksoylar
@@ -9,9 +11,13 @@ manifest:
     - name: carrefinho
       url-base: https://github.com/carrefinho
   projects:
+    # - name: zmk
+    #   remote: zmkfirmware
+    #   revision: main
+    #   import: app/west.yml
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: Nick-Munnich
+      revision: kconfig-fix
       import: app/west.yml
     - name: lintilla
       remote: ctranstrum
