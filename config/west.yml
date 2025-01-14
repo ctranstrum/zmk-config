@@ -10,15 +10,17 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: carrefinho
       url-base: https://github.com/carrefinho
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
   projects:
-    # - name: zmk
-    #   remote: zmkfirmware
-    #   revision: main
-    #   import: app/west.yml
     - name: zmk
-      remote: Nick-Munnich
-      revision: kconfig-fix
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
+    # - name: zmk
+    #   remote: Nick-Munnich
+    #   revision: kconfig-fix
+    #   import: app/west.yml
     - name: lintilla
       remote: ctranstrum
       revision: zmk
@@ -27,6 +29,9 @@ manifest:
       revision: main
     - name: prospector-zmk-module
       remote: carrefinho
+      revision: main
+    - name: zmk-dongle-display
+      remote: englmaxi
       revision: main
   self:
     path: config
