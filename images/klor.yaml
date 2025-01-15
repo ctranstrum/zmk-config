@@ -377,7 +377,7 @@ layers:
   - ''
   - ''
   - ''
-  - Ctl+ B
+  - Ctl+B
   - '&tmux N4'
   - '&tmux N5'
   - '&tmux N6'
@@ -408,9 +408,9 @@ layers:
   keyboard:
   - {t: Qwerty, h: toggle}
   - ''
-  - Gui+Sft+ 4
-  - Gui+Ctl+Sft+ 4
-  - Hyper+ 4
+  - Gui+Sft+4
+  - Gui+Ctl+Sft+4
+  - Hyper+4
   - ''
   - ''
   - ''
@@ -430,10 +430,10 @@ layers:
   - ''
   - '&bootloader'
   - ''
-  - Hyper+ M
+  - Hyper+M
   - {t: Colemak, h: toggle}
   - ''
-  - Ctl+ UP
+  - Ctl+UP
   - ''
   - ''
   - ''
@@ -442,7 +442,7 @@ layers:
   - ''
   - ''
   - {type: held}
-  - Gui+Ctl+ Q
+  - Gui+Ctl+Q
   - KP NUM
   - CAPS
   - '&flash 10'

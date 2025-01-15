@@ -58,7 +58,7 @@ layers:
   - KP MINUS
   - BSPC
   - GLOBE
-  - Ctl+ A
+  - Ctl+A
   - LCTL
   - LALT
   - {t: SPC, h: LGUI}
@@ -69,11 +69,11 @@ layers:
   - KP 6
   - KP PLUS
   - KP ENTER
-  - Ctl+ Z
-  - Ctl+ X
-  - Ctl+ C
-  - Ctl+ D
-  - Ctl+ V
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+D
+  - Ctl+V
   - ':'
   - KP 1
   - KP 2
@@ -101,7 +101,7 @@ layers:
   - ''
   - DEL
   - GLOBE
-  - {t: Gui+ A, h: LSHFT}
+  - {t: Gui+A, h: LSHFT}
   - LCTL
   - LALT
   - {t: SPC, h: LGUI}
@@ -112,11 +112,11 @@ layers:
   - RIGHT
   - END
   - RET
-  - Gui+ Z
-  - Gui+ X
-  - Gui+ C
-  - Gui+ D
-  - Gui+ V
+  - Gui+Z
+  - Gui+X
+  - Gui+C
+  - Gui+D
+  - Gui+V
   - PG DN
   - ''
   - DOWN
@@ -144,7 +144,7 @@ layers:
   - ''
   - ''
   - GLOBE
-  - {t: Gui+ A, h: LSHFT}
+  - {t: Gui+A, h: LSHFT}
   - LCTL
   - LALT
   - LCMD
@@ -155,11 +155,11 @@ layers:
   - '&mmv MOVE_RIGHT'
   - '&msc SCRL_RIGHT'
   - ''
-  - Gui+ Z
-  - Gui+ X
-  - Gui+ C
-  - Gui+ D
-  - Gui+ V
+  - Gui+Z
+  - Gui+X
+  - Gui+C
+  - Gui+D
+  - Gui+V
   - '&msc SCRL_DOWN'
   - ''
   - '&mmv MOVE_DOWN'
@@ -341,16 +341,16 @@ layers:
   - ''
   - ''
   - '&tmux P'
-  - Ctl+ B
+  - Ctl+B
   - '&tmux N'
   keyboard:
-  - Gui+Ctl+ Q
+  - Gui+Ctl+Q
   - {type: held}
   - BRI UP
   - ''
   - ''
-  - Gui+Sft+ 4
-  - Gui+Ctl+Sft+ 4
+  - Gui+Sft+4
+  - Gui+Ctl+Sft+4
   - '&ind_bat'
   - ''
   - ''
@@ -371,7 +371,7 @@ layers:
   - ''
   - ''
   - ''
-  - Hyper+ M
+  - Hyper+M
   - VOL DN
   - VOL UP
   - '&ind_con'
@@ -387,9 +387,9 @@ layers:
   - ''
   - ''
 combos:
-- p: [16, 17]
+- p: [5, 6]
   k: (
-- p: [22, 23]
+- p: [9, 10]
   k: )
 - p: [17, 18]
   k: '{'
@@ -399,9 +399,9 @@ combos:
   k: '['
 - p: [32, 33]
   k: ']'
-- p: [27, 28]
+- p: [18, 19]
   k: <
-- p: [33, 34]
+- p: [20, 21]
   k: '>'
 - p: [10, 22]
   k: UP
