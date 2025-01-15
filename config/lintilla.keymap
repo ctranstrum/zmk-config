@@ -67,18 +67,18 @@
 #define LEFT_THUMB_TUCKY 36
 #define LEFT_THUMB_HOME 37
 #define LEFT_THUMB_REACHY 38
-#define RIGHT_THUMB_REACKY 39
+#define RIGHT_THUMB_REACHY 39
 #define RIGHT_THUMB_HOME 40
 #define RIGHT_THUMB_TUCKY 41
 / {
     combos {
         compatible = "zmk,combos";
         combo_lpar {
-            key-positions = <LEFT_RING_HOME LEFT_MIDDLE_HOME>;
+            key-positions = <LEFT_MIDDLE_TOP LEFT_INDEX_TOP>;
             bindings = <&kp LPAR>;
         };
         combo_rpar {
-            key-positions = <RIGHT_MIDDLE_HOME RIGHT_RING_HOME>;
+            key-positions = <RIGHT_INDEX_TOP RIGHT_MIDDLE_TOP>;
             bindings = <&kp RPAR>;
         };
         combo_lbrc {
@@ -98,11 +98,11 @@
             bindings = <&kp RBKT>;
         };
         combo_lt {
-            key-positions = <LEFT_RING_BOTTOM LEFT_MIDDLE_BOTTOM>;
+            key-positions = <LEFT_INDEX_HOME LEFT_INNER_HOME>;
             bindings = <&kp LT>;
         };
         combo_gt {
-            key-positions = <RIGHT_MIDDLE_BOTTOM RIGHT_RING_BOTTOM>;
+            key-positions = <RIGHT_INNER_HOME RIGHT_INDEX_HOME>;
             bindings = <&kp GT>;
         };
         combo_up {
