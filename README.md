@@ -57,7 +57,7 @@ My biggest split yet.
 
 ## Lintilla
 
-[Lintilla Keymap](config/lintilla.keymap)
+[Lintilla Keymap](images/lintilla.svg)
 
 I got tired of everything being close enough but not quite, so I finally took the plunge with ergogen and designed my own keyboard.
 
