@@ -76,70 +76,87 @@
         combo_lpar {
             key-positions = <LEFT_MIDDLE_TOP LEFT_INDEX_TOP>;
             bindings = <&kp LPAR>;
+            layers = <0>;
         };
         combo_rpar {
             key-positions = <RIGHT_INDEX_TOP RIGHT_MIDDLE_TOP>;
             bindings = <&kp RPAR>;
+            layers = <0>;
         };
         combo_lbrc {
             key-positions = <LEFT_MIDDLE_HOME LEFT_INDEX_HOME>;
             bindings = <&kp LBRC>;
+            layers = <0>;
         };
         combo_rbrc {
             key-positions = <RIGHT_INDEX_HOME RIGHT_MIDDLE_HOME>;
             bindings = <&kp RBRC>;
+            layers = <0>;
         };
         combo_lbkt {
             key-positions = <LEFT_MIDDLE_BOTTOM LEFT_INDEX_BOTTOM>;
             bindings = <&kp LBKT>;
+            layers = <0>;
         };
         combo_rbkt {
             key-positions = <RIGHT_INDEX_BOTTOM RIGHT_MIDDLE_BOTTOM>;
             bindings = <&kp RBKT>;
+            layers = <0>;
         };
         combo_lt {
             key-positions = <LEFT_INDEX_HOME LEFT_INNER_HOME>;
             bindings = <&kp LT>;
+            layers = <0>;
         };
         combo_gt {
             key-positions = <RIGHT_INNER_HOME RIGHT_INDEX_HOME>;
             bindings = <&kp GT>;
+            layers = <0>;
         };
         combo_up {
             key-positions = <RIGHT_MIDDLE_TOP RIGHT_MIDDLE_HOME>;
             bindings = <&kp UP>;
+            layers = <0>;
         };
         combo_left {
             key-positions = <RIGHT_INDEX_TOP RIGHT_INDEX_HOME>;
             bindings = <&kp LEFT>;
+            layers = <0>;
         };
         combo_right {
             key-positions = <RIGHT_RING_TOP RIGHT_RING_HOME>;
             bindings = <&kp RIGHT>;
+            layers = <0>;
         };
         combo_down {
             key-positions = <RIGHT_MIDDLE_HOME RIGHT_MIDDLE_BOTTOM>;
             bindings = <&kp DOWN>;
+            layers = <0>;
         };
         combo_pgup {
             key-positions = <RIGHT_INNER_TOP RIGHT_INNER_HOME>;
             bindings = <&kp PG_UP>;
+            layers = <0>;
         };
         combo_pgdn {
             key-positions = <RIGHT_INNER_HOME RIGHT_INNER_BOTTOM>;
             bindings = <&kp PG_DN>;
+            layers = <0>;
         };
         combo_home {
             key-positions = <RIGHT_INDEX_HOME RIGHT_INDEX_BOTTOM>;
             bindings = <&kp HOME>;
+            layers = <0>;
         };
         combo_end {
             key-positions = <RIGHT_RING_HOME RIGHT_RING_BOTTOM>;
             bindings = <&kp END>;
+            layers = <0>;
         };
         combo_del {
             key-positions = <RIGHT_PINKY_TOP RIGHT_OUTER_TOP>;
             bindings = <&kp DEL>;
+            layers = <0>;
         };
     };
 
