@@ -389,35 +389,52 @@ layers:
 combos:
 - p: [5, 6]
   k: (
+  l: [Colemak]
 - p: [9, 10]
   k: )
+  l: [Colemak]
 - p: [17, 18]
   k: '{'
+  l: [Colemak]
 - p: [21, 22]
   k: '}'
+  l: [Colemak]
 - p: [28, 29]
   k: '['
+  l: [Colemak]
 - p: [32, 33]
   k: ']'
+  l: [Colemak]
 - p: [18, 19]
   k: <
+  l: [Colemak]
 - p: [20, 21]
   k: '>'
+  l: [Colemak]
 - p: [10, 22]
   k: UP
+  l: [Colemak]
 - p: [9, 21]
   k: LEFT
+  l: [Colemak]
 - p: [11, 23]
   k: RIGHT
+  l: [Colemak]
 - p: [22, 33]
   k: DOWN
+  l: [Colemak]
 - p: [8, 20]
   k: PG UP
+  l: [Colemak]
 - p: [20, 31]
   k: PG DN
+  l: [Colemak]
 - p: [21, 32]
   k: HOME
+  l: [Colemak]
 - p: [23, 34]
   k: END
+  l: [Colemak]
 - p: [12, 13]
   k: DEL
+  l: [Colemak]
