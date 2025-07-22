@@ -1,3 +1,151 @@
 parse_config:
   zmk_additional_includes:
     - zmk-helpers/include
+
+  modifier_fn_map:
+    left_shift: ⇧
+    left_alt: ⌥
+    right_alt: Alt
+    left_ctrl: ^
+    left_gui: ⌘
+    keycode_combiner: "{mods}{key}"
+    mod_combiner: "{mod_1}{mod_2}"
+
+  raw_binding_map:
+    "&bt_sel 0": BT 1
+    "&bt_sel 1": BT 2
+    "&bt_sel 2": BT 3
+    "&bt_sel 3": BT 4
+    "&bt_sel 4": BT 5
+    "&bt_clr 0": clear 1
+    "&bt_clr 1": clear 2
+    "&bt_clr 2": clear 3
+    "&bt_clr 3": clear 4
+    "&bt_clr 4": clear 5
+    "&caps_word": caps word
+    "&flash 4": flash
+    "&flash 6": flash
+    "&ind_bat": battery status
+    "&ind_con": connection status
+    "&mkp LCLK": "mouse click"
+    "&mkp RCLK": "right click"
+    "&mmv MOVE_DOWN": mouse ↓
+    "&mmv MOVE_LEFT": mouse ←
+    "&mmv MOVE_RIGHT": mouse →
+    "&mmv MOVE_UP": mouse ↑
+    "&msc SCRL_DOWN": scroll ↓
+    "&msc SCRL_LEFT": scroll ←
+    "&msc SCRL_RIGHT": scroll →
+    "&msc SCRL_UP": scroll ↑
+    "&sk LSHIFT": sticky ⇧
+    "&studio_unlock": ZMK Studio
+    "&usb_sel": USB
+    GC(Q): lock screen
+    GCS(N4): screen copy
+    GS(N4): screen shot
+    HYPR(N4): launch pad
+
+  zmk_keycode_map:
+    AMPS: "&"
+    AT: "@"
+    BACKSLASH: \
+    BSPC: ⌫
+    CAPS: Caps 🔒
+    CARET: ^
+    COLON: ":"
+    COMMA: ","
+    C_NEXT: ⏭
+    C_PP: ⏯
+    C_PREV: ⏮
+    DEL: ⌦
+    DLLR: $
+    DOT: .
+    DOWN: ↓
+    END: End
+    EQUAL: "="
+    ESC: Esc
+    EXCL: "!"
+    GLOBE: 🌐
+    GRAVE: "`"
+    GT: ">"
+    HASH: "#"
+    HOME: Home
+    KP_NUM: Num 🔒
+    LALT: ⌥
+    LBKT: "["
+    LBRC: "{"
+    LCTL: ^
+    LCTRL: ^
+    LC(UP): mission control
+    LEFT: ←
+    LGUI: ⌘
+    LPAR: (
+    LSHFT: ⇧
+    LSHIFT: sticky shift
+    LT: <
+    MINUS: "-"
+    PG_DN: PgDn
+    PG_UP: PgUp
+    PIPE: "|"
+    PLUS: +
+    PRCNT: "%"
+    QMARK: "?"
+    RALT: Alt
+    RBKT: "]"
+    RBRC: "}"
+    RET: ↵
+    RIGHT: →
+    RPAR: )
+    SEMI: ;
+    SLASH: /
+    SPC: ␣
+    SQT: "'"
+    STAR: "*"
+    TAB: ⇥
+    TILDE: "~"
+    UNDER: _
+    UP: ↑
+
+  zmk_combos:
+    # These are all on my Charlieflex board
+    combo_unlock:
+      align: top
+      offset: 1
+    combo_b:
+      dendron: true
+    combo_j:
+      dendron: true
+    combo_less_than:
+      dendron: true
+    combo_greater_than:
+      dendron: true
+    combo_esc:
+      draw_separate: true
+    combo_tab:
+      draw_separate: true
+    combo_backspace:
+      draw_separate: true
+    combo_return:
+      draw_separate: true
+    combo_mouse_click:
+      layers: [flash mode]
+    combo_mouse_right_click:
+      layers: [flash mode]
+    combo_mouse_up:
+      layers: [flash mode]
+    combo_mouse_down:
+      layers: [flash mode]
+    combo_mouse_left:
+      layers: [flash mode]
+    combo_mouse_right:
+      layers: [flash mode]
+    combo_scroll_up:
+      layers: [flash mode]
+    combo_scroll_down:
+      layers: [flash mode]
+    combo_scroll_left:
+      layers: [flash mode]
+    combo_scroll_right:
+      layers: [flash mode]
+    combo_flash:
+      dendron: true
