@@ -33,7 +33,6 @@ layers:
   - {t: '-', h: numpad}
   - {t: LSHIFT, h: navigation, s: '&caps_word'}
   - {t: SPC, h: symbols}
-  - {t: '*', h: symbols}
   numpad:
   - ESC
   - ''
@@ -67,7 +66,6 @@ layers:
   - {type: held}
   - navigation
   - '0'
-  - .
   navigation:
   - ESC
   - ''
@@ -101,7 +99,6 @@ layers:
   - numpad
   - {type: held}
   - {t: TAB, h: symbols}
-  - SPC
   symbols:
   - '`'
   - '#'
@@ -135,7 +132,6 @@ layers:
   - _
   - {t: /, h: navigation}
   - {type: held}
-  - {t: ▽, type: trans}
   function:
   - ''
   - ''
@@ -168,7 +164,6 @@ layers:
   - F10
   - {type: held}
   - {type: held}
-  - ''
   - ''
   keyboard:
   - '&ind_con'
@@ -203,7 +198,6 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {type: held}
-  - {t: ▽, type: trans}
   vim:
   - {type: held}
   - ''
@@ -237,8 +231,7 @@ layers:
   - ''
   - ''
   - '&vldr W'
-  - ''
-  flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [0, 7]
   k: '&studio_unlock'
