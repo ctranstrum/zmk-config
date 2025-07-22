@@ -245,6 +245,12 @@
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
 
+        usb_sel: usb_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_USB>;
+        };
+
         vldr: vim_leader_macro {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;

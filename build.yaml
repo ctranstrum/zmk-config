@@ -10,56 +10,66 @@ include:
   #   artifact-name: sweep-right
 
   # Totem with OLED dongle
-  - board: seeeduino_xiao_ble
-    shield: totem_dongle dongle_display
-    artifact-name: totem-dongle
-  - board: seeeduino_xiao_ble
-    shield: totem_left
-    artifact-name: totem-left
-  - board: seeeduino_xiao_ble
-    shield: totem_right
-    artifact-name: totem-right
+  # - board: seeeduino_xiao_ble
+  #   shield: totem_dongle dongle_display
+  #   artifact-name: totem-dongle
+  # - board: seeeduino_xiao_ble
+  #   shield: totem_left
+  #   artifact-name: totem-left
+  # - board: seeeduino_xiao_ble
+  #   shield: totem_right
+  #   artifact-name: totem-right
 
   # Klor with OLED dongle
-  - board: seeeduino_xiao_ble
-    shield: klor_dongle dongle_display
-    artifact-name: klor-dongle
-  - board: nice_nano_v2
-    shield: klor_left
-    artifact-name: klor-left
-  - board: nice_nano_v2
-    shield: klor_right
-    artifact-name: klor-right
+  # - board: seeeduino_xiao_ble
+  #   shield: klor_dongle dongle_display
+  #   artifact-name: klor-dongle
+  # - board: nice_nano_v2
+  #   shield: klor_left
+  #   artifact-name: klor-left
+  # - board: nice_nano_v2
+  #   shield: klor_right
+  #   artifact-name: klor-right
 
   # Kyria rev 3.1 with OLED dongle
-  - board: seeeduino_xiao_ble
-    shield: trikyria_dongle dongle_display
-    artifact-name: kyria-dongle
-  - board: nice_nano_v2
-    shield: trikyria_left
-    artifact-name: kyria-left
-  - board: nice_nano_v2
-    shield: trikyria_right
-    artifact-name: kyria-right
+  # - board: seeeduino_xiao_ble
+  #   shield: trikyria_dongle dongle_display
+  #   artifact-name: kyria-dongle
+  # - board: nice_nano_v2
+  #   shield: trikyria_left
+  #   artifact-name: kyria-left
+  # - board: nice_nano_v2
+  #   shield: trikyria_right
+  #   artifact-name: kyria-right
 
   # Lintilla
+  # - board: seeeduino_xiao_ble
+  #   shield: lintilla_dongle prospector_adapter
+  #   artifact-name: lintilla-dongle
+  # - board: seeeduino_xiao_ble
+  #   shield: lintilla_left_central rgbled_adapter
+  #   artifact-name: lintilla-left-central
+  # - board: seeeduino_xiao_ble
+  #   shield: lintilla_left_peripheral rgbled_adapter
+  #   artifact-name: lintilla-left-peripheral
+  # - board: seeeduino_xiao_ble
+  #   shield: lintilla_right_peripheral rgbled_adapter
+  #   artifact-name: lintilla-right
+
+  # Charlieflex
   - board: seeeduino_xiao_ble
-    shield: lintilla_dongle prospector_adapter
-    artifact-name: lintilla-dongle
-  - board: seeeduino_xiao_ble
-    shield: lintilla_left_central rgbled_adapter
-    artifact-name: lintilla-left-central
-  - board: seeeduino_xiao_ble
-    shield: lintilla_left_peripheral rgbled_adapter
-    artifact-name: lintilla-left-peripheral
-  - board: seeeduino_xiao_ble
-    shield: lintilla_right_peripheral rgbled_adapter
-    artifact-name: lintilla-right
+    shield: charlieflix_unibody rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: chuck-unibody-ble
+  - board: seeeduino_xiao_rp2040
+    shield: charlieflix_unibody rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: chuck-unibody-ble
 
   # Settings Reset
-  - board: nice_nano_v2
-    shield: settings_reset
-    artifact-name: nano-reset
+  # - board: nice_nano_v2
+  #   shield: settings_reset
+  #   artifact-name: nano-reset
   - board: seeeduino_xiao_ble
     shield: settings_reset
     artifact-name: xiao-reset

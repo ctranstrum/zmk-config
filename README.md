@@ -68,3 +68,19 @@ The key layout is heavily influenced by the Klor, with the case influenced by th
 - rgbled widget
 - large battery "hidden" in a pcb cutout
 - 3D printed sandwich case without standoffs
+
+## Charlieflex
+
+[Twenty One Chuck Street Keymap](images/chuck.svg)
+
+My latest keyboard takes the basic layout of the Lintilla,
+moves back to MX spacing,
+drops all the keys that can't be reached within 1 key from home,
+and smooshes the two halves into a travel-friendly unibody.
+
+- 31 keys, choc v1 and v2 compatible
+- ambidextrous encoder
+- optional dongle
+- rgbled widget
+- large battery
+- snug sandwich case with a battery cover

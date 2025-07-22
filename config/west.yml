@@ -21,6 +21,9 @@ manifest:
     #   remote: Nick-Munnich
     #   revision: kconfig-fix
     #   import: app/west.yml
+    - name: chuck
+      remote: ctranstrum
+      revision: zmk
     - name: lintilla
       remote: ctranstrum
       revision: zmk
