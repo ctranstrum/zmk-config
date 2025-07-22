@@ -9,55 +9,55 @@ layers:
   - U
   - Y
   - ''''
-  - {t: A, h: LSHFT}
-  - {t: R, h: LCTRL}
-  - {t: S, h: LALT}
-  - {t: T, h: LGUI}
-  - {t: G, h: GLOBE}
-  - {t: M, h: GLOBE}
-  - {t: N, h: LGUI}
-  - {t: E, h: LALT}
-  - {t: I, h: LCTRL}
-  - {t: O, h: LSHFT}
+  - {t: A, h: ⇧}
+  - {t: R, h: ^}
+  - {t: S, h: ⌥}
+  - {t: T, h: ⌘}
+  - {t: G, h: 🌐}
+  - {t: M, h: 🌐}
+  - {t: N, h: ⌘}
+  - {t: E, h: ⌥}
+  - {t: I, h: ^}
+  - {t: O, h: ⇧}
   - Z
   - X
-  - {t: C, h: RALT}
+  - {t: C, h: Alt}
   - D
   - V
   - MUTE
   - K
   - H
-  - {t: ',', h: RALT, s: ;}
+  - {t: ',', h: Alt, s: ;}
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: '-', h: numpad}
-  - {t: LSHIFT, h: navigation, s: '&caps_word'}
-  - {t: SPC, h: symbols}
+  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: ␣, h: symbols}
   numpad:
-  - ESC
+  - Esc
   - ''
-  - Gui+Sft+4
-  - Gui+Ctl+Sft+4
+  - screen shot
+  - screen copy
   - '7'
   - '8'
   - '9'
   - '-'
-  - Ctl+A
-  - {t: BSPC, h: LCTRL}
-  - {t: SPC, h: LALT}
-  - {t: TAB, h: LGUI}
-  - {t: RET, h: GLOBE}
+  - ^A
+  - {t: ⌫, h: ^}
+  - {t: ␣, h: ⌥}
+  - {t: ⇥, h: ⌘}
+  - {t: ↵, h: 🌐}
   - /
   - '4'
   - '5'
   - '6'
   - +
-  - Ctl+Z
-  - Ctl+X
-  - {t: Ctl+C, h: RALT}
-  - Ctl+D
-  - Ctl+V
-  - PP
+  - ^Z
+  - ^X
+  - {t: ^C, h: Alt}
+  - ^D
+  - ^V
+  - ⏯
   - '*'
   - '1'
   - '2'
@@ -67,68 +67,68 @@ layers:
   - navigation
   - '0'
   navigation:
-  - ESC
+  - Esc
   - ''
-  - Gui+Sft+4
-  - Gui+Ctl+Sft+4
-  - ESC
+  - screen shot
+  - screen copy
+  - Esc
   - ''
-  - DEL
-  - BSPC
-  - {t: Gui+A, h: LSHFT}
-  - {t: BSPC, h: LCTRL}
-  - {t: SPC, h: LALT}
-  - {t: TAB, h: LGUI}
-  - {t: RET, h: GLOBE}
-  - PG UP
-  - LEFT
-  - UP
-  - RIGHT
-  - RET
-  - Gui+Z
-  - Gui+X
-  - {t: Gui+C, h: RALT}
-  - Gui+D
-  - Gui+V
-  - PREV
-  - PG DN
-  - HOME
-  - DOWN
-  - END
-  - SPC
+  - ⌦
+  - ⌫
+  - {t: ⌘A, h: ⇧}
+  - {t: ⌫, h: ^}
+  - {t: ␣, h: ⌥}
+  - {t: ⇥, h: ⌘}
+  - {t: ↵, h: 🌐}
+  - PgUp
+  - ←
+  - ↑
+  - →
+  - ↵
+  - ⌘Z
+  - ⌘X
+  - {t: ⌘C, h: Alt}
+  - ⌘D
+  - ⌘V
+  - ⏮
+  - PgDn
+  - Home
+  - ↓
+  - End
+  - ␣
   - numpad
   - {type: held}
-  - {t: TAB, h: symbols}
+  - {t: ⇥, h: symbols}
   symbols:
   - '`'
   - '#'
   - '%'
   - '*'
-  - ESC
-  - Ctl+U
-  - DEL
-  - BSPC
+  - Esc
+  - ^U
+  - ⌦
+  - ⌫
   - ^
   - '@'
   - '!'
   - '='
   - $
-  - {t: PG UP, h: GLOBE}
-  - {t: LEFT, h: LGUI}
-  - {t: UP, h: LALT}
-  - {t: RIGHT, h: LCTRL}
-  - RET
+  - {t: PgUp, h: 🌐}
+  - {t: ←, h: ⌘}
+  - {t: ↑, h: ⌥}
+  - {t: →, h: ^}
+  - ↵
   - '~'
   - '|'
   - +
   - '&'
   - '?'
-  - NEXT
-  - PG DN
-  - HOME
-  - {t: DOWN, h: RALT}
-  - END
-  - SPC
+  - ⏭
+  - PgDn
+  - Home
+  - {t: ↓, h: Alt}
+  - End
+  - ␣
   - _
   - {t: /, h: navigation}
   - {type: held}
@@ -141,11 +141,11 @@ layers:
   - F8
   - F9
   - F12
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
-  - GLOBE
+  - ⇧
+  - ^
+  - ⌥
+  - ⌘
+  - 🌐
   - ''
   - F4
   - F5
@@ -166,34 +166,34 @@ layers:
   - {type: held}
   - ''
   keyboard:
-  - '&ind_con'
+  - connection status
   - ''
-  - Gui+Sft+4
-  - Gui+Ctl+Sft+4
-  - Hyper+4
-  - '&usb_sel'
+  - screen shot
+  - screen copy
+  - launch pad
+  - USB
   - ''
-  - '&ind_bat'
+  - battery status
   - ''
-  - PREV
-  - PP
-  - NEXT
+  - ⏮
+  - ⏯
+  - ⏭
   - ''
-  - Ctl+UP
-  - {t: '&bt_sel 3', h: '&bt_clr 3'}
-  - {t: '&bt_sel 4', h: '&bt_clr 4'}
+  - mission control
+  - {t: BT 4, h: clear 4}
+  - {t: BT 5, h: clear 5}
   - ''
   - ''
-  - Gui+Ctl+Q
+  - lock screen
   - MUTE
-  - CAPS
-  - KP NUM
+  - Caps 🔒
+  - Num 🔒
   - ''
   - '&flash 7'
-  - '&studio_unlock'
-  - {t: '&bt_sel', h: '&bt_clr'}
-  - {t: '&bt_sel 1', h: '&bt_clr 1'}
-  - {t: '&bt_sel 2', h: '&bt_clr 2'}
+  - ZMK Studio
+  - {t: BT 1, h: clear 1}
+  - {t: BT 2, h: clear 2}
+  - {t: BT 3, h: clear 3}
   - ''
   - {t: ▽, type: trans}
   - {type: held}
@@ -234,26 +234,34 @@ layers:
   flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [0, 7]
-  k: '&studio_unlock'
+  k: ZMK Studio
   l: [Colemak]
+  a: top
+  o: 1.0
 - p: [3, 12]
   k: B
   l: [Colemak]
+  d: true
 - p: [4, 13]
   k: J
   l: [Colemak]
+  d: true
 - p: [1, 2, 3]
-  k: ESC
+  k: Esc
   l: [Colemak]
+  draw_separate: true
 - p: [9, 10, 11]
-  k: TAB
+  k: ⇥
   l: [Colemak]
+  draw_separate: true
 - p: [4, 5, 6]
-  k: BSPC
+  k: ⌫
   l: [Colemak, numpad, navigation]
+  draw_separate: true
 - p: [14, 15, 16]
-  k: RET
+  k: ↵
   l: [Colemak, numpad, navigation]
+  draw_separate: true
 - p: [2, 3]
   k: (
   l: [Colemak]
@@ -275,39 +283,42 @@ combos:
 - p: [11, 22]
   k: <
   l: [Colemak]
+  d: true
 - p: [14, 24]
   k: '>'
   l: [Colemak]
+  d: true
 - p: [12, 22]
-  k: '&mkp LCLK'
-  l: [Colemak]
+  k: mouse click
+  l: [flash mode]
 - p: [8, 18]
-  k: '&mkp RCLK'
-  l: [Colemak]
+  k: right click
+  l: [flash mode]
 - p: [5, 15]
-  k: '&mmv MOVE_UP'
-  l: [Colemak]
+  k: mouse ↑
+  l: [flash mode]
 - p: [15, 26]
-  k: '&mmv MOVE_DOWN'
-  l: [Colemak]
+  k: mouse ↓
+  l: [flash mode]
 - p: [4, 14]
-  k: '&mmv MOVE_LEFT'
-  l: [Colemak]
+  k: mouse ←
+  l: [flash mode]
 - p: [6, 16]
-  k: '&mmv MOVE_RIGHT'
-  l: [Colemak]
+  k: mouse →
+  l: [flash mode]
 - p: [2, 10]
-  k: '&msc SCRL_UP'
-  l: [Colemak]
+  k: scroll ↑
+  l: [flash mode]
 - p: [10, 20]
-  k: '&msc SCRL_DOWN'
-  l: [Colemak]
+  k: scroll ↓
+  l: [flash mode]
 - p: [1, 9]
-  k: '&msc SCRL_LEFT'
-  l: [Colemak]
+  k: scroll ←
+  l: [flash mode]
 - p: [3, 11]
-  k: '&msc SCRL_RIGHT'
-  l: [Colemak]
+  k: scroll →
+  l: [flash mode]
 - p: [12, 13]
   k: '&flash 7'
   l: [keyboard]
+  d: true

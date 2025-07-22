@@ -3,7 +3,7 @@ layers:
   Colemak:
   - '&lp_mc'
   - {t: MUTE, h: keyboard}
-  - {t: ESC, h: vim}
+  - {t: Esc, h: vim}
   - Q
   - W
   - F
@@ -14,19 +14,19 @@ layers:
   - U
   - Y
   - ''''
-  - BSPC
-  - {t: TAB, h: GLOBE}
-  - {t: A, h: LSHFT}
-  - {t: R, h: LCTRL}
-  - {t: S, h: LALT}
-  - {t: T, h: LGUI}
-  - {t: G, h: RALT}
-  - {t: M, h: RALT}
-  - {t: N, h: LGUI}
-  - {t: E, h: LALT}
-  - {t: I, h: LCTRL}
-  - {t: O, h: LSHFT}
-  - {t: RET, h: GLOBE}
+  - ⌫
+  - {t: ⇥, h: 🌐}
+  - {t: A, h: ⇧}
+  - {t: R, h: ^}
+  - {t: S, h: ⌥}
+  - {t: T, h: ⌘}
+  - {t: G, h: Alt}
+  - {t: M, h: Alt}
+  - {t: N, h: ⌘}
+  - {t: E, h: ⌥}
+  - {t: I, h: ^}
+  - {t: O, h: ⇧}
+  - {t: ↵, h: 🌐}
   - Z
   - X
   - C
@@ -38,43 +38,43 @@ layers:
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: (, h: numpad}
-  - {t: LSHIFT, h: navigation, s: '&caps_word'}
+  - {t: sticky ⇧, h: navigation, s: caps word}
   - {t: ), h: mouse}
   - {t: '[', h: symbols}
-  - {t: SPC, h: symbols}
+  - {t: ␣, h: symbols}
   - {t: ']', h: symbols}
   numpad:
   - ''
-  - DEL
+  - ⌦
   - vim
   - ''
   - ''
   - ''
   - ''
-  - BSPC
+  - ⌫
   - KP SLASH
   - KP 7
   - KP 8
   - KP 9
   - KP MINUS
-  - BSPC
-  - GLOBE
-  - Ctl+A
-  - LCTL
-  - LALT
-  - {t: SPC, h: LGUI}
-  - {t: RET, h: RALT}
+  - ⌫
+  - 🌐
+  - ^A
+  - ^
+  - ⌥
+  - {t: ␣, h: ⌘}
+  - {t: ↵, h: Alt}
   - KP MULTIPLY
   - KP 4
   - KP 5
   - KP 6
   - KP PLUS
   - KP ENTER
-  - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+D
-  - Ctl+V
+  - ^Z
+  - ^X
+  - ^C
+  - ^D
+  - ^V
   - ':'
   - KP 1
   - KP 2
@@ -94,40 +94,40 @@ layers:
   - ''
   - ''
   - ''
-  - BSPC
-  - PG UP
+  - ⌫
+  - PgUp
   - ''
   - ''
   - ''
   - ''
-  - DEL
-  - GLOBE
-  - {t: Gui+A, h: LSHFT}
-  - LCTL
-  - LALT
-  - {t: SPC, h: LGUI}
-  - {t: RET, h: RALT}
-  - HOME
-  - LEFT
-  - UP
-  - RIGHT
-  - END
-  - RET
-  - Gui+Z
-  - Gui+X
-  - Gui+C
-  - Gui+D
-  - Gui+V
-  - PG DN
+  - ⌦
+  - 🌐
+  - {t: ⌘A, h: ⇧}
+  - ^
+  - ⌥
+  - {t: ␣, h: ⌘}
+  - {t: ↵, h: Alt}
+  - Home
+  - ←
+  - ↑
+  - →
+  - End
+  - ↵
+  - ⌘Z
+  - ⌘X
+  - ⌘C
+  - ⌘D
+  - ⌘V
+  - PgDn
   - ''
-  - DOWN
+  - ↓
   - ''
   - ''
   - numpad
   - {type: held}
   - ''
-  - TAB
-  - SPC
+  - ⇥
+  - ␣
   - ''
   mouse:
   - ''
@@ -138,40 +138,40 @@ layers:
   - ''
   - ''
   - ''
-  - '&msc SCRL_UP'
+  - scroll ↑
   - ''
   - ''
   - ''
   - ''
   - ''
-  - GLOBE
-  - {t: Gui+A, h: LSHFT}
-  - LCTL
-  - LALT
+  - 🌐
+  - {t: ⌘A, h: ⇧}
+  - ^
+  - ⌥
   - LCMD
-  - RALT
-  - '&msc SCRL_LEFT'
-  - '&mmv MOVE_LEFT'
-  - '&mmv MOVE_UP'
-  - '&mmv MOVE_RIGHT'
-  - '&msc SCRL_RIGHT'
+  - Alt
+  - scroll ←
+  - mouse ←
+  - mouse ↑
+  - mouse →
+  - scroll →
   - ''
-  - Gui+Z
-  - Gui+X
-  - Gui+C
-  - Gui+D
-  - Gui+V
-  - '&msc SCRL_DOWN'
+  - ⌘Z
+  - ⌘X
+  - ⌘C
+  - ⌘D
+  - ⌘V
+  - scroll ↓
   - ''
-  - '&mmv MOVE_DOWN'
+  - mouse ↓
   - ''
   - ''
   - ''
   - ''
   - {type: held}
   - ''
-  - '&mkp LCLK'
-  - '&mkp RCLK'
+  - mouse click
+  - right click
   function:
   - ''
   - ''
@@ -187,12 +187,12 @@ layers:
   - F9
   - ''
   - ''
-  - GLOBE
+  - 🌐
   - LSFT
-  - LCTL
-  - LALT
-  - LGUI
-  - RALT
+  - ^
+  - ⌥
+  - ⌘
+  - Alt
   - ''
   - F4
   - F5
@@ -236,12 +236,12 @@ layers:
   - '!'
   - '='
   - $
-  - RALT
-  - LGUI
-  - LALT
-  - LCTL
+  - Alt
+  - ⌘
+  - ⌥
+  - ^
   - ''
-  - GLOBE
+  - 🌐
   - <
   - '>'
   - '|'
@@ -342,17 +342,17 @@ layers:
   - ''
   - ''
   - '&tmux P'
-  - Ctl+B
+  - ^B
   - '&tmux N'
   keyboard:
-  - Gui+Ctl+Q
+  - lock screen
   - {type: held}
   - BRI UP
   - ''
   - ''
-  - Gui+Sft+4
-  - Gui+Ctl+Sft+4
-  - '&ind_bat'
+  - screen shot
+  - screen copy
+  - battery status
   - ''
   - ''
   - OUT USB
@@ -360,11 +360,11 @@ layers:
   - ''
   - ''
   - BRI DN
-  - {t: '&bt_sel', h: '&bt_clr'}
-  - {t: '&bt_sel 1', h: '&bt_clr 1'}
-  - {t: '&bt_sel 2', h: '&bt_clr 2'}
-  - {t: '&bt_sel 3', h: '&bt_clr 3'}
-  - {t: '&bt_sel 4', h: '&bt_clr 4'}
+  - {t: BT 1, h: clear 1}
+  - {t: BT 2, h: clear 2}
+  - {t: BT 3, h: clear 3}
+  - {t: BT 4, h: clear 4}
+  - {t: BT 5, h: clear 5}
   - ''
   - ''
   - ''
@@ -372,17 +372,17 @@ layers:
   - ''
   - ''
   - ''
-  - Hyper+M
+  - HyperM
   - VOL DN
   - VOL UP
-  - '&ind_con'
+  - connection status
   - ''
   - ''
   - ''
   - ''
   - ''
-  - KP NUM
-  - CAPS
+  - Num 🔒
+  - Caps 🔒
   - ''
   - ''
   - ''
@@ -413,29 +413,29 @@ combos:
   k: '>'
   l: [Colemak]
 - p: [10, 22]
-  k: UP
+  k: ↑
   l: [Colemak]
 - p: [9, 21]
-  k: LEFT
+  k: ←
   l: [Colemak]
 - p: [11, 23]
-  k: RIGHT
+  k: →
   l: [Colemak]
 - p: [22, 33]
-  k: DOWN
+  k: ↓
   l: [Colemak]
 - p: [8, 20]
-  k: PG UP
+  k: PgUp
   l: [Colemak]
 - p: [20, 31]
-  k: PG DN
+  k: PgDn
   l: [Colemak]
 - p: [21, 32]
-  k: HOME
+  k: Home
   l: [Colemak]
 - p: [23, 34]
-  k: END
+  k: End
   l: [Colemak]
 - p: [12, 13]
-  k: DEL
+  k: ⌦
   l: [Colemak]

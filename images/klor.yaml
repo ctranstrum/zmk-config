@@ -11,7 +11,7 @@ layers:
   - U
   - Y
   - ''''
-  - {t: ESC, h: vim}
+  - {t: Esc, h: vim}
   - A
   - R
   - S
@@ -22,29 +22,29 @@ layers:
   - E
   - I
   - O
-  - BSPC
-  - {t: TAB, h: GLOBE}
-  - {t: Z, h: LSHFT}
-  - {t: X, h: LCTRL}
-  - {t: C, h: LALT}
-  - {t: D, h: LGUI}
-  - {t: V, h: RALT}
-  - PP
+  - ⌫
+  - {t: ⇥, h: 🌐}
+  - {t: Z, h: ⇧}
+  - {t: X, h: ^}
+  - {t: C, h: ⌥}
+  - {t: D, h: ⌘}
+  - {t: V, h: Alt}
+  - ⏯
   - MUTE
-  - {t: K, h: RALT}
-  - {t: H, h: LGUI}
-  - {t: ',', h: LALT, s: ;}
-  - {t: ., h: LCTRL, s: ':'}
-  - {t: /, h: LSHFT, s: \}
-  - {t: RET, h: keyboard}
-  - {t: '{', h: LCTRL}
+  - {t: K, h: Alt}
+  - {t: H, h: ⌘}
+  - {t: ',', h: ⌥, s: ;}
+  - {t: ., h: ^, s: ':'}
+  - {t: /, h: ⇧, s: \}
+  - {t: ↵, h: keyboard}
+  - {t: '{', h: ^}
   - {t: (, h: numpad}
-  - {t: LSHIFT, h: navigation, s: '&caps_word'}
-  - {t: '*', h: LGUI}
-  - {t: '-', h: LGUI}
-  - {t: SPC, h: symbols}
-  - {t: ), h: LALT}
-  - {t: '}', h: LCTRL}
+  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: '*', h: ⌘}
+  - {t: '-', h: ⌘}
+  - {t: ␣, h: symbols}
+  - {t: ), h: ⌥}
+  - {t: '}', h: ^}
   Qwerty:
   - Q
   - W
@@ -56,7 +56,7 @@ layers:
   - I
   - O
   - P
-  - {t: ESC, h: vim}
+  - {t: Esc, h: vim}
   - A
   - S
   - D
@@ -67,29 +67,29 @@ layers:
   - K
   - L
   - ''''
-  - BSPC
-  - {t: TAB, h: GLOBE}
-  - {t: Z, h: LSHFT}
-  - {t: X, h: LCTRL}
-  - {t: C, h: LALT}
-  - {t: V, h: LGUI}
-  - {t: B, h: RALT}
-  - PP
+  - ⌫
+  - {t: ⇥, h: 🌐}
+  - {t: Z, h: ⇧}
+  - {t: X, h: ^}
+  - {t: C, h: ⌥}
+  - {t: V, h: ⌘}
+  - {t: B, h: Alt}
+  - ⏯
   - MUTE
-  - {t: N, h: RALT}
-  - {t: M, h: LGUI}
-  - {t: ',', h: LALT, s: ;}
-  - {t: ., h: LCTRL, s: ':'}
-  - {t: /, h: LSHFT, s: \}
-  - {t: RET, h: keyboard}
-  - {t: '{', h: LCTRL}
+  - {t: N, h: Alt}
+  - {t: M, h: ⌘}
+  - {t: ',', h: ⌥, s: ;}
+  - {t: ., h: ^, s: ':'}
+  - {t: /, h: ⇧, s: \}
+  - {t: ↵, h: keyboard}
+  - {t: '{', h: ^}
   - {t: (, h: numpad}
-  - {t: LSHIFT, h: navigation, s: '&caps_word'}
-  - {t: '*', h: LGUI}
-  - {t: '-', h: LGUI}
-  - {t: SPC, h: symbols}
-  - {t: ), h: LALT}
-  - {t: '}', h: LCTRL}
+  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: '*', h: ⌘}
+  - {t: '-', h: ⌘}
+  - {t: ␣, h: symbols}
+  - {t: ), h: ⌥}
+  - {t: '}', h: ^}
   Dvorak:
   - ''''
   - {t: ',', s: ;}
@@ -101,7 +101,7 @@ layers:
   - C
   - R
   - L
-  - {t: ESC, h: vim}
+  - {t: Esc, h: vim}
   - A
   - O
   - E
@@ -112,36 +112,36 @@ layers:
   - T
   - N
   - S
-  - BSPC
-  - {t: TAB, h: GLOBE}
-  - {t: /, h: LSHFT, s: \}
-  - {t: Q, h: LCTRL}
-  - {t: J, h: LALT}
-  - {t: K, h: LGUI}
-  - {t: X, h: RALT}
-  - PP
+  - ⌫
+  - {t: ⇥, h: 🌐}
+  - {t: /, h: ⇧, s: \}
+  - {t: Q, h: ^}
+  - {t: J, h: ⌥}
+  - {t: K, h: ⌘}
+  - {t: X, h: Alt}
+  - ⏯
   - MUTE
-  - {t: B, h: RALT}
-  - {t: M, h: LGUI}
-  - {t: W, h: LALT}
-  - {t: V, h: LCTRL}
-  - {t: Z, h: LSHFT}
-  - {t: RET, h: keyboard}
-  - {t: '{', h: LCTRL}
+  - {t: B, h: Alt}
+  - {t: M, h: ⌘}
+  - {t: W, h: ⌥}
+  - {t: V, h: ^}
+  - {t: Z, h: ⇧}
+  - {t: ↵, h: keyboard}
+  - {t: '{', h: ^}
   - {t: (, h: numpad}
-  - {t: LSHIFT, h: navigation, s: '&caps_word'}
-  - {t: '*', h: LGUI}
-  - {t: '-', h: LGUI}
-  - {t: SPC, h: symbols}
-  - {t: ), h: LALT}
-  - {t: '}', h: LCTRL}
+  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: '*', h: ⌘}
+  - {t: '-', h: ⌘}
+  - {t: ␣, h: symbols}
+  - {t: ), h: ⌥}
+  - {t: '}', h: ^}
   navigation:
   - ''
   - ''
   - ''
   - ''
   - ''
-  - PG UP
+  - PgUp
   - ''
   - ''
   - ''
@@ -152,32 +152,32 @@ layers:
   - ''
   - ''
   - ''
-  - HOME
-  - LEFT
-  - UP
-  - RIGHT
-  - END
-  - BSPC
-  - GLOBE
+  - Home
+  - ←
+  - ↑
+  - →
+  - End
+  - ⌫
+  - 🌐
   - LSFT
-  - LCTL
-  - LALT
+  - ^
+  - ⌥
   - LCMD
-  - RALT
+  - Alt
   - ''
   - ''
-  - PG DN
+  - PgDn
   - ''
-  - DOWN
+  - ↓
   - ''
   - ''
-  - DEL
+  - ⌦
   - ''
   - numpad
   - {type: held}
   - ''
   - ''
-  - SPC
+  - ␣
   - ''
   - ''
   numpad:
@@ -202,13 +202,13 @@ layers:
   - KP 5
   - KP 6
   - +
-  - BSPC
-  - GLOBE
+  - ⌫
+  - 🌐
   - ''
-  - LCTL
-  - LALT
+  - ^
+  - ⌥
   - LCMD
-  - RALT
+  - Alt
   - ''
   - ''
   - ':'
@@ -222,7 +222,7 @@ layers:
   - navigation
   - ''
   - ','
-  - SPC
+  - ␣
   - KP 0
   - .
   function:
@@ -248,12 +248,12 @@ layers:
   - F6
   - ''
   - F12
-  - GLOBE
+  - 🌐
   - LSFT
-  - LCTL
-  - LALT
+  - ^
+  - ⌥
   - LCMD
-  - RALT
+  - Alt
   - ''
   - ''
   - ''
@@ -301,12 +301,12 @@ layers:
   - '?'
   - ''
   - ''
-  - RALT
+  - Alt
   - LCMD
-  - LALT
-  - LCTL
+  - ⌥
+  - ^
   - ''
-  - GLOBE
+  - 🌐
   - '&arrow'
   - '|'
   - '&'
@@ -377,7 +377,7 @@ layers:
   - ''
   - ''
   - ''
-  - Ctl+B
+  - ^B
   - '&tmux N4'
   - '&tmux N5'
   - '&tmux N6'
@@ -408,20 +408,20 @@ layers:
   keyboard:
   - {t: Qwerty, h: toggle}
   - ''
-  - Gui+Sft+4
-  - Gui+Ctl+Sft+4
-  - Hyper+4
+  - screen shot
+  - screen copy
+  - launch pad
   - ''
   - ''
   - ''
   - ''
   - ''
   - ''
-  - {t: '&bt_sel', h: '&bt_clr'}
-  - {t: '&bt_sel 1', h: '&bt_clr 1'}
-  - {t: '&bt_sel 2', h: '&bt_clr 2'}
-  - {t: '&bt_sel 3', h: '&bt_clr 3'}
-  - {t: '&bt_sel 4', h: '&bt_clr 4'}
+  - {t: BT 1, h: clear 1}
+  - {t: BT 2, h: clear 2}
+  - {t: BT 3, h: clear 3}
+  - {t: BT 4, h: clear 4}
+  - {t: BT 5, h: clear 5}
   - {t: Dvorak, h: toggle}
   - ''
   - ''
@@ -430,10 +430,10 @@ layers:
   - ''
   - '&bootloader'
   - ''
-  - Hyper+M
+  - HyperM
   - {t: Colemak, h: toggle}
   - ''
-  - Ctl+UP
+  - mission control
   - ''
   - ''
   - ''
@@ -442,9 +442,9 @@ layers:
   - ''
   - ''
   - {type: held}
-  - Gui+Ctl+Q
-  - KP NUM
-  - CAPS
+  - lock screen
+  - Num 🔒
+  - Caps 🔒
   - '&flash 10'
   - '&flash 10'
   - ''
