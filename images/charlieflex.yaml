@@ -189,7 +189,7 @@ layers:
   - Caps 🔒
   - Num 🔒
   - ''
-  - '&flash 7'
+  - flash
   - ZMK Studio
   - {t: BT 1, h: clear 1}
   - {t: BT 2, h: clear 2}
@@ -203,9 +203,9 @@ layers:
   - ''
   - ''
   - ''
-  - '&vtab N7'
-  - '&vtab N8'
-  - '&vtab N9'
+  - tab 7
+  - tab 8
+  - tab 9
   - ''
   - ''
   - ''
@@ -213,24 +213,24 @@ layers:
   - ''
   - ''
   - ''
-  - '&vtab N4'
-  - '&vtab N5'
-  - '&vtab N6'
+  - tab 4
+  - tab 5
+  - tab 6
   - ''
   - ''
   - ''
   - ''
   - ''
   - ''
-  - '&vimQ'
+  - QUIT
   - ''
-  - '&vtab N1'
-  - '&vtab N2'
-  - '&vtab N3'
-  - '&vldr Q'
+  - tab 1
+  - tab 2
+  - tab 3
+  - exit
   - ''
   - ''
-  - '&vldr W'
+  - save
   flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [0, 7]
@@ -319,6 +319,6 @@ combos:
   k: scroll →
   l: [flash mode]
 - p: [12, 13]
-  k: '&flash 7'
+  k: flash
   l: [keyboard]
   d: true

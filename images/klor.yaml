@@ -322,9 +322,9 @@ layers:
   - ''
   - ''
   - ''
-  - '&vtab N7'
-  - '&vtab N8'
-  - '&vtab N9'
+  - tab 7
+  - tab 8
+  - tab 9
   - ''
   - {type: held}
   - ''
@@ -333,13 +333,11 @@ layers:
   - ''
   - ''
   - ''
-  - '&vtab N4'
-  - '&vtab N5'
-  - '&vtab N6'
+  - tab 4
+  - tab 5
+  - tab 6
   - ''
-  - '&vimQ'
-  - ''
-  - ''
+  - QUIT
   - ''
   - ''
   - ''
@@ -347,16 +345,18 @@ layers:
   - ''
   - ''
   - ''
-  - '&vtab N1'
-  - '&vtab N2'
-  - '&vtab N3'
   - ''
-  - '&vldr Q'
+  - ''
+  - tab 1
+  - tab 2
+  - tab 3
+  - ''
+  - exit
   - ''
   - numpad
   - ''
   - ''
-  - '&vldr W'
+  - save
   - '&vtabprv'
   - '&vtab N0'
   - '&vtabnxt'
