@@ -71,7 +71,7 @@ The key layout is heavily influenced by the Klor, with the case influenced by th
 
 ## Charlieflex
 
-[Twenty One Chuck Street Keymap](images/chuck.svg)
+[Twenty One Chuck Street Keymap](images/charlieflex.svg)
 
 My latest keyboard takes the basic layout of the Lintilla,
 moves back to MX spacing,
