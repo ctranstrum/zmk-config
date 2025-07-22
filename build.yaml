@@ -58,11 +58,11 @@ include:
 
   # Charlieflex
   - board: seeeduino_xiao_ble
-    shield: charlieflix_unibody rgbled_adapter
+    shield: charlieflex_unibody rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-unibody-ble
   - board: seeeduino_xiao_rp2040
-    shield: charlieflix_unibody rgbled_adapter
+    shield: charlieflex_unibody rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-unibody-ble
 
