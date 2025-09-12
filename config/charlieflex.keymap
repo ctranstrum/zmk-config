@@ -61,18 +61,6 @@
             layers = <_CLMK>;
         };
 
-        combo_tab {
-            key-positions = <9 10 11>;
-            bindings = <&kp TAB>;
-            layers = <_CLMK>;
-        };
-
-        combo_tab_pinky {
-            key-positions = <18 19>;
-            bindings = <&kp TAB>;
-            layers = <_CLMK>;
-        };
-
         combo_backspace {
             key-positions = <4 5 6>;
             bindings = <&kp BSPC>;
@@ -83,6 +71,18 @@
             key-positions = <6 7>;
             bindings = <&kp BSPC>;
             layers = <_CLMK _NUM>;
+        };
+
+        combo_tab {
+            key-positions = <9 10 11>;
+            bindings = <&kp TAB>;
+            layers = <_CLMK>;
+        };
+
+        combo_tab_pinky {
+            key-positions = <18 19>;
+            bindings = <&kp TAB>;
+            layers = <_CLMK>;
         };
 
         combo_return {
@@ -500,4 +500,4 @@
     };
 };
 
-// vim: expandtab softtabstop=4 shiftwidth=4 filetype=dts
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=devicetree
