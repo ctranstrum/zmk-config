@@ -12,6 +12,9 @@ manifest:
       url-base: https://github.com/carrefinho
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: t-ogura
+      url-base: https://github.com/t-ogura
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -37,5 +40,10 @@ manifest:
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
+    - name: prospector-zmk-module
+      remote: t-ogura
+      revision: v1.1.1
+      path: modules/prospector-zmk-module
+
   self:
     path: config
