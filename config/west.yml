@@ -8,8 +8,6 @@ manifest:
       url-base: https://github.com/ctranstrum
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: carrefinho
-      url-base: https://github.com/carrefinho
     - name: englmaxi
       url-base: https://github.com/englmaxi
     - name: t-ogura
@@ -33,9 +31,6 @@ manifest:
       revision: zmk
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
-    - name: prospector-zmk-module
-      remote: carrefinho
       revision: main
     - name: zmk-dongle-display
       remote: englmaxi
