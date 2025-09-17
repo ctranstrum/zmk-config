@@ -56,15 +56,20 @@ include:
   #   shield: lintilla_right_peripheral rgbled_adapter
   #   artifact-name: lintilla-right
 
+  # Prospector Scanner
+  - board: seeeduino_xiao_ble
+    shield: prospector_scanner
+    artifact-name: prospector-ble-scanner
+
   # Charlieflex
   - board: seeeduino_xiao_ble
     shield: charlieflex_unibody rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: chuck-unibody-ble
-  - board: seeeduino_xiao_rp2040
-    shield: charlieflex_unibody rgbled_adapter
-    snippet: studio-rpc-usb-uart
-    artifact-name: chuck-wired-rp2040
+  # - board: seeeduino_xiao_rp2040
+  #   shield: charlieflex_unibody rgbled_adapter
+  #   snippet: studio-rpc-usb-uart
+  #   artifact-name: chuck-wired-rp2040
 
   # Settings Reset
   # - board: nice_nano_v2
