@@ -38,34 +38,34 @@ layers:
   - ''
   - screen shot
   - screen copy
-  - KP 7
-  - KP 8
-  - KP 9
-  - KP MINUS
+  - '7'
+  - '8'
+  - '9'
+  - '-'
   - ^A
   - {t: ⌫, h: ^}
   - {t: ␣, h: ⌥}
   - {t: ⇥, h: ⌘}
   - {t: ↵, h: 🌐}
-  - KP DIVIDE
-  - KP 4
-  - KP 5
-  - KP 6
-  - KP PLUS
+  - /
+  - '4'
+  - '5'
+  - '6'
+  - +
   - ^Z
   - ^X
   - {t: ^C, h: Alt}
   - ^D
   - ^V
   - ⏯
-  - KP MULTIPLY
-  - KP 1
-  - KP 2
-  - KP 3
+  - '*'
+  - '1'
+  - '2'
+  - '3'
   - '='
   - {type: held}
   - navigation
-  - KP 0
+  - '0'
   navigation:
   - Esc
   - ''

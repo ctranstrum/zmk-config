@@ -53,10 +53,10 @@ layers:
   - ''
   - ⌫
   - KP SLASH
-  - KP 7
-  - KP 8
-  - KP 9
-  - KP MINUS
+  - '7'
+  - '8'
+  - '9'
+  - '-'
   - ⌫
   - 🌐
   - ^A
@@ -64,11 +64,11 @@ layers:
   - ⌥
   - {t: ␣, h: ⌘}
   - {t: ↵, h: Alt}
-  - KP MULTIPLY
-  - KP 4
-  - KP 5
-  - KP 6
-  - KP PLUS
+  - '*'
+  - '4'
+  - '5'
+  - '6'
+  - +
   - KP ENTER
   - ^Z
   - ^X
@@ -76,15 +76,15 @@ layers:
   - ^D
   - ^V
   - ':'
-  - KP 1
-  - KP 2
-  - KP 3
+  - '1'
+  - '2'
+  - '3'
   - KP EQUAL
   - {type: held}
   - navigation
   - ''
   - ','
-  - KP 0
+  - '0'
   - .
   navigation:
   - ''
