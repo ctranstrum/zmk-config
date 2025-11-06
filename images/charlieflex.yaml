@@ -189,7 +189,7 @@ layers:
   - Caps 🔒
   - Num 🔒
   - ''
-  - flash
+  - '&flash 8'
   - ZMK Studio
   - {t: BT 1, h: clear 1}
   - {t: BT 2, h: clear 2}
@@ -231,6 +231,39 @@ layers:
   - ''
   - ''
   - save
+  tmux:
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - '&tmux N7'
+  - '&tmux N8'
+  - '&tmux N9'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&tmux D'
+  - '&tmux N4'
+  - '&tmux N5'
+  - '&tmux N6'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&tmux D'
+  - '&tmux A'
+  - '&tmux N1'
+  - '&tmux N2'
+  - '&tmux N3'
+  - ''
+  - {type: held}
+  - ''
+  - '&tmux C'
   flash mode: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [0, 7]
@@ -331,6 +364,6 @@ combos:
   k: scroll →
   l: [flash mode]
 - p: [12, 13]
-  k: flash
+  k: '&flash 8'
   l: [keyboard]
   d: true
