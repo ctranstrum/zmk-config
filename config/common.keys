@@ -236,7 +236,7 @@
         tmuxldr: tmux_leader_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp TMUX>,
+            bindings = <&kp TMUX>;
         };
 
         turbo: key_x_5 {
