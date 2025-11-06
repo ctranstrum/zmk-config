@@ -311,9 +311,9 @@ layers:
   - ''
   - ''
   - ''
-  - '&tmux N7'
-  - '&tmux N8'
-  - '&tmux N9'
+  - tab 7
+  - tab 8
+  - tab 9
   - ''
   - ''
   - ''
@@ -322,21 +322,21 @@ layers:
   - ''
   - ''
   - ''
-  - '&tmux C'
-  - '&tmux N4'
-  - '&tmux N5'
-  - '&tmux N6'
+  - new tab
+  - tab 4
+  - tab 5
+  - tab 6
   - ''
-  - '&tmux D'
-  - ''
-  - ''
+  - DETACH
   - ''
   - ''
   - ''
-  - '&tmux A'
-  - '&tmux N1'
-  - '&tmux N2'
-  - '&tmux N3'
+  - ''
+  - ''
+  - rename tab
+  - tab 1
+  - tab 2
+  - tab 3
   - ''
   - {type: held}
   - ''

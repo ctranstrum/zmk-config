@@ -367,9 +367,9 @@ layers:
   - ''
   - ''
   - ''
-  - '&tmux N7'
-  - '&tmux N8'
-  - '&tmux N9'
+  - tab 7
+  - tab 8
+  - tab 9
   - ''
   - {type: held}
   - ''
@@ -378,9 +378,9 @@ layers:
   - ''
   - ''
   - ^B
-  - '&tmux N4'
-  - '&tmux N5'
-  - '&tmux N6'
+  - tab 4
+  - tab 5
+  - tab 6
   - ''
   - ''
   - ''
@@ -391,17 +391,17 @@ layers:
   - ''
   - ''
   - ''
-  - '&tmux C'
-  - '&tmux N1'
-  - '&tmux N2'
-  - '&tmux N3'
+  - new tab
+  - tab 1
+  - tab 2
+  - tab 3
   - ''
-  - '&tmux D'
+  - DETACH
   - ''
   - {type: held}
   - ''
   - ''
-  - '&tmux A'
+  - rename tab
   - '&tmux P'
   - '&tmux N0'
   - '&tmux N'

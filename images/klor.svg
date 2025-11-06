@@ -1602,19 +1602,19 @@ path.combo {
 <g transform="translate(697, 54)" class="key keypos-6">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">N7</tspan>
+<tspan x="0" dy="-0.6em">tab</tspan><tspan x="0" dy="1.2em">7</tspan>
 </text>
 </g>
 <g transform="translate(754, 28)" class="key keypos-7">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">N8</tspan>
+<tspan x="0" dy="-0.6em">tab</tspan><tspan x="0" dy="1.2em">8</tspan>
 </text>
 </g>
 <g transform="translate(818, 58) rotate(4.0)" class="key keypos-8">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">N9</tspan>
+<tspan x="0" dy="-0.6em">tab</tspan><tspan x="0" dy="1.2em">9</tspan>
 </text>
 </g>
 <g transform="translate(882, 101) rotate(10.0)" class="key keypos-9">
@@ -1645,19 +1645,19 @@ path.combo {
 <g transform="translate(697, 110)" class="key keypos-17">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">N4</tspan>
+<tspan x="0" dy="-0.6em">tab</tspan><tspan x="0" dy="1.2em">4</tspan>
 </text>
 </g>
 <g transform="translate(753, 84)" class="key keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">N5</tspan>
+<tspan x="0" dy="-0.6em">tab</tspan><tspan x="0" dy="1.2em">5</tspan>
 </text>
 </g>
 <g transform="translate(814, 115) rotate(4.0)" class="key keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">N6</tspan>
+<tspan x="0" dy="-0.6em">tab</tspan><tspan x="0" dy="1.2em">6</tspan>
 </text>
 </g>
 <g transform="translate(872, 157) rotate(10.0)" class="key keypos-20">
@@ -1693,25 +1693,25 @@ path.combo {
 <g transform="translate(641, 176)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">C</tspan>
+<tspan x="0" dy="-0.6em">new</tspan><tspan x="0" dy="1.2em">tab</tspan>
 </text>
 </g>
 <g transform="translate(697, 167)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">N1</tspan>
+<tspan x="0" dy="-0.6em">tab</tspan><tspan x="0" dy="1.2em">1</tspan>
 </text>
 </g>
 <g transform="translate(753, 140)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">N2</tspan>
+<tspan x="0" dy="-0.6em">tab</tspan><tspan x="0" dy="1.2em">2</tspan>
 </text>
 </g>
 <g transform="translate(810, 171) rotate(4.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">N3</tspan>
+<tspan x="0" dy="-0.6em">tab</tspan><tspan x="0" dy="1.2em">3</tspan>
 </text>
 </g>
 <g transform="translate(862, 212) rotate(10.0)" class="key keypos-34">
@@ -1719,9 +1719,7 @@ path.combo {
 </g>
 <g transform="translate(920, 207) rotate(10.0)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">D</tspan>
-</text>
+<text x="0" y="0" class="key tap">DETACH</text>
 </g>
 <g transform="translate(256, 231)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1738,7 +1736,7 @@ path.combo {
 <g transform="translate(536, 303) rotate(-45.0)" class="key keypos-40">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;tmux</tspan><tspan x="0" dy="1.2em">A</tspan>
+<tspan x="0" dy="-0.6em">rename</tspan><tspan x="0" dy="1.2em">tab</tspan>
 </text>
 </g>
 <g transform="translate(586, 264) rotate(-30.0)" class="key keypos-41">
