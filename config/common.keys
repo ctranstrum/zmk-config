@@ -11,7 +11,7 @@
 #define I___I &trans
 
 // In case you want to change your leader keys
-#define TMUX LC(B)
+#define TMUX RC(B)
 #define VIM SPACE
 
 // Modifier key combinations

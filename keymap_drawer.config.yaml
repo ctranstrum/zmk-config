@@ -134,6 +134,7 @@ parse_config:
     RALT: Alt
     RBKT: "]"
     RBRC: "}"
+    RC(B): tmux leader
     RET: ↵
     RIGHT: →
     RPAR: )
