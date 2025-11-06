@@ -233,12 +233,6 @@
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
 
-        tmuxldr: tmux_leader_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp TMUX>;
-        };
-
         turbo: key_x_5 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
