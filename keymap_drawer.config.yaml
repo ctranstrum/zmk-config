@@ -40,6 +40,20 @@ parse_config:
     "&msc SCRL_UP": scroll ↑
     "&sk LSHIFT": sticky ⇧
     "&studio_unlock": ZMK Studio
+    "&tmux QMARK": keymap help
+    "&tmux A": rename tab
+    "&tmux C": new tab
+    "&tmux D": DETACH
+    "&tmux N1": tab 1
+    "&tmux N2": tab 2
+    "&tmux N3": tab 3
+    "&tmux N4": tab 4
+    "&tmux N5": tab 5
+    "&tmux N6": tab 6
+    "&tmux N7": tab 7
+    "&tmux N8": tab 8
+    "&tmux N9": tab 9
+    "&tmuxldr": tmux leader
     "&usb_sel": USB
     "&vimQ": QUIT
     "&vldr W": save
