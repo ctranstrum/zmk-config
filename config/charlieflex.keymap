@@ -14,7 +14,8 @@
 #define _FN 4
 #define _KBD 5
 #define _VIM 6
-#define _FLSH 7
+#define _TMUX 7
+#define _FLSH 8
 
 // Key positions for combos
 // ┏━━━━┳━━━━┳━━━━┳━━━━┓                    ┏━━━━┳━━━━┳━━━━┳━━━━┓
@@ -251,6 +252,10 @@
             if-layers = <_NAV _SYM>;
             then-layer = <_KBD>;
         };
+        tmux_layer {
+            if-layers = <_NUM _VIM>;
+            then-layer = <_TMUX>;
+        };
     };
 
     keymap {
@@ -438,6 +443,32 @@
             sensor-bindings = <&vim_tabs>;
         };
 
+        tmux {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "tmux"                  ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃ ##### ┃       ┃       ┃       ┃                                    ┃ tab 7 ┃ tab 8 ┃ tab 9 ┃       ┃
+     I___I    ___     ___     ___                                      &tmux N7 &tmux N8 &tmux N9  ___
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃                    ┃ detach┃ tab 4 ┃ tab 5 ┃ tab 6 ┃       ┃
+      ___     ___     ___     ___     ___                      &tmux D &tmux N4 &tmux N5 &tmux N6  ___
+// ┃       ┃       ┃       ┃       ┃       ┃                    ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃     ┃ DETACH ┃     ┃ rename┃ tab 1 ┃ tab 2 ┃ tab 3 ┃       ┃
+      ___     ___     ___     ___     ___          &tmux D     &tmux A &tmux N1 &tmux N2 &tmux N3  ___
+// ┃       ┃       ┃       ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃       ┃    ┃  new  ┃
+                                     I___I    ___        &tmux C
+//                                 ┃       ┃       ┃    ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┛
+            >;
+
+            sensor-bindings = <&tmux_tabs>;
+        };
+
         flash {
 //                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
             display-name = "flash mode"            ;
@@ -465,10 +496,6 @@
         };
 
         // Extra empty layers for ZMK Studio
-
-        layer8 {
-            status = "reserved";
-        };
 
         layer9 {
             status = "reserved";
