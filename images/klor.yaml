@@ -377,7 +377,7 @@ layers:
   - ''
   - ''
   - ''
-  - ^B
+  - tmux leader
   - tab 4
   - tab 5
   - tab 6

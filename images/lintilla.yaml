@@ -342,7 +342,7 @@ layers:
   - ''
   - ''
   - '&tmux P'
-  - ^B
+  - tmux leader
   - '&tmux N'
   keyboard:
   - lock screen

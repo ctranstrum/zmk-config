@@ -228,7 +228,7 @@ layers:
   - tab 2
   - tab 3
   - exit
-  - {t: ^B, h: numpad}
+  - {t: tmux leader, h: numpad}
   - ''
   - save
   tmux:
