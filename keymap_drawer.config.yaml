@@ -26,6 +26,7 @@ parse_config:
     "&flash 4": flash
     "&flash 6": flash
     "&flash 7": flash
+    "&flash 8": flash
     "&ind_bat": battery status
     "&ind_con": connection status
     "&mkp LCLK": "mouse click"
@@ -43,7 +44,7 @@ parse_config:
     "&tmux QMARK": keymap help
     "&tmux A": rename tab
     "&tmux C": new tab
-    "&tmux D": DETACH
+    "&tmux D": detach
     "&tmux N1": tab 1
     "&tmux N2": tab 2
     "&tmux N3": tab 3

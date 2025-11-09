@@ -294,18 +294,18 @@
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
 // ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                    ┃   7   ┃   8   ┃   9   ┃   -   ┃
-&lt _VIM ESC  ___    GS(N4) GCS(N4)                                 &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS
+&lt _VIM ESC  ___    GS(N4) GCS(N4)                                    &kp N7  &kp N8  &kp N9  &kp MINUS
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ CtrlA ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                    ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
- &kp LC(A) Ctl BSPC Opt SPC Cmd TAB Glb RET           &kp KP_DIVIDE &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS
+ &kp LC(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                  &kp SLASH &kp N4  &kp N5  &kp N6   &kp PLUS
 // ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                    ┃       ┃       ┃       ┃       ┃       ┃
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫     ┏━━━━━━━━┓     ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃ CtrlZ ┃ CtrlX ┃ CtrlC ┃ CtrlD ┃ CtrlV ┃     ┃  PLAY  ┃     ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
-&kp LC(Z) &kp LC(X) Alt LC(C) &kp LC(D) &kp LC(V) &kp C_PP &kp KP_MULTIPLY &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp EQUAL
+&kp LC(Z) &kp LC(X) Alt LC(C) &kp LC(D) &kp LC(V) &kp C_PP    &kp STAR &kp N1  &kp N2  &kp N3  &kp EQUAL
 // ┃       ┃       ┃ R Alt ┃       ┃       ┃     ┗━━━━━━━━┛     ┃       ┃       ┃       ┃       ┃       ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓    ┏━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
 //                                 ┃ ##### ┃       ┃    ┃   0   ┃
-                                     I___I &mo _NAV      &kp KP_N0
+                                     I___I &mo _NAV      &kp N0
 //                                 ┃  num  ┃ func  ┃    ┃       ┃
 //                                 ┗━━━━━━━┻━━━━━━━┛    ┗━━━━━━━┛
             >;
@@ -345,8 +345,8 @@
 //                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
             bindings = <
 // ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                    ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃  Esc  ┃ CtrlU ┃  Del  ┃ Bkspc ┃
-&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                   &kp ESC &kp LC(U) &kp DEL &kp BSPC
+// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                    ┃ CtrlL ┃ CtrlU ┃  Del  ┃ Bkspc ┃
+&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                 &kp LC(L) &kp LC(U) &kp DEL &kp BSPC
 // ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                    ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
 // ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                    ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
 &kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                   Glb PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp RET
