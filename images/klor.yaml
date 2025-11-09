@@ -396,7 +396,7 @@ layers:
   - tab 2
   - tab 3
   - ''
-  - DETACH
+  - detach
   - ''
   - {type: held}
   - ''
