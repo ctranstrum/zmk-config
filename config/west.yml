@@ -22,9 +22,8 @@ manifest:
     #   remote: ctranstrum
     #   revision: zmk
     - name: zmk-rgbled-widget
-      revision: v0.3
       remote: caksoylar
-      revision: main
+      revision: v0.3
     # - name: zmk-dongle-display
     #   remote: englmaxi
     #   revision: main
