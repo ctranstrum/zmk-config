@@ -71,8 +71,8 @@ layers:
   - ''
   - screen shot
   - screen copy
-  - Esc
   - ''
+  - Esc
   - ⌦
   - ⌫
   - {t: ⌘A, h: ⇧}
