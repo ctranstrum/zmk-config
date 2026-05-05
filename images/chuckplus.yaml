@@ -1,4 +1,4 @@
-layout: {zmk_keyboard: chuckplus}
+layout: {zmk_keyboard: chuckplus, layout_name: chuckplus_layout21}
 layers:
   Colemak:
   - {t: Q, h: vim}
