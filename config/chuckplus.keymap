@@ -25,11 +25,11 @@
 // ┏━━━━┳━━━━┳━━━━┳━━━━┓                          ┏━━━━┳━━━━┳━━━━┳━━━━┓
 // ┃ 0  ┃ 1  ┃ 2  ┃ 3  ┃                          ┃ 4  ┃ 5  ┃ 6  ┃ 7  ┃
 // ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┓      ┏━━┓      ┏━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫
-// ┃ 8  ┃ 9  ┃ 10 ┃<11>┃ 12 ┃      ┃33┃      ┃ 13 ┃<14>┃ 15 ┃ 16 ┃ 17 ┃
+// ┃ 8  ┃ 9  ┃ 10 ┃<11>┃ 12 ┃      ┃32┃      ┃ 13 ┃<14>┃ 15 ┃ 16 ┃ 17 ┃
 // ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫   ┏━━╋━━╋━━┓   ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫
-// ┃ 18 ┃ 19 ┃ 20 ┃ 21 ┃ 22 ┃   ┃34┃23┃35┃   ┃ 24 ┃ 25 ┃ 26 ┃ 27 ┃ 28 ┃
+// ┃ 18 ┃ 19 ┃ 20 ┃ 21 ┃ 22 ┃   ┃33┃23┃34┃   ┃ 24 ┃ 25 ┃ 26 ┃ 27 ┃ 28 ┃
 // ┗━━━━┻━━━━┻━━━━┻━━━━╋━━━━╋━━━┻┳━╋━━╋━┳┻━━━╋━━━━┻━━━━┻━━━━┻━━━━┻━━━━┛
-//                     ┃ 29 ┃ 30 ┃ ┃36┃ ┃ 31 ┃
+//                     ┃ 29 ┃ 30 ┃ ┃35┃ ┃ 31 ┃
 //                     ┗━━━━┻━━━━┛ ┗━━┛ ┗━━━━┛
 // Note that the joystick directions press both the center as well as the
 // direction pressed, so we have to use combos for them,
@@ -223,121 +223,121 @@
         // Joystick combos, because the hardware activates both the direction
         // as well as the center push when you move the joystick
         combo_joystick_scroll_up {
-            key-positions = <23 33>;
+            key-positions = <23 32>;
             bindings = <&msc SCRL_UP>;
             layers = <_CLMK>;
         };
 
         combo_joystick_scroll_down {
-            key-positions = <23 36>;
+            key-positions = <23 35>;
             bindings = <&msc SCRL_DOWN>;
             layers = <_CLMK>;
         };
 
         combo_joystick_tab_left {
-            key-positions = <23 34>;
+            key-positions = <23 33>;
             bindings = <&kp LG(LS(LBKT))>;
             layers = <_CLMK>;
         };
 
         combo_joystick_tab_right {
-            key-positions = <23 35>;
+            key-positions = <23 34>;
             bindings = <&kp LG(LS(RBKT))>;
             layers = <_CLMK>;
         };
 
         combo_joystick_vol_up {
-            key-positions = <23 33>;
+            key-positions = <23 32>;
             bindings = <&kp C_VOL_UP>;
             layers = <_NUM _NAV _SYM>;
         };
 
         combo_joystick_vol_down {
-            key-positions = <23 36>;
+            key-positions = <23 35>;
             bindings = <&kp C_VOL_DN>;
             layers = <_NUM _NAV _SYM>;
         };
 
         combo_joystick_prev {
-            key-positions = <23 34>;
+            key-positions = <23 33>;
             bindings = <&kp C_PREV>;
             layers = <_NUM _NAV _SYM>;
         };
 
         combo_joystick_next {
-            key-positions = <23 35>;
+            key-positions = <23 34>;
             bindings = <&kp C_NEXT>;
             layers = <_NUM _NAV _SYM>;
         };
 
         combo_joystick_bright_up {
-            key-positions = <23 33>;
+            key-positions = <23 32>;
             bindings = <&kp C_BRI_UP>;
             layers = <_KBD>;
         };
 
         combo_joystick_bright_down {
-            key-positions = <23 36>;
+            key-positions = <23 35>;
             bindings = <&kp C_BRI_DN>;
             layers = <_KBD>;
         };
 
         combo_joystick_bright_left {
-            key-positions = <23 34>;
+            key-positions = <23 33>;
             bindings = <&kp C_BRI_DN>;
             layers = <_KBD>;
         };
 
         combo_joystick_bright_right {
-            key-positions = <23 35>;
+            key-positions = <23 34>;
             bindings = <&kp C_BRI_UP>;
             layers = <_KBD>;
         };
 
         combo_joystick_vim_up {
-            key-positions = <23 33>;
+            key-positions = <23 32>;
             bindings = <&vtabprv>;
             layers = <_VIM>;
         };
 
         combo_joystick_vim_down {
-            key-positions = <23 36>;
+            key-positions = <23 35>;
             bindings = <&vtabnxt>;
             layers = <_VIM>;
         };
 
         combo_joystick_vim_left {
-            key-positions = <23 34>;
+            key-positions = <23 33>;
             bindings = <&vtabprv>;
             layers = <_VIM>;
         };
 
         combo_joystick_vim_right {
-            key-positions = <23 35>;
+            key-positions = <23 34>;
             bindings = <&vtabnxt>;
             layers = <_VIM>;
         };
 
         combo_joystick_tmux_up {
-            key-positions = <23 33>;
+            key-positions = <23 32>;
             bindings = <&tmux P>;
             layers = <_TMUX>;
         };
 
         combo_joystick_tmux_down {
-            key-positions = <23 36>;
+            key-positions = <23 35>;
             bindings = <&tmux N>;
             layers = <_TMUX>;
         };
 
         combo_joystick_tmux_left {
-            key-positions = <23 34>;
+            key-positions = <23 33>;
             bindings = <&tmux P>;
             layers = <_TMUX>;
         };
 
         combo_joystick_tmux_right {
-            key-positions = <23 35>;
+            key-positions = <23 34>;
             bindings = <&tmux N>;
             layers = <_TMUX>;
         };
