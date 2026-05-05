@@ -21,9 +21,6 @@
 #define C_(key) &kp LC(key)
 #define G_(key) &kp LG(key)
 
-// Magic bluetooth button
-#define BT_(btnum) &bt_key btnum btnum
-
 // Key positions for combos
 // ┏━━━━┳━━━━┳━━━━┳━━━━┓                          ┏━━━━┳━━━━┳━━━━┳━━━━┓
 // ┃ 0  ┃ 1  ┃ 2  ┃ 3  ┃                          ┃ 4  ┃ 5  ┃ 6  ┃ 7  ┃
@@ -32,8 +29,8 @@
 // ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫   ┏━━╋━━╋━━┓   ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫
 // ┃ 18 ┃ 19 ┃ 20 ┃ 21 ┃ 22 ┃   ┃34┃23┃35┃   ┃ 24 ┃ 25 ┃ 26 ┃ 27 ┃ 28 ┃
 // ┗━━━━┻━━━━┻━━━━┻━━━━╋━━━━╋━━━┻┳━╋━━╋━┳┻━━━╋━━━━╋━━━━┻━━━━┻━━━━┻━━━━┛
-//                     ┃ 29 ┃ 30 ┃ ┃36┃ ┃ 31 ┃ 32 ┃
-//                     ┗━━━━┻━━━━┛ ┗━━┛ ┗━━━━┻━━━━┛
+//                     ┃ 29 ┃ 30 ┃ ┃36┃ ┃ 31 ┃
+//                     ┗━━━━┻━━━━┛ ┗━━┛ ┗━━━━┛
 // Note that the joystick directions press both the center as well as the
 // direction pressed, so we have to use combos for them,
 // but not for a center push
