@@ -388,32 +388,6 @@
         };
     };
 
-    macros {
-        bt_clr: bluetooth_clear {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &bt_sel MACRO_PLACEHOLDER>, <&bt BT_CLR>;
-        };
-
-        bt_sel: bluetooth_select {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&out OUT_BLE>, <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
-        };
-
-        usb_sel: usb_select {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <_CLMK>;
-            bindings = <&out OUT_USB>;
-        };
-
-        flash: dongle_bootloader {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &to MACRO_PLACEHOLDER>, <&bootloader>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
