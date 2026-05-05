@@ -66,6 +66,12 @@ include:
   #   snippet: studio-rpc-usb-uart
   #   artifact-name: chuck-wired-rp2040
 
+  # Chuck Plus
+  - board: seeeduino_xiao_ble
+    shield: chuckplus_unibody rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: chuckplus-unibody
+
   # Settings Reset
   # - board: nice_nano_v2
   #   shield: settings_reset

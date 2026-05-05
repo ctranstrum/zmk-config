@@ -1,0 +1,768 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <behaviors/rgbled_widget.dtsi>
+#include "common.keys"
+
+// Layers
+#define _CLMK 0
+#define _NUM 1
+#define _NAV 2
+#define _SYM 3
+#define _FN 4
+#define _KBD 5
+#define _VIM 6
+#define _TMUX 7
+#define _FLSH 8
+
+// Modifiers
+#define C_(key) &kp LC(key)
+#define G_(key) &kp LG(key)
+
+// Magic bluetooth button
+#define BT_(btnum) &bt_key btnum btnum
+
+// Key positions for combos
+// ┏━━━━┳━━━━┳━━━━┳━━━━┓                          ┏━━━━┳━━━━┳━━━━┳━━━━┓
+// ┃ 0  ┃ 1  ┃ 2  ┃ 3  ┃                          ┃ 4  ┃ 5  ┃ 6  ┃ 7  ┃
+// ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┓      ┏━━┓      ┏━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫
+// ┃ 8  ┃ 9  ┃ 10 ┃<11>┃ 12 ┃      ┃33┃      ┃ 13 ┃<14>┃ 15 ┃ 16 ┃ 17 ┃
+// ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫   ┏━━╋━━╋━━┓   ┣━━━━╋━━━━╋━━━━╋━━━━╋━━━━┫
+// ┃ 18 ┃ 19 ┃ 20 ┃ 21 ┃ 22 ┃   ┃34┃23┃35┃   ┃ 24 ┃ 25 ┃ 26 ┃ 27 ┃ 28 ┃
+// ┗━━━━┻━━━━┻━━━━┻━━━━╋━━━━╋━━━┻┳━╋━━╋━┳┻━━━╋━━━━╋━━━━┻━━━━┻━━━━┻━━━━┛
+//                     ┃ 29 ┃ 30 ┃ ┃36┃ ┃ 31 ┃ 32 ┃
+//                     ┗━━━━┻━━━━┛ ┗━━┛ ┗━━━━┻━━━━┛
+// Note that the joystick directions press both the center as well as the
+// direction pressed, so we have to use combos for them,
+// but not for a center push
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_unlock {
+            key-positions = <0 7>;
+            bindings = <&studio_unlock>;
+            layers = <_CLMK>;
+        };
+
+        combo_b {
+            key-positions = <3 12>;
+            bindings = <&kp B>;
+            layers = <_CLMK>;
+        };
+
+        combo_j {
+            key-positions = <4 13>;
+            bindings = <&kp J>;
+            layers = <_CLMK>;
+        };
+
+        combo_esc {
+            key-positions = <1 2 3>;
+            bindings = <&kp ESC>;
+            layers = <_CLMK>;
+        };
+
+        combo_esc_pinky {
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+            layers = <_CLMK>;
+        };
+
+        combo_backspace {
+            key-positions = <4 5 6>;
+            bindings = <&kp BSPC>;
+            layers = <_CLMK _NUM>;
+        };
+
+        combo_backspace_pinky {
+            key-positions = <6 7>;
+            bindings = <&kp BSPC>;
+            layers = <_CLMK _NUM>;
+        };
+
+        combo_tab {
+            key-positions = <9 10 11>;
+            bindings = <&kp TAB>;
+            layers = <_CLMK>;
+        };
+
+        combo_tab_pinky {
+            key-positions = <18 19>;
+            bindings = <&kp TAB>;
+            layers = <_CLMK>;
+        };
+
+        combo_return {
+            key-positions = <14 15 16>;
+            bindings = <&kp RET>;
+            layers = <_CLMK _NUM>;
+        };
+
+        combo_return_pinky {
+            key-positions = <27 28>;
+            bindings = <&kp RET>;
+            layers = <_CLMK _NUM>;
+            require-prior-idle-ms = <175>;
+        };
+
+        combo_left_paren {
+            key-positions = <2 3>;
+            bindings = <&kp LPAR>;
+            layers = <_CLMK>;
+        };
+
+        combo_right_paren {
+            key-positions = <4 5>;
+            bindings = <&kp RPAR>;
+            layers = <_CLMK>;
+            require-prior-idle-ms = <175>;
+        };
+
+        combo_left_curly {
+            key-positions = <10 11>;
+            bindings = <&kp LBRC>;
+            layers = <_CLMK>;
+            require-prior-idle-ms = <175>;
+        };
+
+        combo_right_curly {
+            key-positions = <14 15>;
+            bindings = <&kp RBRC>;
+            layers = <_CLMK>;
+            require-prior-idle-ms = <175>;
+        };
+
+        combo_left_bracket {
+            key-positions = <20 21>;
+            bindings = <&kp LBKT>;
+            layers = <_CLMK>;
+            require-prior-idle-ms = <175>;
+        };
+
+        combo_right_bracket {
+            key-positions = <25 26>;
+            bindings = <&kp RBKT>;
+            layers = <_CLMK>;
+            require-prior-idle-ms = <175>;
+        };
+
+        combo_less_than {
+            key-positions = <11 22>;
+            bindings = <&kp LT>;
+            layers = <_CLMK>;
+        };
+
+        combo_greater_than {
+            key-positions = <14 24>;
+            bindings = <&kp GT>;
+            layers = <_CLMK>;
+            require-prior-idle-ms = <175>;
+        };
+
+        combo_mouse_click {
+            key-positions = <12 22>;
+            bindings = <&mkp LCLK>;
+            layers = <_CLMK>;
+        };
+
+        combo_mouse_right_click {
+            key-positions = <8 18>;
+            bindings = <&mkp RCLK>;
+            layers = <_CLMK>;
+        };
+
+        combo_mouse_up {
+            key-positions = <5 15>;
+            bindings = <&mmv MOVE_UP>;
+            layers = <_CLMK>;
+        };
+
+        combo_mouse_down {
+            key-positions = <15 26>;
+            bindings = <&mmv MOVE_DOWN>;
+            layers = <_CLMK>;
+        };
+
+        combo_mouse_left {
+            key-positions = <4 14>;
+            bindings = <&mmv MOVE_LEFT>;
+            layers = <_CLMK>;
+        };
+
+        combo_mouse_right {
+            key-positions = <6 16>;
+            bindings = <&mmv MOVE_RIGHT>;
+            layers = <_CLMK>;
+        };
+
+        combo_scroll_up {
+            key-positions = <2 10>;
+            bindings = <&msc SCRL_UP>;
+            layers = <_CLMK>;
+        };
+
+        combo_scroll_down {
+            key-positions = <10 20>;
+            bindings = <&msc SCRL_DOWN>;
+            layers = <_CLMK>;
+        };
+
+        combo_scroll_left {
+            key-positions = <1 9>;
+            bindings = <&msc SCRL_LEFT>;
+            layers = <_CLMK>;
+        };
+
+        combo_scroll_right {
+            key-positions = <3 11>;
+            bindings = <&msc SCRL_RIGHT>;
+            layers = <_CLMK>;
+        };
+
+        // Joystick combos, because the hardware activates both the direction
+        // as well as the center push when you move the joystick
+        combo_joystick_scroll_up {
+            key-positions = <23 33>;
+            bindings = <&msc SCRL_UP>;
+            layers = <_CLMK>;
+        };
+
+        combo_joystick_scroll_down {
+            key-positions = <23 36>;
+            bindings = <&msc SCRL_DOWN>;
+            layers = <_CLMK>;
+        };
+
+        combo_joystick_tab_left {
+            key-positions = <23 34>;
+            bindings = <&kp LG(LS(LBKT))>;
+            layers = <_CLMK>;
+        };
+
+        combo_joystick_tab_right {
+            key-positions = <23 35>;
+            bindings = <&kp LG(LS(RBKT))>;
+            layers = <_CLMK>;
+        };
+
+        combo_joystick_vol_up {
+            key-positions = <23 33>;
+            bindings = <&kp C_VOL_UP>;
+            layers = <_NUM _NAV _SYM>;
+        };
+
+        combo_joystick_vol_down {
+            key-positions = <23 36>;
+            bindings = <&kp C_VOL_DN>;
+            layers = <_NUM _NAV _SYM>;
+        };
+
+        combo_joystick_prev {
+            key-positions = <23 34>;
+            bindings = <&kp C_PREV>;
+            layers = <_NUM _NAV _SYM>;
+        };
+
+        combo_joystick_next {
+            key-positions = <23 35>;
+            bindings = <&kp C_NEXT>;
+            layers = <_NUM _NAV _SYM>;
+        };
+
+        combo_joystick_bright_up {
+            key-positions = <23 33>;
+            bindings = <&kp C_BRI_UP>;
+            layers = <_KBD>;
+        };
+
+        combo_joystick_bright_down {
+            key-positions = <23 36>;
+            bindings = <&kp C_BRI_DN>;
+            layers = <_KBD>;
+        };
+
+        combo_joystick_bright_left {
+            key-positions = <23 34>;
+            bindings = <&kp C_BRI_DN>;
+            layers = <_KBD>;
+        };
+
+        combo_joystick_bright_right {
+            key-positions = <23 35>;
+            bindings = <&kp C_BRI_UP>;
+            layers = <_KBD>;
+        };
+
+        combo_joystick_vim_up {
+            key-positions = <23 33>;
+            bindings = <&vtabprv>;
+            layers = <_VIM>;
+        };
+
+        combo_joystick_vim_down {
+            key-positions = <23 36>;
+            bindings = <&vtabnxt>;
+            layers = <_VIM>;
+        };
+
+        combo_joystick_vim_left {
+            key-positions = <23 34>;
+            bindings = <&vtabprv>;
+            layers = <_VIM>;
+        };
+
+        combo_joystick_vim_right {
+            key-positions = <23 35>;
+            bindings = <&vtabnxt>;
+            layers = <_VIM>;
+        };
+
+        combo_joystick_tmux_up {
+            key-positions = <23 33>;
+            bindings = <&tmux P>;
+            layers = <_TMUX>;
+        };
+
+        combo_joystick_tmux_down {
+            key-positions = <23 36>;
+            bindings = <&tmux N>;
+            layers = <_TMUX>;
+        };
+
+        combo_joystick_tmux_left {
+            key-positions = <23 34>;
+            bindings = <&tmux P>;
+            layers = <_TMUX>;
+        };
+
+        combo_joystick_tmux_right {
+            key-positions = <23 35>;
+            bindings = <&tmux N>;
+            layers = <_TMUX>;
+        };
+        // Combos are always executed on the central, so if we have a dongle
+        // without an easily accessible reset button, we can use a combo to
+        // put the central into bootloder mode
+        combo_flash {
+            key-positions = <12 13>;
+            bindings = <&flash _FLSH>;  // The layer number of the flash layer
+            layers = <_KBD>;  // The layer number of the layer where this combo is active
+        };
+    };
+
+    behaviors {
+        bt_key: magic_bluetooth_key {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            bindings = <&bt_clr>, <&bt_sel>;
+        };
+
+        hm: homerow_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            require-prior-idle-ms = <175>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        hmcs: homerow_mod_comma_semi {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            require-prior-idle-ms = <175>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&mcs>;
+        };
+
+        lp_mc: launch_pad_mission_control {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <HYPR(N4)>, <&kp LC(UP)>;
+        };
+
+        lsscw: layer_sticky_shift_caps_word {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&sscw>;
+        };
+
+        mcs: mod_comma_semi {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mdc: mod_dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        msb: mod_slash_back {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        key_rotation: sensor_rotation_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        scroll_rotation: sensor_rotation_scroll {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+            tap-ms = <30>;
+        };
+
+        skqr: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+            bindings = <&kp>;
+        };
+
+        sscw: sticky_shift_caps_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&skqr LSHIFT>, <&caps_word>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        fn_layer {
+            if-layers = <_NUM _NAV>;
+            then-layer = <_FN>;
+        };
+        kbd_layer {
+            if-layers = <_NAV _SYM>;
+            then-layer = <_KBD>;
+        };
+    };
+
+    macros {
+        bt_clr: bluetooth_clear {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &bt_sel MACRO_PLACEHOLDER>, <&bt BT_CLR>;
+        };
+
+        bt_sel: bluetooth_select {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&out OUT_BLE>, <&macro_param_1to2 &bt BT_SEL MACRO_PLACEHOLDER>;
+        };
+
+        usb_sel: usb_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <_CLMK>;
+            bindings = <&out OUT_USB>;
+        };
+
+        flash: dongle_bootloader {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &to MACRO_PLACEHOLDER>, <&bootloader>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        colemak {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "Colemak"               ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃   Q   ┃   W   ┃   F   ┃   P   ┃                                          ┃   L   ┃   U   ┃   Y   ┃  ' "  ┃
+&lt _VIM Q   &kp W   &kp F   &kp P                                              &kp L   &kp U   &kp Y  &kp SQT
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   A   ┃   R   ┃   S   ┃   T   ┃   G   ┃                          ┃   M   ┃   N   ┃   E   ┃   I   ┃   O   ┃
+     Sft A   Ctl R   Opt S   Cmd T   Glb G                              Glb M   Cmd N   Opt E   Ctl I   Sft O
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                          ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃ Shift ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   Z   ┃   X   ┃   C   ┃   D   ┃   V   ┃        ┃  MUTE  ┃        ┃   K   ┃   H   ┃  , ;  ┃  . :  ┃  / \  ┃
+     &kp Z   &kp X   Alt C   &kp D   &kp V          &kp C_MUTE          &kp K &kp H &hmcs RALT 0 &mdc    &msb
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃        ┃vol +/- ┃        ┃       ┃       ┃ R Alt ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃   -   ┃ SHIFT ┃          ┃ SPACE ┃
+                            &lt _NUM MINUS &lsscw _NAV 0     &lt _SYM SPC
+//                                 ┃  num  ┃  nav  ┃          ┃  sym  ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┛
+                                      ___     ___              ___ ___
+            >;
+
+            sensor-bindings = <&key_rotation C_VOL_UP C_VOL_DN>;
+        };
+
+        num {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "numpad"                ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                          ┃   7   ┃   8   ┃   9   ┃   -   ┃
+&lt _VIM ESC  ___    GS(N4) GCS(N4)                                             &kp N7  &kp N8 &kp N9 &kp MINUS
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ CtrlA ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                          ┃   /   ┃   4   ┃   5   ┃   6   ┃   +   ┃
+     C_(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                           &kp SLASH &kp N4  &kp N5  &kp N6 &kp PLUS
+// ┃       ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ CtrlZ ┃ CtrlX ┃ CtrlC ┃ CtrlD ┃ CtrlV ┃        ┃  PLAY  ┃        ┃   *   ┃   1   ┃   2   ┃   3   ┃   =   ┃
+     C_(Z)   C_(X) Alt LC(C) C_(D)   C_(V)           &kp C_PP          &kp STAR &kp N1 &kp N2 &kp N3 &kp EQUAL
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃        ┃ scroll ┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃       ┃          ┃   0   ┃
+                                     I___I &mo _NAV            &kp N0
+//                                 ┃  num  ┃ func  ┃          ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┛
+                                      ___     ___              ___ ___
+            >;
+
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
+        };
+
+        nav {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "navigation"            ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃  Esc  ┃       ┃scrnsht┃scrn cp┃                                          ┃       ┃  Esc  ┃  Del  ┃ Bkspc ┃
+    &kp ESC   ___    GS(N4) GCS(N4)                                              ___   &kp ESC &kp DEL &kp BSPC
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ Cmd A ┃ Bkspc ┃ SPACE ┃  Tab  ┃ Enter ┃                          ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
+ Sft LG(A) Ctl BSPC Opt SPC Cmd TAB Glb RET                          &kp PG_UP &kp LEFT &kp UP &kp RIGHT &kp RET
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ Cmd Z ┃ Cmd X ┃ Cmd C ┃ Cmd D ┃ Cmd V ┃        ┃  PLAY  ┃        ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
+     G_(Z)   G_(X) Alt LG(C) G_(D)   G_(V)           &kp C_PP       &kp PG_DN &kp HOME &kp DOWN &kp END &kp SPC
+// ┃       ┃       ┃ R Alt ┃       ┃       ┃        ┃ scroll ┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃       ┃ ##### ┃          ┃  Tab  ┃
+                                   &mo _NUM  I___I          &lt _SYM TAB
+//                                 ┃ func  ┃       ┃          ┃ keybd ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┛
+                                      ___     ___              ___ ___
+            >;
+
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
+        };
+
+        sym {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "symbols"               ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃   `   ┃   #   ┃   %   ┃   *   ┃                                          ┃ CtrlL ┃ CtrlU ┃  Del  ┃ Bkspc ┃
+&kp GRAVE &kp HASH &kp PRCNT &kp STAR                                           C_(L)   C_(U)  &kp DEL &kp BSPC
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   ^   ┃   @   ┃   !   ┃   =   ┃   $   ┃                          ┃ Pg Up ┃ Left  ┃  Up   ┃ Right ┃ Enter ┃
+&kp CARET &kp AT &kp EXCL &kp EQUAL &kp DLLR                         Glb PG_UP Cmd LEFT Opt UP Ctl RIGHT &kp RET
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃ Globe ┃  Cmd  ┃  Opt  ┃ Ctrl  ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃   ~   ┃   |   ┃   +   ┃   &   ┃   ?   ┃        ┃  PLAY  ┃        ┃ Pg Dn ┃ Home  ┃ Down  ┃  End  ┃ SPACE ┃
+&kp TILDE &kp PIPE &kp PLUS &kp AMPS &kp QMARK       &kp C_PP        &kp PG_DN &kp HOME Alt DOWN &kp END &kp SPC
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃ scroll ┃        ┃       ┃       ┃ R Alt ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃   _   ┃   /   ┃          ┃ ##### ┃
+                               &kp UNDER &lt _NAV SLASH         I___I
+//                                 ┃       ┃ keybd ┃          ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┛
+                                      ___     ___              ___ ___
+            >;
+
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
+        };
+
+        fn {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "function"              ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃       ┃       ┃       ┃       ┃                                          ┃  F7   ┃  F8   ┃  F9   ┃  F12  ┃
+      ___     ___     ___     ___                                              &kp F7  &kp F8  &kp F9  &kp F12
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃       ┃  F4   ┃  F5   ┃  F6   ┃  F11  ┃
+&kp LSHFT &kp LCTRL &kp LALT &kp LGUI &kp GLOBE                          ___   &kp F4  &kp F5  &kp F6  &kp F11
+// ┃ Shift ┃ Ctrl  ┃  Opt  ┃  Cmd  ┃ Globe ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃  PLAY  ┃        ┃       ┃  F1   ┃  F2   ┃  F3   ┃  F10  ┃
+      ___     ___     ___     ___     ___            &kp C_PP            ___   &kp F1  &kp F2  &kp F3  &kp F10
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃ scroll ┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃ ##### ┃          ┃       ┃
+                                     I___I   I___I               ___
+//                                 ┃       ┃       ┃          ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┛
+                                      ___     ___              ___ ___
+            >;
+
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
+        };
+
+        kbd {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "keyboard"              ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃c stat ┃       ┃scrnsht┃scrn cp┃                                          ┃launchp┃  USB  ┃       ┃battery┃
+   &ind_con   ___    GS(N4) GCS(N4)                                           HYPR(N4) &usb_sel  ___  &ind_bat
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃ prev  ┃ play  ┃ next  ┃       ┃                          ┃mission┃  BT4  ┃  BT5  ┃       ┃       ┃
+   ___  &kp C_PREV &kp C_PP &kp C_NEXT  ___                           &kp LC(UP) BT_(3) BT_(4)   ___     ___
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃control┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃ lock  ┃ mute  ┃caps lk┃numlock┃       ┃        ┃ FLASH  ┃        ┃studio ┃  BT1  ┃  BT2  ┃  BT3  ┃       ┃
+GC(Q) &kp C_MUTE &kp CAPS &kp KP_NUM  ___          &flash _FLSH     &studio_unlock BT_(0) BT_(1) BT_(2)  ___
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃ bright ┃        ┃ unlock┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃ ##### ┃          ┃ ##### ┃
+                                     I___I   I___I              I___I
+//                                 ┃       ┃       ┃          ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┛
+                                      ___     ___              ___ ___
+            >;
+
+            sensor-bindings = <&key_rotation C_BRI_UP C_BRI_DN>;
+        };
+
+        vim {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "vim"                   ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃ ##### ┃       ┃       ┃       ┃                                          ┃ tab 7 ┃ tab 8 ┃ tab 9 ┃       ┃
+     I___I    ___     ___     ___                                            &vtab N7 &vtab N8 &vtab N9  ___
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃       ┃ tab 4 ┃ tab 5 ┃ tab 6 ┃       ┃
+      ___     ___     ___     ___     ___                                ___ &vtab N4 &vtab N5 &vtab N6  ___
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃  QUIT  ┃        ┃       ┃ tab 1 ┃ tab 2 ┃ tab 3 ┃ exit  ┃
+      ___     ___     ___     ___     ___             &vimQ              ___ &vtab N1 &vtab N2 &vtab N3 &vldr Q
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃vim tabs┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ tmux  ┃       ┃          ┃ save  ┃
+                                &lt _NUM TMUX ___             &vldr W
+//                                 ┃ leader┃       ┃          ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┛
+                                      ___     ___              ___ ___
+            >;
+
+            sensor-bindings = <&vim_tabs>;
+        };
+
+        tmux {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "tmux"                  ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃ ##### ┃       ┃       ┃       ┃                                          ┃ tab 7 ┃ tab 8 ┃ tab 9 ┃       ┃
+     I___I    ___     ___     ___                                            &tmux N7 &tmux N8 &tmux N9  ___
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃ detach┃ tab 4 ┃ tab 5 ┃ tab 6 ┃       ┃
+      ___     ___     ___     ___     ___                            &tmux D &tmux N4 &tmux N5 &tmux N6  ___
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃  HELP  ┃        ┃ rename┃ tab 1 ┃ tab 2 ┃ tab 3 ┃       ┃
+      ___     ___     ___     ___     ___          &tmux QMARK       &tmux A &tmux N1 &tmux N2 &tmux N3  ___
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃vim tabs┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃ ##### ┃       ┃          ┃  new  ┃
+                                     I___I    ___             &tmux C
+//                                 ┃       ┃       ┃          ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┛
+                                      ___     ___              ___ ___
+            >;
+
+            sensor-bindings = <&tmux_tabs>;
+        };
+
+        flash {
+//                       ┏━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "flash mode"            ;
+//                       ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            bindings = <
+// ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓                                          ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
+// ┃       ┃       ┃       ┃       ┃                                          ┃       ┃       ┃       ┃       ┃
+      ___     ___     ___     ___                                                ___     ___     ___     ___
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓                          ┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+      ___     ___     ___     ___     ___                                ___     ___     ___     ___     ___
+// ┃       ┃       ┃       ┃       ┃       ┃                          ┃       ┃       ┃       ┃       ┃       ┃
+// ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫        ┏━━━━━━━━┓        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃        ┃        ┃       ┃       ┃       ┃       ┃       ┃
+      ___     ___     ___     ___     ___              ___               ___     ___     ___     ___     ___
+// ┃       ┃       ┃       ┃       ┃       ┃        ┃        ┃        ┃       ┃       ┃       ┃       ┃       ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━┓┗━━━━━━━━┛┏━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛
+//                                 ┃       ┃       ┃          ┃       ┃       ┃
+                                      ___     ___                ___     ___
+//                                 ┃       ┃       ┃          ┃       ┃       ┃
+//                                 ┗━━━━━━━┻━━━━━━━┛          ┗━━━━━━━┻━━━━━━━┛
+                                      ___     ___                ___     ___
+            >;
+
+            sensor-bindings = <&scroll_rotation MOVE_DOWN MOVE_UP>;
+        };
+
+        // Extra empty layers for ZMK Studio
+
+        layer9 {
+            status = "reserved";
+        };
+
+        layer10 {
+            status = "reserved";
+        };
+
+        layer11 {
+            status = "reserved";
+        };
+
+        layer12 {
+            status = "reserved";
+        };
+
+        layer13 {
+            status = "reserved";
+        };
+
+        layer14 {
+            status = "reserved";
+        };
+
+        layer15 {
+            status = "reserved";
+        };
+    };
+};
+
+// vim: expandtab softtabstop=4 shiftwidth=4 filetype=dts

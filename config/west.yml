@@ -17,7 +17,7 @@ manifest:
       import: app/west.yml
     - name: chuck
       remote: ctranstrum
-      revision: zmk
+      revision: zmk-plus
     # - name: lintilla
     #   remote: ctranstrum
     #   revision: zmk

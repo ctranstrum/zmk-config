@@ -70,7 +70,9 @@ parse_config:
     "&vtab N9": tab 9
     GC(Q): lock screen
     GCS(N4): screen copy
+    GS(LBKT): tab ←
     GS(N4): screen shot
+    GS(RBKT): tab →
     HYPR(N4): launch pad
 
   zmk_keycode_map:
@@ -82,9 +84,14 @@ parse_config:
     CARET: ^
     COLON: ":"
     COMMA: ","
+    C_BRI_DN: 🔅
+    C_BRI_UP: 🔆
+    C_MUTE: 🔇
     C_NEXT: ⏭
     C_PP: ⏯
     C_PREV: ⏮
+    C_VOL_DN: 🔉
+    C_VOL_UP: 🔊
     DEL: ⌦
     DLLR: $
     DOT: .
