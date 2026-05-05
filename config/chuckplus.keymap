@@ -352,24 +352,6 @@
     };
 
     behaviors {
-        bt_key: magic_bluetooth_key {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <500>;
-            bindings = <&bt_clr>, <&bt_sel>;
-        };
-
-        hm: homerow_mod {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            require-prior-idle-ms = <175>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
         hmcs: homerow_mod_comma_semi {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -378,42 +360,6 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&mcs>;
-        };
-
-        lp_mc: launch_pad_mission_control {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <HYPR(N4)>, <&kp LC(UP)>;
-        };
-
-        lsscw: layer_sticky_shift_caps_word {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&sscw>;
-        };
-
-        mcs: mod_comma_semi {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mdc: mod_dot_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        msb: mod_slash_back {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SLASH>, <&kp BACKSLASH>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         key_rotation: sensor_rotation_kp {
@@ -427,22 +373,6 @@
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
             tap-ms = <30>;
-        };
-
-        skqr: sticky_key_quick_release {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            release-after-ms = <1000>;
-            quick-release;
-            ignore-modifiers;
-            bindings = <&kp>;
-        };
-
-        sscw: sticky_shift_caps_word {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&skqr LSHIFT>, <&caps_word>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
