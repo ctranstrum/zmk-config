@@ -388,6 +388,10 @@
         };
     };
 
+    chosen {
+        zmk,physical-layout = &chuckplus_layout21;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
