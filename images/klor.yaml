@@ -39,7 +39,7 @@ layers:
   - {t: ↵, h: keyboard}
   - {t: '{', h: ^}
   - {t: (, h: numpad}
-  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: sticky shift, h: navigation, s: caps word}
   - {t: '*', h: ⌘}
   - {t: '-', h: ⌘}
   - {t: ␣, h: symbols}
@@ -84,7 +84,7 @@ layers:
   - {t: ↵, h: keyboard}
   - {t: '{', h: ^}
   - {t: (, h: numpad}
-  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: sticky shift, h: navigation, s: caps word}
   - {t: '*', h: ⌘}
   - {t: '-', h: ⌘}
   - {t: ␣, h: symbols}
@@ -129,7 +129,7 @@ layers:
   - {t: ↵, h: keyboard}
   - {t: '{', h: ^}
   - {t: (, h: numpad}
-  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: sticky shift, h: navigation, s: caps word}
   - {t: '*', h: ⌘}
   - {t: '-', h: ⌘}
   - {t: ␣, h: symbols}

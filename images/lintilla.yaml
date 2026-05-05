@@ -38,7 +38,7 @@ layers:
   - {t: ., s: ':'}
   - {t: /, s: \}
   - {t: (, h: numpad}
-  - {t: sticky ⇧, h: navigation, s: caps word}
+  - {t: sticky shift, h: navigation, s: caps word}
   - {t: ), h: mouse}
   - {t: '[', h: symbols}
   - {t: ␣, h: symbols}
