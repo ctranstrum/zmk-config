@@ -347,7 +347,7 @@ layers:
   keyboard:
   - lock screen
   - {type: held}
-  - BRI UP
+  - 🔆
   - ''
   - ''
   - screen shot
@@ -359,7 +359,7 @@ layers:
   - ''
   - ''
   - ''
-  - BRI DN
+  - 🔅
   - {t: BT 1, h: clear 1}
   - {t: BT 2, h: clear 2}
   - {t: BT 3, h: clear 3}
@@ -373,8 +373,8 @@ layers:
   - ''
   - ''
   - HyperM
-  - VOL DN
-  - VOL UP
+  - 🔉
+  - 🔊
   - connection status
   - ''
   - ''

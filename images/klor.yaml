@@ -30,7 +30,7 @@ layers:
   - {t: D, h: ⌘}
   - {t: V, h: Alt}
   - ⏯
-  - MUTE
+  - 🔇
   - {t: K, h: Alt}
   - {t: H, h: ⌘}
   - {t: ',', h: ⌥, s: ;}
@@ -75,7 +75,7 @@ layers:
   - {t: V, h: ⌘}
   - {t: B, h: Alt}
   - ⏯
-  - MUTE
+  - 🔇
   - {t: N, h: Alt}
   - {t: M, h: ⌘}
   - {t: ',', h: ⌥, s: ;}
@@ -120,7 +120,7 @@ layers:
   - {t: K, h: ⌘}
   - {t: X, h: Alt}
   - ⏯
-  - MUTE
+  - 🔇
   - {t: B, h: Alt}
   - {t: M, h: ⌘}
   - {t: W, h: ⌥}
