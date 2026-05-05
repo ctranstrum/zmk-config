@@ -386,6 +386,10 @@
             if-layers = <_NAV _SYM>;
             then-layer = <_KBD>;
         };
+        tmux_layer {
+            if-layers = <_NUM _VIM>;
+            then-layer = <_TMUX>;
+        };
     };
 
     chosen {
