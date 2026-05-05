@@ -395,64 +395,64 @@ combos:
 - p: [3, 11]
   k: scroll →
   l: [flash mode]
-- p: [23, 33]
+- p: [23, 32]
   k: scroll ↑
   l: [Colemak]
-- p: [23, 36]
+- p: [23, 35]
   k: scroll ↓
   l: [Colemak]
-- p: [23, 34]
+- p: [23, 33]
   k: tab ←
   l: [Colemak]
-- p: [23, 35]
+- p: [23, 34]
   k: tab →
   l: [Colemak]
-- p: [23, 33]
+- p: [23, 32]
   k: 🔊
   l: [numpad, navigation, symbols]
-- p: [23, 36]
+- p: [23, 35]
   k: 🔉
   l: [numpad, navigation, symbols]
-- p: [23, 34]
+- p: [23, 33]
   k: ⏮
   l: [numpad, navigation, symbols]
-- p: [23, 35]
+- p: [23, 34]
   k: ⏭
   l: [numpad, navigation, symbols]
-- p: [23, 33]
+- p: [23, 32]
   k: 🔆
-  l: [keyboard]
-- p: [23, 36]
-  k: 🔅
-  l: [keyboard]
-- p: [23, 34]
-  k: 🔅
   l: [keyboard]
 - p: [23, 35]
-  k: 🔆
+  k: 🔅
   l: [keyboard]
 - p: [23, 33]
-  k: '&vtabprv'
-  l: [vim]
-- p: [23, 36]
-  k: '&vtabnxt'
-  l: [vim]
+  k: 🔅
+  l: [keyboard]
 - p: [23, 34]
+  k: 🔆
+  l: [keyboard]
+- p: [23, 32]
   k: '&vtabprv'
   l: [vim]
 - p: [23, 35]
   k: '&vtabnxt'
   l: [vim]
 - p: [23, 33]
+  k: '&vtabprv'
+  l: [vim]
+- p: [23, 34]
+  k: '&vtabnxt'
+  l: [vim]
+- p: [23, 32]
   k: '&tmux P'
   l: [tmux]
-- p: [23, 36]
+- p: [23, 35]
   k: '&tmux N'
   l: [tmux]
-- p: [23, 34]
+- p: [23, 33]
   k: '&tmux P'
   l: [tmux]
-- p: [23, 35]
+- p: [23, 34]
   k: '&tmux N'
   l: [tmux]
 - p: [12, 13]
